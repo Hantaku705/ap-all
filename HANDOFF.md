@@ -25,15 +25,12 @@
 
 ## 未コミット変更
 ```
- D webapp/src/app/concept/definition/page.tsx
- D webapp/src/app/concept/good-concept/page.tsx
- M webapp/src/app/concept/page.tsx
-?? webapp/src/app/concept/textbook/
+なし
 ```
 
 ## 最新コミット
 ```
-cb99062 feat: add concept learning webapp and documentation
+b075191 refactor: simplify webapp to 2-section layout
 ```
 
 ## セッション履歴
