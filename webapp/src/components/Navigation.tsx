@@ -12,16 +12,10 @@ export function Navigation() {
           </div>
           <div className="flex items-center gap-6">
             <Link
-              href="/concept/definition"
+              href="/concept/textbook"
               className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
             >
-              定義
-            </Link>
-            <Link
-              href="/concept/good-concept"
-              className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
-            >
-              良いコンセプト
+              教科書
             </Link>
             <Link
               href="/concept/examples"
