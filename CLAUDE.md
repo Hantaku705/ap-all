@@ -144,13 +144,18 @@ npm run dev
 ### デプロイ
 ```bash
 cd webapp
-vercel --prod
+vercel --prod --yes
 ```
+**注意**: GitHub連携は解除済み。CLI直接デプロイのみ。
+
+### GitHubリポジトリ
+https://github.com/Hantaku705/ap-concept-learning
 
 ---
 
 ## 更新履歴
 
+- 2026-01-20: GitHubリポジトリ移行（Hantaku705/ap-concept-learning）、CLI直接デプロイに変更
 - 2026-01-20: 事例15件に拡張、ネーミング案を14項目評価指標に則って改善
 - 2026-01-20: webappシンプル化（2セクション構成）、評価項目14項目に統合、用語統一
 - 2026-01-19: UGCネーミング7条件を事例に追加、メディアプラン資料作成

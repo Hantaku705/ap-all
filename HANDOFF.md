@@ -15,6 +15,9 @@
 - [x] **事例を10個追加（計15事例に拡張）**
 - [x] **ネーミング案を14項目評価指標に則って改善（全15事例）**
 - [x] **ナビゲーション修正（古いリンク削除）**
+- [x] **Vercelデプロイ問題の調査・解決**
+- [x] **新しいGitHubリポジトリ作成（Hantaku705/ap-concept-learning）**
+- [x] **CLI直接デプロイに変更（GitHub連携解除）**
 
 ### 作業中のタスク
 - なし
@@ -22,41 +25,34 @@
 ## 次のアクション
 1. 必要に応じてwebappをVercelカスタムドメインに設定
 2. コンセプト事例を追加（新しい商品分析）
+3. GitHub連携を再設定する場合はVercelダッシュボードから
 
 ## 未解決の問題
 - **データ同期**: `docs/concept/concept-data.json` と `webapp/src/data/concept-data.json` は手動同期が必要（Turbopackがシンボリックリンク非対応のため）
 
 ## 未コミット変更
 ```
-M CLAUDE.md
- M HANDOFF.md
- M docs/concept/CLAUDE.md
- M docs/concept/concept-data.json
- M docs/concept/examples/01-nuru-tsukematsuge.md
- M docs/concept/examples/02-convini-gym.md
- M docs/concept/examples/03-yakan-biyou-shampoo.md
- M docs/concept/examples/04-ganmen-shishu-fande.md
- M docs/concept/examples/05-shigaisen-abitara.md
- M webapp/src/components/Navigation.tsx
- M webapp/src/data/concept-data.json
-?? docs/concept/examples/06-onedan-ijou.md
-?? docs/concept/examples/07-convini-coffee.md
-?? docs/concept/examples/08-nomu-tenteki.md
-?? docs/concept/examples/09-1000yen-cut.md
-?? docs/concept/examples/10-otona-no-furikake.md
-?? docs/concept/examples/11-asa-mac.md
-?? docs/concept/examples/12-okudake-wifi.md
-?? docs/concept/examples/13-ochinai-lip.md
-?? docs/concept/examples/14-nomu-skincare.md
-?? docs/concept/examples/15-nagara-biganki.md
+ M .gitignore
 ```
 
 ## 最新コミット
 ```
-7a845ed docs: update HANDOFF.md with latest commit info
+b5c2a71 feat: expand concept examples to 15 cases with improved naming
 ```
 
 ## セッション履歴
+
+### 2026-01-20 (4)
+- Vercelデプロイ問題の調査・解決
+  - 原因: ローカルコミットがリモートにプッシュされていなかった
+  - 元リポジトリ（affaan-m/everything-claude-code）にプッシュ権限なし
+- 新しいGitHubリポジトリ作成
+  - https://github.com/Hantaku705/ap-concept-learning
+- VercelのGitHub連携を解除
+  - CLI直接デプロイに変更（`vercel --prod`）
+- 本番デプロイ完了
+  - 2セクション構成が正しく表示されることを確認
+  - URL: https://webapp-five-bay.vercel.app
 
 ### 2026-01-20 (3)
 - ナビゲーション修正
