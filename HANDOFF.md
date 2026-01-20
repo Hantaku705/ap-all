@@ -57,19 +57,12 @@
 
 ## 未コミット変更
 ```
- M dr.melaxin/CLAUDE.md
- M dr.melaxin/docs/CLAUDE.md
- D dr.melaxin/docs/strategy.md
- D dr.melaxin/media-plan/CLAUDE.md
- D dr.melaxin/media-plan/annual.md
- D dr.melaxin/media-plan/june.md
- D dr.melaxin/media-plan/march.md
-?? dr.melaxin/proposal/
+なし
 ```
 
 ## 最新コミット
 ```
-801fbb0 refactor: reorganize dr.melaxin folder structure
+898ca3b feat(dr.melaxin): reorganize proposal folder and enhance strategy docs
 ```
 
 ## セッション履歴
