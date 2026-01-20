@@ -18,29 +18,95 @@
 - [x] **Vercelデプロイ問題の調査・解決**
 - [x] **新しいGitHubリポジトリ作成（Hantaku705/ap-concept-learning）**
 - [x] **CLI直接デプロイに変更（GitHub連携解除）**
+- [x] **APフォルダ構造を整理（プロジェクト別に分離）**
+- [x] **Phone Farm 脅威インテリジェンスレポート作成**
+- [x] **Phone Farm WebアプリをNext.jsで作成（Vercelデプロイ）**
+- [x] **レポートをライトテーマに変更（視認性改善）**
+- [x] **各セクションに目的・補足説明を追加**
+- [x] **セットアップガイドページ作成（/setup-guide）**
 
 ### 作業中のタスク
-- なし
+- [ ] **MASCODEアイライナー コンセプト作成**（検討中）
 
 ## 次のアクション
-1. 必要に応じてwebappをVercelカスタムドメインに設定
-2. コンセプト事例を追加（新しい商品分析）
-3. GitHub連携を再設定する場合はVercelダッシュボードから
+1. MASCODEアイライナーのコンセプト案を最終決定
+2. Phone Farmガイドのフィードバック対応（必要に応じて）
 
 ## 未解決の問題
-- **データ同期**: `docs/concept/concept-data.json` と `webapp/src/data/concept-data.json` は手動同期が必要（Turbopackがシンボリックリンク非対応のため）
+- **データ同期**: `concept-learning/docs/concept-data.json` と `concept-learning/webapp/src/data/concept-data.json` は手動同期が必要（Turbopackがシンボリックリンク非対応のため）
 
 ## 未コミット変更
 ```
- M .gitignore
+M  CLAUDE.md
+M  HANDOFF.md
+D  agents/, commands/, rules/, skills/, hooks/, mcp-configs/, plugins/, examples/
+D  docs/, webapp/, kwonlege/
+D  メディアプラン_MASCODE/
+?? _archive/
+?? _claude-code/
+?? concept-learning/
+?? dr.melaxin/
+?? mascode/
+?? phonefarm/
 ```
 
 ## 最新コミット
 ```
-b5c2a71 feat: expand concept examples to 15 cases with improved naming
+f83ca08 docs: update HANDOFF.md and CLAUDE.md for session handoff
 ```
 
 ## セッション履歴
+
+### 2026-01-20 (7)
+- **Phone Farm 脅威インテリジェンスレポート作成**
+  - TikTok不正業者（Phone Farm）の手法を分析
+  - 初心者業者が使用するハードウェア・ソフトウェアを網羅
+  - 検出戦略（ハードウェア/ソフトウェア/行動/ネットワーク）をまとめ
+- **Next.js Webアプリ作成**
+  - `phonefarm/webapp/` にNext.js 15アプリを構築
+  - Vercelにデプロイ: https://phonefarm-threat-intel.vercel.app
+- **視認性改善**
+  - ダークテーマ → ライトテーマに変更
+  - 各セクションに「目的」「ポイント」「補足説明」を追加
+  - 検出戦略テーブルに「理由」列を追加
+- **セットアップガイドページ作成** (`/setup-guide`)
+  - 初心者向け0→1完全マニュアル
+  - 2つの予算構成（最小: 5台3万円、スタンダード: 10台17万円）
+  - 具体的な買い物リスト（商品名・価格・購入先URL）
+  - 8フェーズ・29ステップのガイド
+  - 各ステップにコマンド例・検出シグナル付き
+  - トラブルシューティングセクション
+
+### 2026-01-20 (6)
+- APフォルダ構造を整理（プロジェクト別に分離）
+  - `_claude-code/` 作成: agents, commands, rules, skills, hooks, mcp-configs, plugins, examples を移動
+  - `concept-learning/` 作成: webapp, docs/concept, kwonlege を移動
+  - `mascode/` 作成: PDF提案書、メディアプラン を移動
+  - `_archive/` 作成: 用途不明ファイル（video-analysis-kit.md, account-analysis/, コンセプトmd）を退避
+- 命名修正
+  - `kwonlege/` → `concept-learning/knowledge/` （スペル修正）
+  - `メディアプラン_MASCODE/` → `mascode/media-plan/` （英語化）
+  - `【MASCODE BEAUTY】...pdf` → `mascode/proposal.pdf` （英語化）
+- CLAUDE.md を新しい構造に合わせて更新
+
+### 2026-01-20 (5)
+- MASCODEアイライナー コンセプト作成（検討中）
+  - PDF資料を分析（53ページのプロモーション提案書）
+  - 商品情報: MASCODE スリークリキッドアイライナー THE BLACK
+  - ターゲット: 30-40代働く女性
+  - 消費者インサイト: 目元の疲れ、メイクが古い、失敗したくない
+- コンセプト案を5つ作成・14項目評価
+  1. 選べる3黒（サンクロ）
+  2. 疲れ目、盛れる黒
+  3. 大人の目力ライナー
+  4. ひと描きで目力
+  5. 黒、3段活用
+- 現状方向性（勝ち確ブラック/浮かないブラック）を評価
+- 「浮かず盛れる黒」の方向性で追加案を提案
+  - さりげ盛り黒
+  - しれっと盛り黒
+  - ほど盛り黒
+- 4案比較表を作成（次回最終決定予定）
 
 ### 2026-01-20 (4)
 - Vercelデプロイ問題の調査・解決
