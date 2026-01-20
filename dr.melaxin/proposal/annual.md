@@ -403,6 +403,7 @@
 
 | ファイル | 内容 |
 |---------|------|
+| `annual-matrix.md` | 年間メディアプラン（マトリックス形式） |
 | `strategy.md` | 戦略資料（OGSM形式） |
 | `../docs/budget-proposal-10m.md` | $10M予算提案書 |
 | `../docs/research.md` | 競合リサーチ |

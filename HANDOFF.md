@@ -45,6 +45,8 @@
 - [x] **Dr.Melaxin X TopView削除→運用型広告に変更**
 - [x] **Dr.Melaxin Reach計算ロジック・媒体別単価・KOL規模をCLAUDE.mdに追記**
 - [x] **Dr.Melaxin 根拠ファイル（reason files）を6ファイル作成**
+- [x] **Dr.Melaxin annual-matrix.md 作成**（年間マトリックス形式）
+- [x] **Dr.Melaxin q1-q4 matrix ファイル作成**（四半期別マトリックス形式）
 
 ### 作業中のタスク
 - [ ] **MASCODEアイライナー コンセプト作成**（検討中）
@@ -62,20 +64,40 @@
 ## 未コミット変更
 ```
  M dr.melaxin/proposal/CLAUDE.md
-?? dr.melaxin/proposal/annual_reason.md
-?? dr.melaxin/proposal/q1_reason.md
-?? dr.melaxin/proposal/q2_reason.md
-?? dr.melaxin/proposal/q3_reason.md
-?? dr.melaxin/proposal/q4_reason.md
-?? dr.melaxin/proposal/strategy_reason.md
+ M dr.melaxin/proposal/annual.md
+ M dr.melaxin/proposal/q1.md
+ M dr.melaxin/proposal/q2.md
+ M dr.melaxin/proposal/q3.md
+ M dr.melaxin/proposal/q4.md
+?? dr.melaxin/proposal/annual-matrix.md
+?? dr.melaxin/proposal/q1-matrix.md
+?? dr.melaxin/proposal/q2-matrix.md
+?? dr.melaxin/proposal/q3-matrix.md
+?? dr.melaxin/proposal/q4-matrix.md
 ```
 
 ## 最新コミット
 ```
-f017b48 fix(dr.melaxin): correct inconsistencies in proposal documents
+1efe842 docs(dr.melaxin): add reason files for proposal documents
 ```
 
 ## セッション履歴
+
+### 2026-01-21 (17)
+- **Dr.Melaxin annual-matrix.md 作成**（年間マトリックス形式）
+  - SNS別詳細表（施策×SNS行、月列）
+  - 予算のみ表 / リーチのみ表（M=百万円/UU表記）
+  - SNS別 / 月別 / 施策別サマリー
+  - ASCII視覚化（バーチャート）
+  - KPIサマリー、Reach計算ロジック
+- **Dr.Melaxin q1-q4 matrix ファイル作成**（四半期別マトリックス形式）
+  - `q1-matrix.md`: 2-3月、3.8億円、Reach 1.2億UU
+  - `q2-matrix.md`: 4-6月、3.6億円+別枠2.5-3.3億円、Reach 2.2億UU
+  - `q3-matrix.md`: 7-9月、4.0億円、Reach 1.5億UU
+  - `q4-matrix.md`: 10-12月、4.4億円、Reach 1.7億UU
+- **各ファイルの更新**
+  - `q1.md`, `q2.md`, `q3.md`, `q4.md`: 関連ドキュメントにマトリックスファイルへのリンク追加
+  - `proposal/CLAUDE.md`: ファイル一覧と更新履歴を更新
 
 ### 2026-01-21 (16)
 - **Dr.Melaxin 根拠ファイル（reason files）を6ファイル作成**
