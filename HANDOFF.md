@@ -42,12 +42,12 @@
 
 ## 未コミット変更
 ```
-M HANDOFF.md
+（なし）
 ```
 
 ## 最新コミット
 ```
-8ac9f58 feat: add Dr.Melaxin marketing proposal analysis
+bf47033 docs: update HANDOFF.md with latest commit info
 ```
 
 ## セッション履歴
