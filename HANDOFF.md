@@ -99,14 +99,12 @@
 
 ## 未コミット変更
 ```
- M CLAUDE.md
- M HANDOFF.md
-?? The Room FX/
+（なし）
 ```
 
 ## 最新コミット
 ```
-e0b2241 feat(dr.melaxin): adjust budget from 26.7B to 15B yen (56.18% scale)
+475b421 feat(the-room-fx): add ANA business class proposal project
 ```
 
 ## セッション履歴
