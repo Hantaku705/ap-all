@@ -61,16 +61,25 @@
 - [x] **四半期データ・根拠データの整合性修正**
 - [x] **施策一覧に投稿数・フォロワー数を追加**（TacticMaster型拡張、KPIカード6つに拡張）
 - [x] **年間ロードマップをStrategyページに追加**（Q2=6月Ambassadorを年間最大ピークとして可視化）
+- [x] **Media Plan/Calendar全面ブラッシュアップ**（tactics-data連携、投稿数/フォロワー表示追加）
+- [x] **アクティベーションカレンダーにフィルタリング機能追加**（四半期・月フィルタ）
+- [x] **フィルタ時の視認性改善**（セル幅・フォントサイズを動的に変更）
+- [x] **Tactics データに施策タイプ（Post/Boost/Other）を追加**
+- [x] **Media Plan「両方」モードのテーブル統合**（予算とReachを1つの表に）
+- [x] **FilterableMatrix ピボットテーブル機能実装**（行軸/列軸の動的切り替え）
+- [x] **行軸「全て」時にSNS/施策/目的カラムを追加**（11行の詳細表示）
+- [x] **列軸「全て」時に月+四半期計を同時表示**
+- [x] **データ整合性修正**（annualBudgetMatrix/annualReachMatrix 11行統一）
+- [x] **フィルターUI改善**（チェックマーク、選択数表示、クリアボタン強調）
 
 ### 作業中のタスク
 - [ ] **MASCODEアイライナー コンセプト作成**（検討中）
 
 ## 次のアクション
-1. **Dr.Melaxin Webapp変更をコミット＆プッシュ**（30ファイル未コミット）
-2. 施策マスターの最終確認（全11施策の優先度・予算・役割）
-3. クライアントとの認識合わせ（GMV目標 73.6億円 vs 120億円の位置づけ）
-4. 3月メガ割に向けた準備開始（TikTok制作発注、RT部隊業者との調整）
-5. 6月ジョングク契約交渉の進捗確認
+1. **Dr.Melaxin Webapp変更をコミット＆プッシュ**（9ファイル未コミット）
+2. クライアントとの認識合わせ（GMV目標 73.6億円 vs 120億円の位置づけ）
+3. 3月メガ割に向けた準備開始（TikTok制作発注、RT部隊業者との調整）
+4. 6月ジョングク契約交渉の進捗確認
 
 ## 未解決の問題
 - **データ同期**: `concept-learning/docs/concept-data.json` と `concept-learning/webapp/src/data/concept-data.json` は手動同期が必要（Turbopackがシンボリックリンク非対応のため）
@@ -78,43 +87,101 @@
 ## 未コミット変更
 ```
  M HANDOFF.md
+ M concept-learning/docs/CLAUDE.md
+ M concept-learning/docs/concept-data.json
+ M concept-learning/webapp/src/data/concept-data.json
  M dr.melaxin/webapp/CLAUDE.md
- M dr.melaxin/webapp/src/app/page.tsx
- M dr.melaxin/webapp/src/components/Navigation.tsx
- M dr.melaxin/webapp/src/components/charts/ChannelBarChart.tsx
- M dr.melaxin/webapp/src/components/charts/InvestmentPieChart.tsx
- M dr.melaxin/webapp/src/components/charts/QuarterlyChart.tsx
- M dr.melaxin/webapp/src/components/charts/SalesChart.tsx
-?? dr.melaxin/webapp/src/app/dashboard/
-?? dr.melaxin/webapp/src/app/mediaplan/
-?? dr.melaxin/webapp/src/app/strategy/
-?? dr.melaxin/webapp/src/components/ActivationCalendarContent.tsx
-?? dr.melaxin/webapp/src/components/FilterableMatrix.tsx
-?? dr.melaxin/webapp/src/components/MediaPlanContent.tsx
-?? dr.melaxin/webapp/src/components/ProposalTabs.tsx
-?? dr.melaxin/webapp/src/components/QuarterDetailView.tsx
-?? dr.melaxin/webapp/src/components/QuarterlyTabs.tsx
-?? dr.melaxin/webapp/src/components/ReasonAccordion.tsx
-?? dr.melaxin/webapp/src/components/SimpleNav.tsx
-?? dr.melaxin/webapp/src/components/StrategyContent.tsx
-?? dr.melaxin/webapp/src/components/TacticsListContent.tsx
-?? dr.melaxin/webapp/src/components/TimelineChart.tsx
-?? dr.melaxin/webapp/src/components/charts/ReachEfficiencyChart.tsx
-?? dr.melaxin/webapp/src/components/charts/ReachTrendChart.tsx
-?? dr.melaxin/webapp/src/components/charts/SnsPieChart.tsx
-?? dr.melaxin/webapp/src/data/matrix-data.ts
-?? dr.melaxin/webapp/src/data/quarterly-data.ts
-?? dr.melaxin/webapp/src/data/reason-data.ts
-?? dr.melaxin/webapp/src/data/strategy-data.ts
-?? dr.melaxin/webapp/src/data/tactics-data.ts
+ M dr.melaxin/webapp/src/components/ActivationCalendarContent.tsx
+ M dr.melaxin/webapp/src/components/FilterableMatrix.tsx
+ M dr.melaxin/webapp/src/components/TacticsListContent.tsx
+ M dr.melaxin/webapp/src/data/matrix-data.ts
+ M dr.melaxin/webapp/src/data/tactics-data.ts
+?? concept-learning/item/
 ```
 
 ## 最新コミット
 ```
-3b7a265 docs(dr.melaxin): add matrix format media plans for annual and quarterly
+96d9258 feat(dr.melaxin): add 4-tab UI with strategy roadmap and tactics list
 ```
 
 ## セッション履歴
+
+### 2026-01-21 (26)
+- **FilterableMatrix ピボットテーブル機能実装**
+  - 行軸: 全て / SNS / 施策 / 目的 の4モード
+  - 列軸: 全て / 月 / 四半期 の3モード
+  - `RowAxis`, `ColAxis` 型を追加
+- **行軸「全て」時のカラム追加**
+  - SNS / 施策 / 目的 の3カラムを表示
+  - 11行すべての施策を詳細表示
+  - PivotRow型に `sns`, `tactic`, `purposes` フィールド追加
+- **列軸「全て」時の列追加**
+  - 月別（2月〜12月）+ 四半期計（Q1計〜Q4計）を同時表示
+  - `allColumns` 配列を定義
+  - `getColValue()` でQ1計〜Q4計のハンドリング追加
+- **データ整合性修正** (`matrix-data.ts`)
+  - `annualReachMatrix`: 9行 → 11行に統一（annualBudgetMatrixと一致）
+  - 不足していた「広告配信（獲得型IG）」「@cosme/LIPS」のReachを追加
+  - 施策名を統一（運用型TT/IG、獲得型X/IG）
+  - `filterOptions.tactic` から「全て」を削除
+- **フィルターUI改善**
+  - 選択済みフィルターに ✓ マーク追加
+  - 選択時に背景色を濃く（SNS色/Purpose色）
+  - 「X件選択中」バッジ追加
+  - クリアボタンを赤色で強調
+- **Vercel本番デプロイ完了**
+  - URL: https://dr-melaxin-proposal.vercel.app
+
+### 2026-01-21 (25)
+- **Media Plan「両方」モードのテーブル統合**
+  - `FilterableMatrix.tsx`: 「両方」選択時に1つの表で予算とReachを表示
+  - `renderCombinedCell`関数を追加（予算とReachを2行で表示）
+    - 予算: amber-600色（上）
+    - Reach: purple-600色、text-xs（下）
+    - 両方0の場合は「-」表示
+  - 「両方」モード専用テーブルを新規追加
+  - 既存テーブルの条件変更（`viewMode === "budget"` / `viewMode === "reach"` のみに）
+  - 合計行も予算/Reachを2行で表示
+- **Vercel本番デプロイ完了**
+  - URL: https://dr-melaxin-proposal.vercel.app
+
+### 2026-01-21 (24)
+- **アクティベーションカレンダーにフィルタリング機能追加**
+  - `ActivationCalendarContent.tsx`: 四半期・月フィルタを追加
+    - `filterQuarter`: all / Q1 / Q2 / Q3 / Q4
+    - `filterMonth`: all / 2月〜12月（四半期に連動）
+    - 四半期変更時に月フィルタを自動リセット
+    - クリアボタン、表示件数インジケータ追加
+- **フィルタ時の視認性改善**
+  - テーブル幅: 全表示時は`min-w-[1100px]`、フィルタ時は`w-full`
+  - セル幅: 列数に応じて`min-w-[85px]`〜`min-w-[200px]`
+  - フォントサイズ: 列数に応じて`text-[9px]`〜`text-sm`
+  - keyMessage: フィルタ時はtruncateせずフル表示
+- **Tactics データに施策タイプ（Post/Boost/Other）を追加**
+  - `tactics-data.ts`: `TacticType`型と`typeColors`を追加
+  - 全11施策にtypeフィールドを追加:
+    - Post: TikTok大量生成、X RT部隊、KOL Pick（IG/YT）
+    - Boost: TTS GMV MAX、広告配信（運用型/獲得型）
+    - Other: アンバサダー、@cosme/LIPS
+  - `TacticsListContent.tsx`: タイプ列とタイプフィルターを追加
+- **Vercel本番デプロイ完了**
+  - URL: https://dr-melaxin-proposal.vercel.app
+
+### 2026-01-21 (23)
+- **Media Plan/Calendar全面ブラッシュアップ**
+  - `matrix-data.ts`: アンバサダー（グク）をBudget/Reachマトリックスに追加
+    - 6月: 3億円（budget）、5億UU（reach）
+    - purpose: ブランディング/認知/話題化
+  - `MediaPlanContent.tsx`: KPIカード4→6に拡張
+    - 追加: 合計投稿数、合計フォロワー
+    - tactics-dataからデータ取得
+  - `ActivationCalendarContent.tsx`: tactics-data連携強化
+    - tacticsMasterDataからposts/followers取得
+    - フォロワー表示追加（FW）
+    - 凡例更新: Amb=アンバサダー、FW=フォロワー
+    - shortNamesにアンバサダー追加
+- **Vercel本番デプロイ完了**
+  - URL: https://dr-melaxin-proposal.vercel.app
 
 ### 2026-01-21 (22)
 - **年間ロードマップをStrategyページに追加**

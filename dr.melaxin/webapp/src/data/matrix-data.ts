@@ -186,7 +186,7 @@ export const annualReachMatrix = [
     note: "freq4",
   },
   {
-    tactic: "広告配信（運用型）",
+    tactic: "広告配信（運用型TT）",
     sns: "TikTok" as SnsType,
     purpose: ["認知"] as Purpose[],
     data: {
@@ -197,7 +197,7 @@ export const annualReachMatrix = [
     note: "freq3",
   },
   {
-    tactic: "広告配信（運用型）",
+    tactic: "広告配信（運用型IG）",
     sns: "Instagram" as SnsType,
     purpose: ["認知"] as Purpose[],
     data: {
@@ -208,7 +208,7 @@ export const annualReachMatrix = [
     note: "freq3",
   },
   {
-    tactic: "広告配信（獲得型）",
+    tactic: "広告配信（獲得型X）",
     sns: "X" as SnsType,
     purpose: ["購入"] as Purpose[],
     data: {
@@ -217,6 +217,17 @@ export const annualReachMatrix = [
     },
     total: 22778,
     note: "freq3",
+  },
+  {
+    tactic: "広告配信（獲得型IG）",
+    sns: "Instagram" as SnsType,
+    purpose: ["購入"] as Purpose[],
+    data: {
+      feb: 0, mar: 0, apr: 0, may: 0, jun: 0,
+      jul: 0, aug: 0, sep: 0, oct: 0, nov: 0, dec: 0,
+    },
+    total: 0,
+    note: "リタゲのためReach計算なし",
   },
   {
     tactic: "KOL Pick（IG）",
@@ -250,6 +261,17 @@ export const annualReachMatrix = [
     },
     total: 8600,
     note: "freq5",
+  },
+  {
+    tactic: "@cosme/LIPS",
+    sns: "Other" as SnsType,
+    purpose: ["比較検討"] as Purpose[],
+    data: {
+      feb: 0, mar: 0, apr: 0, may: 0, jun: 0,
+      jul: 0, aug: 0, sep: 0, oct: 0, nov: 0, dec: 0,
+    },
+    total: 0,
+    note: "レビュー施策のためReach計算なし",
   },
   {
     tactic: "アンバサダー起用（グク）",
@@ -386,20 +408,23 @@ export const monthlyReachTrend = [
 // Filter Options
 // ============================================
 export const filterOptions = {
-  sns: ["全て", "TikTok", "X", "Instagram", "YouTube", "TikTokShop", "Other"],
-  month: ["全て", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
-  quarter: ["全て", "Q1", "Q2", "Q3", "Q4"],
+  sns: ["TikTok", "X", "Instagram", "YouTube", "TikTokShop", "Other"],
+  month: ["2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+  quarter: ["Q1", "Q2", "Q3", "Q4"],
   tactic: [
-    "全て",
     "TikTok大量生成",
     "X RT部隊",
-    "広告配信（運用型）",
-    "広告配信（獲得型）",
-    "KOL Pick",
+    "広告配信（運用型TT）",
+    "広告配信（運用型IG）",
+    "広告配信（獲得型X）",
+    "広告配信（獲得型IG）",
+    "KOL Pick（IG）",
+    "KOL Pick（YT）",
     "TTS GMV MAX",
     "@cosme/LIPS",
+    "アンバサダー起用（グク）",
   ],
-  purpose: ["全て", "認知", "比較検討", "購入", "話題化", "ブランディング"],
+  purpose: ["認知", "比較検討", "購入", "話題化", "ブランディング"],
 };
 
 // Purpose color map

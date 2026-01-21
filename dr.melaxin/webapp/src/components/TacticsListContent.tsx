@@ -5,9 +5,11 @@ import {
   tacticsMasterData,
   tacticsSummary,
   snsColors,
+  typeColors,
   getPriorityStars,
   getPriorityColor,
   TacticMaster,
+  TacticType,
 } from "@/data/tactics-data";
 import { purposeColors, Purpose, SnsType } from "@/data/matrix-data";
 
@@ -66,6 +68,7 @@ function formatAvgFollowers(totalFollowers?: number, creatorCount?: number): str
 
 export default function TacticsListContent() {
   const [filterSns, setFilterSns] = useState<string>("all");
+  const [filterType, setFilterType] = useState<string>("all");
   const [filterPurpose, setFilterPurpose] = useState<string>("all");
   const [sortBy, setSortBy] = useState<"priority" | "budget" | "reach">("priority");
 
@@ -74,6 +77,10 @@ export default function TacticsListContent() {
 
   if (filterSns !== "all") {
     filteredTactics = filteredTactics.filter((t) => t.sns === filterSns);
+  }
+
+  if (filterType !== "all") {
+    filteredTactics = filteredTactics.filter((t) => t.type === filterType);
   }
 
   if (filterPurpose !== "all") {
@@ -91,6 +98,7 @@ export default function TacticsListContent() {
   });
 
   const snsOptions: SnsType[] = ["TikTok", "X", "Instagram", "YouTube", "TikTokShop", "Other"];
+  const typeOptions: TacticType[] = ["Post", "Boost", "Other"];
   const purposeOptions: Purpose[] = ["認知", "話題化", "購入", "比較検討", "ブランディング"];
 
   return (
@@ -140,6 +148,19 @@ export default function TacticsListContent() {
             </select>
           </div>
           <div className="flex items-center gap-2">
+            <span className="text-sm text-gray-600">タイプ:</span>
+            <select
+              value={filterType}
+              onChange={(e) => setFilterType(e.target.value)}
+              className="text-sm border border-gray-300 rounded px-2 py-1"
+            >
+              <option value="all">すべて</option>
+              {typeOptions.map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
+          </div>
+          <div className="flex items-center gap-2">
             <span className="text-sm text-gray-600">目的:</span>
             <select
               value={filterPurpose}
@@ -177,6 +198,7 @@ export default function TacticsListContent() {
             <thead>
               <tr className="bg-gray-50 border-b border-gray-200">
                 <th className="px-4 py-3 text-left font-medium text-gray-600">施策名</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-600">タイプ</th>
                 <th className="px-4 py-3 text-left font-medium text-gray-600">SNS</th>
                 <th className="px-4 py-3 text-left font-medium text-gray-600">目的</th>
                 <th className="px-4 py-3 text-left font-medium text-gray-600 min-w-[200px]">役割・狙い</th>
@@ -224,6 +246,14 @@ function TacticRow({ tactic }: { tactic: TacticMaster }) {
         <td className="px-4 py-3">
           <div className="font-medium text-gray-900">{tactic.name}</div>
           <div className="text-xs text-gray-500">{tactic.shortName}</div>
+        </td>
+        <td className="px-4 py-3">
+          <span
+            className="inline-flex items-center px-2 py-1 rounded text-xs font-medium text-white"
+            style={{ backgroundColor: typeColors[tactic.type] }}
+          >
+            {tactic.type}
+          </span>
         </td>
         <td className="px-4 py-3">
           <span
@@ -278,7 +308,7 @@ function TacticRow({ tactic }: { tactic: TacticMaster }) {
       </tr>
       {expanded && (
         <tr className="bg-gray-50">
-          <td colSpan={10} className="px-4 py-3">
+          <td colSpan={11} className="px-4 py-3">
             <div className="flex gap-6 text-xs">
               {tactic.kpi && (
                 <div>

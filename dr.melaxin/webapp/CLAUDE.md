@@ -74,7 +74,7 @@ Dr.Melaxinマーケティング提案書（$10M版）を可視化するNext.js�
 | `ActivationCalendarContent` | カレンダービュー（1スライド統合） | `/`（Calendarタブ） |
 | `ReasonAccordion` | 根拠Q&A展開 | `/` |
 | `TimelineChart` | 年間タイムライン | `/` |
-| `FilterableMatrix` | フィルタ付きマトリックス | `/matrix` |
+| `FilterableMatrix` | フィルタ付きマトリックス（両方モードで予算/Reach統合表示） | `/matrix` |
 
 ### グラフ
 
@@ -157,6 +157,10 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-21: FilterableMatrix「両方」モードで予算/Reachを1つの表に統合表示
+- 2026-01-21: Media PlanにKPIカード追加（投稿数/フォロワー、4→6カード）
+- 2026-01-21: Calendarにフォロワー表示追加、tactics-data連携強化
+- 2026-01-21: matrix-dataにアンバサダー（グク）を追加（Budget/Reach両方）
 - 2026-01-21: 年間ロードマップ追加（Q2=6月Ambassadorを年間最大ピークとして可視化）
 - 2026-01-21: 施策一覧に投稿数・フォロワー数を追加（KPIカード6つに拡張）
 - 2026-01-21: 4タブUI実装（Strategy/Tactics/Media Plan/Calendar）

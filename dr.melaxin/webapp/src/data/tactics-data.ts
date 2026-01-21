@@ -2,11 +2,15 @@
 
 import { SnsType, Purpose } from "./matrix-data";
 
+// 施策タイプ
+export type TacticType = "Post" | "Boost" | "Other";
+
 export interface TacticMaster {
   id: string;
   name: string;              // 施策名
   shortName: string;         // 略称
   sns: SnsType;              // SNS
+  type: TacticType;          // タイプ（Post/Boost/Other）
   purposes: Purpose[];       // 目的（複数可）
   roleDescription: string;   // 役割・狙い
   priority: 1 | 2 | 3 | 4 | 5; // 優先順位（5が最高）
@@ -18,6 +22,13 @@ export interface TacticMaster {
   kpi?: string;              // KPI
   note?: string;             // 備考
 }
+
+// タイプ別の色
+export const typeColors: Record<TacticType, string> = {
+  Post: "#10b981",   // emerald-500
+  Boost: "#f59e0b",  // amber-500
+  Other: "#8b5cf6",  // violet-500
+};
 
 // SNS colors for display
 export const snsColors: Record<SnsType, string> = {
@@ -49,6 +60,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "アンバサダー起用（グク）",
     shortName: "Amb",
     sns: "Other",
+    type: "Other",
     purposes: ["ブランディング", "認知", "話題化"],
     roleDescription: "ブランディング確立+切り抜きUGC醸成。大量動画のステマ感を軽減し、ブランド信頼性を担保。",
     priority: 5,
@@ -64,6 +76,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "TikTok大量生成",
     shortName: "TT",
     sns: "TikTok",
+    type: "Post",
     purposes: ["認知", "話題化"],
     roleDescription: "UGC大量生成でアルゴリズムハック。1本1万円でJipanglobal経由。",
     priority: 5,
@@ -80,6 +93,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "X RT部隊",
     shortName: "RT",
     sns: "X",
+    type: "Post",
     purposes: ["話題化"],
     roleDescription: "トレンド入りでバズ創出。美容カテゴリのXハックが勝ち筋。",
     priority: 5,
@@ -96,6 +110,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "TTS GMV MAX",
     shortName: "TTS",
     sns: "TikTokShop",
+    type: "Boost",
     purposes: ["購入"],
     roleDescription: "TikTok Shop経由の直接売上。GMV MAX自動最適化で定常配信。",
     priority: 4,
@@ -109,6 +124,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "KOL Pick（IG）",
     shortName: "KOL-IG",
     sns: "Instagram",
+    type: "Post",
     purposes: ["比較検討", "ブランディング"],
     roleDescription: "Aクラス2人のLive配信でメガ割刈り取り。契約済み。",
     priority: 4,
@@ -125,6 +141,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "KOL Pick（YT）",
     shortName: "KOL-YT",
     sns: "YouTube",
+    type: "Post",
     purposes: ["比較検討", "ブランディング"],
     roleDescription: "メガ系KOL（25万登録）でYouTube経由の大規模リーチ。",
     priority: 3,
@@ -141,6 +158,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "広告配信（運用型TT）",
     shortName: "広告TT",
     sns: "TikTok",
+    type: "Boost",
     purposes: ["認知"],
     roleDescription: "TikTok広告でリーチ補完。GMV MAX連動。",
     priority: 3,
@@ -154,6 +172,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "広告配信（運用型IG）",
     shortName: "広告IG",
     sns: "Instagram",
+    type: "Boost",
     purposes: ["認知"],
     roleDescription: "Meta広告でリーチ補完。KOL Pickと連動。",
     priority: 2,
@@ -167,6 +186,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "広告配信（獲得型X）",
     shortName: "獲得X",
     sns: "X",
+    type: "Boost",
     purposes: ["購入"],
     roleDescription: "X広告でCPA最適化。RT部隊との相乗効果狙い。",
     priority: 3,
@@ -180,6 +200,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "広告配信（獲得型IG）",
     shortName: "獲得IG",
     sns: "Instagram",
+    type: "Boost",
     purposes: ["購入"],
     roleDescription: "リターゲティングで刈り取り。KOL Pick視聴者向け。",
     priority: 2,
@@ -193,6 +214,7 @@ export const tacticsMasterData: TacticMaster[] = [
     name: "@cosme/LIPS",
     shortName: "@cos",
     sns: "Other",
+    type: "Other",
     purposes: ["比較検討"],
     roleDescription: "レビュー施策でSEO・信頼性向上。BestCosme狙い。",
     priority: 2,

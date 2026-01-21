@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { q1Data, q2Data, q3Data, q4Data } from "@/data/quarterly-data";
 import { annualBudgetMatrix, annualReachMatrix, purposeColors, Purpose } from "@/data/matrix-data";
 import { tacticsMasterData } from "@/data/tactics-data";
@@ -8,13 +8,28 @@ import { tacticsMasterData } from "@/data/tactics-data";
 // All months in order
 const allMonths = ["2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"];
 
+// Month key for filters
+type MonthKey = "2月" | "3月" | "4月" | "5月" | "6月" | "7月" | "8月" | "9月" | "10月" | "11月" | "12月";
+
+// Quarter ID type
+type QuarterId = "all" | "Q1" | "Q2" | "Q3" | "Q4";
+
 // Quarter definitions
 const quarters = [
-  { id: "Q1", months: ["2月", "3月"], data: q1Data, color: "bg-sky-50", hoverColor: "hover:bg-sky-100" },
-  { id: "Q2", months: ["4月", "5月", "6月"], data: q2Data, color: "bg-emerald-50", hoverColor: "hover:bg-emerald-100" },
-  { id: "Q3", months: ["7月", "8月", "9月"], data: q3Data, color: "bg-amber-50", hoverColor: "hover:bg-amber-100" },
-  { id: "Q4", months: ["10月", "11月", "12月"], data: q4Data, color: "bg-purple-50", hoverColor: "hover:bg-purple-100" },
+  { id: "Q1" as const, months: ["2月", "3月"] as MonthKey[], data: q1Data, color: "bg-sky-50", hoverColor: "hover:bg-sky-100" },
+  { id: "Q2" as const, months: ["4月", "5月", "6月"] as MonthKey[], data: q2Data, color: "bg-emerald-50", hoverColor: "hover:bg-emerald-100" },
+  { id: "Q3" as const, months: ["7月", "8月", "9月"] as MonthKey[], data: q3Data, color: "bg-amber-50", hoverColor: "hover:bg-amber-100" },
+  { id: "Q4" as const, months: ["10月", "11月", "12月"] as MonthKey[], data: q4Data, color: "bg-purple-50", hoverColor: "hover:bg-purple-100" },
 ];
+
+// Quarter to months mapping
+const quarterMonthsMap: Record<QuarterId, MonthKey[]> = {
+  all: allMonths as MonthKey[],
+  Q1: ["2月", "3月"],
+  Q2: ["4月", "5月", "6月"],
+  Q3: ["7月", "8月", "9月"],
+  Q4: ["10月", "11月", "12月"],
+};
 
 // Purpose categories
 const purposeCategories: Purpose[] = ["認知", "話題化", "購入", "比較検討", "ブランディング"];
@@ -50,7 +65,7 @@ function Tooltip({ text, children }: { text: string; children: React.ReactNode }
 
 // Get quarter for a month
 function getQuarterForMonth(month: string) {
-  return quarters.find((q) => q.months.includes(month));
+  return quarters.find((q) => q.months.includes(month as MonthKey));
 }
 
 // Check if month is mega sale
@@ -163,13 +178,117 @@ function truncateKeyMessage(msg: string, maxLen: number = 18): string {
 }
 
 export default function ActivationCalendarContent() {
+  // Filter states
+  const [filterQuarter, setFilterQuarter] = useState<QuarterId>("all");
+  const [filterMonth, setFilterMonth] = useState<string>("all");
+
+  // Reset month filter when quarter changes
+  useEffect(() => {
+    setFilterMonth("all");
+  }, [filterQuarter]);
+
+  // Get available months based on quarter filter
+  const getAvailableMonths = (): MonthKey[] => {
+    return quarterMonthsMap[filterQuarter];
+  };
+
+  // Get visible months based on both filters
+  const getVisibleMonths = (): MonthKey[] => {
+    const availableMonths = getAvailableMonths();
+    if (filterMonth === "all") {
+      return availableMonths;
+    }
+    return availableMonths.filter((m) => m === filterMonth);
+  };
+
+  // Get visible quarters (for header rendering)
+  const getVisibleQuarters = () => {
+    const visibleMonths = getVisibleMonths();
+    return quarters
+      .map((q) => ({
+        ...q,
+        visibleMonths: q.months.filter((m) => visibleMonths.includes(m)),
+      }))
+      .filter((q) => q.visibleMonths.length > 0);
+  };
+
+  const visibleMonths = getVisibleMonths();
+  const visibleQuarters = getVisibleQuarters();
+  const availableMonths = getAvailableMonths();
+
+  // Dynamic width and font size based on visible months
+  const tableMinWidth = visibleMonths.length === allMonths.length ? "min-w-[1100px]" : "";
+  const cellMinWidth = visibleMonths.length <= 3 ? "min-w-[200px]" : visibleMonths.length <= 6 ? "min-w-[120px]" : "min-w-[85px]";
+  const showFullMessage = visibleMonths.length <= 6;
+  const tacticFontSize = visibleMonths.length <= 3 ? "text-sm" : visibleMonths.length <= 6 ? "text-xs" : "text-[9px]";
+  const tacticPadding = visibleMonths.length <= 3 ? "px-3 py-2" : visibleMonths.length <= 6 ? "px-2 py-1.5" : "px-1.5 py-1";
+
   // Annual totals
   const totalInvestment = quarters.reduce((sum, q) => sum + q.data.summary.investmentValue, 0);
   const totalGmv = 73.6;
   const totalReach = quarters.reduce((sum, q) => sum + q.data.summary.totalReachValue, 0);
 
+  // Check if filters are active
+  const isFiltered = filterQuarter !== "all" || filterMonth !== "all";
+
   return (
     <div className="max-w-7xl mx-auto">
+      {/* Filter Controls */}
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-3 mb-4">
+        <div className="flex flex-wrap items-center gap-4">
+          {/* Quarter Filter */}
+          <div className="flex items-center gap-2">
+            <label className="text-xs text-gray-500 font-medium">四半期</label>
+            <select
+              value={filterQuarter}
+              onChange={(e) => setFilterQuarter(e.target.value as QuarterId)}
+              className="text-sm border border-gray-300 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="all">すべて</option>
+              <option value="Q1">Q1（2-3月）</option>
+              <option value="Q2">Q2（4-6月）</option>
+              <option value="Q3">Q3（7-9月）</option>
+              <option value="Q4">Q4（10-12月）</option>
+            </select>
+          </div>
+
+          {/* Month Filter */}
+          <div className="flex items-center gap-2">
+            <label className="text-xs text-gray-500 font-medium">月</label>
+            <select
+              value={filterMonth}
+              onChange={(e) => setFilterMonth(e.target.value)}
+              className="text-sm border border-gray-300 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="all">すべて</option>
+              {availableMonths.map((month) => (
+                <option key={month} value={month}>
+                  {month}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Clear Filter Button */}
+          {isFiltered && (
+            <button
+              onClick={() => {
+                setFilterQuarter("all");
+                setFilterMonth("all");
+              }}
+              className="text-xs text-gray-500 hover:text-gray-700 underline"
+            >
+              クリア
+            </button>
+          )}
+
+          {/* Filter Status */}
+          <div className="ml-auto text-xs text-gray-500">
+            表示: {visibleMonths.length}ヶ月 / {allMonths.length}ヶ月
+          </div>
+        </div>
+      </div>
+
       {/* Compact KPI Header */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-3 mb-4">
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm">
@@ -195,24 +314,24 @@ export default function ActivationCalendarContent() {
       {/* Single Table View */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-xs border-collapse min-w-[1100px]">
+          <table className={`w-full text-xs border-collapse ${tableMinWidth}`}>
             {/* Quarter Header Row */}
             <thead>
               <tr className="bg-gray-100">
                 <th className="px-2 py-2 text-left text-gray-600 font-medium border-b border-r border-gray-200 w-16 sticky left-0 bg-gray-100 z-10">
                   目的
                 </th>
-                {quarters.map((q) => (
+                {visibleQuarters.map((q) => (
                   <th
                     key={q.id}
-                    colSpan={q.months.length}
+                    colSpan={q.visibleMonths.length}
                     className={`px-2 py-2 text-center font-medium border-b border-r border-gray-200 ${q.color}`}
                   >
                     <Tooltip text={q.data.summary.keyMessage}>
                       <div className="flex flex-col">
                         <span className="font-bold text-gray-800">{q.id}</span>
-                        <span className="text-[10px] text-gray-500 font-normal truncate">
-                          {truncateKeyMessage(q.data.summary.keyMessage)}
+                        <span className={`text-[10px] text-gray-500 font-normal ${showFullMessage ? "" : "truncate"}`}>
+                          {showFullMessage ? q.data.summary.keyMessage : truncateKeyMessage(q.data.summary.keyMessage)}
                         </span>
                       </div>
                     </Tooltip>
@@ -224,13 +343,13 @@ export default function ActivationCalendarContent() {
                 <th className="px-2 py-1.5 text-left text-gray-500 font-medium border-b border-r border-gray-200 sticky left-0 bg-gray-50 z-10">
 
                 </th>
-                {allMonths.map((month) => {
+                {visibleMonths.map((month) => {
                   const q = getQuarterForMonth(month);
                   const isMega = isMegaSaleMonth(month);
                   return (
                     <th
                       key={month}
-                      className={`px-1 py-1.5 text-center font-medium border-b border-r border-gray-200 min-w-[85px] ${
+                      className={`px-1 py-1.5 text-center font-medium border-b border-r border-gray-200 ${cellMinWidth} ${
                         isMega ? "bg-amber-100 text-amber-800" : q?.color || ""
                       }`}
                     >
@@ -255,7 +374,7 @@ export default function ActivationCalendarContent() {
                       {purpose}
                     </span>
                   </td>
-                  {allMonths.map((month) => {
+                  {visibleMonths.map((month) => {
                     const tactics = getTacticsForPurposeAndMonth(purpose, month);
                     const isMega = isMegaSaleMonth(month);
                     return (
@@ -270,7 +389,7 @@ export default function ActivationCalendarContent() {
                             {tactics.map((tactic, idx) => (
                               <div
                                 key={idx}
-                                className="bg-gray-50 rounded px-1.5 py-1 text-[9px]"
+                                className={`bg-gray-50 rounded ${tacticPadding} ${tacticFontSize}`}
                               >
                                 <div className="font-semibold text-gray-800">{tactic.shortName}</div>
                                 <div className="text-gray-500">
