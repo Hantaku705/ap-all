@@ -9,6 +9,7 @@ NADESHIKOプロジェクトのデータ変換・処理スクリプトを格納�
 | ファイル | 説明 |
 |---------|------|
 | `csv_to_deals_all.py` | 利益管理CSV→TypeScript変換（4フォーマット対応） |
+| `csv_to_views.py` | 再生数CSV→JSON+TypeScript変換（3タイプ対応、22ファイル→4,781件） |
 | `xlsx_to_csv_views.py` | 再生数Excel→CSV変換（月別6シート） |
 | `xlsx_to_csv_views_old.py` | 過去再生数Excel→CSV変換（月別16シート） |
 
@@ -50,6 +51,42 @@ python3 scripts/csv_to_deals_all.py
 | 対象月数 | 30月（2023年11月〜2026年4月） |
 
 ---
+
+## csv_to_views.py
+
+### 概要
+
+再生数シートCSVファイルをWebアプリ用のJSON + TypeScriptラッパーに変換するスクリプト。
+
+### 対応フォーマット（3タイプ）
+
+| タイプ | 期間 | 日付形式 | sns/担当者 |
+|-------|------|----------|-----------|
+| タイプA | 2024年4月〜9月 | 相対日付（04/12(金)） | 空 |
+| タイプB | 2024年10月〜2025年7月 | ISO日付 | 空 |
+| タイプC | 2025年8月〜2026年1月 | ISO日付 | あり |
+
+### 実行方法
+
+```bash
+python3 scripts/csv_to_views.py
+```
+
+### 入出力
+
+| 項目 | パス |
+|------|------|
+| 入力 | `data/再生数シート/*.csv`（22ファイル） |
+| 出力 | `webapp/src/data/views-data.json`、`webapp/src/data/views-data.ts` |
+
+### 処理結果
+
+| 項目 | 値 |
+|------|-----|
+| 入力CSVファイル | 22件 |
+| 入力行数 | 6,304行 |
+| 出力レコード | 4,781件（views=0除外後） |
+| プラットフォーム | TikTok: 4,755件、IG: 26件 |
 
 ---
 
@@ -131,6 +168,7 @@ python3 scripts/xlsx_to_csv_views_old.py
 
 ## 更新履歴
 
+- 2026-01-23: csv_to_views.py追加（再生数CSV→JSON変換、3タイプ対応）
 - 2026-01-23: xlsx_to_csv_views_old.py拡張（2024年4月〜12月追加、計16ファイル）
 - 2026-01-23: xlsx_to_csv_views_old.py追加（過去再生数シート変換）
 - 2026-01-23: xlsx_to_csv_views.py追加（再生数シート変換）

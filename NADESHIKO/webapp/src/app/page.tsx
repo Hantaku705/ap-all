@@ -6,6 +6,8 @@ import TabNavigation from "@/components/layout/TabNavigation";
 import DashboardContent from "@/components/dashboard/DashboardContent";
 import DealsContent from "@/components/deals/DealsContent";
 import PerformanceContent from "@/components/performance/PerformanceContent";
+import ViewsContent from "@/components/views/ViewsContent";
+import AlgorithmContent from "@/components/algorithm/AlgorithmContent";
 import ChatWidget from "@/components/chat/ChatWidget";
 import { useEdit } from "@/contexts/EditContext";
 import { formatCurrency } from "@/lib/formatters";
@@ -64,6 +66,8 @@ export default function HomePage() {
         {activeTab === "dashboard" && <DashboardContent />}
         {activeTab === "deals" && <DealsContent />}
         {activeTab === "performance" && <PerformanceContent />}
+        {activeTab === "views" && <ViewsContent />}
+        {activeTab === "algorithm" && <AlgorithmContent />}
       </div>
 
       {/* AIチャットウィジェット */}

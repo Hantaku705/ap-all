@@ -9,6 +9,8 @@ const tabs = [
   { id: "dashboard", label: "Dashboard", icon: "📊" },
   { id: "deals", label: "Deals", icon: "📝" },
   { id: "performance", label: "Performance", icon: "🏆" },
+  { id: "views", label: "Views", icon: "👁️" },
+  { id: "algorithm", label: "Algorithm", icon: "🧠" },
 ];
 
 export default function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {

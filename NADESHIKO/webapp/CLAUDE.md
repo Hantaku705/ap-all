@@ -13,13 +13,15 @@ NADESHIKO事業の売上・粗利・パフォーマンスを管理・可視化�
 
 ---
 
-## 3タブ構成
+## 5タブ構成
 
 | タブ | 内容 | 主要機能 |
 |-----|------|---------|
 | Dashboard | KPIサマリー | 売上/粗利/達成率、月次推移グラフ、AJP/RCP比率 |
 | Deals | 案件一覧 | テーブル表示、フィルター |
 | Performance | パフォーマンス分析 | 担当者別/アカウント別/クライアント別ランキング、年/四半期フィルター、時系列グラフ |
+| Views | 再生数分析 | 6KPIカード、月別推移、アカウント別円グラフ、**日別再生数トラッキング**、フィルター、データテーブル |
+| Algorithm | TikTokアルゴリズム解説 | 13セクション、折りたたみUI、目次ナビゲーション、すべて開く/閉じる |
 
 ---
 
@@ -51,7 +53,7 @@ NADESHIKO事業の売上・粗利・パフォーマンスを管理・可視化�
 webapp/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx            # メインページ（3タブ）
+│   │   ├── page.tsx            # メインページ（4タブ）
 │   │   ├── layout.tsx          # EditProvider
 │   │   └── api/chat/route.ts   # OpenAI APIエンドポイント
 │   ├── components/
@@ -59,15 +61,21 @@ webapp/
 │   │   ├── dashboard/          # KPICards, Charts
 │   │   ├── deals/              # DealsContent
 │   │   ├── performance/        # PerformanceContent, TrendChart
+│   │   ├── views/              # ViewsContent, ViewsKPICards, ViewsTrendChart, AccountRanking, AccountPieChart, DailyTrendSection, DailyTrendChart, AccountSelector
+│   │   ├── algorithm/          # AlgorithmContent, AlgorithmSection
 │   │   └── chat/               # ChatWidget
 │   ├── contexts/
 │   │   └── EditContext.tsx     # 状態管理
 │   ├── data/
 │   │   ├── deals-data.ts       # 案件データ（CSVから変換）
+│   │   ├── views-data.json     # 再生数データ（CSV→JSON、4,781件）
+│   │   ├── views-data.ts       # 再生数データTypeScriptラッパー
+│   │   ├── algorithm-data.ts   # アルゴリズム解説データ（13セクション）
 │   │   ├── targets-data.ts     # 月別目標
 │   │   └── constants.ts        # 定数
 │   ├── lib/
 │   │   ├── calculations.ts     # 粗利計算、集計、時系列
+│   │   ├── view-calculations.ts # 再生数集計、中央値、期間フィルター、日別集計（filterByLastNDays, calculateDailyViewsForAccount等）
 │   │   └── formatters.ts       # 金額フォーマット
 │   └── types/
 │       └── deal.ts             # 型定義
@@ -101,5 +109,10 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-23: Viewsタブに日別再生数トラッキング追加（期間30日/60日/90日/カスタム、単一/比較モード、最大10アカウント）
+- 2026-01-23: Viewsタブにデータテーブル追加（14カラム、最新100件表示、フィルター連動）
+- 2026-01-23: Algorithmタブ追加（TikTokアルゴリズム解説、13セクション、折りたたみUI）
+- 2026-01-23: Viewsタブ強化（期間複数選択、アカウント別円グラフ、全期間フィルター）
+- 2026-01-23: Viewsタブ追加（再生数分析、4,781件、6KPI、フィルター機能）
 - 2026-01-23: AIチャット機能追加、年/四半期フィルター、Settingsタブ削除、編集モード削除
 - 2026-01-23: 初版作成（4タブWebapp、Vercelデプロイ）

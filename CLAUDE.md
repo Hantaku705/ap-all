@@ -405,7 +405,7 @@ AnyMind Groupの美容系SNSメディア「NADESHIKO」の運用資料・分析�
 |------|-----|
 | 本番URL | https://nadeshiko-sales.vercel.app |
 | 技術スタック | Next.js 16.1.4 + React 19 + Recharts + Tailwind CSS |
-| タブ構成 | Dashboard / Deals / Performance / Settings |
+| タブ構成 | Dashboard / Deals / Performance / Views / Algorithm |
 | データ期間 | 2023年11月〜2026年4月（30月分、1,102件） |
 
 **事業概要**:
@@ -446,6 +446,10 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-23: NADESHIKO Viewsタブに日別再生数トラッキング追加（期間選択、単一/比較モード、最大10アカウント）
+- 2026-01-23: NADESHIKO Viewsタブにデータテーブル追加（14カラム、最新100件表示）
+- 2026-01-23: NADESHIKO Algorithmタブ追加（TikTokアルゴリズム解説、13セクション、折りたたみUI）
+- 2026-01-23: NADESHIKO Viewsタブ強化（期間複数選択、アカウント別円グラフ、全期間フィルター対応）
 - 2026-01-23: `/address-lookup` コマンド追加、`_claude-code/commands/CLAUDE.md` 作成
 - 2026-01-23: NADESHIKO全期間データ統合（2023年11月〜2026年4月、1,102件）、CSV変換スクリプト作成
 - 2026-01-23: 「何ゲーか」分析スキル追加（`_claude-code/skills/what-game.md`）

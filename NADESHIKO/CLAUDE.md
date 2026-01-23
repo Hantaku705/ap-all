@@ -30,6 +30,7 @@ NADESHIKO/
 │   └── ksf.md             # KSF（Key Success Factors）- 本質分析
 ├── scripts/               # 変換スクリプト
 │   ├── csv_to_deals_all.py      # 利益管理CSV→TypeScript変換
+│   ├── csv_to_views.py          # 再生数CSV→JSON変換（22ファイル→4,781件）
 │   ├── xlsx_to_csv_views.py     # 再生数Excel→CSV変換（2025/8〜2026/1）
 │   └── xlsx_to_csv_views_old.py # 過去再生数Excel→CSV変換（2024/4〜2025/7）
 └── webapp/                # Next.js Webアプリ
@@ -99,6 +100,7 @@ NADESHIKO/
 | `data/利益管理シート/*.csv` | 月別利益管理シート（33件、2023年11月〜2026年4月） |
 | `data/再生数シート/*.csv` | 月別再生数データ（22ファイル、6,304行） |
 | `scripts/csv_to_deals_all.py` | 利益管理CSV→TypeScript変換スクリプト |
+| `scripts/csv_to_views.py` | 再生数CSV→JSON変換スクリプト（3タイプ対応） |
 | `scripts/xlsx_to_csv_views.py` | 再生数Excel→CSV変換スクリプト |
 | `scripts/xlsx_to_csv_views_old.py` | 過去再生数Excel→CSV変換スクリプト |
 
@@ -122,7 +124,7 @@ NADESHIKO/
 | Dashboard | KPIサマリー、月次推移グラフ、AJP/RCP比率 |
 | Deals | 案件一覧（編集・追加・削除機能） |
 | Performance | 担当者別・アカウント別・クライアント別ランキング |
-| Settings | 月別目標設定、CSVエクスポート |
+| Views | 再生数分析（6KPI、月別推移、SNS別、フィルター機能） |
 
 **開発コマンド**:
 ```bash
@@ -140,6 +142,7 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-23: Viewsタブ追加（再生数分析、4,781件、6KPI、フィルター機能）
 - 2026-01-23: 過去再生数シート追加（2024年4月〜2025年7月、16ファイル、2,194行）
 - 2026-01-23: 再生数シートExcel→CSV変換（6ファイル、4,110行）
 - 2026-01-23: 全期間データ統合（2023年11月〜2026年4月、1,102件）、CSV変換スクリプト作成

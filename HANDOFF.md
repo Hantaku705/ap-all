@@ -10,11 +10,44 @@
 | The Room FX | 28-36回目 | 提案書11ファイル、Webapp、整合性修正 | 18件 |
 | N organic | 37-41回目 | X戦略、Webapp、コンセプト設計スキル | 8件 |
 | なまえデザイン | 42-44回目 | 書籍まとめ Phase 1-2 | 3件 |
-| NADESHIKO | 45-51回目 | 売上管理Webapp、Excel→CSV変換、KSF分析、アルゴリズム解説、全期間データ統合、Webapp改善、再生数シート変換 | 13件 |
+| NADESHIKO | 45-57回目 | 売上管理Webapp、Excel→CSV変換、KSF分析、アルゴリズム解説、全期間データ統合、Webapp改善、再生数シート変換、Viewsタブ追加・強化、Algorithmタブ追加、日別再生数トラッキング | 19件 |
 
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 直近の完了タスク
+- [x] **日別再生数トラッキング機能追加（セッション57）**
+  - Viewsタブに「日別再生数トラッキング」セクション追加
+  - 期間選択: 直近30日/60日/90日 + カスタム
+  - 表示モード: 単一（1アカウント詳細）/ 比較（最大10アカウント）
+  - 新規ファイル: AccountSelector.tsx, DailyTrendChart.tsx, DailyTrendSection.tsx
+  - view-calculations.tsに日別集計関数4つ追加
+  - Vercelデプロイ完了
+- [x] **Viewsタブにデータテーブル追加（セッション56）**
+  - 投稿データ一覧テーブル（14カラム）
+  - 投稿日/アカウント名/PR・通常/sns/担当者/タイトル/URL/種別/動画尺/再生数/いいね/コメント/共有/保存
+  - 最新100件表示、フィルター連動
+  - Vercelデプロイ完了
+- [x] **Algorithmタブ追加（セッション55）**
+  - algorithm/algorithm.md（約520行）の内容をWebアプリに反映
+  - 13セクション構造化データ（algorithm-data.ts）
+  - 折りたたみ可能なセクションUI（AlgorithmSection.tsx）
+  - 目次ナビゲーション、すべて開く/閉じるボタン
+  - ビルド成功確認
+- [x] **Viewsタブ大幅強化（セッション54）**
+  - 期間フィルター全期間対応（2024年含む全データ表示）
+  - 期間フィルター複数選択対応（チェックボックス付きドロップダウン）
+  - 円グラフを「プラットフォーム別」→「アカウント別」に変更
+  - AccountPieChart.tsx新規作成（上位10アカウント + その他）
+  - Vercelデプロイ完了
+- [x] **Viewsタブ機能強化（セッション53）**
+  - フィルター追加: PR/通常、アカウント、SNS
+  - 中央再生数カード追加（6カードレイアウト）
+  - Vercelデプロイ完了
+- [x] **Viewsタブ追加（セッション52-53）**
+  - CSV→JSON変換スクリプト（csv_to_views.py）
+  - 22 CSVファイル（6,304行）→ JSON変換
+  - 3タイプのCSV構造対応（タイプA/B/C）
+  - 5コンポーネント作成（ViewsContent, ViewsKPICards, ViewsTrendChart, AccountRanking, PlatformPieChart）
 - [x] **Phone Farmプロジェクト理解＆住所検索スキル作成（セッション52）**
   - phonefarmプロジェクトの構成・内容理解
   - Some3C 10ポートボックスの電圧（日本は110V）・追加必要ハードウェア回答
@@ -54,32 +87,128 @@
 
 ## 未コミット変更
 ```
- M CLAUDE.md
- M HANDOFF.md
- M NADESHIKO/CLAUDE.md
- M NADESHIKO/algorithm/CLAUDE.md
- M NADESHIKO/algorithm/algorithm.md
- M NADESHIKO/webapp/CLAUDE.md
- M NADESHIKO/webapp/package*.json
- M NADESHIKO/webapp/src/app/page.tsx
- M NADESHIKO/webapp/src/components/*
- M NADESHIKO/webapp/src/data/*
- M NADESHIKO/webapp/src/lib/*
-?? NADESHIKO/data/再生数シート/（6ファイル）
-?? NADESHIKO/data/過去再生数シート/
-?? NADESHIKO/scripts/*.py
-?? NADESHIKO/webapp/src/app/api/
-?? NADESHIKO/webapp/src/components/chat/
-?? NADESHIKO/webapp/src/components/performance/TrendChart.tsx
-?? _claude-code/commands/address-lookup.md
+M CLAUDE.md
+M HANDOFF.md
+M NADESHIKO/CLAUDE.md
+M NADESHIKO/scripts/CLAUDE.md
+M NADESHIKO/webapp/CLAUDE.md
+M NADESHIKO/webapp/src/app/page.tsx
+M NADESHIKO/webapp/src/components/layout/TabNavigation.tsx
+M NADESHIKO/webapp/src/components/views/ViewsContent.tsx
+M NADESHIKO/webapp/src/lib/view-calculations.ts
+?? NADESHIKO/scripts/csv_to_views.py
+?? NADESHIKO/webapp/src/components/algorithm/
+?? NADESHIKO/webapp/src/components/views/AccountSelector.tsx
+?? NADESHIKO/webapp/src/components/views/DailyTrendChart.tsx
+?? NADESHIKO/webapp/src/components/views/DailyTrendSection.tsx
+?? NADESHIKO/webapp/src/data/algorithm-data.ts
+?? NADESHIKO/webapp/src/data/views-data.json
+?? NADESHIKO/webapp/src/data/views-data.ts
 ```
 
 ## 最新コミット
 ```
-648d08b feat(nadeshiko): add KSF analysis, TikTok algorithm guide, and what-game skill
+cff3618 feat(nadeshiko): enhance webapp with AI chat, filters, and full data integration
 ```
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-23 (57)
+- **Viewsタブに日別再生数トラッキング機能追加**
+  - ユーザー依頼: デイリーの投稿をトラッキングしたい、伸びてるのか減ってるのかを投稿ベースでトラッキングしたい
+  - 要件確認: 配置=Viewsタブ内、期間=フィルター選択、粒度=アカウント別日別再生数、モード=単一+比較両方
+- **新規ファイル作成**:
+  - `view-calculations.ts`: 日別集計関数4つ追加（filterByDateRange, filterByLastNDays, calculateDailyViewsForAccount, calculateDailyViewsMultiAccount）
+  - `AccountSelector.tsx`: アカウント選択UI（単一/複数モード切替、最大10選択）
+  - `DailyTrendChart.tsx`: 日別折れ線グラフ（Recharts、単一/比較モード対応）
+  - `DailyTrendSection.tsx`: 親コンテナ（期間フィルター、モード切替、アカウント選択）
+  - `ViewsContent.tsx`: DailyTrendSection統合
+- **機能**:
+  - 期間選択: 直近30日/60日/90日 + カスタム期間
+  - 単一モード: 1アカウント選択 → 再生数/いいね/投稿数の3ライングラフ
+  - 比較モード: 最大10アカウント選択 → 色分け比較グラフ
+- **Vercelデプロイ完了**
+  - 本番URL: https://nadeshiko-sales.vercel.app
+
+### 2026-01-23 (56)
+- **Viewsタブにデータテーブル追加**
+  - ユーザー依頼: 下にテーブル票を作りたい（投稿日、アカウント名、PR/通常、sns、担当者、タイトル、URL、種別、動画尺、再生数、いいね、コメント、共有、保存）
+  - 実装: ViewsContent.tsxのランキング下部にテーブル追加
+  - 14カラム構成、最新100件表示（パフォーマンス考慮）
+  - UI機能:
+    - 横スクロール対応、ヘッダー固定（sticky）
+    - PR/通常はバッジ表示（ピンク/グレー）
+    - URLはリンク化、タイトルは省略表示
+    - 動画尺はMM:SS形式、数値はカンマ区切り
+    - フィルター連動（期間/PR・通常/アカウント/SNS）
+- **Vercelデプロイ完了**
+  - 本番URL: https://nadeshiko-sales.vercel.app
+
+### 2026-01-23 (55)
+- **Algorithmタブ追加**
+  - ユーザー依頼: NADESHIKOのwebアプリにTikTokのアルゴリズムタブを追加したい、algorithm.mdの内容が反映されるように
+  - 入力: `NADESHIKO/algorithm/algorithm.md`（約520行）
+  - 新規作成ファイル:
+    - `src/data/algorithm-data.ts`: 13セクション構造化データ
+    - `src/components/algorithm/AlgorithmSection.tsx`: 折りたたみセクションコンポーネント
+    - `src/components/algorithm/AlgorithmContent.tsx`: メインコンテンツ（目次、すべて開く/閉じる）
+  - 修正ファイル:
+    - `src/components/layout/TabNavigation.tsx`: Algorithmタブ追加（🧠アイコン）
+    - `src/app/page.tsx`: AlgorithmContent条件分岐追加
+- **13セクション構成**:
+  - FYPの仕組み、重要指標、移動平均、アカウント質、デバイス・ネットワーク
+  - コンテンツ最適化、投稿タイミング、ハッシュタグ、シャドウバン（5^6理論）
+  - TikTok Shop、検索SEO、分析と改善、NADESHIKOへの適用
+- **ビルド成功**（Next.js 16.1.4 Turbopack）
+
+### 2026-01-23 (54)
+- **Viewsタブ期間フィルター全期間対応**
+  - ユーザー依頼: 期間：2024年が入ってないと感じる。全部の期間を入れるようにして
+  - 原因: `generatePeriodOptions()`が直近12ヶ月のみ表示（`months.slice(-12)`）
+  - 修正: `view-calculations.ts`で全月表示に変更（`[...months].reverse()`）
+- **Viewsタブ期間フィルター複数選択対応**
+  - ユーザー依頼: 期間について複数選択ができるようにしたい
+  - 実装:
+    - `filterByPeriods()`関数追加（複数期間のOR条件フィルター）
+    - チェックボックス付きドロップダウンUI実装
+    - 「全期間」選択時は他選択をリセット
+    - 選択数表示（例: 「3件選択中」）
+- **円グラフをアカウント別に変更**
+  - ユーザー依頼: プラットフォーム別じゃなくて、アカウント別にしたい
+  - 実装:
+    - `AccountViewSummary`インターフェース追加
+    - `calculateAccountViews()`関数追加（上位10 + その他）
+    - `AccountPieChart.tsx`新規作成
+    - カラフルなパレット（11色）で視認性向上
+- **Vercelデプロイ完了**
+  - 本番URL: https://nadeshiko-sales.vercel.app
+
+### 2026-01-23 (53)
+- **Viewsタブ追加（CSV→JSON統合）**
+  - ユーザー依頼: webappにも反映させたい、csvはそれぞれ構造が違うのでうまく調整しながら
+  - 入力: `data/再生数シート/*.csv`（22ファイル、6,304行）
+  - 3タイプのCSV対応:
+    - タイプA（2024年4月〜9月）: 相対日付「04/12(金)」、sns/担当者空
+    - タイプB（2024年10月〜2025年7月）: ISO日付、sns/担当者空
+    - タイプC（2025年8月〜2026年1月）: ISO日付、sns/担当者あり
+  - 変換スクリプト: `scripts/csv_to_views.py`
+  - 出力: `webapp/src/data/views-data.json`（4,781件）
+- **Viewsタブ5コンポーネント作成**
+  - ViewsContent.tsx: メインコンテナ、期間フィルター
+  - ViewsKPICards.tsx: 6カードKPI表示
+  - ViewsTrendChart.tsx: 月別推移グラフ（折れ線/棒）
+  - AccountRanking.tsx: アカウント別・担当者別ランキング
+  - PlatformPieChart.tsx: SNS別円グラフ
+- **TypeScriptエラー修正**
+  - "Expression produces a union type that is too complex" → JSON import方式に変更
+  - Recharts PieLabelRenderProps型 → optional propsに変更
+- **Viewsタブ機能強化**
+  - ユーザー依頼: フィルタとして・通常/PR・アカウント・SNS でもできるようにしたい、平均再生数/中央再生数 もわかるようにしたい
+  - フィルター追加: PR/通常、アカウント、SNS（複数条件組み合わせ対応）
+  - 中央値関数追加: `calculateMedianViews()`
+  - KPIカードを6カードに拡張（中央再生数追加）
+- **Vercelデプロイ完了**
+  - 本番URL: https://nadeshiko-sales.vercel.app
 
 ### 2026-01-23 (52)
 - **Phone Farmプロジェクト理解**
