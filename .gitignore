@@ -31,3 +31,5 @@ dr.melaxin/slides/
 dr.melaxin/*.pptx
 dr.melaxin/*.pdf
 *.pptx
+# Large files (>100MB)
+opperation/なまえデザイン_フォルダ/なまえデザイン.pdf

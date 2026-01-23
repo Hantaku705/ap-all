@@ -32,6 +32,14 @@ AP/
 │
 ├── _archive/               # アーカイブ
 │
+├── opperation/             # 運用・学習資料
+│   └── なまえデザイン_フォルダ/  # 「なまえ」デザイン書籍まとめ
+│
+├── NADESHIKO/              # 美容系SNSメディア事業
+│   ├── data/               # 利益管理シート（CSV）
+│   ├── issue/              # 週次ミーティングノート
+│   └── webapp/             # Next.js Webアプリ（開発中）
+│
 ├── CLAUDE.md               # このファイル
 ├── HANDOFF.md              # セッション引き継ぎ
 └── README.md               # リポジトリ概要
@@ -58,6 +66,7 @@ AP/
 | スキル | 用途 |
 |--------|------|
 | `concept-design.md` | コンセプト設計原則・チェックリスト |
+| `what-game.md` | 「何ゲーか」分析フレームワーク（市場構造の本質特定） |
 | `coding-standards.md` | コーディング標準 |
 | `webapp-data-pattern.md` | Webappデータパターン |
 | `backend-patterns.md` | バックエンドパターン |
@@ -375,8 +384,62 @@ Claude Codeの設定リファレンス実装。
 
 ---
 
+### NADESHIKO（美容系SNSメディア）
+
+AnyMind Groupの美容系SNSメディア「NADESHIKO」の運用資料・分析データ・売上管理Webapp。
+
+**売上管理Webapp**:
+| 項目 | 値 |
+|------|-----|
+| 本番URL | https://nadeshiko-sales.vercel.app |
+| 技術スタック | Next.js 16.1.4 + React 19 + Recharts + Tailwind CSS |
+| タブ構成 | Dashboard / Deals / Performance / Settings |
+
+**事業概要**:
+| 項目 | 内容 |
+|------|------|
+| 事業 | 美容系SNSメディア運営（TikTok/IG/YT/X） |
+| ビジネスモデル | タイアップ投稿 + 広告配信 + 素材納品 |
+| 月間目標 | 粗利 2,000〜5,000万円 |
+
+**Key Files**:
+| ファイル | 用途 |
+|---------|------|
+| `NADESHIKO/issue/issue.md` | 週次ミーティング記録（2025年9月〜2026年1月、約2,300行） |
+| `NADESHIKO/issue/ksf.md` | KSF（本質分析）- 勝者リスト、ゲーム構造、再現手順 |
+| `NADESHIKO/algorithm/algorithm.md` | TikTokアルゴリズム解説（FYP、移動平均、5^6理論等） |
+| `NADESHIKO/data/*.csv` | 月別利益管理シート |
+| `NADESHIKO/webapp/` | 売上管理Webapp（Next.js） |
+
+**主要課題（2026年1月時点）**:
+- 再生数低迷（検索流入減少）
+- インバウンド減少
+- 組織問題（キーメンバー燃え尽き）
+
+**開発コマンド**:
+```bash
+cd NADESHIKO/webapp
+npm run dev
+```
+
+**デプロイ**:
+```bash
+cd NADESHIKO/webapp
+vercel --prod --yes
+```
+
+---
+
 ## 更新履歴
 
+- 2026-01-23: 「何ゲーか」分析スキル追加（`_claude-code/skills/what-game.md`）
+- 2026-01-23: NADESHIKO KSF分析・アルゴリズム解説作成（`issue/ksf.md`、`algorithm/algorithm.md`）
+- 2026-01-23: NADESHIKO売上管理Webapp作成・デプロイ（https://nadeshiko-sales.vercel.app）
+- 2026-01-23: NADESHIKOプロジェクト追加（週次ミーティング記録の分析・サマリー化）
+- 2026-01-23: 「なまえデザイン」書籍まとめ Phase 2（「いい名前の定義」セクション追加、チェックリスト強化）
+- 2026-01-23: /handoff スキル更新（全フォルダにCLAUDE.md自動作成/更新）
+- 2026-01-23: opperation/フォルダ追加（なまえデザイン書籍まとめ）
+- 2026-01-23: _claude-code/skills/CLAUDE.md 作成
 - 2026-01-22: コンセプト設計スキル追加（`_claude-code/skills/concept-design.md`）
 - 2026-01-22: N organic コンセプト更新「帰ったら洗う、花粉オフ」、2/11花粉飛散宣言軸に戦略変更
 - 2026-01-22: フォルダ構造整理（projects/に6プロジェクト統合、The Room FX → the-room-fx にリネーム）
