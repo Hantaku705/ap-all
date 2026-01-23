@@ -40,14 +40,32 @@ export default function DealsContent() {
     result.sort((a, b) => {
       let comparison = 0;
       switch (sortBy) {
+        case "month":
+          comparison = a.month.localeCompare(b.month);
+          break;
+        case "manager":
+          comparison = a.manager.localeCompare(b.manager);
+          break;
+        case "client":
+          comparison = a.client.localeCompare(b.client);
+          break;
+        case "projectName":
+          comparison = a.projectName.localeCompare(b.projectName);
+          break;
+        case "accountName":
+          comparison = (a.accountName || "").localeCompare(b.accountName || "");
+          break;
+        case "category":
+          comparison = a.category.localeCompare(b.category);
+          break;
         case "sales":
           comparison = a.sales - b.sales;
           break;
         case "grossProfit":
           comparison = a.grossProfit - b.grossProfit;
           break;
-        case "manager":
-          comparison = a.manager.localeCompare(b.manager);
+        case "status":
+          comparison = a.status.localeCompare(b.status);
           break;
       }
       return sortOrder === "desc" ? -comparison : comparison;
@@ -63,7 +81,7 @@ export default function DealsContent() {
     return { totalSales, totalProfit, count: filteredDeals.length };
   }, [filteredDeals]);
 
-  const handleSort = (field: "sales" | "grossProfit" | "manager") => {
+  const handleSort = (field: SortField) => {
     if (sortBy === field) {
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     } else {
@@ -156,17 +174,42 @@ export default function DealsContent() {
           <table className="min-w-full text-sm">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-3 py-2 text-left text-gray-600">月</th>
+                <th
+                  className="px-3 py-2 text-left text-gray-600 cursor-pointer hover:bg-gray-100"
+                  onClick={() => handleSort("month")}
+                >
+                  月 {sortBy === "month" && (sortOrder === "asc" ? "↑" : "↓")}
+                </th>
                 <th
                   className="px-3 py-2 text-left text-gray-600 cursor-pointer hover:bg-gray-100"
                   onClick={() => handleSort("manager")}
                 >
                   担当者 {sortBy === "manager" && (sortOrder === "asc" ? "↑" : "↓")}
                 </th>
-                <th className="px-3 py-2 text-left text-gray-600">クライアント</th>
-                <th className="px-3 py-2 text-left text-gray-600">案件名</th>
-                <th className="px-3 py-2 text-left text-gray-600">アカウント</th>
-                <th className="px-3 py-2 text-center text-gray-600">区分</th>
+                <th
+                  className="px-3 py-2 text-left text-gray-600 cursor-pointer hover:bg-gray-100"
+                  onClick={() => handleSort("client")}
+                >
+                  クライアント {sortBy === "client" && (sortOrder === "asc" ? "↑" : "↓")}
+                </th>
+                <th
+                  className="px-3 py-2 text-left text-gray-600 cursor-pointer hover:bg-gray-100"
+                  onClick={() => handleSort("projectName")}
+                >
+                  案件名 {sortBy === "projectName" && (sortOrder === "asc" ? "↑" : "↓")}
+                </th>
+                <th
+                  className="px-3 py-2 text-left text-gray-600 cursor-pointer hover:bg-gray-100"
+                  onClick={() => handleSort("accountName")}
+                >
+                  アカウント {sortBy === "accountName" && (sortOrder === "asc" ? "↑" : "↓")}
+                </th>
+                <th
+                  className="px-3 py-2 text-center text-gray-600 cursor-pointer hover:bg-gray-100"
+                  onClick={() => handleSort("category")}
+                >
+                  区分 {sortBy === "category" && (sortOrder === "asc" ? "↑" : "↓")}
+                </th>
                 <th
                   className="px-3 py-2 text-right text-gray-600 cursor-pointer hover:bg-gray-100"
                   onClick={() => handleSort("sales")}
@@ -179,7 +222,12 @@ export default function DealsContent() {
                 >
                   粗利 {sortBy === "grossProfit" && (sortOrder === "asc" ? "↑" : "↓")}
                 </th>
-                <th className="px-3 py-2 text-center text-gray-600">ステータス</th>
+                <th
+                  className="px-3 py-2 text-center text-gray-600 cursor-pointer hover:bg-gray-100"
+                  onClick={() => handleSort("status")}
+                >
+                  ステータス {sortBy === "status" && (sortOrder === "asc" ? "↑" : "↓")}
+                </th>
                 {isEditMode && <th className="px-3 py-2 text-center text-gray-600">操作</th>}
               </tr>
             </thead>
@@ -187,7 +235,7 @@ export default function DealsContent() {
               {filteredDeals.map((deal) => (
                 <tr key={deal.id} className="border-t border-gray-100 hover:bg-gray-50">
                   <td className="px-3 py-2 text-gray-600 whitespace-nowrap">
-                    {deal.month.split("-")[1]}月
+                    {deal.month.slice(2, 4)}年{parseInt(deal.month.split("-")[1])}月
                   </td>
                   <td className="px-3 py-2 text-gray-900 whitespace-nowrap">
                     {deal.manager || "（未設定）"}

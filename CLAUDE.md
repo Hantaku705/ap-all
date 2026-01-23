@@ -36,9 +36,10 @@ AP/
 │   └── なまえデザイン_フォルダ/  # 「なまえ」デザイン書籍まとめ
 │
 ├── NADESHIKO/              # 美容系SNSメディア事業
-│   ├── data/               # 利益管理シート（CSV）
+│   ├── data/               # 利益管理シート（CSV、33件）
 │   ├── issue/              # 週次ミーティングノート
-│   └── webapp/             # Next.js Webアプリ（開発中）
+│   ├── scripts/            # CSV→TypeScript変換スクリプト
+│   └── webapp/             # Next.js Webアプリ（1,102件データ）
 │
 ├── CLAUDE.md               # このファイル
 ├── HANDOFF.md              # セッション引き継ぎ
@@ -71,6 +72,17 @@ AP/
 | `webapp-data-pattern.md` | Webappデータパターン |
 | `backend-patterns.md` | バックエンドパターン |
 | `frontend-patterns.md` | フロントエンドパターン |
+
+### 既存コマンド一覧
+
+| コマンド | 用途 |
+|---------|------|
+| `/address-lookup` | 企業サイトから住所を取得し配送フォーム形式（英語）に変換 |
+| `/build-fix` | ビルドエラーの自動修正 |
+| `/code-review` | コードレビュー実行 |
+| `/e2e` | E2Eテスト生成・実行（Playwright） |
+| `/plan` | 実装計画作成 |
+| `/tdd` | TDDワークフロー |
 
 ---
 
@@ -394,6 +406,7 @@ AnyMind Groupの美容系SNSメディア「NADESHIKO」の運用資料・分析�
 | 本番URL | https://nadeshiko-sales.vercel.app |
 | 技術スタック | Next.js 16.1.4 + React 19 + Recharts + Tailwind CSS |
 | タブ構成 | Dashboard / Deals / Performance / Settings |
+| データ期間 | 2023年11月〜2026年4月（30月分、1,102件） |
 
 **事業概要**:
 | 項目 | 内容 |
@@ -408,7 +421,8 @@ AnyMind Groupの美容系SNSメディア「NADESHIKO」の運用資料・分析�
 | `NADESHIKO/issue/issue.md` | 週次ミーティング記録（2025年9月〜2026年1月、約2,300行） |
 | `NADESHIKO/issue/ksf.md` | KSF（本質分析）- 勝者リスト、ゲーム構造、再現手順 |
 | `NADESHIKO/algorithm/algorithm.md` | TikTokアルゴリズム解説（FYP、移動平均、5^6理論等） |
-| `NADESHIKO/data/*.csv` | 月別利益管理シート |
+| `NADESHIKO/data/利益管理シート/*.csv` | 月別利益管理シート（33件、2023年11月〜2026年4月） |
+| `NADESHIKO/scripts/csv_to_deals_all.py` | CSV→TypeScript変換スクリプト（4フォーマット対応） |
 | `NADESHIKO/webapp/` | 売上管理Webapp（Next.js） |
 
 **主要課題（2026年1月時点）**:
@@ -432,6 +446,8 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-23: `/address-lookup` コマンド追加、`_claude-code/commands/CLAUDE.md` 作成
+- 2026-01-23: NADESHIKO全期間データ統合（2023年11月〜2026年4月、1,102件）、CSV変換スクリプト作成
 - 2026-01-23: 「何ゲーか」分析スキル追加（`_claude-code/skills/what-game.md`）
 - 2026-01-23: NADESHIKO KSF分析・アルゴリズム解説作成（`issue/ksf.md`、`algorithm/algorithm.md`）
 - 2026-01-23: NADESHIKO売上管理Webapp作成・デプロイ（https://nadeshiko-sales.vercel.app）

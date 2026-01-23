@@ -26,10 +26,10 @@ export function formatNumber(value: number): string {
   return new Intl.NumberFormat('ja-JP').format(value);
 }
 
-// 月ラベル（2026-01 → 1月）
+// 月ラベル（2026-01 → 26年1月）
 export function formatMonthShort(month: string): string {
-  const m = parseInt(month.split('-')[1], 10);
-  return `${m}月`;
+  const [year, m] = month.split('-');
+  return `${year.slice(2)}年${parseInt(m, 10)}月`;
 }
 
 // 月ラベル（2026-01 → 2026年1月）

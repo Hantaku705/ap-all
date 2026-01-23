@@ -22,14 +22,17 @@ NADESHIKO/
 ├── CLAUDE.md              ← このファイル
 ├── algorithm/             # アルゴリズム解説
 │   └── algorithm.md       # TikTokアルゴリズム解説
-├── data/                  # 利益管理シート（CSV）
-│   ├── 利益管理シート_NADESIKO_2024年10月期 - 【進行中】2026年1月.csv
-│   ├── 利益管理シート_NADESIKO_2024年10月期 - 【進行中】2026年2月.csv
-│   └── 利益管理シート_NADESIKO_2024年10月期 - 【進行中】2026年3月.csv
+├── data/                  # データ（CSV）
+│   ├── 利益管理シート/    # 33件のCSV（2023年11月〜2026年4月）
+│   └── 再生数シート/      # 月別再生数CSV（22ファイル、6,304行）
 ├── issue/                 # 課題・週次ミーティングノート
 │   ├── issue.md           # 週次ミーティング記録（2025年9月〜2026年1月）
 │   └── ksf.md             # KSF（Key Success Factors）- 本質分析
-└── webapp/                # Next.js Webアプリ（開発中）
+├── scripts/               # 変換スクリプト
+│   ├── csv_to_deals_all.py      # 利益管理CSV→TypeScript変換
+│   ├── xlsx_to_csv_views.py     # 再生数Excel→CSV変換（2025/8〜2026/1）
+│   └── xlsx_to_csv_views_old.py # 過去再生数Excel→CSV変換（2024/4〜2025/7）
+└── webapp/                # Next.js Webアプリ
 ```
 
 ---
@@ -92,7 +95,12 @@ NADESHIKO/
 | ファイル | 用途 |
 |---------|------|
 | `issue/issue.md` | 週次ミーティング記録（2025年9月〜2026年1月、約2,300行） |
-| `data/*.csv` | 月別利益管理シート |
+| `issue/ksf.md` | KSF本質分析（勝者リスト、ゲーム構造、勝ちパターン） |
+| `data/利益管理シート/*.csv` | 月別利益管理シート（33件、2023年11月〜2026年4月） |
+| `data/再生数シート/*.csv` | 月別再生数データ（22ファイル、6,304行） |
+| `scripts/csv_to_deals_all.py` | 利益管理CSV→TypeScript変換スクリプト |
+| `scripts/xlsx_to_csv_views.py` | 再生数Excel→CSV変換スクリプト |
+| `scripts/xlsx_to_csv_views_old.py` | 過去再生数Excel→CSV変換スクリプト |
 
 ---
 
@@ -106,6 +114,7 @@ NADESHIKO/
 |------|-----|
 | 本番URL | https://nadeshiko-sales.vercel.app |
 | 技術スタック | Next.js 16.1.4 + React 19 + Recharts + Tailwind CSS |
+| データ期間 | 2023年11月〜2026年4月（30月分、1,102件） |
 
 **4タブ構成**:
 | タブ | 内容 |
@@ -131,6 +140,9 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-23: 過去再生数シート追加（2024年4月〜2025年7月、16ファイル、2,194行）
+- 2026-01-23: 再生数シートExcel→CSV変換（6ファイル、4,110行）
+- 2026-01-23: 全期間データ統合（2023年11月〜2026年4月、1,102件）、CSV変換スクリプト作成
 - 2026-01-23: algorithm/algorithm.md 追加（TikTokアルゴリズム解説）
 - 2026-01-23: issue/ksf.md 追加（KSF本質分析）
 - 2026-01-23: Webアプリ作成（売上管理ダッシュボード、https://nadeshiko-sales.vercel.app）

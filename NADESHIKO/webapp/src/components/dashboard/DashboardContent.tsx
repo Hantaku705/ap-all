@@ -4,16 +4,40 @@ import { useMemo } from "react";
 import { useEdit } from "@/contexts/EditContext";
 import KPICards from "./KPICards";
 import MonthlyTrendChart from "./MonthlyTrendChart";
-import { calculateMonthlySummary, calculateTotalSummary } from "@/lib/calculations";
-import { monthOptions } from "@/data/constants";
+import {
+  calculateMonthlySummary,
+  calculateMonthlySummaryWithYoY,
+  calculatePeriodComparison,
+  getPeriodType,
+  periodToMonths,
+} from "@/lib/calculations";
+import { periodOptions, PeriodType } from "@/data/constants";
+
+function formatChange(value: number | null): string {
+  if (value === null) return "-";
+  const sign = value >= 0 ? "+" : "";
+  return `${sign}${value.toFixed(1)}%`;
+}
+
+function getChangeColor(value: number | null): string {
+  if (value === null) return "text-gray-400";
+  return value >= 0 ? "text-green-600" : "text-red-600";
+}
 
 export default function DashboardContent() {
   const { deals, targets, selectedMonth, setSelectedMonth } = useEdit();
 
+  // 期間タイプを判定
+  const periodType = useMemo((): PeriodType => {
+    return getPeriodType(selectedMonth);
+  }, [selectedMonth]);
+
   // フィルター済みの案件
   const filteredDeals = useMemo(() => {
     if (selectedMonth === "all") return deals;
-    return deals.filter((d) => d.month === selectedMonth);
+    const months = periodToMonths(selectedMonth);
+    if (months.length === 0) return deals;
+    return deals.filter((d) => months.includes(d.month));
   }, [deals, selectedMonth]);
 
   // 月別サマリー
@@ -21,18 +45,32 @@ export default function DashboardContent() {
     return calculateMonthlySummary(deals, targets);
   }, [deals, targets]);
 
-  // 全体サマリー（フィルター適用）
-  const summary = useMemo(() => {
-    const filteredTargets =
-      selectedMonth === "all"
-        ? targets
-        : targets.filter((t) => t.month === selectedMonth);
-    return calculateTotalSummary(filteredDeals, filteredTargets);
-  }, [filteredDeals, targets, selectedMonth]);
+  // 月別サマリー with YoY（テーブル用）
+  const monthlySummariesWithYoY = useMemo(() => {
+    return calculateMonthlySummaryWithYoY(monthlySummaries);
+  }, [monthlySummaries]);
+
+  // 期間比較計算（MoM/QoQ/YoY）
+  const periodComparison = useMemo(() => {
+    return calculatePeriodComparison(deals, targets, selectedMonth);
+  }, [deals, targets, selectedMonth]);
+
+  // グループ化されたオプション
+  const groupedOptions = useMemo(() => {
+    const groups: Record<string, typeof periodOptions> = {};
+    periodOptions.forEach((opt) => {
+      const group = opt.group || "";
+      if (!groups[group]) {
+        groups[group] = [];
+      }
+      groups[group].push(opt);
+    });
+    return groups;
+  }, []);
 
   return (
     <div className="space-y-6">
-      {/* 月セレクター */}
+      {/* 期間セレクター */}
       <div className="flex items-center gap-2">
         <label className="text-sm text-gray-600">表示期間:</label>
         <select
@@ -40,24 +78,44 @@ export default function DashboardContent() {
           onChange={(e) => setSelectedMonth(e.target.value)}
           className="px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
         >
-          <option value="all">全期間</option>
-          {monthOptions.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
+          {Object.entries(groupedOptions).map(([group, options]) => (
+            group === "" ? (
+              options.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))
+            ) : (
+              <optgroup key={group} label={`── ${group} ──`}>
+                {options.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </optgroup>
+            )
           ))}
         </select>
+        {periodType !== "all" && (
+          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+            {periodComparison.comparisonLabel}比較
+          </span>
+        )}
       </div>
 
       {/* KPIカード */}
       <KPICards
-        totalSales={summary.totalSales}
-        totalGrossProfit={summary.totalGrossProfit}
-        grossProfitRate={summary.grossProfitRate}
-        achievementRate={summary.achievementRate}
-        target={summary.totalTarget}
-        dealCount={summary.dealCount}
-        completedCount={summary.completedCount}
+        totalSales={periodComparison.currentPeriod.totalSales}
+        totalGrossProfit={periodComparison.currentPeriod.totalGrossProfit}
+        grossProfitRate={periodComparison.currentPeriod.grossProfitRate}
+        achievementRate={periodComparison.currentPeriod.achievementRate}
+        target={periodComparison.currentPeriod.target}
+        dealCount={periodComparison.currentPeriod.dealCount}
+        completedCount={periodComparison.currentPeriod.completedCount}
+        salesChange={periodComparison.salesChange}
+        grossProfitChange={periodComparison.grossProfitChange}
+        dealCountChange={periodComparison.dealCountChange}
+        comparisonLabel={periodComparison.comparisonLabel}
       />
 
       {/* 月次推移グラフ */}
@@ -73,17 +131,19 @@ export default function DashboardContent() {
                 <th className="px-3 py-2 text-left text-gray-600">月</th>
                 <th className="px-3 py-2 text-right text-gray-600">目標</th>
                 <th className="px-3 py-2 text-right text-gray-600">売上</th>
+                <th className="px-3 py-2 text-right text-gray-600">売上YoY</th>
                 <th className="px-3 py-2 text-right text-gray-600">粗利</th>
+                <th className="px-3 py-2 text-right text-gray-600">粗利YoY</th>
                 <th className="px-3 py-2 text-right text-gray-600">粗利率</th>
                 <th className="px-3 py-2 text-right text-gray-600">達成率</th>
                 <th className="px-3 py-2 text-right text-gray-600">案件数</th>
               </tr>
             </thead>
             <tbody>
-              {monthlySummaries.map((s) => (
+              {monthlySummariesWithYoY.map((s) => (
                 <tr key={s.month} className="border-b border-gray-100">
                   <td className="px-3 py-2 text-gray-900">
-                    {s.month.replace("-", "年") + "月"}
+                    {s.month.slice(2, 4)}年{parseInt(s.month.split("-")[1])}月
                   </td>
                   <td className="px-3 py-2 text-right text-gray-600">
                     {s.target > 0
@@ -93,8 +153,14 @@ export default function DashboardContent() {
                   <td className="px-3 py-2 text-right text-gray-900 font-medium">
                     ¥{(s.totalSales / 10000).toFixed(0)}万
                   </td>
+                  <td className={`px-3 py-2 text-right font-medium ${getChangeColor(s.salesYoY)}`}>
+                    {formatChange(s.salesYoY)}
+                  </td>
                   <td className="px-3 py-2 text-right text-green-600">
                     ¥{(s.totalGrossProfit / 10000).toFixed(0)}万
+                  </td>
+                  <td className={`px-3 py-2 text-right font-medium ${getChangeColor(s.grossProfitYoY)}`}>
+                    {formatChange(s.grossProfitYoY)}
                   </td>
                   <td className="px-3 py-2 text-right text-gray-600">
                     {s.grossProfitRate.toFixed(1)}%
