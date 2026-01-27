@@ -15,12 +15,29 @@
 | Refa | 73-74回目 | プロモーション変遷分析Webapp（イノベーター理論曲線、4ページ構成、ReFa GINZA・再ブランディング追加、Vercelデプロイ） | 2件 |
 | workflow | 76回目 | プロジェクトワークフローガイド作成（5段階フロー、7プロジェクト分析、/project-workflow スキル） | 1件 |
 | フォルダ整理 | 78, 81回目 | projects/ フォルダ構造整理（5プロジェクト→7プロジェクト、workflow.md準拠→4カテゴリ拡張） | 2件 |
-| CLAUDECODE | 86-96回目 | Claude Code オンボーディングWebapp Skills/Starter Kit タブ追加、**Claude Code Starter Kit GitHub作成**、Compareタブ3項目比較化、**Architectureタブ追加**、**Multi-Agent System実装**、**Getting Started ステップ7修正**、**Starter Kit SDK Docs追加**、**レベルベース設計**、**Multi-Agent Shogunオリジナル版再現**、**/shogunスキル作成**、**用語説明＆ペルソナ＆ゴール追加** | 11件 |
+| CLAUDECODE | 86-98回目 | Claude Code オンボーディングWebapp Skills/Starter Kit タブ追加、**Claude Code Starter Kit GitHub作成**、Compareタブ3項目比較化、**Architectureタブ追加**、**Multi-Agent System実装**、**Getting Started ステップ7修正**、**Starter Kit SDK Docs追加**、**レベルベース設計**、**Multi-Agent Shogunオリジナル版再現**、**/shogunスキル作成**、**用語説明＆ペルソナ＆ゴール追加**、**Progate風ミッション形式化**、**ミッションタブ化** | 12件 |
 | 将軍Claude Code化 | 97回目 | /shogunスキルをTask toolベースに書き換え（tmux不要化）、動作テスト成功 | 1件 |
+| nanobanana + tmux版復活 | 99回目 | nanobanana MCP設定、tmux版multi-agent-shogunパス修正・フル起動成功（10インスタンス） | 2件 |
 
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 直近の完了タスク
+- [x] **nanobanana MCP + tmux版multi-agent-shogunフル起動（セッション99）**
+  - nanobanana MCPサーバー登録（Gemini 2.5 Flash画像生成、`claude mcp add`）
+  - tmux版multi-agent-shogunパス修正（4ファイル: projects.yaml, shogun.md, karo.md, ashigaru.md）
+  - `./start_macos.sh` フル起動成功（10 Claude Codeインスタンス、将軍「殿、何なりとお申し付けくだされ」待機確認）
+- [x] **Progate風ミッション形式 + ミッションタブ化（セッション98）**
+  - ゴールをミッション形式に変更（クリック→Step-by-Step展開→完了ボタン）
+  - 全10ミッションにStep-by-Stepデータ追加（初心者5、中級者3、上級者4）
+  - アンロック機能廃止（全レベル自由切替）
+  - ヘッダーのMissionBanner→ミッションタブに移動（各レベルの先頭タブ）
+  - 初心者ミッション1に「Getting Startedタブで詳しく見る→」リンクボタン追加
+  - 中級者ゴール更新（Skill作成/Command実行/Subagent並行処理）
+  - 上級者ゴール更新（Vercel/Supabase/API Keys/Hooks）
+  - Buildタブ追加（上級者向け、Vercel/Supabase/API Keys/Hooks ガイド）
+  - Skillsタブを上級者→中級者に移動
+  - 参考サイトリンク追加（Vercel/Supabase/Apify/RapidAPI docs）
+  - Vercelデプロイ完了: https://claude-code-onboarding-ten.vercel.app
 - [x] **/shogun Task tool化（セッション97）**
   - tmuxベースの将軍システムをClaude Code Task toolベースに完全移行
   - `/shogun` スキルを書き換え（家老subagent→足軽subagent並列実行→dashboard更新）
@@ -90,7 +107,7 @@
 - [ ] **「なまえデザイン」書籍まとめ Phase 3**（各章詳細追加予定）
 
 ## 次のアクション
-1. **Multi-Agent System 運用開始**（`/shogun タスク内容` でTask toolベース実行、`dashboard.md` で進捗確認）
+1. **tmux版Multi-Agent Shogun運用開始**（`tmux attach -t shogun` で将軍にアタッチ→指示出し、`tmux attach -t multiagent` で家老・足軽の動きを観察）
 2. **Clawdbot Gmail/Calendar連携**（Google Cloud ConsoleでOAuth設定 → `gog auth` 実行）
 3. **NADESHIKOアルゴリズム実践**（ksf.md、algorithm.md参照）
 4. **The Room FX 提案書レビュー＆プレゼン資料化**（2月1週目締切）
@@ -100,24 +117,74 @@
 
 ## 未コミット変更
 ```
- M HANDOFF.md
- M _claude-code/commands/CLAUDE.md
- M opperation/CLAUDE.md
- M opperation/CLAUDECODE/CLAUDE.md
- M opperation/CLAUDECODE/webapp/app/data/onboarding-data.ts
- M opperation/CLAUDECODE/webapp/app/page.tsx
- M opperation/multi-agent/* (オリジナル版 + Task tool化)
-?? .claude/commands/shogun.md (Task toolベース)
-?? _claude-code/commands/shogun.md (Task toolベース)
-?? opperation/multi-agent/新規ファイル多数
+M CLAUDE.md
+M HANDOFF.md
+M opperation/CLAUDECODE/webapp/app/data/onboarding-data.ts
+M opperation/CLAUDECODE/webapp/app/page.tsx
+M opperation/multi-agent/config/projects.yaml
+M opperation/multi-agent/dashboard.md
+M opperation/multi-agent/instructions/ashigaru.md
+M opperation/multi-agent/instructions/karo.md
+M opperation/multi-agent/instructions/shogun.md
 ```
 
 ## 最新コミット
 ```
-fda6860 feat: major updates across CLAUDECODE, NADESHIKO, and project reorganization
+883046e feat: migrate shogun multi-agent system from tmux to Task tool
 ```
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-27 (99)
+- **nanobanana MCP + tmux版multi-agent-shogunフル起動**
+  - ユーザー依頼:
+    1. Claude Codeでnanobananaを使えるようにしたい
+    2. Zenn記事（multi-agent-shogun）の「一生見ていられる」状態を実現したい
+  - **nanobanana MCP設定**:
+    - `claude mcp add nanobanana-mcp -e GOOGLE_AI_API_KEY=... -- npx -y gemini-nanobanana-mcp`
+    - Gemini 2.5 Flash画像生成がClaude Codeから利用可能に
+  - **tmux版multi-agent-shogunパス修正（4ファイル）**:
+    - `config/projects.yaml`: `/mnt/c/Projects/Sample` → `/Users/hantaku/Downloads/AP`
+    - `instructions/shogun.md`: `~/multi-agent-shogun/CLAUDE.md` → `./CLAUDE.md`
+    - `instructions/karo.md`: 同上 + target_path例をmacOSパスに
+    - `instructions/ashigaru.md`: 同上
+  - **フル起動成功**:
+    - `./start_macos.sh` で10 Claude Codeインスタンス起動
+    - 将軍:「殿、何なりとお申し付けくだされ」待機確認
+    - 家老: 指示書読み込み完了、待機確認
+    - 足軽1-8: 全員待機確認
+    - `ps aux | grep claude` → 15プロセス稼働
+  - **使い方**:
+    ```bash
+    tmux attach-session -t shogun      # 将軍にアタッチ→指示出し
+    tmux attach-session -t multiagent  # 家老・足軽の動きを観察
+    ```
+
+### 2026-01-27 (98)
+- **Progate風ミッション形式 + ミッションタブ化**
+  - ユーザー依頼:
+    1. チェックボックス展開・クリック修正
+    2. 中級者・上級者ゴール更新
+    3. ゴールに沿った学習内容の修正（タブ再構成、Buildタブ追加）
+    4. 参考サイトリンク追加（Vercel/Supabase等）
+    5. Progate風ミッション形式に変更（ミッション→Step-by-Step→完了）
+    6. ミッションをタブ化（ヘッダーから移動）
+    7. 初心者ミッション1にGetting Startedリンクボタン追加
+  - **データ変更** (`onboarding-data.ts`):
+    - `Mission` / `MissionStep` 型追加
+    - `LevelGoal.checkItems` → `LevelGoal.missions: Mission[]` に拡張
+    - 全10ミッション分のStep-by-Stepデータ（コード例付き）
+    - `BuildGuideSection` 型追加（links フィールド含む）
+    - `buildGuideSections` 4セクション（Vercel/Supabase/API Keys/Hooks）
+    - tabs/levels にミッションタブ追加（各レベル先頭）
+    - Skills: advanced → intermediate に移動
+  - **UI変更** (`page.tsx`):
+    - MissionBanner: アコーディオン展開 + Step-by-Step + コードブロック + コピーボタン + 完了ボタン
+    - MissionBannerをヘッダーからタブコンテンツに移動
+    - レベルカード: アンロック機能廃止、全レベル自由切替
+    - BuildContent / BuildSectionCard コンポーネント追加
+    - 初心者ミッション1に onNavigateTab で Getting Started リンクボタン
+  - **Vercelデプロイ完了**: https://claude-code-onboarding-ten.vercel.app
 
 ### 2026-01-27 (97)
 - **/shogun Task tool化（tmux不要化）**

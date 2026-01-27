@@ -12,25 +12,27 @@ Claude Code導入・説明会用のWebアプリケーション。
 
 ## レベル構成（3段階）
 
-ドロップダウンでレベルを選択すると、該当するタブのみ表示される。
+レベルカード3枚で切替。各レベルの先頭に「ミッション」タブ（Progate風Step-by-Step形式）。
 
 | レベル | タブ数 | 内容 |
 |--------|--------|------|
-| 🌱 初心者 | 2 | Getting Started + Starter Kit |
-| 🌿 中級者 | 4 | Features + Examples + Architecture + Compare |
-| 🌳 上級者 | 2 | Skills + Tips |
+| 🌱 初心者 | 3 | ミッション + Getting Started + Starter Kit |
+| 🌿 中級者 | 6 | ミッション + Features + Examples + Architecture + Compare + Skills |
+| 🌳 上級者 | 3 | ミッション + Build + Tips |
 
-## ページ構成（8タブ）
+## ページ構成（12タブ）
 
 | タブ | 内容 | 用途 | レベル |
 |------|------|------|--------|
+| ミッション | Step-by-Stepミッション（アコーディオン展開） | **ゴール管理** | 全レベル |
 | Getting Started | インストール〜基本操作〜Starter Kit | **説明会メイン**（約27分） | 🌱 |
 | Starter Kit | 1コマンドでプロ環境構築 | 初期セットアップ | 🌱 |
 | Features | Skills/Commands/Agents/Rules一覧 | リファレンス | 🌿 |
 | Examples | よくあるプロンプト例（コピーボタン付き） | 実践用 | 🌿 |
 | Architecture | Claude Code全体像（7要素の定義・役割） | 概念理解 | 🌿 |
 | Compare | Agent SDK vs Everything Claude Code vs Starter Kit | 比較・選択 | 🌿 |
-| Skills | おすすめカスタムスキル8個（コピー可能） | 実戦導入 | 🌳 |
+| Skills | おすすめカスタムスキル8個（コピー可能） | 実戦導入 | 🌿 |
+| Build | Vercel/Supabase/API Keys/Hooks導入ガイド | 実践構築 | 🌳 |
 | Tips | 上級機能（CLAUDE.md、Subagent、Hooks） | 慣れてきたら | 🌳 |
 
 ## 収録コンテンツ
@@ -155,6 +157,7 @@ Claude Codeを構成する7要素の定義と役割を解説。
 
 ## 更新履歴
 
+- 2026-01-27: Progate風ミッション形式化（Step-by-Step展開、全10ミッション、ミッションタブ化、Buildタブ追加、Skills中級者移動、参考サイトリンク追加）
 - 2026-01-27: 用語説明＆ペルソナ＆ゴール追加（Glossary 7件、3レベル分のペルソナ＆卒業条件、ヘッダー下バナー）
 - 2026-01-27: Starter Kit に Claude Agent SDK Docs 追加（docs/agent-sdk.md、Stats 4列化、Docsセクション）
 - 2026-01-27: Getting Startedステップ7修正（「便利機能」→「Starter Kit」、合計時間29分→27分）

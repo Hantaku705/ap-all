@@ -496,6 +496,51 @@ MCPを入れすぎると 200k → 70k にコンテキスト縮小
 # GitHub
 https://github.com/affaan-m/everything-claude-code`,
   },
+  {
+    id: 'env-security',
+    title: '.env.local と API Key のセキュリティ',
+    content: 'API Keyや秘密情報は .env.local で管理する。漏洩するとクラウド請求の乗っ取り、データ流出、サービス停止に直結する。「漏れたら終わり」の意識で運用すること。',
+    code: `# ═══════════════════════════════════════════
+# .env.local の基本ルール
+# ═══════════════════════════════════════════
+
+# 1. .env.local はプロジェクトルートに置く
+#    → Next.js が自動で読み込む
+#    → .gitignore に含まれている（デフォルト）
+
+# 2. NEXT_PUBLIC_ プレフィックスの違い（超重要）
+NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co   # ← ブラウザに露出する（公開OK）
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...               # ← ブラウザに露出する（公開OK）
+SUPABASE_SERVICE_ROLE_KEY=eyJ...                    # ← サーバーのみ（絶対に NEXT_PUBLIC_ つけない）
+APIFY_TOKEN=apify_api_xxxxx                        # ← サーバーのみ
+OPENAI_API_KEY=sk-proj-xxxxx                       # ← サーバーのみ
+
+# ═══════════════════════════════════════════
+# NEXT_PUBLIC_ の仕組み
+# ═══════════════════════════════════════════
+#
+# NEXT_PUBLIC_ あり → ビルド時にJSバンドルに埋め込まれる
+#                    → ブラウザのDevToolsで誰でも見れる
+#                    → 公開前提のキーのみ使用可
+#
+# NEXT_PUBLIC_ なし → サーバーサイドでのみアクセス可能
+#                    → API Routes / Server Components でのみ使用
+#                    → 秘密キーは必ずこちら
+
+# ═══════════════════════════════════════════
+# 漏洩チェックリスト
+# ═══════════════════════════════════════════
+# □ .gitignore に .env.local が含まれているか
+# □ git log に .env.local がコミットされていないか
+# □ NEXT_PUBLIC_ に秘密キーをつけていないか
+# □ コードにハードコードしていないか
+# □ Vercel環境変数に登録済みか
+
+# 確認コマンド
+cat .gitignore | grep env
+git log --all --full-history -- .env.local
+git log --all -p | grep -i "sk-proj\\|service_role\\|apify_api"`,
+  },
 ];
 
 // Recommended Skills (Custom Skills for sharing)
@@ -924,15 +969,18 @@ export interface Tab {
 
 export const tabs: Tab[] = [
   // Lv.1 初心者
+  { id: 'mission-beginner', label: 'ミッション', level: 'beginner' },
   { id: 'getting-started', label: 'Getting Started', level: 'beginner' },
   { id: 'starter-kit', label: 'Starter Kit', level: 'beginner' },
   // Lv.2 中級者
+  { id: 'mission-intermediate', label: 'ミッション', level: 'intermediate' },
   { id: 'features', label: 'Features', level: 'intermediate' },
   { id: 'examples', label: 'Examples', level: 'intermediate' },
   { id: 'architecture', label: 'Architecture', level: 'intermediate' },
   { id: 'compare', label: 'Compare', level: 'intermediate' },
   { id: 'skills', label: 'Skills', level: 'intermediate' },
   // Lv.3 上級者
+  { id: 'mission-advanced', label: 'ミッション', level: 'advanced' },
   { id: 'build', label: 'Build', level: 'advanced' },
   { id: 'tips', label: 'Tips', level: 'advanced' },
 ];
@@ -946,9 +994,9 @@ export interface Level {
 }
 
 export const levels: Level[] = [
-  { id: 'beginner', label: '初心者', icon: '🌱', description: 'Getting Started + Starter Kit', tabs: ['getting-started', 'starter-kit'] },
-  { id: 'intermediate', label: '中級者', icon: '🌿', description: 'Features + Examples + Architecture + Compare + Skills', tabs: ['features', 'examples', 'architecture', 'compare', 'skills'] },
-  { id: 'advanced', label: '上級者', icon: '🌳', description: 'Build + Tips', tabs: ['build', 'tips'] },
+  { id: 'beginner', label: '初心者', icon: '🌱', description: 'ミッション + Getting Started + Starter Kit', tabs: ['mission-beginner', 'getting-started', 'starter-kit'] },
+  { id: 'intermediate', label: '中級者', icon: '🌿', description: 'ミッション + Features + Examples + Architecture + Compare + Skills', tabs: ['mission-intermediate', 'features', 'examples', 'architecture', 'compare', 'skills'] },
+  { id: 'advanced', label: '上級者', icon: '🌳', description: 'ミッション + Build + Tips', tabs: ['mission-advanced', 'build', 'tips'] },
 ];
 
 // Glossary for beginners
@@ -1057,11 +1105,23 @@ export const personas: Persona[] = [
   },
 ];
 
+// Mission step-by-step
+export interface MissionStep {
+  title: string;
+  description?: string;
+  code?: string;
+}
+
+export interface Mission {
+  title: string;
+  steps: MissionStep[];
+}
+
 // Goals for each level
 export interface LevelGoal {
   level: LevelType;
   goalTitle: string;
-  checkItems: string[];
+  missions: Mission[];
   timeEstimate: string;
   nextAction: string;
 }
@@ -1070,12 +1130,68 @@ export const levelGoals: LevelGoal[] = [
   {
     level: 'beginner',
     goalTitle: '中級者へ',
-    checkItems: [
-      'Claude Codeをインストールして認証できた',
-      '基本操作5つを覚えた（claude, /help, /clear, Ctrl+C, exit）',
-      '実際にファイルを1つ作成できた',
-      '/handoff と /resume を使えた',
-      'Plan Modeを試した',
+    missions: [
+      {
+        title: 'Claude Codeをインストールして認証できた',
+        steps: [
+          { title: 'Homebrewをインストール', description: 'Macのターミナルを開いて以下を実行', code: '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"' },
+          { title: 'Node.jsをインストール', code: 'brew install node' },
+          { title: 'Claude Codeをインストール', code: 'npm install -g @anthropic-ai/claude-code' },
+          { title: 'Claude Codeを起動して認証', description: '任意のフォルダで実行し、ブラウザで認証を完了', code: 'claude' },
+        ],
+      },
+      {
+        title: '基本操作5つを覚えた',
+        steps: [
+          { title: 'claude で起動', description: 'ターミナルで claude と入力して起動', code: 'claude' },
+          { title: '/help でヘルプ表示', description: '使えるコマンド一覧を確認', code: '/help' },
+          { title: '/clear で会話リセット', description: 'コンテキストをリフレッシュ', code: '/clear' },
+          { title: 'Ctrl+C で中断', description: '実行中の処理を止める' },
+          { title: 'exit で終了', description: 'セッションを終了する', code: 'exit' },
+        ],
+      },
+      {
+        title: '実際にファイルを1つ作成できた',
+        steps: [
+          { title: 'プロジェクトフォルダに移動', code: 'cd ~/Desktop && mkdir my-first-project && cd my-first-project' },
+          { title: 'Claude Codeを起動', code: 'claude' },
+          { title: 'ファイル作成を依頼', description: '例：「hello.txt を作成して、中に Hello World と書いて」と入力' },
+        ],
+      },
+      {
+        title: 'Git & GitHubの基本を覚えた',
+        steps: [
+          { title: 'Gitとは？', description: 'ファイルの変更履歴を管理するツール。「セーブポイント」を作れる。間違えても前の状態に戻せる' },
+          { title: 'git init でリポジトリ作成', description: 'プロジェクトフォルダでGitを有効化する', code: 'cd my-first-project\ngit init' },
+          { title: 'git add + commit で保存', description: '変更をステージング（選択）してコミット（保存）する', code: '# 全ファイルをステージング\ngit add .\n\n# コミット（セーブポイント作成）\ngit commit -m "initial commit"' },
+          { title: 'GitHubにリポジトリを作成', description: 'gh コマンドでGitHubにリポジトリを作り、コードをアップロード', code: '# GitHub CLIで認証（初回のみ）\ngh auth login\n\n# リポジトリ作成＆プッシュ\ngh repo create my-first-project --public --source=. --remote=origin --push' },
+          { title: 'Claude Codeに「コミットして」と依頼', description: 'Claude Codeはgit操作もやってくれる。「変更をコミットして」と言うだけ' },
+        ],
+      },
+      {
+        title: 'Starter Kitを導入してプロの設定を体感した',
+        steps: [
+          { title: 'Starter Kitとは', description: 'プロが作った12コマンド + 8エージェント + 6ルールが1コマンドで入る。0から自分で作る必要なし' },
+          { title: 'インストール実行', description: 'Claude Code内で以下を入力するだけ', code: 'claude /install-github-plugin Hantaku705/claude-code-starter' },
+          { title: '何が入ったか確認', description: 'インストールされたファイルを見てみよう', code: '# コマンド一覧\nls ~/.claude/commands/\n\n# エージェント一覧\nls ~/.claude/agents/\n\n# ルール一覧\nls ~/.claude/rules/' },
+          { title: '試しに使ってみる', description: 'Claude Code内でスラッシュコマンドを実行', code: '# 例1: 高速コミット\n/quick-commit\n\n# 例2: コードレビュー\n/code-review\n\n# 例3: セッション終了\n/handoff' },
+        ],
+      },
+      {
+        title: '/handoff と /resume を使えた',
+        steps: [
+          { title: 'セッション終了時に /handoff', description: '作業内容がHANDOFF.mdに自動保存される', code: '/handoff' },
+          { title: '次回セッション開始時に /resume', description: '前回の状態を復元して続きから作業', code: '/resume' },
+        ],
+      },
+      {
+        title: 'Plan Modeを試した',
+        steps: [
+          { title: 'Shift+Tab でPlan Modeに切替', description: 'プロンプト入力欄でShift+Tabを押す' },
+          { title: '計画を依頼', description: '例：「このプロジェクトにREADME.mdを追加する計画を立てて」と入力' },
+          { title: '計画を確認してApprove', description: '提示された計画をレビューし、OKなら承認して実行' },
+        ],
+      },
     ],
     timeEstimate: '約1-2時間',
     nextAction: 'CLAUDE.mdを作成してプロジェクト設定を始めよう',
@@ -1083,10 +1199,65 @@ export const levelGoals: LevelGoal[] = [
   {
     level: 'intermediate',
     goalTitle: '上級者へ',
-    checkItems: [
-      'Skillを自分で作れた',
-      'Commandを実行できた',
-      'Subagentを理解して、並行処理ができた',
+    missions: [
+      {
+        title: 'Claude Codeの全体像を理解した',
+        steps: [
+          {
+            title: '5つの要素の関係を理解する',
+            description: 'Claude Codeは5つの要素で構成される。それぞれの役割を理解しよう',
+            code: '# ═══════════════════════════════════════════\n# Claude Code の5要素\n# ═══════════════════════════════════════════\n#\n# 1. Agent（本体）\n#    → Claude Code自体。ユーザーの指示を受けてタスクを実行する\n#    → CLAUDE.md を読んでプロジェクトを理解する\n#\n# 2. Sub Agent（子プロセス）\n#    → Agentが複雑なタスクを分割して委託する専門家\n#    → 例：code-reviewer, security-reviewer, build-error-resolver\n#    → .claude/agents/ に定義ファイルを置く\n#\n# 3. Skills（ワークフロー）★最重要\n#    → 「こうやって仕事して」という手順書\n#    → /スキル名 で呼び出す\n#    → .claude/commands/ に定義ファイルを置く\n#\n# 4. Commands（組み込みコマンド）\n#    → Claude Code に最初から入っている機能\n#    → /help, /clear, /compact, /model など\n#\n# 5. Hooks（自動トリガー）\n#    → 特定のアクション前後に自動実行されるスクリプト\n#    → ~/.claude/settings.json に定義',
+          },
+          {
+            title: '★ なぜSkillsが最重要なのか',
+            description: 'Skillsは「知識の貯金箱」。一度作ったSkillは何度でも再利用でき、チームで共有できる。Skillsに知識を貯めることで、Claude Codeの生産性が指数関数的に上がる',
+            code: '# ═══════════════════════════════════════════\n# Skillsが最重要な理由\n# ═══════════════════════════════════════════\n#\n# 【普通の使い方】\n#   毎回「コミットして」「レビューして」と指示\n#   → 毎回やり方を説明する必要がある\n#   → 品質がバラつく\n#\n# 【Skillsを貯めた使い方】\n#   /quick-commit → 一貫したコミット\n#   /code-review  → 毎回同じ基準でレビュー\n#   /tdd          → テスト駆動で品質保証\n#   → 知識が蓄積されて、どんどん賢くなる\n#\n# ═══════════════════════════════════════════\n# Skillsの知識蓄積サイクル\n# ═══════════════════════════════════════════\n#\n#   作業で「いいやり方」発見\n#       ↓\n#   Skillとして .claude/commands/ に保存\n#       ↓\n#   次回から /スキル名 で一発呼び出し\n#       ↓\n#   チームに共有 → 全員の生産性UP\n#       ↓\n#   さらに改善 → Skill更新\n#       ↓\n#   知識が複利で増えていく 📈',
+          },
+          {
+            title: '全体像を図で確認する',
+            description: 'Exploreタブ > Architectureセクションで7要素の関係図を確認しよう',
+            code: '# ═══════════════════════════════════════════\n# Claude Code 全体構成図\n# ═══════════════════════════════════════════\n#\n#   あなた（ユーザー）\n#     │\n#     ▼\n#   Agent（Claude Code本体）\n#     │  CLAUDE.md を読んでプロジェクト理解\n#     │\n#     ├── Skills ★知識の貯金箱\n#     │   /commit, /review, /tdd ...\n#     │   → .claude/commands/\n#     │\n#     ├── Sub Agents（専門家チーム）\n#     │   code-reviewer, security-reviewer ...\n#     │   → .claude/agents/\n#     │\n#     ├── Commands（組み込み機能）\n#     │   /help, /clear, /compact ...\n#     │\n#     ├── Hooks（自動ガードレール）\n#     │   編集後チェック, push前確認 ...\n#     │   → ~/.claude/settings.json\n#     │\n#     ├── Rules（常時適用ルール）\n#     │   → .claude/rules/\n#     │\n#     └── MCPs（外部サービス連携）\n#         → ~/.claude.json',
+          },
+          {
+            title: '自分のSkillsフォルダを確認する',
+            description: 'まだ空でもOK。ここに知識を貯めていくのが中級者→上級者への道',
+            code: '# グローバルSkills（全プロジェクト共通）\nls ~/.claude/commands/\n\n# プロジェクトSkills（このプロジェクト専用）\nls .claude/commands/\n\n# なければ作成\nmkdir -p .claude/commands\nmkdir -p .claude/agents\nmkdir -p .claude/rules',
+          },
+        ],
+      },
+      {
+        title: 'Webアプリを作ってブラウザで見れた',
+        steps: [
+          { title: 'Claude Codeに依頼してWebアプリを作る', description: 'プロジェクトフォルダで以下のように依頼するだけ', code: '# Claude Codeで実行\n「Next.jsで自己紹介ページを作って」\n\n# 手動の場合\nnpx create-next-app@latest my-app --typescript --tailwind --app' },
+          { title: '開発サーバーを起動', description: 'npm run dev でローカルサーバーが起動し、ブラウザで見れる', code: 'cd my-app\nnpm run dev\n# → http://localhost:3000 をブラウザで開く' },
+          { title: 'Claude Codeで機能を追加', description: '起動したまま、Claude Codeに追加依頼を出す。保存するとブラウザが自動更新される', code: '# 例\n「ダークモード切り替えボタンを追加して」\n「プロフィール画像を丸く表示して」\n「アニメーションをつけて」' },
+          { title: 'GitHubにプッシュ', description: '作ったものをGitHubに保存', code: 'gh repo create my-app --public --source=. --remote=origin --push' },
+        ],
+      },
+      {
+        title: 'Skillを自分で作れた',
+        steps: [
+          { title: 'Skillファイルの保存先を確認', description: 'プロジェクト内 .claude/commands/ またはグローバル ~/.claude/commands/', code: 'mkdir -p .claude/commands' },
+          { title: 'Skillファイルを作成', description: '例：git commitを自動化するスキル', code: 'cat > .claude/commands/quick-commit.md << \'EOF\'\n---\ndescription: "高速コミット"\n---\n1. git statusで変更確認\n2. git add .\n3. git commitをconventional commits形式で\nEOF' },
+          { title: 'Skillを実行', description: 'Claude Code内で /quick-commit と入力して実行', code: '/quick-commit' },
+        ],
+      },
+      {
+        title: 'Commandを実行できた',
+        steps: [
+          { title: '利用可能なコマンドを確認', description: '/help で一覧表示', code: '/help' },
+          { title: 'よく使うコマンドを試す', description: '例：/clear, /compact, /model など' },
+          { title: 'カスタムコマンドを実行', description: '自分で作成したSkillを / で呼び出す' },
+        ],
+      },
+      {
+        title: 'Subagentを理解して、並行処理ができた',
+        steps: [
+          { title: 'Subagentの概念を理解', description: 'Claude Codeは複雑なタスクを自動的にSubagent（子プロセス）に分割して並行処理する' },
+          { title: '並行処理を体験', description: '例：「3つのファイルを同時にレビューして」と依頼すると、Subagentが並行で処理する' },
+          { title: 'カスタムSubagentの定義場所を確認', description: '.claude/agents/ フォルダにMarkdownファイルで定義', code: 'ls .claude/agents/' },
+        ],
+      },
     ],
     timeEstimate: '約1-2週間',
     nextAction: 'Hooks・MCP連携でワークフローをさらに自動化しよう',
@@ -1094,11 +1265,58 @@ export const levelGoals: LevelGoal[] = [
   {
     level: 'advanced',
     goalTitle: 'マスター',
-    checkItems: [
-      'Webアプリを作れた（Vercelを活用）',
-      'データベースを作れた（Supabaseの理解・導入）',
-      '外部API Keyの理解（Apify / RapidAPIの導入理解）',
-      'Hooksの設定ができた',
+    missions: [
+      {
+        title: 'Webアプリを作れた（Vercelを活用）',
+        steps: [
+          { title: 'Next.jsプロジェクトを作成', code: 'npx create-next-app@latest my-app --typescript --tailwind --app' },
+          { title: 'Claude Codeで機能を実装', description: 'claude を起動して「ダッシュボードページを作って」などと依頼' },
+          { title: 'Vercel CLIでデプロイ', code: 'npm i -g vercel && vercel --yes' },
+          { title: '本番デプロイ', code: 'vercel --prod --yes' },
+        ],
+      },
+      {
+        title: 'データベースを作れた（Supabaseの理解・導入）',
+        steps: [
+          { title: 'Supabaseプロジェクト作成', description: 'https://supabase.com でアカウント作成 → New Project' },
+          { title: '環境変数を設定', description: 'Project Settings → API からURLとキーを取得', code: 'echo "NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co" >> .env.local\necho "NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ..." >> .env.local' },
+          { title: 'Supabaseクライアントをインストール', code: 'npm install @supabase/supabase-js' },
+          { title: 'テーブル作成', description: 'SQL Editorで CREATE TABLE を実行、またはClaude Codeに依頼' },
+        ],
+      },
+      {
+        title: '外部API Keyの理解（Apify / RapidAPIの導入理解）',
+        steps: [
+          { title: 'APIキーの概念を理解', description: 'APIキー = 外部サービスを使うためのパスワード。環境変数で管理する' },
+          { title: 'Apifyアカウント作成', description: 'https://apify.com でサインアップ → Settings → API Keys からキー取得' },
+          { title: 'RapidAPIアカウント作成', description: 'https://rapidapi.com でサインアップ → APIを選んでSubscribe → キー取得' },
+        ],
+      },
+      {
+        title: '.env.localのセキュリティチェックを実施した',
+        steps: [
+          { title: '.gitignore に .env.local が含まれているか確認', description: '含まれていなければ即追加。これがないとAPI Keyが全世界に公開される', code: 'cat .gitignore | grep env\n# → 「.env*.local」があればOK\n# なければ追加:\necho ".env*.local" >> .gitignore' },
+          { title: 'Git履歴に漏洩がないか確認', description: '過去に.env.localをコミットしていないかチェック', code: '# .env.localがコミットされていないか\ngit log --all --full-history -- .env.local\n\n# 秘密キーがコード内にないか\ngit log --all -p | grep -i "sk-proj\\|service_role\\|apify_api"' },
+          { title: 'NEXT_PUBLIC_ の使い分けを確認', description: 'NEXT_PUBLIC_ をつけた変数はブラウザに露出する。秘密キーについていないかチェック', code: '# .env.local の中身を確認\ncat .env.local\n\n# NG例: 秘密キーにNEXT_PUBLIC_がついている\n# NEXT_PUBLIC_OPENAI_API_KEY=sk-proj-xxx  ← 全世界に公開される!\n\n# OK例: 秘密キーはNEXT_PUBLIC_なし\n# OPENAI_API_KEY=sk-proj-xxx  ← サーバーのみ' },
+        ],
+      },
+      {
+        title: 'Hooksの設定ができた',
+        steps: [
+          { title: 'Hooks設定ファイルを確認', description: '~/.claude/settings.json にHooksを定義', code: 'cat ~/.claude/settings.json' },
+          { title: 'PostToolUse Hookを追加', description: '例：ファイル編集後にconsole.logを検出', code: '{\n  "hooks": {\n    "PostToolUse": [{\n      "matcher": "Edit",\n      "hooks": [{\n        "type": "command",\n        "command": "grep -n console.log \\"$CLAUDE_FILE_PATH\\""\n      }]\n    }]\n  }\n}' },
+          { title: 'Hookの動作を確認', description: 'Claude Codeでファイルを編集し、Hookが自動実行されることを確認' },
+        ],
+      },
+      {
+        title: 'MCP連携を設定した',
+        steps: [
+          { title: 'MCPとは', description: 'Model Context Protocol。Claude Codeから外部サービス（Google Docs, Slack, DB等）を直接操作できる仕組み' },
+          { title: '設定ファイルの場所を確認', description: '~/.claude.json にMCPサーバーを定義する', code: 'cat ~/.claude.json\n\n# なければ作成\necho \'{"mcpServers": {}}\' > ~/.claude.json' },
+          { title: 'MCPサーバーを追加', description: '例：ファイルシステムMCPを追加', code: '# ~/.claude.json の例\n{\n  "mcpServers": {\n    "filesystem": {\n      "command": "npx",\n      "args": ["-y", "@anthropic-ai/mcp-filesystem"]\n    },\n    "google-docs": {\n      "command": "npx",\n      "args": ["-y", "google-docs-mcp"]\n    }\n  }\n}' },
+          { title: 'Claude Codeを再起動して確認', description: 'MCPサーバーが認識されているか確認。Claude Code内で外部サービスを操作してみる', code: '# Claude Codeを再起動\nexit\nclaude\n\n# 例：「Google Docsの最近のドキュメントを一覧して」と依頼' },
+        ],
+      },
     ],
     timeEstimate: '継続的',
     nextAction: 'Agent SDKで本番環境の自動化を構築しよう',
@@ -1195,40 +1413,49 @@ export const buildGuideSections: BuildGuideSection[] = [
   },
   {
     id: 'api-keys',
-    title: '外部API Key（Apify / RapidAPI）',
+    title: '外部API Key & .env.local セキュリティ',
     icon: '🔑',
-    description: '外部サービスのAPIを使い、データ取得やスクレイピングを行う',
+    description: 'API Keyの正しい管理方法と、漏洩した場合のリスクを理解する',
     steps: [
       {
-        title: 'API Keyとは',
-        description: '外部サービスにアクセスするための「合言葉」。サービスごとに発行され、環境変数で管理する',
-        code: '# 環境変数で管理（.env.local）\nAPIF_TOKEN=apify_api_xxxxx\nRAPID_API_KEY=xxxxx\n\n# コード内で使用\nconst token = process.env.APIFY_TOKEN',
+        title: 'API Keyとは？なぜ危険？',
+        description: 'API Keyは外部サービスへの「鍵」。漏洩すると他人があなたのアカウントで無制限にサービスを使える。クラウド課金の場合、数十万〜数百万円の請求が来ることもある',
+        code: '# ════════════════════════════════════════\n# API Key 漏洩の実害（実例）\n# ════════════════════════════════════════\n#\n# OpenAI API Key 漏洩\n#   → 他人がGPT-4を大量使用 → 月額100万円超の請求\n#\n# AWS Secret Key 漏洩\n#   → 仮想通貨マイニングに悪用 → 数百万円の請求\n#\n# Supabase Service Role Key 漏洩\n#   → RLSバイパスで全データ読み書き可能\n#   → 個人情報流出 → 法的責任\n#\n# ════════════════════════════════════════\n# 漏洩する主な原因\n# ════════════════════════════════════════\n#\n# 1. GitHubにコミットしてしまった（最多）\n# 2. NEXT_PUBLIC_ をつけてしまった\n# 3. フロントエンドのコードに直書きした\n# 4. Slackやチャットに貼り付けた\n# 5. スクリーンショットに映り込んだ',
       },
       {
-        title: 'Apify（スクレイピング）',
-        description: 'Webサイトからデータを自動取得するプラットフォーム。TikTok、Instagram、Google等のスクレイパーが豊富',
-        code: '# Apify クライアント\nnpm install apify-client\n\n# 使用例（TikTokプロフィール取得）\nimport { ApifyClient } from "apify-client"\n\nconst client = new ApifyClient({ token: process.env.APIFY_TOKEN })\nconst run = await client.actor("actor-id").call({ profiles: ["@username"] })\nconst { items } = await client.dataset(run.defaultDatasetId).listItems()',
+        title: '.env.local の正しい使い方',
+        description: 'Next.jsでは .env.local に秘密情報を保存する。NEXT_PUBLIC_ プレフィックスの有無でブラウザ露出が決まる',
+        code: '# ════════════════════════════════════════\n# .env.local ファイル例\n# ════════════════════════════════════════\n\n# ✅ 公開OK（ブラウザに露出する）\nNEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co\nNEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...\nNEXT_PUBLIC_APP_URL=https://myapp.vercel.app\n\n# 🔒 秘密（サーバーサイドのみ）\nSUPABASE_SERVICE_ROLE_KEY=eyJ...\nOPENAI_API_KEY=sk-proj-xxxxx\nAPIF_TOKEN=apify_api_xxxxx\nRAPID_API_KEY=xxxxx\n\n# ════════════════════════════════════════\n# NEXT_PUBLIC_ の仕組み\n# ════════════════════════════════════════\n#\n# NEXT_PUBLIC_ あり\n#   → ビルド時にJavaScriptに埋め込まれる\n#   → ブラウザのDevTools > Sources で誰でも読める\n#   → 公開前提の値のみ使うこと\n#\n# NEXT_PUBLIC_ なし\n#   → サーバーサイドでのみ process.env.XXX で参照可能\n#   → API Routes (app/api/) や Server Components で使う\n#   → 秘密キーは必ずこちら',
       },
       {
-        title: 'RapidAPI（APIマーケットプレイス）',
-        description: '数千のAPIを1つのキーで使えるマーケットプレイス。翻訳、天気、SNSデータなど',
-        code: '# RapidAPI 使用例\nconst response = await fetch("https://api-endpoint.p.rapidapi.com/data", {\n  headers: {\n    "X-RapidAPI-Key": process.env.RAPID_API_KEY!,\n    "X-RapidAPI-Host": "api-endpoint.p.rapidapi.com"\n  }\n})\nconst data = await response.json()',
+        title: 'サーバーサイドでのAPI Key使用',
+        description: '秘密キーはAPI Routes経由でのみ使用する。フロントから直接外部APIを叩かない',
+        code: '// ════════════════════════════════════════\n// ❌ NG: フロントエンドで直接使う\n// ════════════════════════════════════════\n\n// app/page.tsx（クライアントコンポーネント）\nconst res = await fetch("https://api.openai.com/v1/chat", {\n  headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}` }\n  // ↑ クライアントでは undefined になる（NEXT_PUBLIC_なし）\n  // NEXT_PUBLIC_ をつけたら？→ 全世界に公開される\n})\n\n// ════════════════════════════════════════\n// ✅ OK: API Route経由で使う\n// ════════════════════════════════════════\n\n// app/api/generate/route.ts（サーバーサイド）\nexport async function POST(req: Request) {\n  const { prompt } = await req.json()\n\n  const res = await fetch("https://api.openai.com/v1/chat", {\n    headers: {\n      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,\n      // ↑ サーバーサイドなので安全にアクセスできる\n    },\n    body: JSON.stringify({ model: "gpt-4", messages: [{ role: "user", content: prompt }] }),\n  })\n\n  return Response.json(await res.json())\n}\n\n// app/page.tsx（クライアント → 自分のAPI Route経由）\nconst res = await fetch("/api/generate", {\n  method: "POST",\n  body: JSON.stringify({ prompt: "Hello" }),\n})',
+      },
+      {
+        title: '.gitignore 確認 & 漏洩チェック',
+        description: '.env.local がGitにコミットされていないか必ず確認。過去のコミット履歴にも残っていないかチェック',
+        code: '# ════════════════════════════════════════\n# 確認コマンド\n# ════════════════════════════════════════\n\n# 1. .gitignore に .env.local が含まれているか確認\ncat .gitignore | grep env\n# → 「.env*.local」が含まれていればOK\n\n# 2. 過去にコミットしていないか確認\ngit log --all --full-history -- .env.local\n# → 何も出なければOK、出たら履歴から削除が必要\n\n# 3. コード内にハードコードがないか確認\ngit log --all -p | grep -i "sk-proj\\|service_role\\|apify_api"\n# → 何も出なければOK\n\n# ════════════════════════════════════════\n# もし漏洩してしまったら\n# ════════════════════════════════════════\n#\n# 1. 即座にキーをローテーション（再発行）\n#    → 各サービスのダッシュボードで新しいキーを発行\n#    → 古いキーを無効化\n#\n# 2. Git履歴からも削除\n#    → git filter-branch や BFG Repo-Cleaner を使う\n#    → force push が必要（チームに共有）\n#\n# 3. 不正利用の確認\n#    → 各サービスの使用量ダッシュボードを確認\n#    → 不審なアクセスがあれば報告',
       },
       {
         title: 'Vercelへの環境変数登録',
-        description: 'API Keyは必ずVercelの環境変数に登録（コードにハードコードNG）',
-        code: '# Vercelに環境変数登録\nvercel env add APIFY_TOKEN production <<< "apify_api_xxxxx"\nvercel env add RAPID_API_KEY production <<< "xxxxx"\n\n# 再デプロイ\nvercel --prod --yes',
+        description: '本番環境ではVercelの環境変数に登録する。.env.localはローカル開発用のみ',
+        code: '# Vercelに環境変数登録\nvercel env add OPENAI_API_KEY production <<< "sk-proj-xxxxx"\nvercel env add APIFY_TOKEN production <<< "apify_api_xxxxx"\nvercel env add RAPID_API_KEY production <<< "xxxxx"\nvercel env add SUPABASE_SERVICE_ROLE_KEY production <<< "eyJ..."\n\n# 一覧確認\nvercel env ls\n\n# 再デプロイ（環境変数反映）\nvercel --prod --yes',
       },
     ],
     tips: [
-      'API Keyは絶対にコードに直書きしない（環境変数で管理）',
-      'Apifyは無料枠あり（月$5相当）。RapidAPIも無料プランあり',
-      '.env.local は .gitignore に含まれているか必ず確認',
+      '🚨 NEXT_PUBLIC_ に秘密キーを絶対につけない（ブラウザに露出する）',
+      '🚨 API Keyをコードに直書きしない（.env.local + Vercel環境変数で管理）',
+      '🚨 .env.local は .gitignore に含まれているか必ず確認',
+      '秘密キーを使う処理は必ず API Routes（app/api/）経由にする',
+      '漏洩したら即座にキーをローテーション（再発行 → 古いキーを無効化）',
+      'Claude Codeに「.env.localのセキュリティチェックして」と依頼できる',
     ],
     links: [
+      { label: 'Next.js 環境変数ドキュメント', url: 'https://nextjs.org/docs/app/building-your-application/configuring/environment-variables' },
       { label: 'Apify 公式', url: 'https://apify.com' },
-      { label: 'Apify Store', url: 'https://apify.com/store' },
       { label: 'RapidAPI 公式', url: 'https://rapidapi.com' },
+      { label: 'Vercel 環境変数', url: 'https://vercel.com/docs/projects/environment-variables' },
     ],
   },
   {

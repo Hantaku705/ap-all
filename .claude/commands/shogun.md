@@ -1,153 +1,84 @@
 ---
-description: "/shogun - マルチエージェント並列実行（Claude Code内完結）"
+description: "/shogun - 戦国マルチエージェント（tmux版、Claude Code内完結）"
 ---
 
-# /shogun - 戦国マルチエージェントシステム（Task tool版）
+# /shogun - 戦国マルチエージェントシステム
 
-将軍/家老/足軽の階層構造で、Task toolを使ってタスクを並列実行する。
-tmux不要。Claude Code内で完結。
+将軍/家老/足軽×8のtmuxマルチエージェントをClaude Code内から起動・指示する。
+ユーザーはターミナルを一切触らない。
 
 ## 使用方法
 
-- `/shogun` のあとにユーザーの指示が ARGUMENTS に入る
-- 引数がない場合はユーザーに指示を聞く
+- `/shogun タスク内容` → tmux起動 + 将軍にタスク送信
+- `/shogun` → 引数なしの場合はユーザーに指示を聞く
 
 ## 実行手順
 
 ### STEP 1: 指示の受領
 
-ユーザーの指示（ARGUMENTS）を確認する。引数がなければ AskUserQuestion で聞く。
+ARGUMENTS を確認する。引数がなければ AskUserQuestion で聞く。
 
-### STEP 2: 家老を召喚（タスク分解）
+### STEP 2: tmuxセッション確認
 
-Task tool で **家老 subagent** を1体起動する。
+Bash ツールで以下を実行：
 
-```
-Task tool:
-  subagent_type: general-purpose
-  description: "家老: タスク分解"
-  prompt: |
-    あなたは家老（Karo）である。テックリード兼スクラムマスターとして、
-    将軍からの指示を分析し、独立した実行可能なサブタスクに分解せよ。
-
-    ## 将軍からの指示
-    {ユーザーの指示}
-
-    ## プロジェクトルート
-    /Users/hantaku/Downloads/AP
-
-    ## やること
-    1. 指示に関連するファイル・ディレクトリを探索せよ（Glob, Grep, Read を使え）
-    2. コンテキストを理解した上で、サブタスクに分解せよ
-    3. 各サブタスクには以下を含めよ：
-       - task_id: subtask_001, subtask_002, ...
-       - description: 具体的な作業内容
-       - target_path: 対象ファイル/ディレクトリ
-       - depends_on: 依存するtask_id（なければ null）
-       - persona: 最適なペルソナ（例: シニアエンジニア, テクニカルライター）
-
-    ## ルール
-    - 独立タスクは並列化できるよう depends_on: null にせよ
-    - 同一ファイルへの書き込みが競合しないよう分割せよ
-    - 最大8サブタスクまで
-
-    ## 出力フォーマット（厳守）
-    最後に以下のJSON形式でサブタスクリストを出力せよ：
-
-    ```json
-    {
-      "command_summary": "将軍の指示の要約",
-      "subtasks": [
-        {
-          "task_id": "subtask_001",
-          "description": "具体的な作業内容",
-          "target_path": "/path/to/file",
-          "depends_on": null,
-          "persona": "シニアエンジニア"
-        }
-      ]
-    }
-    ```
+```bash
+tmux list-sessions 2>/dev/null | grep -E "^(shogun|multiagent):"
 ```
 
-### STEP 3: 足軽を並列召喚（タスク実行）
+- **両方存在する** → STEP 4へスキップ
+- **存在しない or 片方だけ** → STEP 3へ
 
-家老の分解結果から、**依存関係のないタスクを並列で** Task tool で起動する。
+### STEP 3: tmuxセッション起動
 
-- depends_on: null のタスクは**同時に**起動（1メッセージに複数 Task tool 呼び出し）
-- depends_on がある場合は、先行タスク完了後に起動
+Bash ツールで起動スクリプトを実行（タイムアウト120秒）：
 
-各足軽の Task tool 呼び出し：
-
-```
-Task tool:
-  subagent_type: general-purpose
-  description: "足軽{N}: {task_id}"
-  prompt: |
-    あなたは足軽（Ashigaru）である。{persona}として最高品質の作業を行え。
-
-    ## 任務
-    {description}
-
-    ## 対象
-    {target_path}
-
-    ## プロジェクトルート
-    /Users/hantaku/Downloads/AP
-
-    ## ルール
-    - 指示された作業のみ実行せよ
-    - コードやドキュメントの品質はプロレベルを維持
-    - 完了後、以下を報告せよ：
-      1. 作業サマリー
-      2. 変更したファイル一覧
-      3. スキル化候補（汎用パターンを発見した場合）
-
-    ## 出力フォーマット
-    最後に以下の形式で報告せよ：
-
-    ```
-    【報告】
-    - サマリー: ...
-    - 変更ファイル: ...
-    - スキル化候補: あり/なし（ありの場合は名前と説明）
-    ```
+```bash
+cd /Users/hantaku/Downloads/AP/opperation/multi-agent && ./start_macos.sh
 ```
 
-### STEP 4: 結果集約・ダッシュボード更新
+起動完了後、各ペインのClaude Code起動を確認：
 
-全足軽の結果を集約し、`opperation/multi-agent/dashboard.md` を更新する。
-
-ダッシュボードのフォーマット：
-
-```markdown
-# 📊 戦況報告
-最終更新: {timestamp}
-
-## 🚨 要対応 - 殿のご判断をお待ちしております
-{要対応事項があれば記載}
-
-## 🔄 進行中 - 只今、戦闘中でござる
-なし
-
-## ✅ 本日の戦果
-| 時刻 | 戦場 | 任務 | 結果 |
-|------|------|------|------|
-| {time} | {target} | {task} | {result} |
-
-## 🎯 スキル化候補 - 承認待ち
-{足軽から報告があれば記載}
-
-## 🛠️ 生成されたスキル
-なし
+```bash
+tmux capture-pane -t shogun:0.0 -p 2>/dev/null | tail -3
 ```
+
+「殿、何なりと」や「❯」が表示されていれば成功。
+表示されていなければ30秒待って再確認。
+
+### STEP 4: 将軍にタスクを送信
+
+Bash ツールで send-keys を使用（**必ず2回に分けて送る**）：
+
+```bash
+tmux send-keys -t shogun "ここにタスク内容を入れる"
+tmux send-keys -t shogun Enter
+```
+
+**重要**: メッセージとEnterは必ず別のsend-keysで送る（1回だとEnterが効かない）。
 
 ### STEP 5: ユーザーに報告
 
-結果をユーザーに簡潔に報告する。
+以下を報告する：
+
+1. 「将軍にタスクを送信しました」
+2. 観察方法：
+   - `tmux attach-session -t shogun` で将軍の動きを見る
+   - `tmux attach-session -t multiagent` で家老・足軽の動きを見る
+3. `cat opperation/multi-agent/dashboard.md` でダッシュボード確認
+
+### STEP 6: ダッシュボード監視（オプション）
+
+ユーザーが「進捗は？」「状況は？」と聞いたら：
+
+```bash
+cat /Users/hantaku/Downloads/AP/opperation/multi-agent/dashboard.md
+```
 
 ## 注意事項
 
-- tmux不要（Claude Code の Task tool で完結）
-- API使用量はタスク数に比例（常時10インスタンスではない）
-- 依存タスクは順次実行、独立タスクは並列実行
+- tmuxはバックグラウンドで動作（ユーザーはターミナル不要）
+- 10 Claude Code インスタンスが起動する（将軍1 + 家老1 + 足軽8）
+- 初回起動は約40秒かかる（Claude Code起動 + セキュリティ承認 + 指示書読み込み）
+- 2回目以降はセッションが残っていればSTEP 4から即実行
+- 終了：`tmux kill-session -t shogun && tmux kill-session -t multiagent`

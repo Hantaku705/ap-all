@@ -1,8 +1,8 @@
 projects:
-  - id: sample_project
-    name: "Sample Project"
-    path: "/mnt/c/Projects/Sample"
+  - id: ap_project
+    name: "AP Project"
+    path: "/Users/hantaku/Downloads/AP"
     priority: high
     status: active
 
-current_project: sample_project
+current_project: ap_project

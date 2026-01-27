@@ -513,8 +513,11 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-27: **nanobanana MCP設定**（Gemini 2.5 Flash画像生成、`claude mcp add nanobanana-mcp`）
+- 2026-01-27: **tmux版multi-agent-shogunフル起動成功**（パス修正4ファイル、10インスタンス起動、`./start_macos.sh`）
 - 2026-01-27: **/shogun Task tool化**（tmuxベース→Claude Code Task toolベースに移行、ターミナル操作不要、`/shogun タスク内容` で完結）
 - 2026-01-27: **Multi-Agent System実装**（`opperation/multi-agent/`、Orchestrator/Coordinator/SubAgent×8、YAML拡張、Skills自動生成、Web UIダッシュボード、28ファイル）
+- 2026-01-27: CLAUDECODE Webapp Progate風ミッション形式化（Step-by-Step展開、全10ミッション、ミッションタブ化、Buildタブ追加、Skills中級者移動、参考サイトリンク追加）
 - 2026-01-27: CLAUDECODE Webapp Compareタブ3項目比較化（Agent SDK vs Everything Claude Code vs Starter Kit）
 - 2026-01-27: **Claude Code Starter Kit GitHub作成**（https://github.com/Hantaku705/claude-code-starter、12コマンド+8エージェント+6ルール、1コマンドでプロ環境構築）
 - 2026-01-27: CLAUDECODE Webapp Starter Kit タブ追加（8タブ構成、GitHubリポジトリ連携）
