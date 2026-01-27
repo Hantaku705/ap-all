@@ -15,16 +15,71 @@
 | Refa | 73-74回目 | プロモーション変遷分析Webapp（イノベーター理論曲線、4ページ構成、ReFa GINZA・再ブランディング追加、Vercelデプロイ） | 2件 |
 | workflow | 76回目 | プロジェクトワークフローガイド作成（5段階フロー、7プロジェクト分析、/project-workflow スキル） | 1件 |
 | フォルダ整理 | 78, 81回目 | projects/ フォルダ構造整理（5プロジェクト→7プロジェクト、workflow.md準拠→4カテゴリ拡張） | 2件 |
-| CLAUDECODE | 86-98回目 | Claude Code オンボーディングWebapp Skills/Starter Kit タブ追加、**Claude Code Starter Kit GitHub作成**、Compareタブ3項目比較化、**Architectureタブ追加**、**Multi-Agent System実装**、**Getting Started ステップ7修正**、**Starter Kit SDK Docs追加**、**レベルベース設計**、**Multi-Agent Shogunオリジナル版再現**、**/shogunスキル作成**、**用語説明＆ペルソナ＆ゴール追加**、**Progate風ミッション形式化**、**ミッションタブ化** | 12件 |
+| CLAUDECODE | 86-104回目 | Claude Code オンボーディングWebapp Skills/Starter Kit タブ追加、**Claude Code Starter Kit GitHub作成**、Compareタブ3項目比較化、**Architectureタブ追加**、**Multi-Agent System実装**、**Getting Started ステップ7修正**、**Starter Kit SDK Docs追加**、**レベルベース設計**、**Multi-Agent Shogunオリジナル版再現**、**/shogunスキル作成**、**用語説明＆ペルソナ＆ゴール追加**、**Progate風ミッション形式化**、**ミッションタブ化**、**Google ログイン機能実装** | 13件 |
 | 将軍Claude Code化 | 97回目 | /shogunスキルをTask toolベースに書き換え（tmux不要化）、動作テスト成功 | 1件 |
 | nanobanana + tmux版復活 | 99回目 | nanobanana MCP設定、tmux版multi-agent-shogunパス修正・フル起動成功（10インスタンス） | 2件 |
 | フォルダ移行 | 100回目 | DynamicBranding → opperation/ 移行（.git削除、CLAUDE.md更新） | 1件 |
 | CLAUDECODE修正 | 101回目 | Getting Started/Starter KitをLv.1専用に修正、multi-agent移動 | 1件 |
-| 将軍ダッシュボード | 102回目 | ゲーム性UI改善（プログレスバー、足軽陣形、リアルタイムログ）、skills-map Webapp構築 | 2件 |
+| 将軍ダッシュボード | 102-103回目 | ゲーム性UI改善、skills-map構築、**v3.1スキルパネル（巻物庫）**、**v3.2陣形/統計/アチーブメントUI**、**セルフブラッシュアップ方針策定** | 4件 |
+| シャンプータグライン | 105-114回目 | タグライン収集（35→86ブランド）、ポジショニングマップWebapp作成・デプロイ、PR TIMESデータ追加、workflow整備、URL追加・テーブルリンク化、ファクトチェック、キャッチコピー追加、catchcopyスキル作成、4象限表示、Meltwater CSV分析→17ブランド追加 | 9件 |
 
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 直近の完了タスク
+- [x] **シャンプータグライン Meltwater CSV分析→17ブランド追加（セッション114）**
+  - Meltwater CSV（10,000件SNS投稿）を分析、Webapp未登録ブランドを特定
+  - 17ブランド追加（69→86ブランド）: プチプラ6、ドラコス6、美容専売品5
+  - 各ブランドのタグラインをWeb検索で取得、ポジショニング座標を設定
+  - ビルド成功
+- [x] **シャンプータグライン 4象限分類表示（セッション113）**
+  - TaglineTableに「象限」列追加（機能×特別/感性×特別/機能×日常/感性×日常）
+  - x,y座標から自動算出、ビルド成功
+- [x] **キャッチコピー Skills作成（セッション112）**
+  - `_claude-code/skills/catchcopy.md` 新規作成
+  - 5つの型分類（疑問提起/課題共感/否定逆説/宣言/シーン提示）
+  - 評価チェックリスト5項目、タグライン接続チェック
+  - `_claude-code/skills/CLAUDE.md` 更新
+- [x] **シャンプータグライン キャッチコピー追加（セッション111）**
+  - `catchcopy` フィールド追加、約25ブランドに値設定
+  - TaglineTableにキャッチコピー列追加
+  - PositioningMapのTooltipにキャッチコピー表示
+  - Vercelデプロイ完了
+- [x] **シャンプータグライン ファクトチェックマーク追加（セッション110）**
+  - TaglineTableに「FC」列追加（✓/- 表示）
+  - `factChecked: boolean` フィールド活用
+- [x] **シャンプータグライン テーブルURL追加・リンク化（セッション109）**
+  - 全62ブランドに`url`フィールド追加（既存ブランド=公式サイト、PR TIMES由来=記事URL）
+  - TaglineTable.tsxのブランド名をクリック可能リンクに変更（新タブで開く）
+  - `catchcopy`フィールドをoptionalに修正（ビルドエラー対応）
+  - Vercelデプロイ完了: https://webapp-five-bay.vercel.app
+- [x] **シャンプータグライン PR TIMESデータ追加（セッション107）**
+  - PR TIMESから約30記事を取得、27ブランドを追加（35→62ブランド）
+  - 追加カテゴリ: プチプラ+1、ドラコス+10、美容専売品+16
+  - Vercelデプロイ完了: https://webapp-five-bay.vercel.app
+- [x] **シャンプータグライン workflow・フォルダ構造整備（セッション107）**
+  - CLAUDE.md、docs/brief.md新規作成
+  - AP/CLAUDE.mdにプロジェクト追記
+- [x] **シャンプータグライン ポジショニングマップWebapp作成（セッション105）**
+  - 35ブランドのタグライン収集（プチプラ12/ドラコス10/美容専売品13）
+  - ScatterChart + テーブルの1ページWebapp
+  - 本番URL: https://webapp-five-bay.vercel.app
+- [x] **CLAUDECODE Webapp Google ログイン機能実装（セッション104）**
+  - Supabase Auth + ハイブリッド進捗管理（未ログイン: localStorage / ログイン: クラウド同期）
+  - 新規8ファイル: client.ts, server.ts, AuthContext.tsx, useProgress.ts, LoginButton.tsx, API routes×3
+  - 修正4ファイル: package.json, layout.tsx, page.tsx, Header.tsx
+  - ビルド成功、Supabase設定後に本番稼働
+- [x] **将軍ダッシュボード v3.1 スキルパネル（巻物庫）実装（セッション103）**
+  - 秘伝書（スキル化候補）と奥義（生成されたスキル）をゲーム的に可視化
+  - 奥義習得時に味方軍バフ表示（攻撃力/防御力/機動力）
+  - 味方カードにオーラエフェクト（スキル数に応じて強度変化）
+- [x] **将軍ダッシュボード v3.2 UI構造追加（セッション103）**
+  - 陣形パネル（均衡/攻撃/守備/機動の4陣形選択）
+  - 統計パネル（総撃破数、作戦完了、最高コンボ、連勝記録）
+  - アチーブメントパネル（解除状態の可視化）
+  - 戦場背景装飾（旗アニメーション）
+- [x] **セルフブラッシュアップ方針策定（セッション103）**
+  - 敵 = localhost(dashboard.html)のブラッシュアップ項目として再定義
+  - /shogunでダッシュボード自体を改善する「メタ」体験の計画
 - [x] **将軍ダッシュボードUI大幅改善 + skills-map Webapp構築（セッション102）**
   - ダッシュボード: プログレスバー、足軽陣形（8人カード）、リアルタイムログ、召喚アニメーション
   - skills-map: 型定義、UIコンポーネント、データ41件、検索フック、タブ、メインページ統合
@@ -116,17 +171,26 @@
   - Vercelデプロイ完了: https://claude-code-onboarding-ten.vercel.app
 
 ### 作業中のタスク
+- [ ] **Google Docs MCP 再認証 → スプレッドシート読み取り**
+  - `token.json` 削除済み、Claude Code再起動で自分のGoogleアカウントで再認証
+  - 対象: `1eZ8F3FjQXz0dnpfkTJZ0utKB3YU4BA24fKEFfnZ4YYk`（会社のスプレッドシート）
+  - `@anymindgroup.com` で認証すればアクセス制限突破可能
+- [ ] **将軍ダッシュボード v3.2 JavaScript実装**
+  - setFormation()関数、統計パネル永続化、アチーブメントシステム、足軽アバター/タイプ表示
+  - セルフブラッシュアップ方式で実行予定（敵 = 改善項目）
+- [ ] **CLAUDECODE Webapp ログイン機能 - Supabase設定待ち**
+  - コード実装完了（8ファイル新規、4ファイル修正、ビルド成功）
+  - 残り: Supabaseプロジェクト作成、Google OAuth設定、DBテーブル作成、環境変数設定、Vercelデプロイ
 - [ ] **skills-map Webapp CLAUDE.md作成**（残り1タスク、次セッションで完了予定）
 - [ ] **Clawdbot リアクション機能設定**（`reactions:write` をBot Token Scopesに追加）
 - [ ] **The Room FX 提案書 Google Docs書き込み**（5〜11章 + Appendix 残り）
-- [ ] **MASCODEアイライナー コンセプト作成**（検討中）
-- [ ] **「なまえデザイン」書籍まとめ Phase 3**（各章詳細追加予定）
 
 ## 次のアクション
-1. **skills-map CLAUDE.md作成＆Vercelデプロイ**（残り1タスク→本番公開）
-2. **/shogun で並列タスク実行テスト**（http://localhost:3333 でリアルタイム監視）
-3. **Clawdbot Gmail/Calendar連携**（Google Cloud ConsoleでOAuth設定 → `gog auth` 実行）
-4. **NADESHIKOアルゴリズム実践**（ksf.md、algorithm.md参照）
+1. **CLAUDECODE ログイン機能 - Supabase設定**
+   - Supabaseプロジェクト作成 → Google OAuth設定 → DBテーブル作成 → 環境変数設定 → Vercelデプロイ
+2. **/shogun セルフブラッシュアップ実行**（dashboard.htmlの改善項目を敵として表示→実行）
+3. **skills-map CLAUDE.md作成＆Vercelデプロイ**（残り1タスク→本番公開）
+4. **Clawdbot Gmail/Calendar連携**（Google Cloud ConsoleでOAuth設定 → `gog auth` 実行）
 5. **The Room FX 提案書レビュー＆プレゼン資料化**（2月1週目締切）
 
 ## 未解決の問題
@@ -134,22 +198,184 @@
 
 ## 未コミット変更
 ```
-M .claude/commands/shogun.md
-M CLAUDE.md
-M _claude-code/commands/shogun.md
-M _claude-code/multi-agent/dashboard.html (ゲーム性UI改善)
-M _claude-code/multi-agent/dashboard.md
-M opperation/CLAUDE.md
-M opperation/CLAUDECODE/webapp/app/components/tabs/*.tsx
-?? opperation/skills-map/ (新規Webapp、7/8タスク完了)
+ M CLAUDE.md
+ M HANDOFF.md
+ m _claude-code/multi-agent
+ M _claude-code/skills/CLAUDE.md
+ M opperation/CLAUDECODE/CLAUDE.md
+ M opperation/CLAUDECODE/webapp/app/components/layout/Header.tsx
+ M opperation/CLAUDECODE/webapp/app/layout.tsx
+ M opperation/CLAUDECODE/webapp/app/page.tsx
+ M opperation/CLAUDECODE/webapp/package-lock.json
+ M opperation/CLAUDECODE/webapp/package.json
+ M projects/シャンプータグライン/webapp/src/data/tagline-data.ts
+ D phonefarm/3c.md
+?? _claude-code/commands/should-skill.md
+?? _claude-code/skills/catchcopy.md
+?? opperation/CLAUDECODE/webapp/app/api/
+?? opperation/CLAUDECODE/webapp/app/auth/
+?? opperation/CLAUDECODE/webapp/app/components/ui/LoginButton.tsx
+?? opperation/CLAUDECODE/webapp/app/contexts/
+?? opperation/CLAUDECODE/webapp/app/hooks/useProgress.ts
+?? opperation/CLAUDECODE/webapp/app/lib/supabase/
+?? opperation/CLAUDECODE/webapp/supabase/
+?? opperation/phonefarm/
+?? projects/シャンプータグライン/
+?? read-sheet.js
 ```
 
 ## 最新コミット
 ```
-2f25020 feat: migrate DynamicBranding to opperation/ folder
+bc3b802 feat: add skills-map webapp and enhance shogun dashboard UI
 ```
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-28 (114)
+- **シャンプータグライン Meltwater CSV分析→17ブランド追加**
+  - ユーザー依頼: CSVにあってWebappにないブランドを追加
+  - **CSV分析**: Meltwater 10,000件SNS投稿を解析、ペット関連ノイズ除外、ブランド言及数を集計
+  - **17ブランド特定・追加**（69→86ブランド）:
+    - プチプラ6: SALA(481言及), シャボン玉石けん, カウブランド無添加, ルシードエル, マシェリ, fino
+    - ドラコス6: CLAYGE(97), KUNDAL(79), haru(32), cocone(26), ululis(11), キュレル
+    - 美容専売品5: ミルボン(52), ReFa(35), アリミノ(33), デミ(16), アジュバン
+  - **タグライン調査**: Web検索で各ブランド公式タグラインを取得
+  - **変更ファイル**: `tagline-data.ts`（17エントリ追加）
+  - ビルド成功
+
+### 2026-01-28 (113)
+- **シャンプータグライン ファクトチェック→キャッチコピー→スキル→4象限**
+  - セッション110: ファクトチェックマーク（FC列）追加
+  - セッション111: キャッチコピー＝課題の提示、タグライン＝便益性の定義確立。~25ブランドにcatchcopy追加、テーブル列追加、マップTooltip追加
+  - セッション112: `_claude-code/skills/catchcopy.md` 新規作成（5つの型分類、評価チェックリスト）
+  - セッション113: TaglineTableに「象限」列追加（x,y座標から4象限を自動算出）
+  - **変更ファイル**:
+    - `projects/シャンプータグライン/webapp/src/data/tagline-data.ts` - catchcopy追加
+    - `projects/シャンプータグライン/webapp/src/components/TaglineTable.tsx` - FC列、キャッチコピー列、象限列追加
+    - `projects/シャンプータグライン/webapp/src/components/PositioningMap.tsx` - Tooltipにcatchcopy表示
+    - `_claude-code/skills/catchcopy.md` - 新規作成
+    - `_claude-code/skills/CLAUDE.md` - catchcopy追加
+
+### 2026-01-28 (109)
+- **シャンプータグライン テーブルURL追加・リンク化**
+  - ユーザー依頼: テーブルのブランド名にURLリンクを追加し、タグライン出典ページに飛ばしたい
+  - **データ更新**: 全62ブランドに`url`フィールド追加
+    - 既存12ブランド（プチプラ）: 公式サイトURL
+    - 既存10ブランド（ドラコス）: 公式サイトURL
+    - 既存12ブランド（美容専売品）: 公式サイト/ブランドページURL
+    - PR TIMES由来27ブランド: PR TIMES記事URL
+  - **コンポーネント更新**: `TaglineTable.tsx`のブランド名セルを`<a>`リンクに変更（`target="_blank"`）
+  - **ビルドエラー修正**: `catchcopy`フィールドが`required`だったが既存データに存在しなかったため`optional`に変更
+  - **Vercelデプロイ完了**: https://webapp-five-bay.vercel.app
+  - **Key Files変更**:
+    - `projects/シャンプータグライン/webapp/src/data/tagline-data.ts` - url追加
+    - `projects/シャンプータグライン/webapp/src/components/TaglineTable.tsx` - リンク化
+
+### 2026-01-28 (108)
+- **Google Docs MCP認証フロー試行（未完了）**
+  - ユーザー依頼: 会社のスプレッドシート（`1eZ8F3FjQXz0dnpfkTJZ0utKB3YU4BA24fKEFfnZ4YYk`）をClaude Codeで読み取りたい
+  - `google-docs-mcp` は登録済みだが接続失敗（`token.json` 未生成）
+  - GCPプロジェクト `anymind-jp-ai-boost` のOAuthクライアントで `credentials.json` 差し替え済み
+  - Google Sheets API有効化済み、テストユーザー `takumi@anymindgroup.com` 追加済み
+  - **問題**: OAuth認証フローがインタラクティブ入力を要求するため、Claude Code Bashツールでは完了不可
+  - **次ステップ**: 別ターミナルで `cd /Users/hantaku/mcp-googledocs-server && node dist/server.js` → ブラウザ認証 → Claude Code再起動。または CSVエクスポートで対応
+
+### 2026-01-28 (107)
+- **シャンプータグライン PR TIMESデータ追加 + workflow整備**
+  - ユーザー依頼: PR TIMESのシャンプー記事を大量収集してWebappを更新
+  - **PR TIMESスクレイピング**: 検索結果ページ + 個別記事約30件をWebFetchで取得
+  - **タグライン抽出**: 各記事からブランド名・メーカー・タグライン・価格帯を抽出
+  - **データ追加**: 27ブランド追加（35→62ブランド）
+    - プチプラ+1: エッセンシャルプレミアム
+    - ドラコス+10: anummy, ジュレーム, YUCHAG, コラージュフルフル, ARGELAN, Care me, LUFT, &honey Professional, ラサーナ for Style, LUX Crystal
+    - 美容専売品+16: melt, MEMEME, KIWABI, N/AI pro, AROMATICA, ラ・カスタ, SYSTEM PROFESSIONAL, エシオン, スカルプD NEXT+, ケラリス ノワール, OLES, VALX, te.on, THE ANSWER, allume, COKON LAB, Promille, HairRepro, Organic Josephine, VITALISM, ennic, ヒロシ君シャンプー, REVIAS, マナラ
+  - **workflow整備**: CLAUDE.md, docs/brief.md新規作成、AP/CLAUDE.md追記
+  - **Vercelデプロイ完了**: https://webapp-five-bay.vercel.app
+  - **Key Files**:
+    - `projects/シャンプータグライン/webapp/src/data/tagline-data.ts` - 62ブランドデータ
+    - `projects/シャンプータグライン/CLAUDE.md` - プロジェクト概要
+    - `projects/シャンプータグライン/docs/brief.md` - データブリーフ
+
+### 2026-01-28 (106)
+- **Google Docs MCP 再認証準備**
+  - ユーザー依頼: 会社のスプレッドシートをClaude Codeから読み取りたい（`@anymindgroup.com` 外アクセス不可）
+  - MCPが知人のGoogleアカウント（`shigeyuki0524`）で認証されていたことが判明
+  - `token.json` 削除済み（`/Users/hantaku/mcp-googledocs-server/token.json`）
+  - **次ステップ**: Claude Code再起動 → 自分のアカウントで再認証 → スプレッドシート読み取り
+
+### 2026-01-28 (105)
+- **シャンプータグライン ポジショニングマップWebapp作成**
+  - ユーザー依頼: シャンプーのタグラインを集めてポジショニングマップを作りたい（プチプラ/ドラコス/美容専売品）
+  - **Plan Mode使用**: 計画ファイル作成→軸確認（機能×感性 / 日常×特別）→ユーザー承認後に実装
+  - **データ収集**: Web検索で35ブランドのタグラインを収集
+    - プチプラ(12): メリット、いち髪、LUX、パンテーン、エッセンシャル、TSUBAKI、ダヴ、h&s、CLEAR、ひまわり、セグレタ、ヘアレシピ
+    - ドラコス(10): BOTANIST、YOLU、&honey、ダイアン、8 THE THALASSO、mixim POTION、DROAS、Amino Mason、LUX Luminique、Je l'aime
+    - 美容専売品(13): オージュア、ケラスターゼ、TOKIO IE、コタ、N.、OLAPLEX、モロッカンオイル、ルベル、ハホニコ、ジョンマスター、エルジューダ、シュワルツコフ
+  - **Webapp**: Next.js 16 + Recharts ScatterChart + テーブル（価格帯フィルター付き）
+  - **本番URL**: https://webapp-five-bay.vercel.app
+  - **Key Files**:
+    - `projects/シャンプータグライン/webapp/src/data/tagline-data.ts` - 全35ブランドデータ
+    - `projects/シャンプータグライン/webapp/src/components/PositioningMap.tsx` - ScatterChart
+    - `projects/シャンプータグライン/webapp/src/components/TaglineTable.tsx` - 一覧テーブル
+
+### 2026-01-27 (104)
+- **CLAUDECODE Webapp Google ログイン機能実装**
+  - ユーザー依頼: Webappにログイン機能を追加、ログインした人はミッション進捗を保存できるようにしたい
+  - **Plan Mode使用**: 計画ファイル作成→ユーザー承認後に実装
+  - **技術選定**: Supabase Auth（軽量SDK、他APプロジェクトで実績あり）
+  - **実装内容**:
+    - 新規8ファイル:
+      - `app/lib/supabase/client.ts` - ブラウザ用Supabaseクライアント
+      - `app/lib/supabase/server.ts` - サーバー用Supabaseクライアント
+      - `app/contexts/AuthContext.tsx` - 認証状態管理（useAuth）
+      - `app/hooks/useProgress.ts` - ハイブリッド進捗管理Hook
+      - `app/components/ui/LoginButton.tsx` - Google ログインボタン
+      - `app/auth/callback/route.ts` - OAuth コールバック
+      - `app/api/progress/route.ts` - 進捗取得・更新API
+      - `app/api/progress/migrate/route.ts` - localStorage→クラウド移行API
+    - 修正4ファイル:
+      - `package.json` - Supabase依存パッケージ追加（@supabase/supabase-js, @supabase/ssr）
+      - `app/layout.tsx` - AuthProvider追加
+      - `app/page.tsx` - useLocalStorage → useProgress に置換
+      - `app/components/layout/Header.tsx` - LoginButton追加
+    - ドキュメント:
+      - `supabase/migrations/001_user_progress.sql` - DBマイグレーション
+      - `.env.example` - 環境変数テンプレート
+      - `CLAUDE.md` - 認証機能セクション追加
+  - **ハイブリッド進捗管理**:
+    - 未ログイン: localStorage（現状維持）
+    - ログイン: Supabase + localStorage（クラウド優先、ローカルキャッシュ）
+    - 初回ログイン: localStorageの既存進捗を自動移行
+  - **ビルド成功**: Supabase未設定時もエラーなく動作（LoginButton非表示）
+  - **残りタスク**: Supabaseプロジェクト作成、Google OAuth設定、DBテーブル作成、環境変数設定、Vercelデプロイ
+  - **計画ファイル**: `/Users/hantaku/.claude/plans/buzzing-discovering-ritchie.md`
+
+### 2026-01-27 (103)
+- **将軍ダッシュボード v3.1 スキルパネル（巻物庫）実装**
+  - ユーザー依頼: スキル化候補・生成されたスキルを「味方軍が強化される感じ」で表示したい
+  - **v3.1 実装内容**:
+    - 巻物庫セクション追加（秘伝書 + 奥義）
+    - 秘伝書カード: スキル化候補を黄金の光るカードで表示、「殿の承認待ち」ステータス
+    - 奥義バッジ: 生成されたスキルをバフアイコン付きバッジで表示
+    - バフサマリー: 攻撃力/防御力/機動力の合計値表示
+    - 味方カードオーラ: スキル数に応じて青→金のオーラエフェクト
+    - 奥義習得演出: 新スキル追加時に「📜 奥義習得！」アニメーション
+  - **v3.2 UI構造追加**（JavaScript未実装）:
+    - 陣形パネル: 均衡/攻撃/守備/機動の4陣形選択ボタン
+    - 統計パネル: 総撃破数、作戦完了、最高コンボ、連勝記録
+    - アチーブメントパネル: 解除状態の可視化グリッド
+    - 戦場背景: 旗アニメーション、背景グラデーション
+  - **変更ファイル**: `_claude-code/multi-agent/dashboard.html`（約800行→1800行に拡張）
+- **セルフブラッシュアップ方針策定**
+  - ユーザー依頼: /shogun上でlocalhostのビジュアルがupdateされてる様子を出したい
+  - **方針決定**:
+    - 敵 = localhost(dashboard.html)のブラッシュアップ項目
+    - dashboard.mdの「進行中」に改善タスクを記載
+    - /shogunで実行すると「自分自身を改善している」メタ体験
+  - **計画ファイル**: `/Users/hantaku/.claude/plans/happy-roaming-grove.md`
+- **CLAUDECODE Webapp ログイン機能開始（未完了）**
+  - Supabase認証設定ファイル追加（api/, auth/, contexts/, hooks/, lib/supabase/）
+  - セッション中断のため未完了
 
 ### 2026-01-27 (102)
 - **将軍ダッシュボードUI大幅改善**
@@ -360,91 +586,6 @@ M opperation/CLAUDECODE/webapp/app/components/tabs/*.tsx
   - **GitHub**: https://github.com/Hantaku705/claude-code-starter (af203d8)
   - **Vercelデプロイ完了**: https://claude-code-onboarding-ten.vercel.app
 
-### 2026-01-27 (91)
-- **Getting Started ステップ7修正**
-  - ユーザー依頼: メンバーに見せるのはGetting Startedのみ。⑦便利機能を削除してStarter Kitに置き換え
-  - **変更内容**:
-    - ステップ7: 「便利機能」（5分） → 「Starter Kit」（3分）
-    - 合計時間: 約29分 → 約27分
-    - コード例: gh auth login → claude /install-github-plugin → 使えるコマンド例
-  - **修正ファイル**: `onboarding-data.ts:150-168`, `page.tsx:209`
-  - **Vercelデプロイ完了**: https://claude-code-onboarding-ten.vercel.app
-
-### 2026-01-27 (90)
-- **Multi-Agent System 実装**
-  - ユーザー依頼: https://zenn.dev/shio_shoppaize/articles/5fee11d03a11a1 と https://github.com/yohey-w/multi-agent-shogun を参考に、Enterprise版マルチエージェントシステムを実装
-  - **要件**:
-    - 命名変更: 将軍/家老/足軽 → Orchestrator/Coordinator/SubAgent（ビジネス向け）
-    - Skills自動生成機能
-    - YAML拡張性
-    - リアルタイムダッシュボード（Markdown + Web UI）
-    - 8 SubAgents
-    - macOS環境
-  - **実装ステップ（6段階）**:
-    1. フォルダ構成作成
-    2. YAML設定ファイル作成（agents.yaml, skills.yaml, workflows.yaml, settings.yaml）
-    3. エージェント指示書作成（orchestrator.md, coordinator.md, subagent.md）
-    4. スクリプト作成（setup.sh, start.sh, stop.sh）
-    5. ダッシュボード作成（Next.js Web UI + Markdown）
-    6. CLAUDE.md・README.md作成
-  - **作成ファイル（28件）**: `opperation/multi-agent/` に配置
-  - **使用方法**:
-    ```bash
-    cd opperation/multi-agent
-    ./scripts/setup.sh
-    cd dashboard && npm install && cd ..
-    ./scripts/start.sh
-    ```
-
-### 2026-01-27 (89)
-- **Compareタブ3項目比較化**
-  - ユーザー依頼: CompareタブをClaude Agent SDK vs Everything Claude Code vs Claude Code Starter Kitの3項目比較に変更
-  - **Plan Mode使用**: 計画ファイル作成→ユーザー承認後に実装
-  - **変更内容**:
-    - 概要比較: 2列 → 3列グリッド（Agent SDK: 青、ECC: 紫、Starter Kit: 緑）
-    - 詳細テーブル: 3列 → 4列（Starter Kit列追加）
-    - 何が導入されるか: 2列 → 3列、Starter Kitカード追加
-    - おすすめの使い分け: 初心者→Starter Kit、中級者→ECC、本番→SDK
-  - **Vercelデプロイ完了**: https://claude-code-onboarding-ten.vercel.app
-
-### 2026-01-27 (88)
-- **Starter Kit 情報源確認**
-  - ユーザー質問: Starter Kitはどのような情報をもとに作られているか？
-  - **結論**: Starter Kitは `~/.claude/`（31 commands, 18 agents, 8 rules）から厳選した12 commands + 8 agents + 6 rules
-
-### 2026-01-27 (87)
-- **Claude Code Starter Kit GitHub作成 + Webapp Starter Kitタブ追加**
-  - **GitHub作成**: https://github.com/Hantaku705/claude-code-starter
-    - インストール: `claude /install-github-plugin Hantaku705/claude-code-starter`
-    - 12 Commands + 8 Agents + 6 Rules + Templates
-  - **Webapp追加**: 「Starter Kit」タブ追加（8タブ構成）
-  - **Vercelデプロイ完了**: https://claude-code-onboarding-ten.vercel.app
-
-### 2026-01-27 (86)
-- **Claude Code オンボーディングWebapp Skills タブ追加**
-  - 8個のおすすめカスタムスキル追加（handoff, resume, memory, quick-commit, code-review, tdd, build-fix, plan）
-  - 6タブ構成: Getting Started / Features / Examples / Compare / Skills / Tips
-  - **Vercelデプロイ完了**: https://claude-code-onboarding-ten.vercel.app
-
-### 2026-01-26 (84)
-- **NADESHIKO MAトレンド一覧改善 + PR/通常フィルター**
-  - 全16アカウント表示（スクロール削除）
-  - 「全員」行追加
-  - PR/通常フィルター追加（デフォルト: 通常）
-
-### 2026-01-26 (83)
-- **NADESHIKO webapp フィルターヘッダー固定**
-  - Dashboard/Deals/Viewsのフィルターをstickyに
-  - **Vercelデプロイ完了**: https://nadeshiko-sales.vercel.app
-
-### 2026-01-26 (82)
-- **NADESHIKO code.js Instagram レート制限対策強化**
-  - 待機時間10秒、リトライ間隔15s/30s/45s、SNS優先度変更
-
-### 2026-01-26 (81)
-- **projects/ フォルダ構造4カテゴリ拡張**
-  - 新標準構造: docs/{brief,proposal,analysis}/, source/{source-docs,data}/, webapp/
-  - 7プロジェクト更新
 
 ---
 過去のセッション履歴: [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md)
