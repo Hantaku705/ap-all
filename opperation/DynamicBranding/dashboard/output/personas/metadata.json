@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-01-21T03:59:44.387Z",
+  "totalBrands": 8,
+  "totalPersonas": 51,
+  "brands": [
+    {
+      "name": "ほんだし",
+      "personaCount": 8,
+      "postCount": 2429,
+      "quality": 57
+    },
+    {
+      "name": "クックドゥ",
+      "personaCount": 8,
+      "postCount": 2502,
+      "quality": 47
+    },
+    {
+      "name": "味の素",
+      "personaCount": 8,
+      "postCount": 24235,
+      "quality": 48
+    },
+    {
+      "name": "丸鶏がらスープ",
+      "personaCount": 7,
+      "postCount": 1539,
+      "quality": 57
+    },
+    {
+      "name": "香味ペースト",
+      "personaCount": 5,
+      "postCount": 559,
+      "quality": 50
+    },
+    {
+      "name": "コンソメ",
+      "personaCount": 5,
+      "postCount": 1543,
+      "quality": 48
+    },
+    {
+      "name": "ピュアセレクト",
+      "personaCount": 5,
+      "postCount": 241,
+      "quality": 40
+    },
+    {
+      "name": "アジシオ",
+      "personaCount": 5,
+      "postCount": 1427,
+      "quality": 54
+    }
+  ],
+  "clusterConfig": {
+    "x_axis": {
+      "label": "時間・労力投資",
+      "min": -2,
+      "max": 2,
+      "labels": {
+        "min": "手軽・効率重視",
+        "max": "丁寧・時間投資"
+      }
+    },
+    "y_axis": {
+      "label": "心理的関与度",
+      "min": -2,
+      "max": 2,
+      "labels": {
+        "min": "ルーティン",
+        "max": "こだわり・喜ばせたい"
+      }
+    }
+  }
+}

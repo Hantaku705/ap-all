@@ -1,0 +1,48 @@
+{
+  "brand": "味の素",
+  "cooccurrences": [
+    {
+      "brand": "クックドゥ",
+      "count": 40
+    },
+    {
+      "brand": "ほんだし",
+      "count": 36
+    },
+    {
+      "brand": "コンソメ",
+      "count": 28
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "count": 12
+    },
+    {
+      "brand": "アジシオ",
+      "count": 10
+    }
+  ],
+  "correlations": [
+    {
+      "brand": "アジシオ",
+      "coefficient": 0.35
+    },
+    {
+      "brand": "アジシオ",
+      "coefficient": 0.35
+    },
+    {
+      "brand": "クックドゥ",
+      "coefficient": 0.26
+    },
+    {
+      "brand": "クックドゥ",
+      "coefficient": 0.26
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "coefficient": 0.2
+    }
+  ],
+  "keywords": []
+}

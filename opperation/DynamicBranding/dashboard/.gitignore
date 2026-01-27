@@ -1,0 +1,7 @@
+.vercel
+
+# Data files (loaded from Supabase in production)
+data/sns/
+data/trends/
+
+.env*.local

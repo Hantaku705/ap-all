@@ -1,0 +1,40 @@
+{
+  "brand": "クックドゥ",
+  "cooccurrences": [
+    {
+      "brand": "味の素",
+      "count": 40
+    },
+    {
+      "brand": "香味ペースト",
+      "count": 4
+    },
+    {
+      "brand": "ほんだし",
+      "count": 3
+    }
+  ],
+  "correlations": [
+    {
+      "brand": "味の素",
+      "coefficient": 0.26
+    },
+    {
+      "brand": "味の素",
+      "coefficient": 0.26
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "coefficient": 0.11
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "coefficient": 0.11
+    },
+    {
+      "brand": "ほんだし",
+      "coefficient": -0.11
+    }
+  ],
+  "keywords": []
+}

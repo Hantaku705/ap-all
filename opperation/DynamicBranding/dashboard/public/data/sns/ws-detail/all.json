@@ -1,0 +1,1329 @@
+{
+  "dish_category": [
+    {
+      "category": "その他",
+      "count": 4206,
+      "percentage": 22.8
+    },
+    {
+      "category": "ご飯もの",
+      "count": 2575,
+      "percentage": 13.9
+    },
+    {
+      "category": "下味・調味",
+      "count": 2437,
+      "percentage": 13.2
+    },
+    {
+      "category": "汁物",
+      "count": 2305,
+      "percentage": 12.5
+    },
+    {
+      "category": "中華",
+      "count": 1944,
+      "percentage": 10.5
+    },
+    {
+      "category": "麺類",
+      "count": 1584,
+      "percentage": 8.6
+    },
+    {
+      "category": "煮込み",
+      "count": 1224,
+      "percentage": 6.6
+    },
+    {
+      "category": "揚げ物",
+      "count": 1002,
+      "percentage": 5.4
+    },
+    {
+      "category": "炒め物",
+      "count": 533,
+      "percentage": 2.9
+    },
+    {
+      "category": "サラダ",
+      "count": 449,
+      "percentage": 2.4
+    },
+    {
+      "category": "焼き物",
+      "count": 203,
+      "percentage": 1.1
+    }
+  ],
+  "dish_name": [
+    {
+      "name": "餃子",
+      "count": 999,
+      "brand": "味の素・クックドゥ"
+    },
+    {
+      "name": "麻婆豆腐",
+      "count": 597,
+      "brand": "クックドゥ・ほんだし"
+    },
+    {
+      "name": "お茶漬け",
+      "count": 508,
+      "brand": "ほんだし・味の素"
+    },
+    {
+      "name": "味噌汁",
+      "count": 471,
+      "brand": "味の素・ほんだし"
+    },
+    {
+      "name": "ポトフ",
+      "count": 460,
+      "brand": "味の素,コンソメ・味の素,丸鶏がらスープ"
+    },
+    {
+      "name": "コンソメスープ",
+      "count": 329,
+      "brand": "味の素,コンソメ・コンソメ,丸鶏がらスープ"
+    },
+    {
+      "name": "チャーハン",
+      "count": 268,
+      "brand": "味の素・香味ペースト"
+    },
+    {
+      "name": "おかゆ",
+      "count": 243,
+      "brand": "ほんだし,味の素・味の素"
+    },
+    {
+      "name": "味の素",
+      "count": 198,
+      "brand": "味の素・味の素,コンソメ"
+    },
+    {
+      "name": "ラーメン",
+      "count": 192,
+      "brand": "味の素・丸鶏がらスープ"
+    },
+    {
+      "name": "カレー",
+      "count": 171,
+      "brand": "味の素,コンソメ・アジシオ"
+    },
+    {
+      "name": "卵かけご飯",
+      "count": 145,
+      "brand": "味の素・ほんだし"
+    },
+    {
+      "name": "ナポリタン",
+      "count": 137,
+      "brand": "味の素,コンソメ・味の素"
+    },
+    {
+      "name": "パスタ",
+      "count": 124,
+      "brand": "ほんだし・香味ペースト"
+    },
+    {
+      "name": "マヨネーズ",
+      "count": 119,
+      "brand": "ピュアセレクト・味の素,ピュアセレクト"
+    },
+    {
+      "name": "回鍋肉",
+      "count": 114,
+      "brand": "クックドゥ・味の素"
+    },
+    {
+      "name": "おにぎり",
+      "count": 101,
+      "brand": "ほんだし・味の素"
+    },
+    {
+      "name": "スープ",
+      "count": 91,
+      "brand": "丸鶏がらスープ・クックドゥ,丸鶏がらスープ"
+    },
+    {
+      "name": "鍋",
+      "count": 83,
+      "brand": "味の素,鍋キューブ・丸鶏がらスープ"
+    },
+    {
+      "name": "だし",
+      "count": 81,
+      "brand": "ほんだし,味の素・コンソメ"
+    }
+  ],
+  "meal_occasion": [
+    {
+      "occasion": "平日夜（ゆっくり）",
+      "count": 1253,
+      "percentage": 28.1
+    },
+    {
+      "occasion": "平日夜（急ぎ）",
+      "count": 1026,
+      "percentage": 23
+    },
+    {
+      "occasion": "夜食・晩酌",
+      "count": 745,
+      "percentage": 16.7
+    },
+    {
+      "occasion": "朝食",
+      "count": 605,
+      "percentage": 13.6
+    },
+    {
+      "occasion": "お弁当",
+      "count": 494,
+      "percentage": 11.1
+    },
+    {
+      "occasion": "週末夕食",
+      "count": 172,
+      "percentage": 3.9
+    },
+    {
+      "occasion": "パーティー",
+      "count": 85,
+      "percentage": 1.9
+    },
+    {
+      "occasion": "週末ブランチ",
+      "count": 72,
+      "percentage": 1.6
+    }
+  ],
+  "cooking_for": [
+    {
+      "target": "自分用",
+      "count": 9456,
+      "percentage": 74.9
+    },
+    {
+      "target": "家族",
+      "count": 2083,
+      "percentage": 16.5
+    },
+    {
+      "target": "子ども",
+      "count": 434,
+      "percentage": 3.4
+    },
+    {
+      "target": "複数",
+      "count": 285,
+      "percentage": 2.3
+    },
+    {
+      "target": "来客",
+      "count": 193,
+      "percentage": 1.5
+    },
+    {
+      "target": "配偶者",
+      "count": 127,
+      "percentage": 1
+    },
+    {
+      "target": "親・高齢者",
+      "count": 43,
+      "percentage": 0.3
+    }
+  ],
+  "motivation": [
+    {
+      "category": "時間がない",
+      "count": 2401,
+      "percentage": 22.7
+    },
+    {
+      "category": "定番・安心感",
+      "count": 2337,
+      "percentage": 22.1
+    },
+    {
+      "category": "いつもと違うもの",
+      "count": 1435,
+      "percentage": 13.6
+    },
+    {
+      "category": "味を失敗したくない",
+      "count": 1345,
+      "percentage": 12.7
+    },
+    {
+      "category": "健康志向",
+      "count": 1241,
+      "percentage": 11.7
+    },
+    {
+      "category": "料理に自信がない",
+      "count": 827,
+      "percentage": 7.8
+    },
+    {
+      "category": "節約",
+      "count": 604,
+      "percentage": 5.7
+    },
+    {
+      "category": "相手を喜ばせたい",
+      "count": 394,
+      "percentage": 3.7
+    }
+  ],
+  "brand_dish": [
+    {
+      "brand": "味の素",
+      "category": "中華",
+      "count": 559
+    },
+    {
+      "brand": "味の素",
+      "category": "麺類",
+      "count": 669
+    },
+    {
+      "brand": "味の素",
+      "category": "ご飯もの",
+      "count": 719
+    },
+    {
+      "brand": "味の素",
+      "category": "下味・調味",
+      "count": 1427
+    },
+    {
+      "brand": "味の素",
+      "category": "揚げ物",
+      "count": 808
+    },
+    {
+      "brand": "味の素",
+      "category": "汁物",
+      "count": 423
+    },
+    {
+      "brand": "味の素",
+      "category": "炒め物",
+      "count": 175
+    },
+    {
+      "brand": "味の素",
+      "category": "サラダ",
+      "count": 188
+    },
+    {
+      "brand": "味の素",
+      "category": "焼き物",
+      "count": 96
+    },
+    {
+      "brand": "味の素",
+      "category": "煮込み",
+      "count": 145
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "煮込み",
+      "count": 509
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "汁物",
+      "count": 355
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "麺類",
+      "count": 149
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "ご飯もの",
+      "count": 11
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "サラダ",
+      "count": 1
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "揚げ物",
+      "count": 3
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "下味・調味",
+      "count": 22
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "炒め物",
+      "count": 3
+    },
+    {
+      "brand": "味の素,コンソメ",
+      "category": "焼き物",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素",
+      "category": "ご飯もの",
+      "count": 10
+    },
+    {
+      "brand": "ほんだし,味の素",
+      "category": "汁物",
+      "count": 27
+    },
+    {
+      "brand": "ほんだし,味の素",
+      "category": "煮込み",
+      "count": 5
+    },
+    {
+      "brand": "ほんだし,味の素",
+      "category": "下味・調味",
+      "count": 28
+    },
+    {
+      "brand": "ほんだし,味の素",
+      "category": "炒め物",
+      "count": 5
+    },
+    {
+      "brand": "ほんだし,味の素",
+      "category": "揚げ物",
+      "count": 2
+    },
+    {
+      "brand": "ほんだし,味の素",
+      "category": "サラダ",
+      "count": 4
+    },
+    {
+      "brand": "ほんだし,味の素",
+      "category": "麺類",
+      "count": 6
+    },
+    {
+      "brand": "ほんだし",
+      "category": "汁物",
+      "count": 230
+    },
+    {
+      "brand": "ほんだし",
+      "category": "炒め物",
+      "count": 30
+    },
+    {
+      "brand": "ほんだし",
+      "category": "下味・調味",
+      "count": 88
+    },
+    {
+      "brand": "ほんだし",
+      "category": "中華",
+      "count": 4
+    },
+    {
+      "brand": "ほんだし",
+      "category": "麺類",
+      "count": 89
+    },
+    {
+      "brand": "ほんだし",
+      "category": "焼き物",
+      "count": 15
+    },
+    {
+      "brand": "ほんだし",
+      "category": "揚げ物",
+      "count": 15
+    },
+    {
+      "brand": "ほんだし",
+      "category": "煮込み",
+      "count": 107
+    },
+    {
+      "brand": "ほんだし",
+      "category": "ご飯もの",
+      "count": 83
+    },
+    {
+      "brand": "ほんだし",
+      "category": "サラダ",
+      "count": 26
+    },
+    {
+      "brand": "アジシオ",
+      "category": "炒め物",
+      "count": 6
+    },
+    {
+      "brand": "アジシオ",
+      "category": "下味・調味",
+      "count": 229
+    },
+    {
+      "brand": "アジシオ",
+      "category": "サラダ",
+      "count": 29
+    },
+    {
+      "brand": "アジシオ",
+      "category": "ご飯もの",
+      "count": 61
+    },
+    {
+      "brand": "アジシオ",
+      "category": "揚げ物",
+      "count": 23
+    },
+    {
+      "brand": "アジシオ",
+      "category": "焼き物",
+      "count": 13
+    },
+    {
+      "brand": "アジシオ",
+      "category": "麺類",
+      "count": 16
+    },
+    {
+      "brand": "アジシオ",
+      "category": "煮込み",
+      "count": 3
+    },
+    {
+      "brand": "アジシオ",
+      "category": "汁物",
+      "count": 8
+    },
+    {
+      "brand": "アジシオ",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "麺類",
+      "count": 80
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "サラダ",
+      "count": 57
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "煮込み",
+      "count": 59
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "汁物",
+      "count": 102
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "炒め物",
+      "count": 79
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "中華",
+      "count": 20
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 26
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "ご飯もの",
+      "count": 82
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "揚げ物",
+      "count": 20
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "焼き物",
+      "count": 12
+    },
+    {
+      "brand": "コンソメ,丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 3
+    },
+    {
+      "brand": "コンソメ,丸鶏がらスープ",
+      "category": "煮込み",
+      "count": 2
+    },
+    {
+      "brand": "コンソメ,丸鶏がらスープ",
+      "category": "汁物",
+      "count": 8
+    },
+    {
+      "brand": "コンソメ,丸鶏がらスープ",
+      "category": "揚げ物",
+      "count": 1
+    },
+    {
+      "brand": "コンソメ,丸鶏がらスープ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "中華",
+      "count": 718
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "煮込み",
+      "count": 27
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "ご飯もの",
+      "count": 21
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "炒め物",
+      "count": 61
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "麺類",
+      "count": 21
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "汁物",
+      "count": 4
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "焼き物",
+      "count": 3
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "下味・調味",
+      "count": 10
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "サラダ",
+      "count": 2
+    },
+    {
+      "brand": "クックドゥ",
+      "category": "揚げ物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,香味ペースト",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,香味ペースト",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,香味ペースト",
+      "category": "ご飯もの",
+      "count": 4
+    },
+    {
+      "brand": "クックドゥ,香味ペースト",
+      "category": "汁物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,香味ペースト",
+      "category": "揚げ物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,鍋キューブ",
+      "category": "煮込み",
+      "count": 23
+    },
+    {
+      "brand": "味の素,鍋キューブ",
+      "category": "汁物",
+      "count": 11
+    },
+    {
+      "brand": "味の素,鍋キューブ",
+      "category": "ご飯もの",
+      "count": 2
+    },
+    {
+      "brand": "クックドゥ,味の素",
+      "category": "汁物",
+      "count": 3
+    },
+    {
+      "brand": "クックドゥ,味の素",
+      "category": "中華",
+      "count": 90
+    },
+    {
+      "brand": "クックドゥ,味の素",
+      "category": "下味・調味",
+      "count": 4
+    },
+    {
+      "brand": "クックドゥ,味の素",
+      "category": "炒め物",
+      "count": 16
+    },
+    {
+      "brand": "クックドゥ,味の素",
+      "category": "ご飯もの",
+      "count": 6
+    },
+    {
+      "brand": "クックドゥ,味の素",
+      "category": "煮込み",
+      "count": 6
+    },
+    {
+      "brand": "クックドゥ,味の素",
+      "category": "麺類",
+      "count": 9
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "煮込み",
+      "count": 8
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "麺類",
+      "count": 17
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "汁物",
+      "count": 31
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 12
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "炒め物",
+      "count": 6
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "ご飯もの",
+      "count": 17
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "サラダ",
+      "count": 4
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "中華",
+      "count": 5
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "焼き物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ",
+      "category": "揚げ物",
+      "count": 1
+    },
+    {
+      "brand": "鍋キューブ",
+      "category": "煮込み",
+      "count": 3
+    },
+    {
+      "brand": "鍋キューブ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "下味・調味",
+      "count": 42
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "サラダ",
+      "count": 7
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "揚げ物",
+      "count": 2
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "焼き物",
+      "count": 1
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "麺類",
+      "count": 1
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "麺類",
+      "count": 14
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "下味・調味",
+      "count": 49
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "ご飯もの",
+      "count": 56
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "焼き物",
+      "count": 1
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "中華",
+      "count": 6
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "炒め物",
+      "count": 19
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "汁物",
+      "count": 7
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "サラダ",
+      "count": 3
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "揚げ物",
+      "count": 2
+    },
+    {
+      "brand": "味の素,コンソメ,アジシオ",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "味の素,コンソメ,アジシオ",
+      "category": "煮込み",
+      "count": 1
+    },
+    {
+      "brand": "味の素,コンソメ,アジシオ",
+      "category": "麺類",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 2
+    },
+    {
+      "brand": "ほんだし,丸鶏がらスープ",
+      "category": "煮込み",
+      "count": 5
+    },
+    {
+      "brand": "ほんだし,丸鶏がらスープ",
+      "category": "ご飯もの",
+      "count": 2
+    },
+    {
+      "brand": "ほんだし,丸鶏がらスープ",
+      "category": "汁物",
+      "count": 5
+    },
+    {
+      "brand": "ほんだし,丸鶏がらスープ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,丸鶏がらスープ",
+      "category": "麺類",
+      "count": 2
+    },
+    {
+      "brand": "ほんだし,味の素,コンソメ,アジシオ",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,丸鶏がらスープ",
+      "category": "煮込み",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,丸鶏がらスープ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,丸鶏がらスープ",
+      "category": "汁物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,丸鶏がらスープ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,丸鶏がらスープ",
+      "category": "中華",
+      "count": 3
+    },
+    {
+      "brand": "コンソメ",
+      "category": "煮込み",
+      "count": 5
+    },
+    {
+      "brand": "コンソメ",
+      "category": "汁物",
+      "count": 21
+    },
+    {
+      "brand": "コンソメ",
+      "category": "麺類",
+      "count": 7
+    },
+    {
+      "brand": "コンソメ",
+      "category": "ご飯もの",
+      "count": 5
+    },
+    {
+      "brand": "コンソメ",
+      "category": "下味・調味",
+      "count": 3
+    },
+    {
+      "brand": "コンソメ",
+      "category": "焼き物",
+      "count": 1
+    },
+    {
+      "brand": "コンソメ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,ピュアセレクト",
+      "category": "下味・調味",
+      "count": 17
+    },
+    {
+      "brand": "味の素,ピュアセレクト",
+      "category": "サラダ",
+      "count": 3
+    },
+    {
+      "brand": "味の素,ピュアセレクト",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "味の素,ピュアセレクト",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,ピュアセレクト",
+      "category": "揚げ物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "炒め物",
+      "count": 4
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "下味・調味",
+      "count": 33
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "焼き物",
+      "count": 3
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "ご飯もの",
+      "count": 3
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "麺類",
+      "count": 3
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "煮込み",
+      "count": 2
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "サラダ",
+      "count": 5
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "揚げ物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,アジシオ",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "アジシオ,ピュアセレクト",
+      "category": "サラダ",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,コンソメ,丸鶏がらスープ",
+      "category": "汁物",
+      "count": 3
+    },
+    {
+      "brand": "ほんだし,コンソメ,丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,ピュアセレクト",
+      "category": "ご飯もの",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,ピュアセレクト",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "コンソメ,香味ペースト",
+      "category": "ご飯もの",
+      "count": 1
+    },
+    {
+      "brand": "コンソメ,香味ペースト",
+      "category": "煮込み",
+      "count": 1
+    },
+    {
+      "brand": "コンソメ,香味ペースト",
+      "category": "麺類",
+      "count": 1
+    },
+    {
+      "brand": "味の素,香味ペースト",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,香味ペースト",
+      "category": "下味・調味",
+      "count": 2
+    },
+    {
+      "brand": "味の素,香味ペースト",
+      "category": "汁物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,香味ペースト",
+      "category": "ご飯もの",
+      "count": 5
+    },
+    {
+      "brand": "味の素,香味ペースト",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "味の素,香味ペースト",
+      "category": "麺類",
+      "count": 2
+    },
+    {
+      "brand": "クックドゥ,味の素,鍋キューブ",
+      "category": "煮込み",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,味の素,鍋キューブ",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "味の素,ほんだし",
+      "category": "下味・調味",
+      "count": 3
+    },
+    {
+      "brand": "味の素,ほんだし",
+      "category": "サラダ",
+      "count": 4
+    },
+    {
+      "brand": "味の素,ほんだし",
+      "category": "汁物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,ほんだし",
+      "category": "ご飯もの",
+      "count": 2
+    },
+    {
+      "brand": "ほんだし,コンソメ",
+      "category": "汁物",
+      "count": 11
+    },
+    {
+      "brand": "ほんだし,コンソメ",
+      "category": "下味・調味",
+      "count": 3
+    },
+    {
+      "brand": "ほんだし,コンソメ",
+      "category": "ご飯もの",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,コンソメ",
+      "category": "煮込み",
+      "count": 4
+    },
+    {
+      "brand": "ほんだし,コンソメ",
+      "category": "麺類",
+      "count": 3
+    },
+    {
+      "brand": "ほんだし,コンソメ",
+      "category": "サラダ",
+      "count": 1
+    },
+    {
+      "brand": "丸鶏がらスープ,アジシオ",
+      "category": "サラダ",
+      "count": 1
+    },
+    {
+      "brand": "丸鶏がらスープ,アジシオ",
+      "category": "煮込み",
+      "count": 1
+    },
+    {
+      "brand": "丸鶏がらスープ,アジシオ",
+      "category": "ご飯もの",
+      "count": 2
+    },
+    {
+      "brand": "丸鶏がらスープ,アジシオ",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "丸鶏がらスープ,アジシオ",
+      "category": "麺類",
+      "count": 1
+    },
+    {
+      "brand": "丸鶏がらスープ,アジシオ",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ,アジシオ",
+      "category": "サラダ",
+      "count": 1
+    },
+    {
+      "brand": "丸鶏がらスープ,香味ペースト",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "丸鶏がらスープ,香味ペースト",
+      "category": "汁物",
+      "count": 2
+    },
+    {
+      "brand": "クックドゥ,コンソメ",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "味の素,クックドゥ",
+      "category": "中華",
+      "count": 4
+    },
+    {
+      "brand": "味の素,クックドゥ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,クックドゥ",
+      "category": "汁物",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,コンソメ,丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,コンソメ,丸鶏がらスープ",
+      "category": "サラダ",
+      "count": 1
+    },
+    {
+      "brand": "味の素,コンソメ,丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 4
+    },
+    {
+      "brand": "味の素,コンソメ,丸鶏がらスープ",
+      "category": "ご飯もの",
+      "count": 1
+    },
+    {
+      "brand": "味の素,コンソメ,丸鶏がらスープ",
+      "category": "汁物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,コンソメ,丸鶏がらスープ",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "味の素,コンソメ,丸鶏がらスープ",
+      "category": "煮込み",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,アジシオ",
+      "category": "ご飯もの",
+      "count": 2
+    },
+    {
+      "brand": "クックドゥ,味の素,ピュアセレクト",
+      "category": "煮込み",
+      "count": 2
+    },
+    {
+      "brand": "クックドゥ,味の素,アジシオ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,香味ペースト,鍋キューブ",
+      "category": "ご飯もの",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,アジシオ",
+      "category": "下味・調味",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,味の素,コンソメ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,味の素,コンソメ",
+      "category": "中華",
+      "count": 3
+    },
+    {
+      "brand": "ほんだし,クックドゥ,味の素,コンソメ",
+      "category": "中華",
+      "count": 1
+    },
+    {
+      "brand": "ほんだし,味の素,コンソメ",
+      "category": "汁物",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,味の素,丸鶏がらスープ",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "味の素,丸鶏がらスープ,香味ペースト",
+      "category": "麺類",
+      "count": 1
+    },
+    {
+      "brand": "クックドゥ,味の素,香味ペースト",
+      "category": "炒め物",
+      "count": 1
+    }
+  ]
+}

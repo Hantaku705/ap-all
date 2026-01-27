@@ -1,0 +1,24 @@
+{
+  "id": 3,
+  "name": "味の素",
+  "nameEn": "ajinomoto",
+  "color": "#D81B60",
+  "mentionCount": 3740,
+  "mentionShare": 43.9,
+  "positiveCount": 1870,
+  "neutralCount": 413,
+  "negativeCount": 101,
+  "negativeRate": 4.2,
+  "topCep": {
+    "name": "一人暮らしの手抜き飯",
+    "score": null
+  },
+  "primaryQuadrant": "コア強化",
+  "quadrantDistribution": {
+    "コア強化": 0,
+    "機会獲得": 0,
+    "育成検討": 0,
+    "低優先": 0
+  },
+  "cepCount": 5
+}

@@ -1,0 +1,24 @@
+{
+  "id": 8,
+  "name": "アジシオ",
+  "nameEn": "ajishio",
+  "color": "#F4511E",
+  "mentionCount": 96,
+  "mentionShare": 1.1,
+  "positiveCount": 72,
+  "neutralCount": 20,
+  "negativeCount": 4,
+  "negativeRate": 4.2,
+  "topCep": {
+    "name": "一人暮らしの手抜き飯",
+    "score": null
+  },
+  "primaryQuadrant": "コア強化",
+  "quadrantDistribution": {
+    "コア強化": 0,
+    "機会獲得": 0,
+    "育成検討": 0,
+    "低優先": 0
+  },
+  "cepCount": 5
+}

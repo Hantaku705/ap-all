@@ -1,0 +1,24 @@
+{
+  "id": 1,
+  "name": "ほんだし",
+  "nameEn": "hondashi",
+  "color": "#E53935",
+  "mentionCount": 271,
+  "mentionShare": 3.2,
+  "positiveCount": 224,
+  "neutralCount": 43,
+  "negativeCount": 4,
+  "negativeRate": 1.5,
+  "topCep": {
+    "name": "平日夜の時短ニーズ",
+    "score": null
+  },
+  "primaryQuadrant": "コア強化",
+  "quadrantDistribution": {
+    "コア強化": 0,
+    "機会獲得": 0,
+    "育成検討": 0,
+    "低優先": 0
+  },
+  "cepCount": 5
+}

@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-01-20T15:18:23.276Z",
+  "brands": [
+    {
+      "name": "ほんだし",
+      "exists": true,
+      "updatedAt": "2026-01-20T15:17:04.496Z",
+      "paths": {
+        "json": "ほんだし/report.json",
+        "markdown": "ほんだし/report.md"
+      }
+    },
+    {
+      "name": "クックドゥ",
+      "exists": true,
+      "updatedAt": "2026-01-20T15:17:16.222Z",
+      "paths": {
+        "json": "クックドゥ/report.json",
+        "markdown": "クックドゥ/report.md"
+      }
+    },
+    {
+      "name": "味の素",
+      "exists": true,
+      "updatedAt": "2026-01-20T15:17:27.111Z",
+      "paths": {
+        "json": "味の素/report.json",
+        "markdown": "味の素/report.md"
+      }
+    },
+    {
+      "name": "丸鶏がらスープ",
+      "exists": true,
+      "updatedAt": "2026-01-20T15:17:38.320Z",
+      "paths": {
+        "json": "丸鶏がらスープ/report.json",
+        "markdown": "丸鶏がらスープ/report.md"
+      }
+    },
+    {
+      "name": "香味ペースト",
+      "exists": true,
+      "updatedAt": "2026-01-20T15:17:49.914Z",
+      "paths": {
+        "json": "香味ペースト/report.json",
+        "markdown": "香味ペースト/report.md"
+      }
+    },
+    {
+      "name": "コンソメ",
+      "exists": true,
+      "updatedAt": "2026-01-20T15:18:00.443Z",
+      "paths": {
+        "json": "コンソメ/report.json",
+        "markdown": "コンソメ/report.md"
+      }
+    },
+    {
+      "name": "ピュアセレクト",
+      "exists": true,
+      "updatedAt": "2026-01-20T15:18:11.743Z",
+      "paths": {
+        "json": "ピュアセレクト/report.json",
+        "markdown": "ピュアセレクト/report.md"
+      }
+    },
+    {
+      "name": "アジシオ",
+      "exists": true,
+      "updatedAt": "2026-01-20T15:18:22.666Z",
+      "paths": {
+        "json": "アジシオ/report.json",
+        "markdown": "アジシオ/report.md"
+      }
+    }
+  ]
+}

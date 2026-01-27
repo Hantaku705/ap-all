@@ -1,0 +1,969 @@
+{
+  "threshold": 100,
+  "totalBuzzPosts": 50,
+  "analyzedPosts": 50,
+  "summary": {
+    "highImpact": 1,
+    "mediumImpact": 9,
+    "lowImpact": 40,
+    "highImpactRate": 2,
+    "coherentCount": 13,
+    "incoherentCount": 8,
+    "neutralCount": 29,
+    "highReliability": 0,
+    "mediumReliability": 5,
+    "lowReliability": 45
+  },
+  "impacts": [
+    {
+      "postDate": "2025-08-16",
+      "engagement": 1339,
+      "sentiment": "positive",
+      "content": "今回この味の素ポストが伸びたことで初見で感動してる人もたくさんいて、企業の炎上話が定期的に蒸し返されて荒れるやつみたいにグッドコミュニケーションも数年後に蒸し返されて追加ボーナスが出るケースがあるんだ",
+      "topic": "other",
+      "url": "http://twitter.com/mrc_hrm/status/1956675935966748796",
+      "nextTradingDay": "2025-08-18",
+      "stockChange": 2.3,
+      "impact": "medium",
+      "impactLabel": "↗️ 上昇",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 48,
+      "reliabilityLabel": "中信頼"
+    },
+    {
+      "postDate": "2025-05-28",
+      "engagement": 1219,
+      "sentiment": "positive",
+      "content": "契約満了に伴いこんな素敵なメモリアルページを作って下さってる味の素さん素敵すぎる🥹 2013年からのフォトギャラリー辿ってるだけで当時の思い出が蘇ってきて泣いちゃう😭 そして栗原さんのメッセージ\ud83d",
+      "topic": "other",
+      "url": "http://twitter.com/yzkyun_4A_mami/status/1927618337166791141",
+      "nextTradingDay": "2025-05-29",
+      "stockChange": 2.16,
+      "impact": "medium",
+      "impactLabel": "↗️ 上昇",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 48,
+      "reliabilityLabel": "中信頼"
+    },
+    {
+      "postDate": "2024-11-21",
+      "engagement": 1374,
+      "sentiment": "positive",
+      "content": "就任アンバサダーおよびスポンサー様 味の素さま KOSEさま ファイテンさま 東和薬品さま GUCCIさま 中国シチズンさま ハイアールさま AQUAさま （仙台市観光アンバサダー） どの羽生結弦も麗",
+      "topic": "other",
+      "url": "http://twitter.com/ailoveyuzu82/status/1859545452863160564",
+      "nextTradingDay": "2024-11-22",
+      "stockChange": 1.95,
+      "impact": "medium",
+      "impactLabel": "↗️ 上昇",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 48,
+      "reliabilityLabel": "中信頼"
+    },
+    {
+      "postDate": "2025-05-22",
+      "engagement": 2311,
+      "sentiment": "positive",
+      "content": "【めめこじ】 企業様同士が繋がり宣伝して下さるなんて凄すぎる❤2人で沢山受賞してるからいつか共演あります様に！ 2021年ベストコンビ1位 2022年7万人投票ベストペア1位 2025年カップルペア、",
+      "topic": null,
+      "url": "http://twitter.com/SNOW_KOJI_621/status/1925515303615963604",
+      "nextTradingDay": "2025-05-23",
+      "stockChange": 1.94,
+      "impact": "medium",
+      "impactLabel": "↗️ 上昇",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 48,
+      "reliabilityLabel": "中信頼"
+    },
+    {
+      "postDate": "2024-09-19",
+      "engagement": 2026,
+      "sentiment": "positive",
+      "content": "＼世界で初めて実証／ 味の素社が「電気調味料」を研究中💡⚡️ 「電気調味料」……おそらく誰もが初めて耳にする言葉ではないでしょうか？🧐 実はこれ、ヘッドフォンのような形状の「ウェアラブルデバイス」",
+      "topic": "rnd",
+      "url": "https://www.facebook.com/264576449557612/posts/538829532132301",
+      "nextTradingDay": "2024-09-20",
+      "stockChange": 1.64,
+      "impact": "medium",
+      "impactLabel": "↗️ 上昇",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 48,
+      "reliabilityLabel": "中信頼"
+    },
+    {
+      "postDate": "2024-11-30",
+      "engagement": 2995,
+      "sentiment": "positive",
+      "content": "＼ #羽生結弦 選手オリジナルアクスタ ／ 🔴予約終了まであと2⃣日📢 味の素『勝ち飯セットⓇ』第15弾 『勝ち飯Ⓡ』商品14品と羽生結弦選手オリジナルアクスタのセットがご予約受付中‼️ オンライ",
+      "topic": "other",
+      "url": "http://twitter.com/apita_piago_uny/status/1862670382681211346",
+      "nextTradingDay": "2024-12-02",
+      "stockChange": 1.24,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-06-21",
+      "engagement": 1654,
+      "sentiment": "positive",
+      "content": "AJINOMOTOさんの作ってくださった、羽生くんの特設ページ 特設ページのYouTube Vol.1からVol.6まであります✨ #羽生結弦 #AJINOMOTO https://t.co/20F0",
+      "topic": "other",
+      "url": "http://twitter.com/dyefXhdMqm4kftB/status/1936187595094159793",
+      "nextTradingDay": "2025-06-23",
+      "stockChange": 1.03,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-07-09",
+      "engagement": 1356,
+      "sentiment": "positive",
+      "content": "味の素さん定時が16:30で平均年収1,047万円、住宅補助14万円出るって最強のホワイト企業すぎる",
+      "topic": "employment",
+      "url": "http://twitter.com/penpan_IT/status/1810650107911827519",
+      "nextTradingDay": "2024-07-10",
+      "stockChange": 1.02,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-07-05",
+      "engagement": 2256,
+      "sentiment": "positive",
+      "content": "味の素ソンフンのサイン出た😭😭😭😭😭😭😭😭😭😭 https://t.co/kJMbLRFSUz",
+      "topic": "other",
+      "url": "http://twitter.com/Jay_____02/status/1941372693800157633",
+      "nextTradingDay": "2025-07-07",
+      "stockChange": 0.58,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-02-23",
+      "engagement": 1895,
+      "sentiment": "positive",
+      "content": "\"ส​กาย - นา​นิ\" ใน​งาน \"AjiPanda Village by อา​ยิโนะ​โมะโต๊ะ\" เปิด​บ้าน​อา​ยิแพนด้า เต็ม​อิ่ม​ทั้ง​ค",
+      "topic": "other",
+      "url": "http://twitter.com/NNEWs_Uent/status/1893597189185712612",
+      "nextTradingDay": "2025-02-25",
+      "stockChange": 0.49,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-03-13",
+      "engagement": 1572,
+      "sentiment": "positive",
+      "content": "味の素(株)さんの「あえて、®」とのコラボが決定しましたぁぁ！！ うれしすぎる、、！ 配信は3/17(月) 19:00〜です！ 初食レポで大緊張。みんな見に来て～ #PR #味の素KK #あえてせつな",
+      "topic": "company_news",
+      "url": "http://twitter.com/Setsuna_VPI/status/1900124677596451222",
+      "nextTradingDay": "2025-03-14",
+      "stockChange": 0.35,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-12-27",
+      "engagement": 1372,
+      "sentiment": "positive",
+      "content": "みんなの頑張りに心動かされました！ すごく悔しい結果となってしまいましたが、またここから成長できるはず！ 私も何度も悔しい思いをして成長してきました！ ジュニアちゃんもまたここから❤️‍🔥 みんなお",
+      "topic": "other",
+      "url": "http://twitter.com/yuzuho_19/status/1872608619348566332",
+      "nextTradingDay": "2024-12-30",
+      "stockChange": 0.08,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-08-31",
+      "engagement": 934,
+      "sentiment": "positive",
+      "content": "動画、インタビュー全6編 本日まで😭 改めまして #味の素さんありがとう ございました🙏✨️ #ビクトリープロジェクト #勝ち飯 いつも側にいてくれた栗原さん🙌 またお会いできますように🥲 ＃",
+      "topic": "other",
+      "url": "http://twitter.com/lPINWHZ0ewgVkxV/status/1961940649781113128",
+      "nextTradingDay": "2025-09-01",
+      "stockChange": 0.25,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": true,
+        "coherenceScore": 100,
+        "coherenceLabel": "✅ 整合"
+      },
+      "reliabilityScore": 20,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-11-17",
+      "engagement": 1068,
+      "sentiment": "neutral",
+      "content": "張り詰めた心をほぐす上手な選択。 古民家カフェオーナーの「ちょっと贅沢な」時間 . - - - - - - - - - - - - 仕事でも家事でも、 無意識の「こうでなきゃ」が いつの間にか自分を縛",
+      "topic": "other",
+      "url": "http://instagram.com/reel/DRJmv31Dy3W",
+      "nextTradingDay": "2025-11-18",
+      "stockChange": -4,
+      "impact": "high",
+      "impactLabel": "📉 大幅下落",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 36,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-07-22",
+      "engagement": 1004,
+      "sentiment": "neutral",
+      "content": "มีมคู่ป่ะ ไม่​แฟนกี่​โมง AJINOMOTO X WILLIAMEST #AjinomotoQuickMealxWilliamEst https://t.co/KifPVcqp",
+      "topic": "other",
+      "url": "http://twitter.com/pn_PuNim/status/1947316343902187881",
+      "nextTradingDay": "2025-07-23",
+      "stockChange": -2.3,
+      "impact": "medium",
+      "impactLabel": "↘️ 下落",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-01-25",
+      "engagement": 2499,
+      "sentiment": "neutral",
+      "content": "どうすれば「働く人」に選ばれ、どうあれば従業員エンゲージメントを高く維持し続けられるのか🤔 「未来の日本企業のあり方」をテーマにセミナーを開催。味の素、東洋製罐グループホールディングス、Unipos",
+      "topic": "employment",
+      "url": "https://www.facebook.com/631999882295647/posts/759000022928965",
+      "nextTradingDay": "2024-01-26",
+      "stockChange": -2.23,
+      "impact": "medium",
+      "impactLabel": "↘️ 下落",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-05-17",
+      "engagement": 4841,
+      "sentiment": "neutral",
+      "content": "5月17日【お茶漬けの日】 煎茶の創始者であり、永谷園創業者の先祖である永谷宗七郎の命日にちなんで永谷園が制定しました。 https://t.co/DROLssFVVW",
+      "topic": "other",
+      "url": "http://twitter.com/yamatokotobacat/status/1791212778990034955",
+      "nextTradingDay": "2024-05-20",
+      "stockChange": 1.9,
+      "impact": "medium",
+      "impactLabel": "↗️ 上昇",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 24,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-02-18",
+      "engagement": 931,
+      "sentiment": "neutral",
+      "content": "【保存版】 人気企業の中途採用時期メモ📝 <通年> 三井物産、丸紅、豊田通商、リクルート 中外製薬、第一三共、味の素 <定期募集> 三菱商事：5月頃 日本郵船：5月頃 商船三井：1月 & 9月頃 三",
+      "topic": "employment",
+      "url": "http://twitter.com/Zh4Bwb1plQxWom1/status/1891774176840777888",
+      "nextTradingDay": "2025-02-19",
+      "stockChange": -2.73,
+      "impact": "medium",
+      "impactLabel": "↘️ 下落",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 20,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-10-19",
+      "engagement": 2341,
+      "sentiment": "neutral",
+      "content": "＼寒い時期はあったかく☺️／ プロテインスープ1杯でたんぱく質20g！ 肌寒くなってきましたね～ 冷たいものが飲みにくいと感じるこの頃…。 プロテインドリンクの代わりに「プロテインスープ」を取り入れて",
+      "topic": "csr_sustainability",
+      "url": "https://www.facebook.com/264576449557612/posts/561650516516869",
+      "nextTradingDay": "2024-10-21",
+      "stockChange": -1.47,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-06-06",
+      "engagement": 23737,
+      "sentiment": "neutral",
+      "content": "#味の素YumYum CM 30秒ver.公開📺 タイのさまざまな場所に #向井康二 さんが「Yum Yum®」を持って登場？！🇹🇭",
+      "topic": "other",
+      "url": "http://twitter.com/AJINOMOTOPARK/status/1930960361718444414",
+      "nextTradingDay": "2025-06-09",
+      "stockChange": 1.33,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-04-14",
+      "engagement": 1002,
+      "sentiment": "neutral",
+      "content": "🟣WEリーグ 第14節🟣 #マイナビ仙台レディース 戦 🏟️ 味の素フィールド西が丘 試合終了 マイ仙台 1-2 S広島R #サンフレッチェ広島レジーナ https://t.co/PEPmw3m",
+      "topic": null,
+      "url": "http://twitter.com/sanfrecceREGINA/status/1779403341619159531",
+      "nextTradingDay": "2024-04-15",
+      "stockChange": -1.05,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-07-04",
+      "engagement": 1139,
+      "sentiment": "neutral",
+      "content": "味の素、投資と還元に2000億円超 「稼いだお金は使う」 https://t.co/kgXhQZiG0P",
+      "topic": "company_news",
+      "url": "http://twitter.com/nikkei/status/1808602757324288388",
+      "nextTradingDay": "2024-07-05",
+      "stockChange": -0.82,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-07-19",
+      "engagement": 1104,
+      "sentiment": "neutral",
+      "content": "えーと なんで反医療反科学、言ってしまえば反厚生労働省でありながら厚労省が認定する資格を取ろうと思ってたのかな… 自然派で化学調味料を心底憎んでる人間が味の素に就職したがるよーなモンなんすけど。それ。",
+      "topic": "other",
+      "url": "http://twitter.com/syanosyano6631/status/1814064725715730626",
+      "nextTradingDay": "2024-07-22",
+      "stockChange": 0.66,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-09-21",
+      "engagement": 1253,
+      "sentiment": "neutral",
+      "content": "@ikechannouen IQが違うと会話にならないから 明治、味の素、山パンはキレないんだと思う",
+      "topic": "other",
+      "url": "http://twitter.com/l3iqoe/status/1837146053163860418",
+      "nextTradingDay": "2024-09-24",
+      "stockChange": -0.62,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-07-05",
+      "engagement": 4720,
+      "sentiment": "neutral",
+      "content": "青海の動画たれ流ししたい人はこちらの再生リストからどうぞ！ https://www.youtube.com/playlist?list=PLPjQbzSeZzNtLuVvv5d5lzIDp2dh33Y",
+      "topic": "other",
+      "url": "http://www.youtube.com/watch?v=LbnD8vpbeMg",
+      "nextTradingDay": "2025-07-07",
+      "stockChange": 0.58,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-02-23",
+      "engagement": 3261,
+      "sentiment": "neutral",
+      "content": "พี่​กาย​ถูก​หวย​ละ​แบ่ง​แม่​ด้วยเด้อ 55555555555555 SKYNANI WITH AJINOMOTO #AjiPandaVillagexSkyNani ",
+      "topic": "other",
+      "url": "http://twitter.com/decemberxflower/status/1893593917787943196",
+      "nextTradingDay": "2025-02-25",
+      "stockChange": 0.49,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-02-23",
+      "engagement": 1069,
+      "sentiment": "neutral",
+      "content": "ส​กาย​สาธิต​นา​นิ​ถอด​ผ้า​กัน​เปื้อน ละ​ดู​โดน​ตี​ไก​หนึ่ง​ที /ช่วย​ด้วยยยยยยยย ไอ้บ้าาา SKYNANI WIT",
+      "topic": null,
+      "url": "http://twitter.com/nnaohmnonq/status/1893608800327745654",
+      "nextTradingDay": "2025-02-25",
+      "stockChange": 0.49,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-08-07",
+      "engagement": 1289,
+      "sentiment": "neutral",
+      "content": "味の素 アミノバイタルのCM楽曲を制作しました https://t.co/Lm5IoAxbhX https://t.co/QkGnFhuzwy",
+      "topic": "other",
+      "url": "http://twitter.com/cwondo_/status/1953444195722789319",
+      "nextTradingDay": "2025-08-08",
+      "stockChange": 0.35,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-01-31",
+      "engagement": 2743,
+      "sentiment": "neutral",
+      "content": "꙳. 310125 | EATING IS A MIRACLE BY AJINOMOTO ◡̈ ว่า​ด้วย​เรื่อง​ใคร​เก็บ​รูป😝 🦖 :ใคร​เก็บ 🚗 : เดี",
+      "topic": "company_news",
+      "url": "http://twitter.com/Cream_Theway/status/1885246203644014895",
+      "nextTradingDay": "2025-02-03",
+      "stockChange": -0.3,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-05-13",
+      "engagement": 1561,
+      "sentiment": "neutral",
+      "content": "กลับ​มา​อีก​ครั้ง​กับ​กิจกรรม อา​ยิโนะ​โมะโต๊ะ ชู​รัก​ด้วย​ชูรส x เต​นิ​ว Season 2 ที่​จะ​ทำให้​คุณ​",
+      "topic": "other",
+      "url": "http://twitter.com/GMMTV/status/1922260543722733700",
+      "nextTradingDay": "2025-05-14",
+      "stockChange": -0.27,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-06-10",
+      "engagement": 4042,
+      "sentiment": "neutral",
+      "content": "＼日本の学校給食に注目👀💡／ 海外の子どもたちの栄養課題を解決！？ ▶︎日本の学校給食がベトナムの子どもたちの栄養改善に？ベトナムの味の素社の給食プロジェクトとは https://story.aj",
+      "topic": "csr_sustainability",
+      "url": "https://www.facebook.com/264576449557612/posts/731728982842354",
+      "nextTradingDay": "2025-06-11",
+      "stockChange": 0.25,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-08-05",
+      "engagement": 4827,
+      "sentiment": "neutral",
+      "content": "EP สุดท้าย​แล้ว! จะ​พลาด​ได้ไง กับ​กิจกรรม อา​ยิโนะ​โมะโต๊ะ ชู​รัก​ด้วย​ชูรส X เต​นิ​ว Season2 🤍 ลุ",
+      "topic": null,
+      "url": "http://instagram.com/p/DM-PnDQh8Pk",
+      "nextTradingDay": "2025-08-06",
+      "stockChange": 0.23,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-12-31",
+      "engagement": 1728,
+      "sentiment": "neutral",
+      "content": "マイナビで2万人以上の転職支援してきましたが、 生活に困らないホワイト企業はこれ。 100位 ヤクルト本社 99位 森永乳業 98位 明治 97位 日清食品 96位 カゴメ 95位 ハウス食品 94位",
+      "topic": "employment",
+      "url": "http://twitter.com/nori_tenshoku3/status/2006107465729941994",
+      "nextTradingDay": "2026-01-05",
+      "stockChange": 0.21,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-07-21",
+      "engagement": 2801,
+      "sentiment": "neutral",
+      "content": "AJINOMOTO X WILLIAMEST #AjinomotoQuickMealxWilliamEst 🙎🏻‍♀️: there’s another comment that came in ",
+      "topic": "other",
+      "url": "http://twitter.com/harxeuphoria/status/1947288752965206088",
+      "nextTradingDay": "2025-07-22",
+      "stockChange": 0.18,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-07-21",
+      "engagement": 1600,
+      "sentiment": "neutral",
+      "content": "See as none of them denied the being a couple allegation..... AJINOMOTO X WILLIAMEST #AjinomotoQuick",
+      "topic": null,
+      "url": "http://twitter.com/WilliamEst4eva/status/1947297126410834173",
+      "nextTradingDay": "2025-07-22",
+      "stockChange": 0.18,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-07-31",
+      "engagement": 1220,
+      "sentiment": "neutral",
+      "content": "雷の影響で決勝のキックオフが遅れています。 ただいま、主催者及びレフェリーによるピッチのチェックが行われ、試合の開催が決定しました。 レギュレーションは当初の予定から大きく変更となり、下記の通りとなり",
+      "topic": "other",
+      "url": "http://twitter.com/frontale_staff/status/1818601655535063349",
+      "nextTradingDay": "2024-08-01",
+      "stockChange": 0.13,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-03-07",
+      "engagement": 1627,
+      "sentiment": "neutral",
+      "content": "【飲食メーカー】3,4月の本選考締切まとめ🐾 ・マルハニチロ 3/10 10:00 ・アサヒビール（事務系） 3/10 11:59 ・味の素AGF 3/10 12:00 ・森永乳業（技術系） 3/1",
+      "topic": "employment",
+      "url": "http://twitter.com/shukatsu_neko/status/1898000876188684721",
+      "nextTradingDay": "2025-03-10",
+      "stockChange": 0.03,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 12,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-07-21",
+      "engagement": 981,
+      "sentiment": "neutral",
+      "content": "ナショナルの選手は、口に入れる物には常に気を配ってる。薬も安易に飲めないし、誰が体に悪いものを仕込んでるかわからない だからこそ、味の素が監修してるNTCは安心できる場所なんだ そこで絶対に口にしちゃ",
+      "topic": null,
+      "url": "http://twitter.com/kyouiku_mondai/status/1814862773207376376",
+      "nextTradingDay": "2024-07-22",
+      "stockChange": 0.66,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 10,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-10-17",
+      "engagement": 991,
+      "sentiment": "neutral",
+      "content": "#26卒 【富士通 インターン対策】 働き方がホワイト過ぎて、少しバズってた会社だね ここ女性限定のオンライン説明会あるので、察しのいい女子学生は必ず受けると思う 締切10/28 年収800万 面接ま",
+      "topic": "employment",
+      "url": "http://twitter.com/syukatuhack/status/1846927629179670558",
+      "nextTradingDay": "2024-10-18",
+      "stockChange": 0.63,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 10,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-11-14",
+      "engagement": 977,
+      "sentiment": "neutral",
+      "content": "#youremyenergyforeveryday #RE_PRAY祭り#RE_PRAYのここが好き (𝑅𝑒-𝑢𝑝𝑙𝑜𝑎𝑑) #YuzuruHanyu #ありがとうYuzu #Ajin",
+      "topic": "other",
+      "url": "http://www.youtube.com/watch?v=u1ZFyNTB4oE",
+      "nextTradingDay": "2025-11-17",
+      "stockChange": -0.6,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 10,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-07-24",
+      "engagement": 989,
+      "sentiment": "neutral",
+      "content": "⚡必殺早業仕事人帰宅🌷 7月25日 ㈮ 大阪天神祭り24日が宵宮、25日が本宮祭、花火は25日 かき氷の日 プリンの日 うま味調味料の日（味の素の日） 知覚過敏の日 はんだ付けの日 体外受精の日 バ",
+      "topic": "other",
+      "url": "http://twitter.com/ryuryu_8823/status/1948394581114130609",
+      "nextTradingDay": "2025-07-25",
+      "stockChange": -0.33,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 10,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-07-21",
+      "engagement": 972,
+      "sentiment": "neutral",
+      "content": "มัน​เกิด​อะไร​กับ​หัวใจ​วะเนี่ยยย 🫣 AJINOMOTO X WILLIAMEST #AjinomotoQuickMealxWilliamEst https://t",
+      "topic": "company_news",
+      "url": "http://twitter.com/ploygoodluck/status/1947279158360326628",
+      "nextTradingDay": "2025-07-22",
+      "stockChange": 0.18,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 50,
+        "coherenceLabel": "⚠️ 中立（判定不能）"
+      },
+      "reliabilityScore": 10,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-01-13",
+      "engagement": 1203,
+      "sentiment": "positive",
+      "content": "今日から味の素ナショナルトレーニングセンターで第2回U20オリンピック育成競技者研修合宿が始まります‼️ 東京駅に着いてこれから憧れのトレーニングセンターへ✨ めっちゃ楽しみ♪ 4日間の合宿、頑張って",
+      "topic": "other",
+      "url": "http://twitter.com/miwachannana/status/1878638949536833630",
+      "nextTradingDay": "2025-01-14",
+      "stockChange": -0.72,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 20,
+        "coherenceLabel": "❌ 矛盾"
+      },
+      "reliabilityScore": 5,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-11-14",
+      "engagement": 2552,
+      "sentiment": "positive",
+      "content": "味の素…天才過ぎる。感謝 https://t.co/DN1tPBcj4D",
+      "topic": "other",
+      "url": "http://twitter.com/oniku117/status/1989323824954048965",
+      "nextTradingDay": "2025-11-17",
+      "stockChange": -0.6,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 20,
+        "coherenceLabel": "❌ 矛盾"
+      },
+      "reliabilityScore": 5,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-09-14",
+      "engagement": 2443,
+      "sentiment": "negative",
+      "content": "情報共有🙏🏻 ̖́- 人工甘味料「ネオテーム」は アスパルテーム(味の素)の 改良型で1988年 米国のモンサント社によって 開発されました 砂糖の1万倍！ アスパルテームの 30~60倍の甘味度",
+      "topic": "company_news",
+      "url": "http://twitter.com/hikoyasiga/status/1966884823060148291",
+      "nextTradingDay": "2025-09-16",
+      "stockChange": 0.59,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 20,
+        "coherenceLabel": "❌ 矛盾"
+      },
+      "reliabilityScore": 5,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-09-17",
+      "engagement": 1077,
+      "sentiment": "positive",
+      "content": "豪雨で開始が延期した味の素公演の前 🦌「気をつけてね」 🐧「うん♥ツウィも怪我しないようにね」 お互いを優しく気遣うミチュが愛おしすぎる……🥺 #Mina #Tzuyu #TWICE https",
+      "topic": "other",
+      "url": "http://twitter.com/Mitzu362414/status/1835944213378416746",
+      "nextTradingDay": "2024-09-18",
+      "stockChange": -0.49,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 20,
+        "coherenceLabel": "❌ 矛盾"
+      },
+      "reliabilityScore": 5,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2024-02-16",
+      "engagement": 7231,
+      "sentiment": "positive",
+      "content": "【朗報】 グレート-O-カーン様 味の素で鶏むね肉を美味しく食べて強くなられる QT @Great_O_Khan: @ore825 デマの内容をよく知らんのじゃが オリンピアン御用達の味の素トレーニン",
+      "topic": "other",
+      "url": "http://twitter.com/ore825/status/1758487822342955015",
+      "nextTradingDay": "2024-02-19",
+      "stockChange": -0.4,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 20,
+        "coherenceLabel": "❌ 矛盾"
+      },
+      "reliabilityScore": 5,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-08-24",
+      "engagement": 1190,
+      "sentiment": "positive",
+      "content": "勝利❤️‍🔥クリームシート🧤最高❤️‍🔥 ホームの雰囲気で最高の後押し！！！ 皆ありがとう♦️🔥 https://t.co/7r0BZsYKzO QT @REDSLADIES: 2025/26",
+      "topic": "other",
+      "url": "http://twitter.com/sakiko_1_ikeda/status/1959619144573407569",
+      "nextTradingDay": "2025-08-25",
+      "stockChange": -0.37,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 20,
+        "coherenceLabel": "❌ 矛盾"
+      },
+      "reliabilityScore": 5,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-05-13",
+      "engagement": 1547,
+      "sentiment": "positive",
+      "content": "Snow Manの 向井康二が、「味の素 Yum Yum」のCMイメージキャラクターに就任。新テレビCM「タイで見つけた、しあわせ篇」が5月15日からオンエアされる。  「タイで見つけた、しあわせ篇」",
+      "topic": "company_news",
+      "url": "https://thetv.jp/news/detail/1263225/",
+      "nextTradingDay": "2025-05-14",
+      "stockChange": -0.27,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 20,
+        "coherenceLabel": "❌ 矛盾"
+      },
+      "reliabilityScore": 5,
+      "reliabilityLabel": "低信頼"
+    },
+    {
+      "postDate": "2025-05-13",
+      "engagement": 1363,
+      "sentiment": "positive",
+      "content": "世界一愛くるしい味の素 https://t.co/1divKSDpkR",
+      "topic": "other",
+      "url": "http://twitter.com/gyoza_410_hk_kj/status/1922067533919633697",
+      "nextTradingDay": "2025-05-14",
+      "stockChange": -0.27,
+      "impact": "low",
+      "impactLabel": "→ 横ばい",
+      "coherence": {
+        "isCoherent": false,
+        "coherenceScore": 20,
+        "coherenceLabel": "❌ 矛盾"
+      },
+      "reliabilityScore": 5,
+      "reliabilityLabel": "低信頼"
+    }
+  ]
+}

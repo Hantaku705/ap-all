@@ -1,0 +1,48 @@
+{
+  "brand": "ピュアセレクト",
+  "cooccurrences": [
+    {
+      "brand": "味の素",
+      "count": 2
+    },
+    {
+      "brand": "ほんだし",
+      "count": 0
+    },
+    {
+      "brand": "クックドゥ",
+      "count": 0
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "count": 0
+    },
+    {
+      "brand": "香味ペースト",
+      "count": 0
+    }
+  ],
+  "correlations": [
+    {
+      "brand": "丸鶏がらスープ",
+      "coefficient": 0.14
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "coefficient": 0.14
+    },
+    {
+      "brand": "アジシオ",
+      "coefficient": 0.12
+    },
+    {
+      "brand": "アジシオ",
+      "coefficient": 0.12
+    },
+    {
+      "brand": "味の素",
+      "coefficient": 0.09
+    }
+  ],
+  "keywords": []
+}

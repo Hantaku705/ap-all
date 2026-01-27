@@ -1,0 +1,299 @@
+{
+  "dish_category": [
+    {
+      "category": "ご飯もの",
+      "count": 56,
+      "percentage": 33.5
+    },
+    {
+      "category": "下味・調味",
+      "count": 49,
+      "percentage": 29.3
+    },
+    {
+      "category": "炒め物",
+      "count": 19,
+      "percentage": 11.4
+    },
+    {
+      "category": "麺類",
+      "count": 14,
+      "percentage": 8.4
+    },
+    {
+      "category": "その他",
+      "count": 10,
+      "percentage": 6
+    },
+    {
+      "category": "汁物",
+      "count": 7,
+      "percentage": 4.2
+    },
+    {
+      "category": "中華",
+      "count": 6,
+      "percentage": 3.6
+    },
+    {
+      "category": "サラダ",
+      "count": 3,
+      "percentage": 1.8
+    },
+    {
+      "category": "揚げ物",
+      "count": 2,
+      "percentage": 1.2
+    },
+    {
+      "category": "焼き物",
+      "count": 1,
+      "percentage": 0.6
+    }
+  ],
+  "dish_name": [
+    {
+      "name": "チャーハン",
+      "count": 40,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "炒飯",
+      "count": 11,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "香味ペースト",
+      "count": 8,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "野菜炒め",
+      "count": 7,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "ポテトチップス",
+      "count": 4,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "ご飯",
+      "count": 2,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "スープ",
+      "count": 2,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "チャーシュー",
+      "count": 2,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "おにぎり",
+      "count": 2,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "うどん",
+      "count": 2,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "もやしそば",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "レタスチャーハン",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "焼肉",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "パスタ",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "チャーシューと長ネギの炒め物",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "豚汁",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "ツナ風トースト",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "汁物",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "納豆麺つゆパスタ",
+      "count": 1,
+      "brand": "香味ペースト"
+    },
+    {
+      "name": "漬け汁",
+      "count": 1,
+      "brand": "香味ペースト"
+    }
+  ],
+  "meal_occasion": [
+    {
+      "occasion": "平日夜（急ぎ）",
+      "count": 15,
+      "percentage": 39.5
+    },
+    {
+      "occasion": "平日夜（ゆっくり）",
+      "count": 9,
+      "percentage": 23.7
+    },
+    {
+      "occasion": "夜食・晩酌",
+      "count": 8,
+      "percentage": 21.1
+    },
+    {
+      "occasion": "朝食",
+      "count": 4,
+      "percentage": 10.5
+    },
+    {
+      "occasion": "週末夕食",
+      "count": 1,
+      "percentage": 2.6
+    },
+    {
+      "occasion": "お弁当",
+      "count": 1,
+      "percentage": 2.6
+    }
+  ],
+  "cooking_for": [
+    {
+      "target": "自分用",
+      "count": 139,
+      "percentage": 94.6
+    },
+    {
+      "target": "家族",
+      "count": 4,
+      "percentage": 2.7
+    },
+    {
+      "target": "複数",
+      "count": 2,
+      "percentage": 1.4
+    },
+    {
+      "target": "子ども",
+      "count": 2,
+      "percentage": 1.4
+    }
+  ],
+  "motivation": [
+    {
+      "category": "時間がない",
+      "count": 32,
+      "percentage": 28.1
+    },
+    {
+      "category": "味を失敗したくない",
+      "count": 28,
+      "percentage": 24.6
+    },
+    {
+      "category": "いつもと違うもの",
+      "count": 22,
+      "percentage": 19.3
+    },
+    {
+      "category": "料理に自信がない",
+      "count": 18,
+      "percentage": 15.8
+    },
+    {
+      "category": "節約",
+      "count": 5,
+      "percentage": 4.4
+    },
+    {
+      "category": "定番・安心感",
+      "count": 4,
+      "percentage": 3.5
+    },
+    {
+      "category": "相手を喜ばせたい",
+      "count": 3,
+      "percentage": 2.6
+    },
+    {
+      "category": "健康志向",
+      "count": 2,
+      "percentage": 1.8
+    }
+  ],
+  "brand_dish": [
+    {
+      "brand": "香味ペースト",
+      "category": "麺類",
+      "count": 14
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "下味・調味",
+      "count": 49
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "ご飯もの",
+      "count": 56
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "焼き物",
+      "count": 1
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "中華",
+      "count": 6
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "炒め物",
+      "count": 19
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "汁物",
+      "count": 7
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "サラダ",
+      "count": 3
+    },
+    {
+      "brand": "香味ペースト",
+      "category": "揚げ物",
+      "count": 2
+    }
+  ]
+}

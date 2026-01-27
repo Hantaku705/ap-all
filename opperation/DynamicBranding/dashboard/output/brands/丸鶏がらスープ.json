@@ -1,0 +1,24 @@
+{
+  "id": 4,
+  "name": "丸鶏がらスープ",
+  "nameEn": "marutori",
+  "color": "#7CB342",
+  "mentionCount": 243,
+  "mentionShare": 2.9,
+  "positiveCount": 218,
+  "neutralCount": 24,
+  "negativeCount": 1,
+  "negativeRate": 0.4,
+  "topCep": {
+    "name": "一人暮らしの手抜き飯",
+    "score": null
+  },
+  "primaryQuadrant": "コア強化",
+  "quadrantDistribution": {
+    "コア強化": 0,
+    "機会獲得": 0,
+    "育成検討": 0,
+    "低優先": 0
+  },
+  "cepCount": 5
+}

@@ -1,0 +1,15 @@
+{
+  "last_processed_id": 74553,
+  "total_processed": 8625,
+  "topic_counts": {
+    "other": 5444,
+    "company_news": 1433,
+    "rnd": 174,
+    "stock_ir": 891,
+    "employment": 399,
+    "csr_sustainability": 185,
+    "management": 99
+  },
+  "started_at": "2026-01-22T12:47:51.654Z",
+  "updated_at": "2026-01-22T13:53:26.066Z"
+}

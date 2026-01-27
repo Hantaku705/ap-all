@@ -1,0 +1,427 @@
+{
+  "brand": "香味ペースト",
+  "personas": [
+    {
+      "id": "p_0",
+      "name": "満腹！節約飯",
+      "description": "金欠だけどお腹いっぱい食べたい！簡単・時短で味が決まる香味ペーストが頼り。",
+      "brand": "香味ペースト",
+      "position": {
+        "x": -0.69,
+        "y": 0.15
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "初級",
+        "primary_motivation": "味の確実性",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "節約",
+          "簡単",
+          "時短",
+          "大学生",
+          "丼もの"
+        ]
+      },
+      "metrics": {
+        "post_count": 68,
+        "avg_engagement": 3,
+        "share_percentage": 33,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "金欠大学生 うどん生活82日目 香味ペーストぶっこんだだけうどん https://t.co/DJkMTrwNfc",
+        "アホチャーハン 今回香味ペーストメイン アホみたいに味濃い https://t.co/Fq49QeylUF",
+        "うどんに、麺つゆごま油醤油に香味ペースト、ニンニク、ネギ、黒胡椒、焼き肉のタレなどなど全部ぶち込んだらめっちゃ美味しいの出来ちゃった！美味しすぎてお腹いっぱいなのに2玉目解凍中 かけうどんverそりゃ美味いだろ味",
+        "お昼は残り物・ω・ 冷や飯や残りの野菜をぶち込んでチャーハンを作りました 香味ペーストに豆板醤で辛味を加えてみたけど、卵無いとちょっとバランス悪いな しかし、美味しく頂きました・ω・ #香味ペースト #味の素 #エスビー食品 https://t.co/qkLDaxmcI8",
+        "初チャーハン 香味ペーストの使い方が下手すぎて味見したら100点満点中5点の出来になりかけた クレイジーソルトかけまくって何とか持ち直して60点ぐらい。 普通 https://t.co/tv8yTBVLmD"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "5",
+          "1",
+          "8"
+        ],
+        "contentThemes": [
+          "#ズボラ飯 レシピ",
+          "節約アレンジ",
+          "ワンパン料理"
+        ],
+        "communicationTips": [
+          "共感的な口調で語りかける",
+          "具体的な金額を提示"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "お金がない",
+          "料理スキルに自信がない",
+          "レシピを考えるのが面倒"
+        ],
+        "motivations": [
+          "安くお腹いっぱい食べたい",
+          "簡単に美味しいものを作りたい",
+          "料理の失敗を避けたい"
+        ],
+        "brandPerception": "香味ペーストは、簡単・時短で味が決まる、節約の味方。"
+      }
+    },
+    {
+      "id": "p_1",
+      "name": "限界自炊人",
+      "description": "一人暮らし。疲れて料理する気力がないけど、栄養は摂りたい。香味ペーストで手軽に味が決まるのが嬉しい。",
+      "brand": "香味ペースト",
+      "position": {
+        "x": -0.89,
+        "y": 0.2
+      },
+      "attributes": {
+        "life_stage": "一人暮らし",
+        "cooking_skill": "初級",
+        "primary_motivation": "不明",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "不明"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "一人暮らし",
+          "疲労困憊",
+          "時短",
+          "簡単",
+          "炒飯"
+        ]
+      },
+      "metrics": {
+        "post_count": 51,
+        "avg_engagement": 27,
+        "share_percentage": 24,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "創味シャンタンと香味ペーストで適当に作る卵炒飯超うめえ",
+        "夜は、永谷園焼豚チャーハン+たくあん、(ハチ食品中華の極み+CookDo香味ペースト)スープ。",
+        "ハム、ねぎ、玉子、玄米を香味ペーストで玄米チャーハン！これひとつで簡単だしこんなに美味しいとは！ご馳走様でした😋 #おうちごはん #自炊記録 https://t.co/wz1UMKryzO",
+        "今日の晩御飯です！今日は生姜ではなくにんにく醤油香味ペーストを使った焼肉です！𓌉𓇋 🥩明日のお弁当と味噌汁は作ったので何とか手間は省いた！ 今日はなんか精神的な事で良くなくてずっと横になっていた気がした。なんか1人って孤独感に押し潰されて辛くなるばかり。食べたら何とかなるかな？… https://t.co/1W1QzGiLR3",
+        "旅行帰りで料理する気力が無い でも出先で足りなかった野菜を 摂取しなければならない ここで強い味方が鍋なんすよ 調理は簡単野菜は食える片付けも楽 今回は香味ペーストとニンニク生姜 ゴマ油も入れて中華風の味にしてみよ …モヤシも入れようかな？ #おうちごはん https://t.co/hl6iqt6UUc"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "5",
+          "1"
+        ],
+        "contentThemes": [
+          "#簡単レシピ",
+          "ワンランクアップ術",
+          "使い切りレシピ"
+        ],
+        "communicationTips": [
+          "共感と応援のメッセージ",
+          "具体的な調理時間の提示"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "疲れて料理をする気力がない",
+          "栄養バランスが気になる",
+          "洗い物を減らしたい"
+        ],
+        "motivations": [
+          "手軽に栄養を摂りたい",
+          "簡単に美味しいものを作りたい",
+          "料理時間を短縮したい"
+        ],
+        "brandPerception": "香味ペーストは、疲れた時に頼りになる、魔法の調味料。"
+      }
+    },
+    {
+      "id": "p_2",
+      "name": "味探求チャレンジャー",
+      "description": "料理は好きだけど、いつも味が決まらない。香味ペーストで新しい味に挑戦中。更なる高みを目指したい。",
+      "brand": "香味ペースト",
+      "position": {
+        "x": 0.21,
+        "y": 0.12
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "中級",
+        "primary_motivation": "バリエーション",
+        "primary_occasion": "不明",
+        "primary_emotion": "中立"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "アレンジ",
+          "味の追求",
+          "実験",
+          "オリジナルレシピ",
+          "創作料理"
+        ]
+      },
+      "metrics": {
+        "post_count": 37,
+        "avg_engagement": 3,
+        "share_percentage": 18,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "炒飯作ったけど自分が作る炒飯毎回なにかが足りないんだよ 香味ペーストやらブラックペッパーやら塩やら入れて油多めで炒めて パラパラにはなるけど 後味が足りなくて美味しくない 不味くもないんだけど 食べてうーん.....うん、ってなるような味 https://t.co/55YiHV9L8r",
+        "香味ペーストニンニク醤油！ 炒飯は一体感があって完成度が高い。けど病みつきというほどニンニクの香りがしない。病みつきにはまだまだ甘い！ 唐揚げは美味い！沁みたニンニク臭と醤油が香ばしくてマヨも一味も合う！焦がさないように揚げないとね 今夜は食べ比べ🍖🤤 #koumi_chakatsu #チャー活 https://t.co/XWaCgXlaHg https://t.co/t701xLtuE4 Q",
+        "香味ペースト買ってきたんですよ。 これはこれでにんにくの味が強いから好きなんだけど、好み分かれそうだなぁ…（） https://t.co/saxFfi6RjW",
+        "作った二郎の残りスープから脂除去して炊き込みご飯作って、それをチャーハンにした かけるラー油と香味ペーストちょっといれただけだけどうますぎる、おすすめ https://t.co/C7TybniqCE",
+        "@tenkawacrystal1 そうですね、チャーハンはコンソメか鶏ガラがお手軽で美味しいですねw(๑´ㅂ`๑)わたしの中華のおすすめはCoo◯Doの「鶏ガラネギ油こがしニンニク油の香味ペースト」これ一本でチャーハン、スープ、野菜炒めがとても美味しく出来上がりますよ！"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "1",
+          "2",
+          "3"
+        ],
+        "contentThemes": [
+          "プロのレシピ",
+          "隠し味テクニック",
+          "世界の料理"
+        ],
+        "communicationTips": [
+          "専門用語を適切に使用",
+          "調理のコツを詳細に解説"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "味が決まらない",
+          "レシピのマンネリ化",
+          "新しい味に挑戦したい"
+        ],
+        "motivations": [
+          "料理の腕を上げたい",
+          "美味しいものを追求したい",
+          "人に喜ばれる料理を作りたい"
+        ],
+        "brandPerception": "香味ペーストは、料理の可能性を広げる、万能調味料。"
+      }
+    },
+    {
+      "id": "p_3",
+      "name": "秒速！手抜き飯",
+      "description": "とにかく時短！平日夜は時間がない。香味ペーストがあれば、秒でご飯が完成！",
+      "brand": "香味ペースト",
+      "position": {
+        "x": -2.14,
+        "y": -0.95
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "初級",
+        "primary_motivation": "時短・効率化",
+        "primary_occasion": "平日夕食（急ぎ）",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "平日夕食（急ぎ）"
+        ],
+        "keywords": [
+          "時短",
+          "手抜き",
+          "効率化",
+          "ワーママ",
+          "平日夜"
+        ]
+      },
+      "metrics": {
+        "post_count": 35,
+        "avg_engagement": 3,
+        "share_percentage": 17,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "ちょっと小腹すいたからお湯沸かして香味ペースト入れただけのスープ飲んだら口の中やけどして草ァ！ ベロンと皮がむけてめっちゃヒリヒリする😭",
+        "冷凍のうどんをチンして 冷凍のネギをかけて あと香味ペーストと醤油辣油山椒 麻 辣 饂 飩",
+        "今日の昼飯はとんこつラーメン🍜と香味ペースト入れただけの炒飯みたいなやつ。 https://t.co/Auy2UE1eIn",
+        "#お料理上手なお母さん目指します QT @SUXTYKqobPMGlll: @kyomokirei @kagami09265293 香味ペーストにお湯混ぜて乾燥野菜、乾燥ワカメ。朝なら溶き卵、夜はラー油だけでもウマーな汁物完成。",
+        "お湯に香味ペーストと溶き卵入れるだけで本格スープになるのなんなんだ 溶き卵っていっても鍋に割入れて高速かき混ぜしたものだから日本語違うか なんでもある時代に生まれて良かったー😵‍💫😵‍💫😵‍💫😽😽😽😽🤞🤞✌️✌️✌️🤝👏🙌🫶👶"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "1",
+          "5"
+        ],
+        "contentThemes": [
+          "5分で作れるレシピ",
+          "レンジ調理",
+          "洗い物なしレシピ"
+        ],
+        "communicationTips": [
+          "具体的な調理時間を強調",
+          "共感的なメッセージを伝える"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "時間がない",
+          "料理をするのが面倒",
+          "手軽に済ませたい"
+        ],
+        "motivations": [
+          "少しでも早く食事を済ませたい",
+          "簡単に美味しいものを作りたい",
+          "時間を有効活用したい"
+        ],
+        "brandPerception": "香味ペーストは、忙しい私の救世主、時短の味方。"
+      }
+    },
+    {
+      "id": "p_4",
+      "name": "こだわりソロ飯",
+      "description": "自分のためだけに、ちょっと贅沢な料理を楽しみたい。香味ペーストでプロの味を再現！",
+      "brand": "香味ペースト",
+      "position": {
+        "x": 0.27,
+        "y": -0.23
+      },
+      "attributes": {
+        "life_stage": "一人暮らし",
+        "cooking_skill": "中級",
+        "primary_motivation": "不明",
+        "primary_occasion": "平日夕食（ゆっくり）",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "平日夕食（ゆっくり）"
+        ],
+        "keywords": [
+          "一人暮らし",
+          "贅沢",
+          "本格",
+          "こだわり",
+          "ラーメン"
+        ]
+      },
+      "metrics": {
+        "post_count": 18,
+        "avg_engagement": 3,
+        "share_percentage": 9,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "飯。料理YouTuber、Genの炊事場さんを参考に味の素の香味ペーストで作った炒飯。家庭用コンロと普通のフライパンで作ったにしては上出来。餃子は蒲田名物你好の元祖羽根付き餃子。 https://t.co/8J6tcfupHY",
+        "#味の素 新商品セットでいただいた、 #香味ペーストやみつきにんにく醤油味 で炒飯作った。 これまーじ美味い。 冷やご飯使てるのに、中の油分でパラパラになるまさにお店の味。 私「炒飯は家で作る時代やな」 娘３歳「(もくもくと食べる)」 息子９歳「やばい。うますぎ死ぬ」 息子が死にました😇😇",
+        "カップ焼きそばの汁捨てるやつは三流、一流は香味ペーストぶち込んでスープにする",
+        "香味ペースト+紹興酒(中国の料理酒)+白ごまでワンランク上のなんちゃってチャーハンができました",
+        "#ステーキハウス楽園 の #ガーリックライス が美味しかったので再現  おでんに使った牛すじの牛脂とスジ肉少しをフライパンで温め、大蒜をこんがりするまで弱火で炒め、卵を入れて崩したらすぐご飯投入。 香味ペースト少し足して炒め、もみのり(本当は刻みのり)を散らして。 お碗に入れて丸くしてお皿へ。 気分はステーキハウス！  煮込まれたおでんの残りを添えて。 二日目のほうが美味しい  #コメダ珈琲店 #"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "5",
+          "1",
+          "9"
+        ],
+        "contentThemes": [
+          "プロの味を再現",
+          "ちょっと贅沢なレシピ",
+          "アレンジレシピ"
+        ],
+        "communicationTips": [
+          "上質なイメージを訴求",
+          "プロのテクニックを紹介"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "外食は高い",
+          "自分で美味しいものを作りたい",
+          "料理の腕を上げたい"
+        ],
+        "motivations": [
+          "手軽に贅沢な気分を味わいたい",
+          "美味しいものを追求したい",
+          "料理の腕を上げたい"
+        ],
+        "brandPerception": "香味ペーストは、自宅で手軽にプロの味が楽しめる、魔法の調味料。"
+      }
+    }
+  ],
+  "clusterConfig": {
+    "x_axis": {
+      "label": "時間・労力投資",
+      "min": -2,
+      "max": 2,
+      "labels": {
+        "min": "手軽・効率重視",
+        "max": "丁寧・時間投資"
+      }
+    },
+    "y_axis": {
+      "label": "心理的関与度",
+      "min": -2,
+      "max": 2,
+      "labels": {
+        "min": "ルーティン",
+        "max": "こだわり・喜ばせたい"
+      }
+    }
+  },
+  "postCount": 559,
+  "personaCount": 5,
+  "generatedAt": "2026-01-21T03:59:15.905Z",
+  "expiresAt": "2026-01-28T03:59:15.905Z",
+  "cached": false,
+  "llmProvider": "gemini",
+  "llmModel": "gemini-2.0-flash-exp",
+  "generationTimeMs": 9451,
+  "quality": {
+    "silhouetteScore": 0.6,
+    "unknownRates": {
+      "life_stage": 85,
+      "cooking_skill": 41,
+      "motivation_category": 74,
+      "meal_occasion": 91,
+      "cooking_for": 69,
+      "emotion": 1,
+      "average": 60
+    },
+    "dataCompleteness": 40,
+    "clusterSeparation": 60,
+    "overallConfidence": 50,
+    "postsAnalyzed": 559,
+    "postsClustered": 209,
+    "postsExcluded": 350,
+    "clusteringMethod": "kmeans",
+    "clusterSizes": [
+      68,
+      51,
+      37,
+      35,
+      18
+    ]
+  }
+}

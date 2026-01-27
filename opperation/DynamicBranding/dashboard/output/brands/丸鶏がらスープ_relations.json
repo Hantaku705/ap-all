@@ -1,0 +1,44 @@
+{
+  "brand": "丸鶏がらスープ",
+  "cooccurrences": [
+    {
+      "brand": "味の素",
+      "count": 12
+    },
+    {
+      "brand": "コンソメ",
+      "count": 2
+    },
+    {
+      "brand": "ほんだし",
+      "count": 1
+    },
+    {
+      "brand": "アジシオ",
+      "count": 0
+    }
+  ],
+  "correlations": [
+    {
+      "brand": "コンソメ",
+      "coefficient": 0.26
+    },
+    {
+      "brand": "コンソメ",
+      "coefficient": 0.26
+    },
+    {
+      "brand": "味の素",
+      "coefficient": 0.2
+    },
+    {
+      "brand": "味の素",
+      "coefficient": 0.2
+    },
+    {
+      "brand": "アジシオ",
+      "coefficient": 0.19
+    }
+  ],
+  "keywords": []
+}

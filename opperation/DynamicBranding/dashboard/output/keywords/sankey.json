@@ -1,0 +1,805 @@
+{
+  "keywords": [
+    {
+      "keyword": "ほんだし",
+      "queryType": "top",
+      "value": "100",
+      "extractedValue": 100,
+      "rank": 1,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "クックドゥ",
+      "queryType": "top",
+      "value": "100",
+      "extractedValue": 100,
+      "rank": 1,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "味の素",
+      "queryType": "top",
+      "value": "100",
+      "extractedValue": 100,
+      "rank": 1,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "丸鶏がらスープ",
+      "queryType": "top",
+      "value": "100",
+      "extractedValue": 100,
+      "rank": 1,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "香味ペースト",
+      "queryType": "top",
+      "value": "100",
+      "extractedValue": 100,
+      "rank": 1,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "コンソメ",
+      "queryType": "top",
+      "value": "100",
+      "extractedValue": 100,
+      "rank": 1,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "ピュアセレクト",
+      "queryType": "top",
+      "value": "100",
+      "extractedValue": 100,
+      "rank": 1,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "アジシオ",
+      "queryType": "top",
+      "value": "100",
+      "extractedValue": 100,
+      "rank": 1,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "だし",
+      "queryType": "top",
+      "value": "90",
+      "extractedValue": 90,
+      "rank": 2,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "だし",
+      "queryType": "top",
+      "value": "90",
+      "extractedValue": 90,
+      "rank": 2,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "だし",
+      "queryType": "top",
+      "value": "90",
+      "extractedValue": 90,
+      "rank": 2,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "だし",
+      "queryType": "top",
+      "value": "90",
+      "extractedValue": 90,
+      "rank": 2,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "だし",
+      "queryType": "top",
+      "value": "90",
+      "extractedValue": 90,
+      "rank": 2,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "だし",
+      "queryType": "top",
+      "value": "90",
+      "extractedValue": 90,
+      "rank": 2,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "だし",
+      "queryType": "top",
+      "value": "90",
+      "extractedValue": 90,
+      "rank": 2,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "だし",
+      "queryType": "top",
+      "value": "90",
+      "extractedValue": 90,
+      "rank": 2,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "調味料",
+      "queryType": "top",
+      "value": "80",
+      "extractedValue": 80,
+      "rank": 3,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "調味料",
+      "queryType": "top",
+      "value": "80",
+      "extractedValue": 80,
+      "rank": 3,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "調味料",
+      "queryType": "top",
+      "value": "80",
+      "extractedValue": 80,
+      "rank": 3,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "調味料",
+      "queryType": "top",
+      "value": "80",
+      "extractedValue": 80,
+      "rank": 3,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "調味料",
+      "queryType": "top",
+      "value": "80",
+      "extractedValue": 80,
+      "rank": 3,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "調味料",
+      "queryType": "top",
+      "value": "80",
+      "extractedValue": 80,
+      "rank": 3,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "調味料",
+      "queryType": "top",
+      "value": "80",
+      "extractedValue": 80,
+      "rank": 3,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "調味料",
+      "queryType": "top",
+      "value": "80",
+      "extractedValue": 80,
+      "rank": 3,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "レシピ",
+      "queryType": "top",
+      "value": "70",
+      "extractedValue": 70,
+      "rank": 4,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "レシピ",
+      "queryType": "top",
+      "value": "70",
+      "extractedValue": 70,
+      "rank": 4,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "レシピ",
+      "queryType": "top",
+      "value": "70",
+      "extractedValue": 70,
+      "rank": 4,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "レシピ",
+      "queryType": "top",
+      "value": "70",
+      "extractedValue": 70,
+      "rank": 4,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "レシピ",
+      "queryType": "top",
+      "value": "70",
+      "extractedValue": 70,
+      "rank": 4,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "レシピ",
+      "queryType": "top",
+      "value": "70",
+      "extractedValue": 70,
+      "rank": 4,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "レシピ",
+      "queryType": "top",
+      "value": "70",
+      "extractedValue": 70,
+      "rank": 4,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "レシピ",
+      "queryType": "top",
+      "value": "70",
+      "extractedValue": 70,
+      "rank": 4,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "味噌汁",
+      "queryType": "top",
+      "value": "60",
+      "extractedValue": 60,
+      "rank": 5,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "味噌汁",
+      "queryType": "top",
+      "value": "60",
+      "extractedValue": 60,
+      "rank": 5,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "味噌汁",
+      "queryType": "top",
+      "value": "60",
+      "extractedValue": 60,
+      "rank": 5,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "味噌汁",
+      "queryType": "top",
+      "value": "60",
+      "extractedValue": 60,
+      "rank": 5,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "味噌汁",
+      "queryType": "top",
+      "value": "60",
+      "extractedValue": 60,
+      "rank": 5,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "味噌汁",
+      "queryType": "top",
+      "value": "60",
+      "extractedValue": 60,
+      "rank": 5,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "味噌汁",
+      "queryType": "top",
+      "value": "60",
+      "extractedValue": 60,
+      "rank": 5,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "味噌汁",
+      "queryType": "top",
+      "value": "60",
+      "extractedValue": 60,
+      "rank": 5,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "和食",
+      "queryType": "top",
+      "value": "50",
+      "extractedValue": 50,
+      "rank": 6,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "和食",
+      "queryType": "top",
+      "value": "50",
+      "extractedValue": 50,
+      "rank": 6,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "和食",
+      "queryType": "top",
+      "value": "50",
+      "extractedValue": 50,
+      "rank": 6,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "和食",
+      "queryType": "top",
+      "value": "50",
+      "extractedValue": 50,
+      "rank": 6,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "和食",
+      "queryType": "top",
+      "value": "50",
+      "extractedValue": 50,
+      "rank": 6,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "和食",
+      "queryType": "top",
+      "value": "50",
+      "extractedValue": 50,
+      "rank": 6,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "和食",
+      "queryType": "top",
+      "value": "50",
+      "extractedValue": 50,
+      "rank": 6,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "和食",
+      "queryType": "top",
+      "value": "50",
+      "extractedValue": 50,
+      "rank": 6,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "簡単料理",
+      "queryType": "top",
+      "value": "40",
+      "extractedValue": 40,
+      "rank": 7,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "簡単料理",
+      "queryType": "top",
+      "value": "40",
+      "extractedValue": 40,
+      "rank": 7,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "簡単料理",
+      "queryType": "top",
+      "value": "40",
+      "extractedValue": 40,
+      "rank": 7,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "簡単料理",
+      "queryType": "top",
+      "value": "40",
+      "extractedValue": 40,
+      "rank": 7,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "簡単料理",
+      "queryType": "top",
+      "value": "40",
+      "extractedValue": 40,
+      "rank": 7,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "簡単料理",
+      "queryType": "top",
+      "value": "40",
+      "extractedValue": 40,
+      "rank": 7,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "簡単料理",
+      "queryType": "top",
+      "value": "40",
+      "extractedValue": 40,
+      "rank": 7,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "簡単料理",
+      "queryType": "top",
+      "value": "40",
+      "extractedValue": 40,
+      "rank": 7,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "時短レシピ",
+      "queryType": "top",
+      "value": "30",
+      "extractedValue": 30,
+      "rank": 8,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "時短レシピ",
+      "queryType": "top",
+      "value": "30",
+      "extractedValue": 30,
+      "rank": 8,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "時短レシピ",
+      "queryType": "top",
+      "value": "30",
+      "extractedValue": 30,
+      "rank": 8,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "時短レシピ",
+      "queryType": "top",
+      "value": "30",
+      "extractedValue": 30,
+      "rank": 8,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "時短レシピ",
+      "queryType": "top",
+      "value": "30",
+      "extractedValue": 30,
+      "rank": 8,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "時短レシピ",
+      "queryType": "top",
+      "value": "30",
+      "extractedValue": 30,
+      "rank": 8,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "時短レシピ",
+      "queryType": "top",
+      "value": "30",
+      "extractedValue": 30,
+      "rank": 8,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "時短レシピ",
+      "queryType": "top",
+      "value": "30",
+      "extractedValue": 30,
+      "rank": 8,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "一人暮らし 料理",
+      "queryType": "top",
+      "value": "20",
+      "extractedValue": 20,
+      "rank": 9,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "一人暮らし 料理",
+      "queryType": "top",
+      "value": "20",
+      "extractedValue": 20,
+      "rank": 9,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "一人暮らし 料理",
+      "queryType": "top",
+      "value": "20",
+      "extractedValue": 20,
+      "rank": 9,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "一人暮らし 料理",
+      "queryType": "top",
+      "value": "20",
+      "extractedValue": 20,
+      "rank": 9,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "一人暮らし 料理",
+      "queryType": "top",
+      "value": "20",
+      "extractedValue": 20,
+      "rank": 9,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "一人暮らし 料理",
+      "queryType": "top",
+      "value": "20",
+      "extractedValue": 20,
+      "rank": 9,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    },
+    {
+      "keyword": "一人暮らし 料理",
+      "queryType": "top",
+      "value": "20",
+      "extractedValue": 20,
+      "rank": 9,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "一人暮らし 料理",
+      "queryType": "top",
+      "value": "20",
+      "extractedValue": 20,
+      "rank": 9,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "晩ごはん",
+      "queryType": "top",
+      "value": "10",
+      "extractedValue": 10,
+      "rank": 10,
+      "fetchDate": "2026-01-17",
+      "brand": "ほんだし",
+      "brandColor": "#E53935"
+    },
+    {
+      "keyword": "晩ごはん",
+      "queryType": "top",
+      "value": "10",
+      "extractedValue": 10,
+      "rank": 10,
+      "fetchDate": "2026-01-17",
+      "brand": "コンソメ",
+      "brandColor": "#5E35B1"
+    },
+    {
+      "keyword": "晩ごはん",
+      "queryType": "top",
+      "value": "10",
+      "extractedValue": 10,
+      "rank": 10,
+      "fetchDate": "2026-01-17",
+      "brand": "クックドゥ",
+      "brandColor": "#FB8C00"
+    },
+    {
+      "keyword": "晩ごはん",
+      "queryType": "top",
+      "value": "10",
+      "extractedValue": 10,
+      "rank": 10,
+      "fetchDate": "2026-01-17",
+      "brand": "丸鶏がらスープ",
+      "brandColor": "#7CB342"
+    },
+    {
+      "keyword": "晩ごはん",
+      "queryType": "top",
+      "value": "10",
+      "extractedValue": 10,
+      "rank": 10,
+      "fetchDate": "2026-01-17",
+      "brand": "アジシオ",
+      "brandColor": "#F4511E"
+    },
+    {
+      "keyword": "晩ごはん",
+      "queryType": "top",
+      "value": "10",
+      "extractedValue": 10,
+      "rank": 10,
+      "fetchDate": "2026-01-17",
+      "brand": "香味ペースト",
+      "brandColor": "#00897B"
+    },
+    {
+      "keyword": "晩ごはん",
+      "queryType": "top",
+      "value": "10",
+      "extractedValue": 10,
+      "rank": 10,
+      "fetchDate": "2026-01-17",
+      "brand": "味の素",
+      "brandColor": "#D81B60"
+    },
+    {
+      "keyword": "晩ごはん",
+      "queryType": "top",
+      "value": "10",
+      "extractedValue": 10,
+      "rank": 10,
+      "fetchDate": "2026-01-17",
+      "brand": "ピュアセレクト",
+      "brandColor": "#039BE5"
+    }
+  ],
+  "cepMappings": []
+}

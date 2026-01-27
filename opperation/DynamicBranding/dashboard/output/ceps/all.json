@@ -1,0 +1,122 @@
+[
+  {
+    "id": 7,
+    "cep_name": "おもてなし料理",
+    "description": "来客時に手料理で喜ばせたいというニーズ",
+    "representative_goal": "ゲストを美味しい料理でもてなしたい",
+    "representative_attribute": "見栄え・本格感",
+    "context_summary": "友人が来る。手料理で喜ばせたい。でも失敗は許されない。",
+    "category": "おもてなし",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 11,
+    "cep_name": "ダイエット中の満足感",
+    "description": "カロリーを抑えつつも満足感のある食事を求めるニーズ",
+    "representative_goal": "ヘルシーでも美味しく満足できる食事をとりたい",
+    "representative_attribute": "低カロリー・満足感",
+    "context_summary": "ダイエット中。でも味気ない食事は続かない。美味しくヘルシーに。",
+    "category": "ダイエット",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 5,
+    "cep_name": "一人暮らしの手抜き飯",
+    "description": "一人暮らしで料理へのモチベーションが低い時の簡単調理ニーズ",
+    "representative_goal": "最小限の手間で満足できる食事をとりたい",
+    "representative_attribute": "手軽さ・コスパ",
+    "context_summary": "一人だと作る気が起きない。でもコンビニ飯は飽きた。簡単に済ませたい。",
+    "category": "一人飯",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 6,
+    "cep_name": "健康意識の高まり",
+    "description": "塩分控えめ、添加物を気にする健康志向層のニーズ",
+    "representative_goal": "体に優しい食事を心がけたい",
+    "representative_attribute": "自然な味・減塩対応",
+    "context_summary": "健康診断で引っかかった。塩分を控えたい。でも味が薄いのは嫌。",
+    "category": "健康志向",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 2,
+    "cep_name": "味付け不安の解消",
+    "description": "自炊初心者や料理に自信がない人の味付けサポートニーズ",
+    "representative_goal": "失敗せずに美味しく作りたい",
+    "representative_attribute": "味の安定性・使いやすさ",
+    "context_summary": "自炊を始めたばかり。味が決まらない不安。失敗したくない。",
+    "category": "料理不安",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 4,
+    "cep_name": "子どもの好き嫌い対策",
+    "description": "子どもが野菜を食べない、偏食を解消したい親のニーズ",
+    "representative_goal": "子どもに栄養バランスの良い食事を食べさせたい",
+    "representative_attribute": "マイルドな味・アレンジ性",
+    "context_summary": "子どもが野菜嫌い。栄養バランスが心配。でも美味しくないと食べない。",
+    "category": "子育て",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 10,
+    "cep_name": "季節の味覚",
+    "description": "旬の食材を活かした季節感ある料理を楽しみたいニーズ",
+    "representative_goal": "季節を感じる美味しい料理を作りたい",
+    "representative_attribute": "素材の引き立て・季節感",
+    "context_summary": "旬の野菜が手に入った。素材を活かした料理がしたい。",
+    "category": "季節料理",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 1,
+    "cep_name": "平日夜の時短ニーズ",
+    "description": "仕事帰りで疲れているが、家族のために手早く食事を作りたい",
+    "representative_goal": "短時間で満足感ある食事を提供したい",
+    "representative_attribute": "即効性・簡単調理",
+    "context_summary": "19時帰宅、子どもが空腹、30分で作りたい。疲れているが手抜きに見られたくない。",
+    "category": "平日夕食",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 8,
+    "cep_name": "晩酌のおつまみ",
+    "description": "お酒に合う簡単なつまみをサッと作りたいニーズ",
+    "representative_goal": "お酒を美味しく楽しむためのつまみを用意したい",
+    "representative_attribute": "即効性・酒との相性",
+    "context_summary": "仕事終わりのビール。何かつまみが欲しい。サッと作りたい。",
+    "category": "晩酌",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 12,
+    "cep_name": "朝の時間節約",
+    "description": "朝の忙しい時間に手早く朝食・弁当を準備したいニーズ",
+    "representative_goal": "朝の限られた時間で効率的に準備を終えたい",
+    "representative_attribute": "超時短・簡単",
+    "context_summary": "朝は時間がない。弁当も作らないと。とにかく早く済ませたい。",
+    "category": "朝食",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 9,
+    "cep_name": "残り物リメイク",
+    "description": "冷蔵庫の残り物を活用して無駄なく料理したいニーズ",
+    "representative_goal": "食材を無駄にせず美味しく食べきりたい",
+    "representative_attribute": "汎用性・アレンジ性",
+    "context_summary": "冷蔵庫に半端な食材。捨てたくない。何か作れないか。",
+    "category": "節約",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  },
+  {
+    "id": 3,
+    "cep_name": "週末の本格料理挑戦",
+    "description": "平日は時間がないが、週末は少し手の込んだ料理に挑戦したい",
+    "representative_goal": "家庭でプロの味を再現したい",
+    "representative_attribute": "本格的な風味・深み",
+    "context_summary": "週末の余裕ある時間。レストランのような味を家で出したい。",
+    "category": "週末料理",
+    "created_at": "2026-01-17T10:17:34.91772+00:00"
+  }
+]

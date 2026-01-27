@@ -18,10 +18,15 @@
 | CLAUDECODE | 86-98回目 | Claude Code オンボーディングWebapp Skills/Starter Kit タブ追加、**Claude Code Starter Kit GitHub作成**、Compareタブ3項目比較化、**Architectureタブ追加**、**Multi-Agent System実装**、**Getting Started ステップ7修正**、**Starter Kit SDK Docs追加**、**レベルベース設計**、**Multi-Agent Shogunオリジナル版再現**、**/shogunスキル作成**、**用語説明＆ペルソナ＆ゴール追加**、**Progate風ミッション形式化**、**ミッションタブ化** | 12件 |
 | 将軍Claude Code化 | 97回目 | /shogunスキルをTask toolベースに書き換え（tmux不要化）、動作テスト成功 | 1件 |
 | nanobanana + tmux版復活 | 99回目 | nanobanana MCP設定、tmux版multi-agent-shogunパス修正・フル起動成功（10インスタンス） | 2件 |
+| フォルダ移行 | 100回目 | DynamicBranding → opperation/ 移行（.git削除、CLAUDE.md更新） | 1件 |
 
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 直近の完了タスク
+- [x] **DynamicBranding → opperation/ 移行（セッション100）**
+  - `/Users/hantaku/Downloads/DynamicBranding` → `opperation/DynamicBranding` に移動
+  - `.git` フォルダ削除（APリポジトリに統合）
+  - `opperation/CLAUDE.md`、`AP/CLAUDE.md` のフォルダ構成を更新
 - [x] **nanobanana MCP + tmux版multi-agent-shogunフル起動（セッション99）**
   - nanobanana MCPサーバー登録（Gemini 2.5 Flash画像生成、`claude mcp add`）
   - tmux版multi-agent-shogunパス修正（4ファイル: projects.yaml, shogun.md, karo.md, ashigaru.md）
@@ -117,23 +122,33 @@
 
 ## 未コミット変更
 ```
+M .claude/commands/shogun.md
 M CLAUDE.md
 M HANDOFF.md
-M opperation/CLAUDECODE/webapp/app/data/onboarding-data.ts
-M opperation/CLAUDECODE/webapp/app/page.tsx
-M opperation/multi-agent/config/projects.yaml
+M _claude-code/commands/shogun.md
+M opperation/CLAUDE.md
 M opperation/multi-agent/dashboard.md
-M opperation/multi-agent/instructions/ashigaru.md
-M opperation/multi-agent/instructions/karo.md
-M opperation/multi-agent/instructions/shogun.md
+?? opperation/DynamicBranding/
+?? opperation/multi-agent/dashboard-server.js
+?? opperation/multi-agent/dashboard.html
 ```
 
 ## 最新コミット
 ```
-883046e feat: migrate shogun multi-agent system from tmux to Task tool
+c3027d5 feat(claudecode): full UI/UX redesign with component architecture and mission expansion
 ```
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-27 (100)
+- **DynamicBranding → opperation/ 移行**
+  - ユーザー依頼: DynamicBrandingプロジェクトフォルダをAP/opperation/に移行
+  - **実施内容**:
+    - `.git` フォルダ削除（APリポジトリへの統合のため）
+    - `mv` でフォルダ移動: `/Users/hantaku/Downloads/DynamicBranding` → `opperation/DynamicBranding`
+    - `opperation/CLAUDE.md` にDynamicBranding行追加
+    - `AP/CLAUDE.md` のフォルダ構成にDynamicBranding追加
+  - **本番URL**: https://dashboard-smoky-six-15.vercel.app
 
 ### 2026-01-27 (99)
 - **nanobanana MCP + tmux版multi-agent-shogunフル起動**

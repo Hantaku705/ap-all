@@ -1,0 +1,50 @@
+[
+  {
+    "brand": "味の素",
+    "count": 3740,
+    "share": 43.9,
+    "color": "#D81B60"
+  },
+  {
+    "brand": "コンソメ",
+    "count": 1048,
+    "share": 12.3,
+    "color": "#5E35B1"
+  },
+  {
+    "brand": "ほんだし",
+    "count": 271,
+    "share": 3.2,
+    "color": "#E53935"
+  },
+  {
+    "brand": "丸鶏がらスープ",
+    "count": 243,
+    "share": 2.9,
+    "color": "#7CB342"
+  },
+  {
+    "brand": "クックドゥ",
+    "count": 240,
+    "share": 2.8,
+    "color": "#FB8C00"
+  },
+  {
+    "brand": "アジシオ",
+    "count": 96,
+    "share": 1.1,
+    "color": "#F4511E"
+  },
+  {
+    "brand": "ピュアセレクト",
+    "count": 30,
+    "share": 0.4,
+    "color": "#039BE5"
+  },
+  {
+    "brand": "香味ペースト",
+    "count": 24,
+    "share": 0.3,
+    "color": "#00897B"
+  }
+]

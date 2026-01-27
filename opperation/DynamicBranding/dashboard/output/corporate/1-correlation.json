@@ -1,0 +1,345 @@
+{
+  "correlations": [
+    {
+      "id": 1,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": -7,
+      "correlation_coefficient": -0.1359,
+      "p_value": 0.352165,
+      "sample_size": 48,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 2,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": -5,
+      "correlation_coefficient": 0.065,
+      "p_value": 0.488958,
+      "sample_size": 115,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 3,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": -3,
+      "correlation_coefficient": -0.011,
+      "p_value": 0.907592,
+      "sample_size": 114,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 4,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 0,
+      "correlation_coefficient": -0.0498,
+      "p_value": 0.735449,
+      "sample_size": 48,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 5,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 1,
+      "correlation_coefficient": -0.0097,
+      "p_value": 0.921349,
+      "sample_size": 105,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 6,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 3,
+      "correlation_coefficient": -0.0298,
+      "p_value": 0.753473,
+      "sample_size": 113,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 7,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 5,
+      "correlation_coefficient": -0.06,
+      "p_value": 0.661571,
+      "sample_size": 55,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 8,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 7,
+      "correlation_coefficient": -0.091,
+      "p_value": 0.539994,
+      "sample_size": 47,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 9,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": -7,
+      "correlation_coefficient": 0.2075,
+      "p_value": 0.15032,
+      "sample_size": 48,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 10,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": -5,
+      "correlation_coefficient": 0.1152,
+      "p_value": 0.217835,
+      "sample_size": 115,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 11,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": -3,
+      "correlation_coefficient": -0.0126,
+      "p_value": 0.894115,
+      "sample_size": 114,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 12,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 0,
+      "correlation_coefficient": 0.0334,
+      "p_value": 0.820716,
+      "sample_size": 48,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 13,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 1,
+      "correlation_coefficient": -0.0571,
+      "p_value": 0.561851,
+      "sample_size": 105,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 14,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 3,
+      "correlation_coefficient": -0.071,
+      "p_value": 0.453044,
+      "sample_size": 113,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 15,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 5,
+      "correlation_coefficient": -0.1935,
+      "p_value": 0.150985,
+      "sample_size": 55,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    },
+    {
+      "id": 16,
+      "corporate_brand_id": 1,
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 7,
+      "correlation_coefficient": -0.0331,
+      "p_value": 0.824124,
+      "sample_size": 47,
+      "is_significant": false,
+      "start_date": "2021-01-25",
+      "end_date": "2025-02-25",
+      "calculated_at": "2026-01-22T06:29:31.205Z"
+    }
+  ],
+  "significant_correlations": [],
+  "matrix": [
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": -7,
+      "correlation": -0.1359,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": -5,
+      "correlation": 0.065,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": -3,
+      "correlation": -0.011,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 0,
+      "correlation": -0.0498,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 1,
+      "correlation": -0.0097,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 3,
+      "correlation": -0.0298,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 5,
+      "correlation": -0.06,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "close_price",
+      "lag_days": 7,
+      "correlation": -0.091,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": -7,
+      "correlation": 0.2075,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": -5,
+      "correlation": 0.1152,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": -3,
+      "correlation": -0.0126,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 0,
+      "correlation": 0.0334,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 1,
+      "correlation": -0.0571,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 3,
+      "correlation": -0.071,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 5,
+      "correlation": -0.1935,
+      "is_significant": false
+    },
+    {
+      "ugc_metric": "mention_count",
+      "stock_metric": "price_change",
+      "lag_days": 7,
+      "correlation": -0.0331,
+      "is_significant": false
+    }
+  ],
+  "best_correlation": null,
+  "generated_at": "2026-01-22T07:00:06.381Z"
+}

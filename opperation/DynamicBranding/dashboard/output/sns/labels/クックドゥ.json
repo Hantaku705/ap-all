@@ -1,0 +1,151 @@
+{
+  "total": 1000,
+  "sentiment": [
+    {
+      "name": "positive",
+      "count": 483,
+      "percentage": 48.3
+    },
+    {
+      "name": "neutral",
+      "count": 481,
+      "percentage": 48.1
+    },
+    {
+      "name": "negative",
+      "count": 36,
+      "percentage": 3.6
+    }
+  ],
+  "intent": [
+    {
+      "name": "usage_report",
+      "count": 431,
+      "percentage": 43.1
+    },
+    {
+      "name": "other",
+      "count": 398,
+      "percentage": 39.8
+    },
+    {
+      "name": "recipe_share",
+      "count": 68,
+      "percentage": 6.8
+    },
+    {
+      "name": "purchase_consider",
+      "count": 40,
+      "percentage": 4
+    },
+    {
+      "name": "complaint",
+      "count": 35,
+      "percentage": 3.5
+    },
+    {
+      "name": "question",
+      "count": 25,
+      "percentage": 2.5
+    }
+  ],
+  "emotion": [
+    {
+      "name": "neutral",
+      "count": 446,
+      "percentage": 44.6
+    },
+    {
+      "name": "satisfaction",
+      "count": 333,
+      "percentage": 33.3
+    },
+    {
+      "name": "frustration",
+      "count": 83,
+      "percentage": 8.3
+    },
+    {
+      "name": "excitement",
+      "count": 82,
+      "percentage": 8.2
+    },
+    {
+      "name": "relief",
+      "count": 30,
+      "percentage": 3
+    },
+    {
+      "name": "anxiety",
+      "count": 18,
+      "percentage": 1.8
+    },
+    {
+      "name": "guilt",
+      "count": 5,
+      "percentage": 0.5
+    }
+  ],
+  "cep": [
+    {
+      "name": "平日夜の時短ニーズ",
+      "count": 372,
+      "percentage": 37.2
+    },
+    {
+      "name": "味付け不安の解消",
+      "count": 52,
+      "percentage": 5.2
+    },
+    {
+      "name": "一人暮らしの手抜き飯",
+      "count": 46,
+      "percentage": 4.6
+    },
+    {
+      "name": "週末の本格料理挑戦",
+      "count": 38,
+      "percentage": 3.8
+    },
+    {
+      "name": "子どもの好き嫌い対策",
+      "count": 24,
+      "percentage": 2.4
+    },
+    {
+      "name": "おもてなし料理",
+      "count": 15,
+      "percentage": 1.5
+    },
+    {
+      "name": "健康意識の高まり",
+      "count": 11,
+      "percentage": 1.1
+    },
+    {
+      "name": "晩酌のおつまみ",
+      "count": 7,
+      "percentage": 0.7
+    },
+    {
+      "name": "残り物リメイク",
+      "count": 5,
+      "percentage": 0.5
+    },
+    {
+      "name": "ダイエット中の満足感",
+      "count": 4,
+      "percentage": 0.4
+    },
+    {
+      "name": "季節の味覚",
+      "count": 3,
+      "percentage": 0.3
+    },
+    {
+      "name": "朝の時間節約",
+      "count": 1,
+      "percentage": 0.1
+    }
+  ]
+}

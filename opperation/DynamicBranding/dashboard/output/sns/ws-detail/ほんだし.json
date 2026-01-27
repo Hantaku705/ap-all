@@ -1,0 +1,334 @@
+{
+  "dish_category": [
+    {
+      "category": "汁物",
+      "count": 230,
+      "percentage": 30.6
+    },
+    {
+      "category": "煮込み",
+      "count": 107,
+      "percentage": 14.2
+    },
+    {
+      "category": "麺類",
+      "count": 89,
+      "percentage": 11.9
+    },
+    {
+      "category": "下味・調味",
+      "count": 88,
+      "percentage": 11.7
+    },
+    {
+      "category": "ご飯もの",
+      "count": 83,
+      "percentage": 11.1
+    },
+    {
+      "category": "その他",
+      "count": 64,
+      "percentage": 8.5
+    },
+    {
+      "category": "炒め物",
+      "count": 30,
+      "percentage": 4
+    },
+    {
+      "category": "サラダ",
+      "count": 26,
+      "percentage": 3.5
+    },
+    {
+      "category": "焼き物",
+      "count": 15,
+      "percentage": 2
+    },
+    {
+      "category": "揚げ物",
+      "count": 15,
+      "percentage": 2
+    },
+    {
+      "category": "中華",
+      "count": 4,
+      "percentage": 0.5
+    }
+  ],
+  "dish_name": [
+    {
+      "name": "味噌汁",
+      "count": 113,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "パスタ",
+      "count": 10,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "煮物",
+      "count": 9,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "肉じゃが",
+      "count": 8,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "チャーハン",
+      "count": 8,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "鍋",
+      "count": 8,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "炊き込みご飯",
+      "count": 8,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "おにぎり",
+      "count": 7,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "卵かけご飯",
+      "count": 7,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "おでん",
+      "count": 7,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "お雑煮",
+      "count": 7,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "スープ",
+      "count": 7,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "唐揚げ",
+      "count": 6,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "豚汁",
+      "count": 6,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "うどん",
+      "count": 6,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "お好み焼き",
+      "count": 6,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "手羽元と長芋のオイスター梅煮",
+      "count": 5,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "焼きうどん",
+      "count": 4,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "だし巻き卵",
+      "count": 4,
+      "brand": "ほんだし"
+    },
+    {
+      "name": "お粥",
+      "count": 4,
+      "brand": "ほんだし"
+    }
+  ],
+  "meal_occasion": [
+    {
+      "occasion": "平日夜（ゆっくり）",
+      "count": 98,
+      "percentage": 37.1
+    },
+    {
+      "occasion": "平日夜（急ぎ）",
+      "count": 62,
+      "percentage": 23.5
+    },
+    {
+      "occasion": "朝食",
+      "count": 37,
+      "percentage": 14
+    },
+    {
+      "occasion": "夜食・晩酌",
+      "count": 32,
+      "percentage": 12.1
+    },
+    {
+      "occasion": "お弁当",
+      "count": 22,
+      "percentage": 8.3
+    },
+    {
+      "occasion": "週末夕食",
+      "count": 9,
+      "percentage": 3.4
+    },
+    {
+      "occasion": "パーティー",
+      "count": 2,
+      "percentage": 0.8
+    },
+    {
+      "occasion": "週末ブランチ",
+      "count": 2,
+      "percentage": 0.8
+    }
+  ],
+  "cooking_for": [
+    {
+      "target": "自分用",
+      "count": 490,
+      "percentage": 71.2
+    },
+    {
+      "target": "家族",
+      "count": 155,
+      "percentage": 22.5
+    },
+    {
+      "target": "子ども",
+      "count": 19,
+      "percentage": 2.8
+    },
+    {
+      "target": "複数",
+      "count": 14,
+      "percentage": 2
+    },
+    {
+      "target": "配偶者",
+      "count": 5,
+      "percentage": 0.7
+    },
+    {
+      "target": "来客",
+      "count": 4,
+      "percentage": 0.6
+    },
+    {
+      "target": "親・高齢者",
+      "count": 1,
+      "percentage": 0.1
+    }
+  ],
+  "motivation": [
+    {
+      "category": "定番・安心感",
+      "count": 142,
+      "percentage": 24.7
+    },
+    {
+      "category": "時間がない",
+      "count": 136,
+      "percentage": 23.7
+    },
+    {
+      "category": "味を失敗したくない",
+      "count": 90,
+      "percentage": 15.7
+    },
+    {
+      "category": "いつもと違うもの",
+      "count": 65,
+      "percentage": 11.3
+    },
+    {
+      "category": "健康志向",
+      "count": 65,
+      "percentage": 11.3
+    },
+    {
+      "category": "料理に自信がない",
+      "count": 43,
+      "percentage": 7.5
+    },
+    {
+      "category": "節約",
+      "count": 28,
+      "percentage": 4.9
+    },
+    {
+      "category": "相手を喜ばせたい",
+      "count": 6,
+      "percentage": 1
+    }
+  ],
+  "brand_dish": [
+    {
+      "brand": "ほんだし",
+      "category": "汁物",
+      "count": 230
+    },
+    {
+      "brand": "ほんだし",
+      "category": "炒め物",
+      "count": 30
+    },
+    {
+      "brand": "ほんだし",
+      "category": "下味・調味",
+      "count": 88
+    },
+    {
+      "brand": "ほんだし",
+      "category": "中華",
+      "count": 4
+    },
+    {
+      "brand": "ほんだし",
+      "category": "麺類",
+      "count": 89
+    },
+    {
+      "brand": "ほんだし",
+      "category": "焼き物",
+      "count": 15
+    },
+    {
+      "brand": "ほんだし",
+      "category": "揚げ物",
+      "count": 15
+    },
+    {
+      "brand": "ほんだし",
+      "category": "煮込み",
+      "count": 107
+    },
+    {
+      "brand": "ほんだし",
+      "category": "ご飯もの",
+      "count": 83
+    },
+    {
+      "brand": "ほんだし",
+      "category": "サラダ",
+      "count": 26
+    }
+  ]
+}

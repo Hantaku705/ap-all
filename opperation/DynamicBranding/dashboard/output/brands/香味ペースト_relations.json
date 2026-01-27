@@ -1,0 +1,48 @@
+{
+  "brand": "香味ペースト",
+  "cooccurrences": [
+    {
+      "brand": "クックドゥ",
+      "count": 4
+    },
+    {
+      "brand": "味の素",
+      "count": 1
+    },
+    {
+      "brand": "コンソメ",
+      "count": 0
+    },
+    {
+      "brand": "ピュアセレクト",
+      "count": 0
+    },
+    {
+      "brand": "アジシオ",
+      "count": 0
+    }
+  ],
+  "correlations": [
+    {
+      "brand": "味の素",
+      "coefficient": -0.17
+    },
+    {
+      "brand": "味の素",
+      "coefficient": -0.17
+    },
+    {
+      "brand": "ほんだし",
+      "coefficient": -0.15
+    },
+    {
+      "brand": "ほんだし",
+      "coefficient": -0.15
+    },
+    {
+      "brand": "アジシオ",
+      "coefficient": -0.14
+    }
+  ],
+  "keywords": []
+}

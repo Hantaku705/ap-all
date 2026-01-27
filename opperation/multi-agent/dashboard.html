@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shogun Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-bottom: 2px solid #c9a96e;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  header h1 {
+    font-size: 20px;
+    color: #c9a96e;
+    letter-spacing: 2px;
+  }
+  header h1 span { font-size: 24px; margin-right: 8px; }
+  .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+  }
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #4caf50;
+    animation: pulse 2s infinite;
+  }
+  .dot.disconnected { background: #f44336; animation: none; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .timestamp { color: #888; font-size: 12px; }
+  main { padding: 24px; max-width: 1200px; margin: 0 auto; }
+  .dashboard h1 { display: none; }
+  .dashboard h2 {
+    font-size: 18px;
+    margin: 24px 0 12px;
+    padding: 8px 12px;
+    background: #1a1a2e;
+    border-left: 4px solid #c9a96e;
+    border-radius: 4px;
+  }
+  .dashboard h2:first-of-type { margin-top: 0; }
+  .dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 16px;
+    font-size: 14px;
+  }
+  .dashboard th {
+    background: #16213e;
+    color: #c9a96e;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #c9a96e44;
+  }
+  .dashboard td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ffffff10;
+  }
+  .dashboard tr:hover td { background: #ffffff08; }
+  .dashboard p {
+    margin: 4px 0;
+    color: #aaa;
+  }
+  .flash { animation: flashBg 1s ease-out; }
+  @keyframes flashBg {
+    0% { background: #c9a96e22; }
+    100% { background: transparent; }
+  }
+  .footer {
+    text-align: center;
+    padding: 16px;
+    color: #555;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1><span>⚔️</span> SHOGUN DASHBOARD</h1>
+  <div class="status-badge">
+    <div class="dot" id="statusDot"></div>
+    <span id="statusText">接続中...</span>
+    <span class="timestamp" id="lastUpdate"></span>
+  </div>
+</header>
+<main>
+  <div class="dashboard" id="content">読み込み中...</div>
+</main>
+<div class="footer">Shogun Multi-Agent System — Live Dashboard</div>
+<script>
+  var content = document.getElementById('content');
+  var statusDot = document.getElementById('statusDot');
+  var statusText = document.getElementById('statusText');
+  var lastUpdate = document.getElementById('lastUpdate');
+
+  function mdToHtml(md) {
+    var lines = md.split('\n');
+    var out = [];
+    var i = 0;
+    while (i < lines.length) {
+      var line = lines[i];
+
+      // heading
+      if (line.match(/^### /)) {
+        out.push('<h3>' + line.slice(4) + '</h3>');
+        i++; continue;
+      }
+      if (line.match(/^## /)) {
+        out.push('<h2>' + line.slice(3) + '</h2>');
+        i++; continue;
+      }
+      if (line.match(/^# /)) {
+        out.push('<h1>' + line.slice(2) + '</h1>');
+        i++; continue;
+      }
+
+      // table block
+      if (line.indexOf('|') !== -1 && line.trim().charAt(0) === '|') {
+        var tableLines = [];
+        while (i < lines.length && lines[i].indexOf('|') !== -1 && lines[i].trim().charAt(0) === '|') {
+          tableLines.push(lines[i]);
+          i++;
+        }
+        if (tableLines.length >= 2) {
+          var parseRow = function(r) {
+            var parts = r.split('|');
+            var cells = [];
+            for (var j = 1; j < parts.length - 1; j++) {
+              cells.push(parts[j].trim());
+            }
+            return cells;
+          };
+          var headers = parseRow(tableLines[0]);
+          var isSep = /^[\s|:-]+$/.test(tableLines[1]);
+          var startIdx = isSep ? 2 : 1;
+          var t = '<table><thead><tr>';
+          for (var h = 0; h < headers.length; h++) {
+            t += '<th>' + headers[h] + '</th>';
+          }
+          t += '</tr></thead><tbody>';
+          for (var r = startIdx; r < tableLines.length; r++) {
+            var cells = parseRow(tableLines[r]);
+            t += '<tr>';
+            for (var c = 0; c < cells.length; c++) {
+              t += '<td>' + cells[c] + '</td>';
+            }
+            t += '</tr>';
+          }
+          t += '</tbody></table>';
+          out.push(t);
+        } else {
+          for (var k = 0; k < tableLines.length; k++) out.push('<p>' + tableLines[k] + '</p>');
+        }
+        continue;
+      }
+
+      // bold
+      line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+      // empty line
+      if (line.trim() === '') { i++; continue; }
+
+      // paragraph
+      out.push('<p>' + line + '</p>');
+      i++;
+    }
+    return out.join('\n');
+  }
+
+  function connect() {
+    var ws = new WebSocket('ws://' + location.host + '/ws');
+    ws.onopen = function() {
+      statusDot.classList.remove('disconnected');
+      statusText.textContent = 'LIVE';
+    };
+    ws.onmessage = function(e) {
+      content.innerHTML = mdToHtml(e.data);
+      content.classList.remove('flash');
+      void content.offsetWidth;
+      content.classList.add('flash');
+      lastUpdate.textContent = new Date().toLocaleTimeString('ja-JP');
+    };
+    ws.onclose = function() {
+      statusDot.classList.add('disconnected');
+      statusText.textContent = '再接続中...';
+      setTimeout(connect, 2000);
+    };
+    ws.onerror = function() { ws.close(); };
+  }
+  connect();
+</script>
+</body>
+</html>

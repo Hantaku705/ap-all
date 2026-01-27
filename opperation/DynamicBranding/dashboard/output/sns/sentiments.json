@@ -1,0 +1,146 @@
+[
+  {
+    "brand": "ほんだし",
+    "positiveCount": 11,
+    "neutralCount": 9,
+    "negativeCount": 9,
+    "negativeRate": 31.03,
+    "total": 29,
+    "color": "#E53935"
+  },
+  {
+    "brand": "アジシオ",
+    "positiveCount": 6,
+    "neutralCount": 9,
+    "negativeCount": 6,
+    "negativeRate": 28.57,
+    "total": 21,
+    "color": "#F4511E"
+  },
+  {
+    "brand": "クックドゥ",
+    "positiveCount": 16,
+    "neutralCount": 5,
+    "negativeCount": 6,
+    "negativeRate": 22.22,
+    "total": 27,
+    "color": "#FB8C00"
+  },
+  {
+    "brand": "香味ペースト",
+    "positiveCount": 4,
+    "neutralCount": 0,
+    "negativeCount": 1,
+    "negativeRate": 20,
+    "total": 5,
+    "color": "#00897B"
+  },
+  {
+    "brand": "味の素",
+    "positiveCount": 123,
+    "neutralCount": 465,
+    "negativeCount": 86,
+    "negativeRate": 12.76,
+    "total": 674,
+    "color": "#D81B60"
+  },
+  {
+    "brand": "味の素",
+    "positiveCount": 1870,
+    "neutralCount": 413,
+    "negativeCount": 101,
+    "negativeRate": 4.2,
+    "total": 2384,
+    "color": "#D81B60"
+  },
+  {
+    "brand": "アジシオ",
+    "positiveCount": 72,
+    "neutralCount": 20,
+    "negativeCount": 4,
+    "negativeRate": 4.2,
+    "total": 96,
+    "color": "#F4511E"
+  },
+  {
+    "brand": "ほんだし",
+    "positiveCount": 224,
+    "neutralCount": 43,
+    "negativeCount": 4,
+    "negativeRate": 1.5,
+    "total": 271,
+    "color": "#E53935"
+  },
+  {
+    "brand": "クックドゥ",
+    "positiveCount": 124,
+    "neutralCount": 16,
+    "negativeCount": 1,
+    "negativeRate": 0.7,
+    "total": 141,
+    "color": "#FB8C00"
+  },
+  {
+    "brand": "丸鶏がらスープ",
+    "positiveCount": 218,
+    "neutralCount": 24,
+    "negativeCount": 1,
+    "negativeRate": 0.4,
+    "total": 243,
+    "color": "#7CB342"
+  },
+  {
+    "brand": "コンソメ",
+    "positiveCount": 10,
+    "neutralCount": 380,
+    "negativeCount": 1,
+    "negativeRate": 0.26,
+    "total": 391,
+    "color": "#5E35B1"
+  },
+  {
+    "brand": "コンソメ",
+    "positiveCount": 943,
+    "neutralCount": 103,
+    "negativeCount": 2,
+    "negativeRate": 0.2,
+    "total": 1048,
+    "color": "#5E35B1"
+  },
+  {
+    "brand": "香味ペースト",
+    "positiveCount": 21,
+    "neutralCount": 3,
+    "negativeCount": 0,
+    "negativeRate": 0,
+    "total": 24,
+    "color": "#00897B"
+  },
+  {
+    "brand": "丸鶏がらスープ",
+    "positiveCount": 12,
+    "neutralCount": 5,
+    "negativeCount": 0,
+    "negativeRate": 0,
+    "total": 17,
+    "color": "#7CB342"
+  },
+  {
+    "brand": "ピュアセレクト",
+    "positiveCount": 2,
+    "neutralCount": 1,
+    "negativeCount": 0,
+    "negativeRate": 0,
+    "total": 3,
+    "color": "#039BE5"
+  },
+  {
+    "brand": "ピュアセレクト",
+    "positiveCount": 27,
+    "neutralCount": 3,
+    "negativeCount": 0,
+    "negativeRate": 0,
+    "total": 30,
+    "color": "#039BE5"
+  }
+]

@@ -1,0 +1,334 @@
+{
+  "dish_category": [
+    {
+      "category": "下味・調味",
+      "count": 229,
+      "percentage": 45.1
+    },
+    {
+      "category": "その他",
+      "count": 119,
+      "percentage": 23.4
+    },
+    {
+      "category": "ご飯もの",
+      "count": 61,
+      "percentage": 12
+    },
+    {
+      "category": "サラダ",
+      "count": 29,
+      "percentage": 5.7
+    },
+    {
+      "category": "揚げ物",
+      "count": 23,
+      "percentage": 4.5
+    },
+    {
+      "category": "麺類",
+      "count": 16,
+      "percentage": 3.1
+    },
+    {
+      "category": "焼き物",
+      "count": 13,
+      "percentage": 2.6
+    },
+    {
+      "category": "汁物",
+      "count": 8,
+      "percentage": 1.6
+    },
+    {
+      "category": "炒め物",
+      "count": 6,
+      "percentage": 1.2
+    },
+    {
+      "category": "煮込み",
+      "count": 3,
+      "percentage": 0.6
+    },
+    {
+      "category": "中華",
+      "count": 1,
+      "percentage": 0.2
+    }
+  ],
+  "dish_name": [
+    {
+      "name": "アジシオ",
+      "count": 35,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "塩",
+      "count": 18,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "おにぎり",
+      "count": 17,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "トマト",
+      "count": 5,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "塩むすび",
+      "count": 4,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "ご飯",
+      "count": 4,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "豆腐のたたき",
+      "count": 3,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "ラーメン",
+      "count": 3,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "パスタ",
+      "count": 3,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "味噌汁",
+      "count": 3,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "白米",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "カレー",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "焼き芋",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "ポップコーン",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "スイカ",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "ゆでたまご",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "きゅうりの和え物",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "茹で卵",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "納豆トースト",
+      "count": 2,
+      "brand": "アジシオ"
+    },
+    {
+      "name": "チャーハン",
+      "count": 2,
+      "brand": "アジシオ"
+    }
+  ],
+  "meal_occasion": [
+    {
+      "occasion": "夜食・晩酌",
+      "count": 61,
+      "percentage": 53
+    },
+    {
+      "occasion": "朝食",
+      "count": 17,
+      "percentage": 14.8
+    },
+    {
+      "occasion": "平日夜（ゆっくり）",
+      "count": 16,
+      "percentage": 13.9
+    },
+    {
+      "occasion": "お弁当",
+      "count": 10,
+      "percentage": 8.7
+    },
+    {
+      "occasion": "平日夜（急ぎ）",
+      "count": 8,
+      "percentage": 7
+    },
+    {
+      "occasion": "パーティー",
+      "count": 1,
+      "percentage": 0.9
+    },
+    {
+      "occasion": "週末夕食",
+      "count": 1,
+      "percentage": 0.9
+    },
+    {
+      "occasion": "週末ブランチ",
+      "count": 1,
+      "percentage": 0.9
+    }
+  ],
+  "cooking_for": [
+    {
+      "target": "自分用",
+      "count": 332,
+      "percentage": 91.5
+    },
+    {
+      "target": "家族",
+      "count": 15,
+      "percentage": 4.1
+    },
+    {
+      "target": "子ども",
+      "count": 7,
+      "percentage": 1.9
+    },
+    {
+      "target": "親・高齢者",
+      "count": 3,
+      "percentage": 0.8
+    },
+    {
+      "target": "来客",
+      "count": 3,
+      "percentage": 0.8
+    },
+    {
+      "target": "配偶者",
+      "count": 2,
+      "percentage": 0.6
+    },
+    {
+      "target": "複数",
+      "count": 1,
+      "percentage": 0.3
+    }
+  ],
+  "motivation": [
+    {
+      "category": "定番・安心感",
+      "count": 75,
+      "percentage": 32.9
+    },
+    {
+      "category": "時間がない",
+      "count": 37,
+      "percentage": 16.2
+    },
+    {
+      "category": "健康志向",
+      "count": 31,
+      "percentage": 13.6
+    },
+    {
+      "category": "いつもと違うもの",
+      "count": 28,
+      "percentage": 12.3
+    },
+    {
+      "category": "味を失敗したくない",
+      "count": 24,
+      "percentage": 10.5
+    },
+    {
+      "category": "節約",
+      "count": 15,
+      "percentage": 6.6
+    },
+    {
+      "category": "料理に自信がない",
+      "count": 14,
+      "percentage": 6.1
+    },
+    {
+      "category": "相手を喜ばせたい",
+      "count": 4,
+      "percentage": 1.8
+    }
+  ],
+  "brand_dish": [
+    {
+      "brand": "アジシオ",
+      "category": "炒め物",
+      "count": 6
+    },
+    {
+      "brand": "アジシオ",
+      "category": "下味・調味",
+      "count": 229
+    },
+    {
+      "brand": "アジシオ",
+      "category": "サラダ",
+      "count": 29
+    },
+    {
+      "brand": "アジシオ",
+      "category": "ご飯もの",
+      "count": 61
+    },
+    {
+      "brand": "アジシオ",
+      "category": "揚げ物",
+      "count": 23
+    },
+    {
+      "brand": "アジシオ",
+      "category": "焼き物",
+      "count": 13
+    },
+    {
+      "brand": "アジシオ",
+      "category": "麺類",
+      "count": 16
+    },
+    {
+      "brand": "アジシオ",
+      "category": "煮込み",
+      "count": 3
+    },
+    {
+      "brand": "アジシオ",
+      "category": "汁物",
+      "count": 8
+    },
+    {
+      "brand": "アジシオ",
+      "category": "中華",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "corporate": {
+    "id": 1,
+    "name": "味の素株式会社",
+    "ticker_symbol": "2802.T",
+    "english_name": "Ajinomoto Co., Inc.",
+    "founded_year": 1909,
+    "headquarters": "東京都中央区",
+    "industry": "食品",
+    "logo_url": null
+  },
+  "product_brands": [
+    {
+      "id": 1,
+      "name": "ほんだし",
+      "category": "seasoning",
+      "weight": 1,
+      "mention_count": 271,
+      "sentiment_score": 0
+    },
+    {
+      "id": 2,
+      "name": "クックドゥ",
+      "category": "instant_food",
+      "weight": 1,
+      "mention_count": 240,
+      "sentiment_score": 0
+    },
+    {
+      "id": 3,
+      "name": "味の素",
+      "category": "seasoning",
+      "weight": 1,
+      "mention_count": 3740,
+      "sentiment_score": 0
+    },
+    {
+      "id": 4,
+      "name": "丸鶏がらスープ",
+      "category": "seasoning",
+      "weight": 1,
+      "mention_count": 243,
+      "sentiment_score": 0
+    },
+    {
+      "id": 5,
+      "name": "香味ペースト",
+      "category": "seasoning",
+      "weight": 1,
+      "mention_count": 24,
+      "sentiment_score": 0
+    },
+    {
+      "id": 6,
+      "name": "コンソメ",
+      "category": "seasoning",
+      "weight": 1,
+      "mention_count": 1048,
+      "sentiment_score": 0
+    },
+    {
+      "id": 7,
+      "name": "ピュアセレクト",
+      "category": "mayonnaise",
+      "weight": 1,
+      "mention_count": 30,
+      "sentiment_score": 0
+    },
+    {
+      "id": 8,
+      "name": "アジシオ",
+      "category": "seasoning",
+      "weight": 1,
+      "mention_count": 96,
+      "sentiment_score": 0
+    },
+    {
+      "id": 17,
+      "name": "鍋キューブ",
+      "category": "other",
+      "weight": 1,
+      "mention_count": 0,
+      "sentiment_score": 0
+    }
+  ],
+  "aggregated_metrics": {
+    "total_mentions": 5692,
+    "avg_sentiment": 0,
+    "positive_rate": 0,
+    "cep_coverage": 12
+  },
+  "latest_stock": {
+    "date": "2026-01-22",
+    "close": 3659,
+    "volume": 3142600,
+    "change": -0.08
+  },
+  "best_correlation": null,
+  "generated_at": "2026-01-22T07:00:06.192Z"
+}

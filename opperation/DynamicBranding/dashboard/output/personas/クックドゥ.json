@@ -1,0 +1,654 @@
+{
+  "brand": "クックドゥ",
+  "personas": [
+    {
+      "id": "p_0",
+      "name": "手軽飯さん",
+      "description": "料理スキルは初心者。簡単で確実な味を求めてCookDoを愛用する。特に麻婆豆腐がお気に入り。",
+      "brand": "クックドゥ",
+      "position": {
+        "x": -0.74,
+        "y": 0.23
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "初級",
+        "primary_motivation": "味の確実性",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "初心者",
+          "簡単",
+          "時短",
+          "麻婆豆腐",
+          "確実な味"
+        ]
+      },
+      "metrics": {
+        "post_count": 245,
+        "avg_engagement": 5,
+        "share_percentage": 25,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "家に極麻婆豆腐の素が常備しないといられない身体にされた！クックドゥは罪深い！！",
+        "クックドゥ最高やな。あいつ入れるだけで自炊した気になるもん。クソ美味いし。",
+        "朝ごはん シンプルなチャーハン Cook Doの香味ペーストで味付け！！ シンプルに美味しい😋 https://t.co/wswGT2OByv",
+        "晩メッシ〜 ごはん🍚 と CookDo回鍋肉〜🐖🥬 安定だな これがいっちゃんうまいんだから https://t.co/1k3U1CI96t",
+        "クックドゥは裏面に作り方が書いてあるし、なんだか1人で一端の料理を作れる人になれたような気にさせてくれるので初心者向き"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "一人ランチ",
+          "簡単夕食",
+          "夜食"
+        ],
+        "contentThemes": [
+          "CookDoを使った簡単レシピ",
+          "5分で作れるアレンジレシピ",
+          "初心者でも失敗しない料理"
+        ],
+        "communicationTips": [
+          "簡単さを強調する",
+          "レシピ動画を多く掲載"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "料理スキルに自信がない",
+          "レシピを読むのが面倒",
+          "毎回同じ味になってしまう"
+        ],
+        "motivations": [
+          "手軽に美味しいものが食べたい",
+          "自炊で節約したい",
+          "料理のレパートリーを増やしたい"
+        ],
+        "brandPerception": "CookDoは、料理が苦手な自分でも美味しく作れる魔法の調味料。"
+      }
+    },
+    {
+      "id": "p_1",
+      "name": "時短ママ",
+      "description": "平日の夕食を時短で作るためにCookDoを活用。家族のために手早く美味しい料理を作りたい。",
+      "brand": "クックドゥ",
+      "position": {
+        "x": -2.07,
+        "y": -0.31
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "初級",
+        "primary_motivation": "時短・効率化",
+        "primary_occasion": "平日夕食（急ぎ）",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "家族"
+        ],
+        "peak_occasions": [
+          "平日夕食（急ぎ）"
+        ],
+        "keywords": [
+          "時短",
+          "共働き",
+          "家族",
+          "夕食",
+          "簡単アレンジ"
+        ]
+      },
+      "metrics": {
+        "post_count": 141,
+        "avg_engagement": 5,
+        "share_percentage": 14,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "しごおわ即クックドゥの極麻婆豆腐を大量生産してる🌶️ https://t.co/6eUkEbSRT2",
+        "実は奥様が闘病中なので調子悪い時もあるんです。そんな時はもちろん自分でご飯を作るのです。今日はクックドゥの豚とピーマンの甘辛きんぴら炒め。ちょっと長ネギと鷹の爪を入れてアレンジしてウマー。 #春雨クッキング https://t.co/KtokNpanB0",
+        "献立考えるのだるくて、専業主婦の分際でミールキットでも頼もうかと考えてたけど、とりあえずCookDo常備しといたらなんか全てが解決したw 美味しいし、夫も作れるし、イオンで2個300円やし、ある野菜で代替えできるし🥺",
+        "出社頻度が増えて、自炊でクックドゥー的なやつの有り難みを知る。",
+        "ズボラ主婦の親友クックドゥで麻婆豆腐(広東風)最近お豆腐切ってから入れる意味がわからなくなってやめました。フライパンの中に一丁ぶちこんで炒めながら切るのが最強。どうせ夫も子どももお豆腐崩して食べるしな。"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "平日夕食",
+          "弁当",
+          "作り置き"
+        ],
+        "contentThemes": [
+          "CookDoを使った時短レシピ",
+          "野菜をたっぷり摂れるレシピ",
+          "子供も喜ぶアレンジレシピ"
+        ],
+        "communicationTips": [
+          "時短効果を訴求する",
+          "家族向けのメニューを紹介する"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "献立を考えるのが大変",
+          "調理時間が足りない",
+          "栄養バランスが偏りがち"
+        ],
+        "motivations": [
+          "家族に美味しいものを食べさせたい",
+          "健康的な食生活を送りたい",
+          "自分の時間も確保したい"
+        ],
+        "brandPerception": "CookDoは、忙しい毎日でも手軽に美味しい家庭料理を作れる強い味方。"
+      }
+    },
+    {
+      "id": "p_2",
+      "name": "こだわり家族",
+      "description": "CookDoをベースに、さらにこだわりの食材や調味料を加えて本格的な味を追求する。",
+      "brand": "クックドゥ",
+      "position": {
+        "x": 0.58,
+        "y": 0.86
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "中級",
+        "primary_motivation": "味の確実性",
+        "primary_occasion": "平日夕食（ゆっくり）",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "家族"
+        ],
+        "peak_occasions": [
+          "平日夕食（ゆっくり）"
+        ],
+        "keywords": [
+          "家族",
+          "本格",
+          "アレンジ",
+          "週末料理",
+          "確実な味"
+        ]
+      },
+      "metrics": {
+        "post_count": 136,
+        "avg_engagement": 18,
+        "share_percentage": 14,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "書道・柔道の和の道を極めし師範夫婦のSurugaya’s dinner 息子が帰り、夫婦二人の晩餐タイム復活 妻の切ないフェイスを横目に、TVで話題のNo.1 CookDo「極」麻辣回鍋肉（辛口） 見た目は普通、食べたら火山！超ウマ＆超カラで脳天直撃、汗だくで大満足 悲しみも辛さでスパイスアップされるのね https://t.co/LYlExKkP8w",
+        "今日はわかめのお味噌汁、麻婆豆腐、ごはん、梅ドリンク🍴 いつもクックドゥの素を使うけど、今日は中村屋の素にしてみたらめっちゃ美味しかった〜😋💕 辛さは抑えられてるけど旨味が強い😍 2人でごはん炊いた分全部食べたよ🤭🍚 https://t.co/hRLxJri8fd",
+        "お疲れ様です！晩ごはんは八宝菜！CookDo美味すぎる😋#自己破産をしたおじさん飯 https://t.co/x0dTuRQOeZ",
+        "本日の夕飯 「青椒肉絲としじみの味噌汁」 ピーマンと貝が嫌いな長女が外出してるため出来たメニュー🤣🤣🤣 Cook Do最高😉👍️✨ 大変おいしくいただきました。 ご馳走様でした🤪🤪🤪 #夕飯 #中間 #しじみ汁 #青椒肉絲 #CookDo https://t.co/BM1hkJ9gqr",
+        "クックドゥの四川風麻婆豆腐、カット野菜で簡単筑前煮、キムチ大根、タコときゅうりの酢味噌和え。今日はニシンの刺身があったのがよかった。美味しい。 #父兄料理部 https://t.co/IUVZQcmkMM"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "週末の特別な夕食",
+          "おもてなし料理",
+          "家族の誕生日"
+        ],
+        "contentThemes": [
+          "CookDoを使った本格アレンジレシピ",
+          "プロの料理家によるCookDo活用術",
+          "地域の食材を使ったCookDoレシピ"
+        ],
+        "communicationTips": [
+          "食材の組み合わせを提案する",
+          "盛り付けのアイデアを紹介する"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "マンネリ化している",
+          "より本格的な味を追求したい",
+          "家族を飽きさせたくない"
+        ],
+        "motivations": [
+          "家族に美味しいものを食べさせたい",
+          "料理の腕を上げたい",
+          "特別な日の食卓を彩りたい"
+        ],
+        "brandPerception": "CookDoは、手軽でありながら、本格的な味への扉を開くきっかけを与えてくれる。"
+      }
+    },
+    {
+      "id": "p_3",
+      "name": "料理研究家",
+      "description": "CookDoをアレンジして、自分のオリジナルレシピを開発することを楽しむ料理好き。",
+      "brand": "クックドゥ",
+      "position": {
+        "x": 0.47,
+        "y": 0.46
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "中級",
+        "primary_motivation": "バリエーション",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "アレンジ",
+          "バリエーション",
+          "レシピ開発",
+          "料理好き",
+          "創作料理"
+        ]
+      },
+      "metrics": {
+        "post_count": 136,
+        "avg_engagement": 89,
+        "share_percentage": 14,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "時短朝食プレート😊🙏🩷 ⁡ グリーンピースとターメリックライス 豚バラ肉とキャベツとスクランブルエッグ🍳 ⁡ 白菜と豚肉のCookDoがあれば…。 簡単ランチの完成です☺️🙌 ⁡ →→→③ 本日は「豚バラと白菜」の盛り合わせを使用しました。 薄切りロースと白菜と小松菜をたっぷり加えました🥬 ⁡ お好みの野菜やトッピングを加えれば、いろいろな料理が作れます。 残りは夜に滑り込みます🤭☝",
+        "さすがに毎日ひとり鍋では飽きたので、 鍋用の具材でクックドゥのクリーム煮に。 なんとなく中華スープと、高野山から送って頂いた高野豆腐でランチ。色味が偏ってるな🫢 https://t.co/U7pWA8SmGZ",
+        "お疲れ様です！ この間カレー作ったときの余りのナスを豚バラと炒めてみました CookDoは偉大🤤 では今日も乾杯🍻 https://t.co/B7P3iVT6FI",
+        "わたし自身 やたら家事能力が低く見積もられがちで クックドゥー使うとか言ったら 誤解されそーと思い 以下、投稿 麻婆豆腐の素を使って麻婆茄子作成 細かく切った生姜と豚肉を漬け込み ナスを炒め 別で炒めた豚肉・生姜にナスを投入し 味調整で お酒・砂糖・ネギを入れる このくらいは調整します https://t.co/gWHQTvim95",
+        "クックドゥ極が手に入ったぞー！…といつものお弁当 #ぴよりこ食堂 https://t.co/RU6tW9DqnC"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "ブログ",
+          "SNS",
+          "料理教室"
+        ],
+        "contentThemes": [
+          "CookDoを使ったオリジナルレシピ",
+          "他の調味料との組み合わせ",
+          "斬新な食材の活用法"
+        ],
+        "communicationTips": [
+          "レシピコンテストを開催する",
+          "共同でレシピ開発を行う"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "アイデアが浮かばない時がある",
+          "レシピの再現性が低い",
+          "自分のレシピが評価されない"
+        ],
+        "motivations": [
+          "料理の腕を上げたい",
+          "自分のレシピを広めたい",
+          "料理を通して自己表現したい"
+        ],
+        "brandPerception": "CookDoは、料理の可能性を広げるためのインスピレーションを与えてくれる存在。"
+      }
+    },
+    {
+      "id": "p_4",
+      "name": "自炊応援隊",
+      "description": "一人暮らしで料理初心者。CookDoを使って簡単に自炊を始めたいと考えている。",
+      "brand": "クックドゥ",
+      "position": {
+        "x": -0.73,
+        "y": -0.02
+      },
+      "attributes": {
+        "life_stage": "一人暮らし",
+        "cooking_skill": "初級",
+        "primary_motivation": "不明",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "不明"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "一人暮らし",
+          "初心者",
+          "簡単",
+          "自炊",
+          "節約"
+        ]
+      },
+      "metrics": {
+        "post_count": 116,
+        "avg_engagement": 4,
+        "share_percentage": 12,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "今日の昼飲みランチ！ おつまみ兼用〆のご飯 【豚肉の黒酢炒め】 CookDoで作りました。 YouTube動画↓ https://t.co/TBsDVJdibl レシピ集↓ https://t.co/GOOD3CYUGV あいうえお順レシピ集↓ https://t.co/4tDAp9jH6S #豚肉の黒酢炒め #CookDo #相互フォロー #フォロバ100💯💯💯 #昼飯 #昼ごはん #おう",
+        "「Cook Do®」甘口麻婆豆腐用 は、辛くない麻婆豆腐用合わせ調味料。 辛くないから、高齢者やお子様にもピッタリ！ スチコンかつ、ホテルパンひとつでできる超簡単調理で、おいしく仕上がるコツをご紹介します！！ 商品の詳細情報やその他プロ向けコンテンツは味の素業務用サイトをご覧ください。 https://www.ajinomoto.co.jp/foodservice/",
+        "#今日の感謝 ～1411･1412～ ･ママさんの成長に感謝✨️ ･助けてくれる人に感謝✨️ ･またまたCookDoに感謝✨️ ･便利なAIさんに感謝✨️ ･Notion使えてきたことに感謝✨️ ･家庭のカレーに感謝✨️🍛 #カメラ目線 https://t.co/YwDbDbUEFE",
+        "ガキワイ「クックドゥの回鍋肉、世界で一番美味しいね！」マッマ「ふふ、そうねぇ」←25年後････",
+        "CookDoのこどもの甘口麻婆豆腐ってやつ見つけてしまって買ったよね、辛さ0になってたから試しにさ"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "一人ランチ",
+          "簡単夕食",
+          "節約レシピ"
+        ],
+        "contentThemes": [
+          "CookDoを使った一人暮らし向けレシピ",
+          "冷蔵庫にあるもので作れるレシピ",
+          "節約しながら美味しく食べる方法"
+        ],
+        "communicationTips": [
+          "自炊のハードルを下げる",
+          "応援メッセージを送る"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "何を作ればいいかわからない",
+          "食材を使いきれない",
+          "外食費がかさむ"
+        ],
+        "motivations": [
+          "健康的な食生活を送りたい",
+          "食費を節約したい",
+          "料理ができるようになりたい"
+        ],
+        "brandPerception": "CookDoは、自炊を始めるための最初の一歩を後押ししてくれる心強い味方。"
+      }
+    },
+    {
+      "id": "p_5",
+      "name": "家族ご飯係",
+      "description": "味の確実性を重視し、家族が喜ぶ定番料理を作るためにCookDoを利用する。",
+      "brand": "クックドゥ",
+      "position": {
+        "x": 0.02,
+        "y": 0.58
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "不明",
+        "primary_motivation": "味の確実性",
+        "primary_occasion": "不明",
+        "primary_emotion": "中立"
+      },
+      "behavior": {
+        "cooking_for": [
+          "家族"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "家族",
+          "定番料理",
+          "安心",
+          "安定の味",
+          "簡単"
+        ]
+      },
+      "metrics": {
+        "post_count": 78,
+        "avg_engagement": 1,
+        "share_percentage": 8,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "クックドゥじゃなく手作りの家庭がどれだけあるんだろう？ 味について文句を言うなら自分で作りなさいと思う。 https://t.co/5q1KnCT52H QT @neko_tan2828: 旦那にリクエストされ回鍋肉を作ったら「俺のお袋から作り方教えて貰いなよ」と言われ凹みながら義母に作り方を聞いたら「回鍋肉？息子には内緒だけどクックドゥよ笑」と言われた時の私 #大沢たかお祭り https://t",
+        "@rencan52 買い物の車の中や電車の中でオートにしてたら昨日や今日で貯まったよ。3回満タンで7個いけたよ。喘息悪化させるから歩かないしねー。 願いをかなえるはね、色々とあるみたいよ🤭🤭 クックドゥとかで素があるやつは使う。肉類は自分で味付け。豚汁は切ってある冷凍の野菜使って自分で味噌で味付けよん。",
+        "ルーローハンの液体で作った。 まぁまぁだな https://t.co/93N48eD1RV https://t.co/Bs42MaVKEN QT @xxmaivv: 回鍋肉を作ろうと思ってて 前に買った割引の液体で作るぞ！と思って 開けたら 匂いがルーローハンで え？？？と思ってちゃんと見たらるーろーはんの素だった… 戻して、クックドゥーで回鍋肉した。 キャベツ買っちゃってたから回鍋肉は止めれられ",
+        "うちの夫もルーツは鹿児島なんだが、私がクックドゥ使うと料理に手を出さないのは矯正した。矯正できたのは育ちが東京だったせいだ。",
+        "クックドゥ 回鍋肉 90g を使って美味しい回鍋肉を5人前作りたいと思います。作り方レシピと必要経費をお願いします。隠し味もよろしくお願いします。 「Cook Do® 回鍋肉用 90g」を使って5人前のおいしい回鍋肉を作るレシピ、必要経費、隠し味を以下にまとめます。5人前を作るには、通常の3～4人前レシピの材料を約1.5倍に増やして調整します。以下は詳細です。 回鍋肉レシピ（5人前） 材料 Coo"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "家族団らんの夕食",
+          "お弁当",
+          "運動会"
+        ],
+        "contentThemes": [
+          "CookDoを使った家族向け定番レシピ",
+          "アレンジで飽きさせない工夫",
+          "栄養満点レシピ"
+        ],
+        "communicationTips": [
+          "家族の笑顔をアピール",
+          "食卓のストーリーを語る"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "献立のマンネリ化",
+          "子供の好き嫌い",
+          "栄養バランス"
+        ],
+        "motivations": [
+          "家族を喜ばせたい",
+          "健康的な食生活",
+          "手軽に美味しいものを作りたい"
+        ],
+        "brandPerception": "CookDoは、家族みんなが笑顔になる、安心できる味を提供してくれる。"
+      }
+    },
+    {
+      "id": "p_6",
+      "name": "子育てシェフ",
+      "description": "子供が喜ぶメニューをCookDoで手軽に作りたい。健康にも気を遣いたい子育て世代。",
+      "brand": "クックドゥ",
+      "position": {
+        "x": 0.06,
+        "y": 0.42
+      },
+      "attributes": {
+        "life_stage": "子育て世帯",
+        "cooking_skill": "中級",
+        "primary_motivation": "不明",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "不明"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "子育て",
+          "子供向け",
+          "簡単",
+          "健康",
+          "時短"
+        ]
+      },
+      "metrics": {
+        "post_count": 66,
+        "avg_engagement": 42,
+        "share_percentage": 7,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "@BAKATHURAMI CookDoだと、唐辛子がキツいのがあるから😓 丸美屋が子供にも安心して出せるし、私もお子ちゃま舌なもので🤪",
+        "まるみや から こういうの が でてましてね ええ でてましてね #とてもよい #ゆずこしょうをおいたしするたさらによい https://t.co/XIVeNZeaHR https://t.co/kCfatIw9YJ QT @UUOgaga: リュウジのクックドゥのランキング動画を見た妻が「食べたい！」と言うので、今日はクックドゥです。",
+        "@AJINOMOTOPARK #CookDo ③かぼちゃ🎃 か ④じゃがいも🥔 2日前にCookDo青椒肉絲にタケノコの代わりにじゃがいも細切りにして入れたら、うちの子がパクパク食べていたので、ナス嫌いなうちの子だったらかぼちゃかじゃがいもかなって思いました🤭",
+        "今夜の30分時短メニューは、 ・ナスの煮浸し（めんつゆで簡単味付け） ・麻婆豆腐（クックドゥの極が美味すぎる。大人用は残ってた豚コマ活用） ・鶏肉の甘酢あん（イオン作） で、十分満足でした。 https://t.co/ygEjf09MTP",
+        "じゅじゅちゃん(@sometime1sho)のお弁当を参考に豆腐チゲをスープジャーに♩娘の好物のキンパも作ったよ♡お昼が楽しみ過ぎる！とウキウキで出掛けました🥰 #CookDo家 #おうちコリア #CookDoKOREA #andTEAM https://t.co/EX8j4SYbRG"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "子供の夕食",
+          "お弁当",
+          "家族の週末"
+        ],
+        "contentThemes": [
+          "CookDoを使った子供向け簡単レシピ",
+          "野菜嫌い克服レシピ",
+          "アレルギー対応レシピ"
+        ],
+        "communicationTips": [
+          "子供が喜ぶ工夫を紹介",
+          "食育に関する情報を提供"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "子供の好き嫌い",
+          "アレルギー",
+          "栄養バランス"
+        ],
+        "motivations": [
+          "子供の健康",
+          "手軽に美味しいものを作りたい",
+          "食育"
+        ],
+        "brandPerception": "CookDoは、子育て世代の強い味方。子供が喜ぶメニューを手軽に作れる。"
+      }
+    },
+    {
+      "id": "p_7",
+      "name": "食の冒険家",
+      "description": "新しい味や調理法に常に興味津々。CookDoをきっかけに、食の世界を広げたい。",
+      "brand": "クックドゥ",
+      "position": {
+        "x": 0.32,
+        "y": 0.6
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "不明",
+        "primary_motivation": "バリエーション",
+        "primary_occasion": "不明",
+        "primary_emotion": "ワクワク"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "冒険",
+          "新しい味",
+          "多様性",
+          "料理",
+          "発見"
+        ]
+      },
+      "metrics": {
+        "post_count": 57,
+        "avg_engagement": 97,
+        "share_percentage": 6,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "昨日は仕事終わりに中量級会🫶 初プレイのクックドゥードゥルシミュレーター🐔🐤🥚 可愛いし、テーマも分かりやすいワカプレで面白い！！ 帰りに軽く飲んで(私だけw)、いろんな話できたのも楽しかった🙌 やっぱり重めのゲームは良いなぁ💓 https://t.co/WgDPED8cI2",
+        "CookDo 豆腐チゲ 金曜日夜はこれで晩酌するのが至福なのに最近全然見かけなくて検索してみたら 8月で生産終了…？！？！？！？！😭😭 見かけたら絶対ゲットするし代わりの品とやらは…お、同じものではないの…？！ 教えてカゴメ😭 https://t.co/jaHbUKksnL",
+        "@AJINOMOTOPARK ジョジョ？🍙楽しみに待ってLUNÉ🌙 おにぎりにも絶対合うCook Do® KOREA! #CookDo家",
+        "みりん、とうふ、ネギ、豆板醤、甜麺醤など、色々揃えた挙句、 色々足りないことにも気づき 結局、CookDoに頼ってしまった漢 麻婆豆腐、うまいです。 https://t.co/Zk7h8zpxnx",
+        "CookDoさんの食べてみたい🤤 近々買って晩御飯にしよう😋"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "世界の料理",
+          "新しい食材",
+          "調理器具"
+        ],
+        "contentThemes": [
+          "CookDoを使った世界の料理",
+          "意外な食材の組み合わせ",
+          "最新調理器具の活用"
+        ],
+        "communicationTips": [
+          "新しい発見を促す",
+          "挑戦を応援する"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "マンネリ化",
+          "新しい味の探求",
+          "調理の難易度"
+        ],
+        "motivations": [
+          "新しい味を体験したい",
+          "料理の腕を上げたい",
+          "食を通して自己表現"
+        ],
+        "brandPerception": "CookDoは、食の世界への扉を開き、新しい発見をもたらしてくれる。"
+      }
+    }
+  ],
+  "clusterConfig": {
+    "x_axis": {
+      "label": "時間・労力投資",
+      "min": -2,
+      "max": 2,
+      "labels": {
+        "min": "手軽・効率重視",
+        "max": "丁寧・時間投資"
+      }
+    },
+    "y_axis": {
+      "label": "心理的関与度",
+      "min": -2,
+      "max": 2,
+      "labels": {
+        "min": "ルーティン",
+        "max": "こだわり・喜ばせたい"
+      }
+    }
+  },
+  "postCount": 2502,
+  "personaCount": 8,
+  "generatedAt": "2026-01-21T03:58:41.287Z",
+  "expiresAt": "2026-01-28T03:58:41.287Z",
+  "cached": false,
+  "llmProvider": "gemini",
+  "llmModel": "gemini-2.0-flash-exp",
+  "generationTimeMs": 15044,
+  "quality": {
+    "silhouetteScore": 0.54,
+    "unknownRates": {
+      "life_stage": 86,
+      "cooking_skill": 42,
+      "motivation_category": 68,
+      "meal_occasion": 86,
+      "cooking_for": 69,
+      "emotion": 0,
+      "average": 59
+    },
+    "dataCompleteness": 41,
+    "clusterSeparation": 54,
+    "overallConfidence": 47,
+    "postsAnalyzed": 2502,
+    "postsClustered": 975,
+    "postsExcluded": 1527,
+    "clusteringMethod": "kmeans",
+    "clusterSizes": [
+      245,
+      141,
+      136,
+      136,
+      116,
+      78,
+      66,
+      57
+    ]
+  }
+}

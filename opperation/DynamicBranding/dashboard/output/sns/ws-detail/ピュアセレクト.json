@@ -1,0 +1,219 @@
+{
+  "dish_category": [
+    {
+      "category": "下味・調味",
+      "count": 42,
+      "percentage": 59.2
+    },
+    {
+      "category": "その他",
+      "count": 17,
+      "percentage": 23.9
+    },
+    {
+      "category": "サラダ",
+      "count": 7,
+      "percentage": 9.9
+    },
+    {
+      "category": "揚げ物",
+      "count": 2,
+      "percentage": 2.8
+    },
+    {
+      "category": "焼き物",
+      "count": 1,
+      "percentage": 1.4
+    },
+    {
+      "category": "炒め物",
+      "count": 1,
+      "percentage": 1.4
+    },
+    {
+      "category": "麺類",
+      "count": 1,
+      "percentage": 1.4
+    }
+  ],
+  "dish_name": [
+    {
+      "name": "マヨネーズ",
+      "count": 34,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "マルシンハンバーグ",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "マクドナルド",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "ドーナツ",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "粉物",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "きゅうり",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "たまごサンド",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "うんち",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "コブサラダドレッシングディップ",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "たこ焼き",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "焼鳥",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "大根サラダ",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "アジアンパスタ",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "カップ麺",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "飲むマヨドリンク",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    },
+    {
+      "name": "ナゲット",
+      "count": 1,
+      "brand": "ピュアセレクト"
+    }
+  ],
+  "meal_occasion": [
+    {
+      "occasion": "夜食・晩酌",
+      "count": 4,
+      "percentage": 80
+    },
+    {
+      "occasion": "平日夜（ゆっくり）",
+      "count": 1,
+      "percentage": 20
+    }
+  ],
+  "cooking_for": [
+    {
+      "target": "自分用",
+      "count": 39,
+      "percentage": 88.6
+    },
+    {
+      "target": "配偶者",
+      "count": 3,
+      "percentage": 6.8
+    },
+    {
+      "target": "家族",
+      "count": 2,
+      "percentage": 4.5
+    }
+  ],
+  "motivation": [
+    {
+      "category": "味を失敗したくない",
+      "count": 9,
+      "percentage": 27.3
+    },
+    {
+      "category": "節約",
+      "count": 6,
+      "percentage": 18.2
+    },
+    {
+      "category": "いつもと違うもの",
+      "count": 5,
+      "percentage": 15.2
+    },
+    {
+      "category": "定番・安心感",
+      "count": 5,
+      "percentage": 15.2
+    },
+    {
+      "category": "健康志向",
+      "count": 4,
+      "percentage": 12.1
+    },
+    {
+      "category": "料理に自信がない",
+      "count": 3,
+      "percentage": 9.1
+    },
+    {
+      "category": "時間がない",
+      "count": 1,
+      "percentage": 3
+    }
+  ],
+  "brand_dish": [
+    {
+      "brand": "ピュアセレクト",
+      "category": "下味・調味",
+      "count": 42
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "サラダ",
+      "count": 7
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "揚げ物",
+      "count": 2
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "焼き物",
+      "count": 1
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "炒め物",
+      "count": 1
+    },
+    {
+      "brand": "ピュアセレクト",
+      "category": "麺類",
+      "count": 1
+    }
+  ]
+}

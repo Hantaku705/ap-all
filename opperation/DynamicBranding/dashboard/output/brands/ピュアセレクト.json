@@ -1,0 +1,24 @@
+{
+  "id": 7,
+  "name": "ピュアセレクト",
+  "nameEn": "pure_select",
+  "color": "#039BE5",
+  "mentionCount": 30,
+  "mentionShare": 0.4,
+  "positiveCount": 27,
+  "neutralCount": 3,
+  "negativeCount": 0,
+  "negativeRate": 0,
+  "topCep": {
+    "name": "一人暮らしの手抜き飯",
+    "score": null
+  },
+  "primaryQuadrant": "育成検討",
+  "quadrantDistribution": {
+    "コア強化": 0,
+    "機会獲得": 0,
+    "育成検討": 3,
+    "低優先": 0
+  },
+  "cepCount": 5
+}

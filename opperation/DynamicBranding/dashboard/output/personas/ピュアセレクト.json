@@ -1,0 +1,417 @@
+{
+  "brand": "ピュアセレクト",
+  "personas": [
+    {
+      "id": "p_0",
+      "name": "定番安心さん",
+      "description": "味に安心感を求める層。普段使いのマヨネーズとしてピュアセレクトを信頼している。",
+      "brand": "ピュアセレクト",
+      "position": {
+        "x": 0.1,
+        "y": 0.06
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "不明",
+        "primary_motivation": "味の確実性",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "安心",
+          "定番",
+          "安定",
+          "使い慣れた味"
+        ]
+      },
+      "metrics": {
+        "post_count": 18,
+        "avg_engagement": 22,
+        "share_percentage": 36,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "@Lz61D うちも実家がキューピーだったけど結婚して夫が推す味の素にしたらメチャ美味しくてビビりました😌 酸っぱいの苦手だったけどピュアセレクトは別次元❣️",
+        "このマヨネーズめっちゃ美味しいです！デパ地下の味になるっていうかw ちょっと高いけど、それだけの価値があります😊 【味の素KK】「ピュアセレクト」｜新鮮キープボトル https://t.co/fGBuw5KKcx",
+        "おはよぞ～！！☀ みんなマヨネーズは好きですか？ よぞはピュアセレクトマヨネーズ食べてからは美味しすぎて世界変わりました😼 みんな次からはピュアセレクト買ってみて！ https://t.co/T7mqBQ3HME",
+        "普段マヨはキューピー派なんやけどたまに使うピュアセレクトがマジで身体に良さそうすぎて使いすぎちゃって逆に身体に悪そうw みんなマヨネーズは何派？",
+        "@kankansakko0803 俺はピュアセレクト派なのーꉂ🤣𐤔"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "日常の食卓",
+          "家族との食事",
+          "簡単アレンジ"
+        ],
+        "contentThemes": [
+          "ピュアセレクトの基本",
+          "アレンジレシピ",
+          "マヨネーズの豆知識"
+        ],
+        "communicationTips": [
+          "親しみやすい言葉遣い",
+          "キャンペーン情報の提供"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "特に不満はない",
+          "価格変動"
+        ],
+        "motivations": [
+          "安定した品質",
+          "使い慣れた味",
+          "家族の好みに合う"
+        ],
+        "brandPerception": "長年愛用している、信頼できるマヨネーズ"
+      }
+    },
+    {
+      "id": "p_1",
+      "name": "こだわり料理人",
+      "description": "料理好きで、ピュアセレクトを使って味の深みを追求する。様々な料理に活用。",
+      "brand": "ピュアセレクト",
+      "position": {
+        "x": 0.05,
+        "y": 0.29
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "中級",
+        "primary_motivation": "味の確実性",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "料理好き",
+          "アレンジ",
+          "味の追求",
+          "こだわり"
+        ]
+      },
+      "metrics": {
+        "post_count": 13,
+        "avg_engagement": 137,
+        "share_percentage": 26,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "マヨネーズはピュアセレクト 多めの砂糖 控えめの味の素 お気持ち程度の塩 そして引くほどパセリ これがウチの卵サンドです、日本卵サンド協会さん パンはコッペが理想 https://t.co/fz4a2XKq9K",
+        "やっと風呂上がり🍺✨ 今夜の夕飯は、焼鳥(タレ)をピュアセレクトマヨネーズで頂きます⤴︎︎⤴︎︎ 録画しといたドリフに挑戦観よ📺👀",
+        "リュウジさんがツナマヨを最高においしくする方法を公開。ツナ缶、マヨネーズに加え、味の素「ほんだし」と「ピュアセレクトマヨネーズ」を使うことがポイントだという。 作り方は簡単で、ツナ缶にマヨネーズと「ほんだし」を混ぜ、目玉焼きを作りトッピングするだけ。「ほんだし」で和のテイストが加わり、「ピュアセレクトマヨネーズ」の酸味のまろやかさがご飯によりなじむ。 仕上げにはのりや七味唐辛子などを加えると更にお",
+        "家のマヨがたまたまピュアセレクトだったので、作ってみた！ 意外と簡単に作れるのねナゲットって。 ナツメグとガーリックパウダーがなかったから、ガーリックハーブソルトで代用したけど美味しかった。 300gで作ったら食べきられちゃったので、1200gのお肉全部入れたけど、数個しか残らなかった… https://t.co/vLU1nshSVh https://t.co/DXHdvP0yP8 QT @ore",
+        "ワイもピュアセレクト派🙋‍♀️キユーピーはテクスチャ固いから混ぜ込むのにはピュアセレクトが使い勝手いいんよなぁ"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "週末の料理",
+          "特別な日の食事",
+          "こだわりのレシピ"
+        ],
+        "contentThemes": [
+          "プロのレシピ",
+          "隠し味としてのマヨ",
+          "世界の料理"
+        ],
+        "communicationTips": [
+          "専門用語の使用",
+          "レシピ共有の促進"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "カロリー",
+          "他のマヨネーズとの違い"
+        ],
+        "motivations": [
+          "料理の幅を広げたい",
+          "味に深みを出したい",
+          "家族や友人を喜ばせたい"
+        ],
+        "brandPerception": "料理の腕を上げるための、高品質なマヨネーズ"
+      }
+    },
+    {
+      "id": "p_2",
+      "name": "節約自炊さん",
+      "description": "一人暮らしで節約しながらも、ピュアセレクトで手軽に美味しい食事を楽しみたい。",
+      "brand": "ピュアセレクト",
+      "position": {
+        "x": -0.83,
+        "y": 0.04
+      },
+      "attributes": {
+        "life_stage": "一人暮らし",
+        "cooking_skill": "初級",
+        "primary_motivation": "不明",
+        "primary_occasion": "不明",
+        "primary_emotion": "満足"
+      },
+      "behavior": {
+        "cooking_for": [
+          "不明"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "一人暮らし",
+          "節約",
+          "簡単",
+          "手軽"
+        ]
+      },
+      "metrics": {
+        "post_count": 9,
+        "avg_engagement": 7,
+        "share_percentage": 18,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "イオンでラーメンとマヨ   買い込んで来たたい   ２回レジした   ラ・ムーよか安かばい  ザ・ビッグでマヨネーズ味の素ピュアセレクト198円100円OFFクーポン3日まで   また３日まで5%オフクーポン",
+        "ピュアセレクトのカロリーオフマヨはアレンジしやすい😆 ツナマヨ作るときに味の素と胡椒をまぜまぜ。 キューピーの酸味強めなのも好きだけど、一人暮らしでマヨ2種は多すぎるので、ピュアセレクトを置いてます😃",
+        "#ねと飯 名を変え 一発目 ピュアセレクト ほりにし たまごサンド おいしぃ… https://t.co/hw0vIzPaJF",
+        "ピュアセレクトマヨネーズって美味すぎて困る これ吸って酒飲んでるもんな",
+        "塩茹でブロッコリーとピュアセレクトがあれば幸せになれる"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "簡単レシピ",
+          "時短料理",
+          "節約レシピ"
+        ],
+        "contentThemes": [
+          "一人暮らし向けレシピ",
+          "マヨネーズちょい足し",
+          "アレンジレシピ"
+        ],
+        "communicationTips": [
+          "親近感のある表現",
+          "お得な情報提供"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "価格",
+          "使い切れない"
+        ],
+        "motivations": [
+          "手軽に美味しい食事",
+          "節約",
+          "料理スキル向上"
+        ],
+        "brandPerception": "手軽に使える、ちょっと贅沢なマヨネーズ"
+      }
+    },
+    {
+      "id": "p_3",
+      "name": "手軽晩酌派",
+      "description": "簡単なおつまみで晩酌を楽しむ。ピュアセレクトは味変アイテム。",
+      "brand": "ピュアセレクト",
+      "position": {
+        "x": -1.07,
+        "y": -0.47
+      },
+      "attributes": {
+        "life_stage": "不明",
+        "cooking_skill": "初級",
+        "primary_motivation": "不明",
+        "primary_occasion": "夜食・晩酌",
+        "primary_emotion": "中立"
+      },
+      "behavior": {
+        "cooking_for": [
+          "自分"
+        ],
+        "peak_occasions": [
+          "夜食・晩酌"
+        ],
+        "keywords": [
+          "晩酌",
+          "おつまみ",
+          "簡単",
+          "味変"
+        ]
+      },
+      "metrics": {
+        "post_count": 6,
+        "avg_engagement": 3,
+        "share_percentage": 12,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "#深夜の晩飯 今夜は、マルシンマルシンハンバーグ♪&ふじっ子煮です~🤗 マヨは、ピュアセレクトマヨネーズ🙋 https://t.co/F3gE4C0DFs",
+        "キューピーピュアセレクトマヨネーズとコブサラダドレッシング(アボカドの絵描いてあるやつ)混ぜると、トルティーヤチップスのディップが捗って今結構胃が気持ち悪い",
+        "ブロッコリーにピュアセレクトマヨネーズ＋ハーブソルトまたは味塩コショウで無限に酒が飲める…！確かにピュアセレクトマヨネーズは味変向き。",
+        "風呂上がり🍺✨ 夕飯のシーチキンと大根サラダを食べながら喧嘩独学を観るよー📺 シーチキンにはピュアセレクトマヨネーズ🥚 サラダには叙々苑の野菜サラダのたれ🥗 #別々に食べるスタイル",
+        "@oreimoderedere おれいもさん、マヨ嫌いなんすね自分もです… 。幼少期にキューピーマヨ舐めて 洗面台に吐き出すほど不味いと思ったのがトラウマで 以降マヨがついてる食べ物や関係するものは、食べないようにしてたんですが、克服したいと思い キューピーでは無く ピュアセレクトに変えたのですがそれでもダメでした"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "夜食",
+          "簡単おつまみ",
+          "一人飲み"
+        ],
+        "contentThemes": [
+          "お酒に合うマヨ",
+          "簡単味変レシピ",
+          "おすすめおつまみ"
+        ],
+        "communicationTips": [
+          "気軽な語り口",
+          "共感を呼ぶ投稿"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "カロリー",
+          "健康面"
+        ],
+        "motivations": [
+          "手軽に晩酌を楽しみたい",
+          "おつまみのバリエーションを増やしたい",
+          "美味しいお酒を飲みたい"
+        ],
+        "brandPerception": "晩酌のお供に最適な、味変アイテム"
+      }
+    },
+    {
+      "id": "p_4",
+      "name": "夫婦の食卓",
+      "description": "夫婦で食事の好みが違う。それぞれの好みに合わせてピュアセレクトを活用したい。",
+      "brand": "ピュアセレクト",
+      "position": {
+        "x": -0.13,
+        "y": 0.54
+      },
+      "attributes": {
+        "life_stage": "夫婦二人",
+        "cooking_skill": "不明",
+        "primary_motivation": "不明",
+        "primary_occasion": "不明",
+        "primary_emotion": "中立"
+      },
+      "behavior": {
+        "cooking_for": [
+          "配偶者"
+        ],
+        "peak_occasions": [
+          "不明"
+        ],
+        "keywords": [
+          "夫婦",
+          "食卓",
+          "好み",
+          "共有"
+        ]
+      },
+      "metrics": {
+        "post_count": 4,
+        "avg_engagement": 14,
+        "share_percentage": 8,
+        "is_real_data": true
+      },
+      "sample_posts": [
+        "@nyo___nyonyo やばいよね！？旦那も私がきゅーぴーって名前でXしてるの知ってるんやけど(趣味垢からずっときゅーぴー)、俺はピュアセレクト派やから！とか言って変えてくれん笑 私も違いはよく分からんのだけど旦那曰くあるらしいから食べ比べしてみてーーーー！✨",
+        "#夕食 夕飯(晩ごはん)🍴主人のリクエスト〜🎵🎶でマクドナルド(マック)✨月見🐇🎑🍔などなど⤴️💕セブンイレブン🏪🥗🦀リプトン✨塩バニラミルクティー🤍 お菓子(おやつ)⭐頂いた🎀🍮🥄 AJINOMOTO✨ピュアセレクト❤️在庫調達🤭 https://t.co/8jFRX7mJNW",
+        "@Ikucha_1224 太りません！（笑） いくちゃ！カロリー神話に騙されるな！（笑） 旦那様＝ピュアセレクト いくちゃ！はピュアセレクトはあまり得意ではない（笑）",
+        "マヨネーズはどっち派？ ちなみにパパはキューピー派 私はピュアセレクト派 味覚が合わない二人でもある 🙃😑 https://t.co/m7FU66wLfz"
+      ],
+      "recommendations": {
+        "targetCEPs": [
+          "家族",
+          "夕食",
+          "お弁当"
+        ],
+        "contentThemes": [
+          "夫婦で楽しめるレシピ",
+          "両方が満足できる料理",
+          "マヨネーズの選び方"
+        ],
+        "communicationTips": [
+          "親しみやすい",
+          "共感できる"
+        ]
+      },
+      "insights": {
+        "painPoints": [
+          "好みが合わない",
+          "健康に気を使いたい"
+        ],
+        "motivations": [
+          "一緒に美味しい食事",
+          "健康的な食生活"
+        ],
+        "brandPerception": "どちらも楽しめるマヨネーズ"
+      }
+    }
+  ],
+  "clusterConfig": {
+    "x_axis": {
+      "label": "時間・労力投資",
+      "min": -2,
+      "max": 2,
+      "labels": {
+        "min": "手軽・効率重視",
+        "max": "丁寧・時間投資"
+      }
+    },
+    "y_axis": {
+      "label": "心理的関与度",
+      "min": -2,
+      "max": 2,
+      "labels": {
+        "min": "ルーティン",
+        "max": "こだわり・喜ばせたい"
+      }
+    }
+  },
+  "postCount": 241,
+  "personaCount": 5,
+  "generatedAt": "2026-01-21T03:59:34.663Z",
+  "expiresAt": "2026-01-28T03:59:34.663Z",
+  "cached": false,
+  "llmProvider": "gemini",
+  "llmModel": "gemini-2.0-flash-exp",
+  "generationTimeMs": 8339,
+  "quality": {
+    "silhouetteScore": 0.5,
+    "unknownRates": {
+      "life_stage": 91,
+      "cooking_skill": 75,
+      "motivation_category": 78,
+      "meal_occasion": 95,
+      "cooking_for": 74,
+      "emotion": 0,
+      "average": 69
+    },
+    "dataCompleteness": 31,
+    "clusterSeparation": 50,
+    "overallConfidence": 40,
+    "postsAnalyzed": 241,
+    "postsClustered": 50,
+    "postsExcluded": 191,
+    "clusteringMethod": "kmeans",
+    "clusterSizes": [
+      18,
+      13,
+      9,
+      6,
+      4
+    ]
+  }
+}

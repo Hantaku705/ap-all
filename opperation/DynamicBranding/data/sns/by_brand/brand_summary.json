@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-01-19T04:14:21.568Z",
+  "total_ugc": 8517,
+  "brands": [
+    {
+      "name": "味の素",
+      "count": 3740,
+      "percentage": 43.91,
+      "status": "sufficient"
+    },
+    {
+      "name": "コンソメ",
+      "count": 1048,
+      "percentage": 12.3,
+      "status": "sufficient"
+    },
+    {
+      "name": "ほんだし",
+      "count": 279,
+      "percentage": 3.28,
+      "status": "moderate"
+    },
+    {
+      "name": "丸鶏がらスープ",
+      "count": 254,
+      "percentage": 2.98,
+      "status": "moderate"
+    },
+    {
+      "name": "クックドゥ",
+      "count": 240,
+      "percentage": 2.82,
+      "status": "moderate"
+    },
+    {
+      "name": "アジシオ",
+      "count": 102,
+      "percentage": 1.2,
+      "status": "moderate"
+    },
+    {
+      "name": "ピュアセレクト",
+      "count": 30,
+      "percentage": 0.35,
+      "status": "insufficient"
+    },
+    {
+      "name": "香味ペースト",
+      "count": 24,
+      "percentage": 0.28,
+      "status": "insufficient"
+    }
+  ],
+  "insufficient_brands": [
+    "ピュアセレクト",
+    "香味ペースト"
+  ],
+  "threshold": 100
+}

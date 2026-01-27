@@ -1,0 +1,334 @@
+{
+  "dish_category": [
+    {
+      "category": "汁物",
+      "count": 102,
+      "percentage": 17.7
+    },
+    {
+      "category": "ご飯もの",
+      "count": 82,
+      "percentage": 14.2
+    },
+    {
+      "category": "麺類",
+      "count": 80,
+      "percentage": 13.9
+    },
+    {
+      "category": "炒め物",
+      "count": 79,
+      "percentage": 13.7
+    },
+    {
+      "category": "煮込み",
+      "count": 59,
+      "percentage": 10.2
+    },
+    {
+      "category": "サラダ",
+      "count": 57,
+      "percentage": 9.9
+    },
+    {
+      "category": "その他",
+      "count": 39,
+      "percentage": 6.8
+    },
+    {
+      "category": "下味・調味",
+      "count": 26,
+      "percentage": 4.5
+    },
+    {
+      "category": "中華",
+      "count": 20,
+      "percentage": 3.5
+    },
+    {
+      "category": "揚げ物",
+      "count": 20,
+      "percentage": 3.5
+    },
+    {
+      "category": "焼き物",
+      "count": 12,
+      "percentage": 2.1
+    }
+  ],
+  "dish_name": [
+    {
+      "name": "鶏がらスープ",
+      "count": 11,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "チャーハン",
+      "count": 9,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "野菜炒め",
+      "count": 8,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "スープ",
+      "count": 7,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "麻婆豆腐",
+      "count": 6,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "炒飯",
+      "count": 6,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "そうめん",
+      "count": 6,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "塩焼きそば",
+      "count": 5,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "味噌ラーメン",
+      "count": 5,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "焼きそば",
+      "count": 5,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "カオマンガイ",
+      "count": 5,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "唐揚げ",
+      "count": 4,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "ラーメン",
+      "count": 4,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "パスタ",
+      "count": 4,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "中華粥",
+      "count": 4,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "天津飯",
+      "count": 4,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "塩ラーメン",
+      "count": 3,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "肉団子のスープ煮",
+      "count": 3,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "お粥",
+      "count": 3,
+      "brand": "丸鶏がらスープ"
+    },
+    {
+      "name": "青椒肉絲",
+      "count": 3,
+      "brand": "丸鶏がらスープ"
+    }
+  ],
+  "meal_occasion": [
+    {
+      "occasion": "平日夜（ゆっくり）",
+      "count": 85,
+      "percentage": 38.1
+    },
+    {
+      "occasion": "平日夜（急ぎ）",
+      "count": 68,
+      "percentage": 30.5
+    },
+    {
+      "occasion": "夜食・晩酌",
+      "count": 28,
+      "percentage": 12.6
+    },
+    {
+      "occasion": "お弁当",
+      "count": 22,
+      "percentage": 9.9
+    },
+    {
+      "occasion": "朝食",
+      "count": 11,
+      "percentage": 4.9
+    },
+    {
+      "occasion": "週末ブランチ",
+      "count": 5,
+      "percentage": 2.2
+    },
+    {
+      "occasion": "週末夕食",
+      "count": 3,
+      "percentage": 1.3
+    },
+    {
+      "occasion": "パーティー",
+      "count": 1,
+      "percentage": 0.4
+    }
+  ],
+  "cooking_for": [
+    {
+      "target": "自分用",
+      "count": 340,
+      "percentage": 67.2
+    },
+    {
+      "target": "家族",
+      "count": 131,
+      "percentage": 25.9
+    },
+    {
+      "target": "複数",
+      "count": 16,
+      "percentage": 3.2
+    },
+    {
+      "target": "子ども",
+      "count": 10,
+      "percentage": 2
+    },
+    {
+      "target": "配偶者",
+      "count": 7,
+      "percentage": 1.4
+    },
+    {
+      "target": "来客",
+      "count": 1,
+      "percentage": 0.2
+    },
+    {
+      "target": "親・高齢者",
+      "count": 1,
+      "percentage": 0.2
+    }
+  ],
+  "motivation": [
+    {
+      "category": "時間がない",
+      "count": 140,
+      "percentage": 34.1
+    },
+    {
+      "category": "いつもと違うもの",
+      "count": 76,
+      "percentage": 18.5
+    },
+    {
+      "category": "健康志向",
+      "count": 48,
+      "percentage": 11.7
+    },
+    {
+      "category": "定番・安心感",
+      "count": 45,
+      "percentage": 11
+    },
+    {
+      "category": "味を失敗したくない",
+      "count": 40,
+      "percentage": 9.8
+    },
+    {
+      "category": "節約",
+      "count": 31,
+      "percentage": 7.6
+    },
+    {
+      "category": "料理に自信がない",
+      "count": 26,
+      "percentage": 6.3
+    },
+    {
+      "category": "相手を喜ばせたい",
+      "count": 4,
+      "percentage": 1
+    }
+  ],
+  "brand_dish": [
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "麺類",
+      "count": 80
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "サラダ",
+      "count": 57
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "煮込み",
+      "count": 59
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "汁物",
+      "count": 102
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "炒め物",
+      "count": 79
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "中華",
+      "count": 20
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "下味・調味",
+      "count": 26
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "ご飯もの",
+      "count": 82
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "揚げ物",
+      "count": 20
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "category": "焼き物",
+      "count": 12
+    }
+  ]
+}

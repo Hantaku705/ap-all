@@ -39,7 +39,8 @@ AP/
 │   ├── multi-agent/         # マルチエージェントシステム（YAML拡張、Skills自動生成）
 │   ├── なまえデザイン_フォルダ/  # 「なまえ」デザイン書籍まとめ
 │   ├── サブスク/            # サブスク確認ツール（Gmail API連携）
-│   └── clawdbot/           # Clawdbot AIアシスタント設定ガイド
+│   ├── clawdbot/           # Clawdbot AIアシスタント設定ガイド
+│   └── DynamicBranding/    # 味の素「点→線→面」ブランディングフレームワーク
 │
 ├── NADESHIKO/              # 美容系SNSメディア事業
 │   ├── code/               # GASインサイト自動取得スクリプト
@@ -513,6 +514,7 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-27: **DynamicBranding → opperation/ 移行**（味の素ブランディングフレームワーク、.git削除しAPリポジトリに統合）
 - 2026-01-27: **nanobanana MCP設定**（Gemini 2.5 Flash画像生成、`claude mcp add nanobanana-mcp`）
 - 2026-01-27: **tmux版multi-agent-shogunフル起動成功**（パス修正4ファイル、10インスタンス起動、`./start_macos.sh`）
 - 2026-01-27: **/shogun Task tool化**（tmuxベース→Claude Code Task toolベースに移行、ターミナル操作不要、`/shogun タスク内容` で完結）

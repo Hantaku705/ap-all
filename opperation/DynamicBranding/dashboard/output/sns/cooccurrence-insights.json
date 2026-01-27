@@ -1,0 +1,1215 @@
+{
+  "pairs": [
+    {
+      "brand1": "コンソメ",
+      "brand2": "味の素",
+      "count": 1342,
+      "representativePosts": [
+        {
+          "id": 18010,
+          "content": "私が作りたい料理は【 #ポトフ 】 #味の素KKコンソメ @ajinomoto",
+          "sentiment": "neutral",
+          "dish": "ポトフ",
+          "scene": "unknown"
+        },
+        {
+          "id": 19036,
+          "content": "私が作りたい料理は【 #コンソメスープ 】 #味の素KKコンソメ @ajinomoto",
+          "sentiment": "neutral",
+          "dish": "コンソメスープ",
+          "scene": "unknown"
+        },
+        {
+          "id": 19064,
+          "content": "私が作りたい料理は【 #ポトフ 】 #味の素KKコンソメ @ajinomoto",
+          "sentiment": "neutral",
+          "dish": "ポトフ",
+          "scene": "unknown"
+        },
+        {
+          "id": 18014,
+          "content": "私が作りたい料理は【 #ポトフ 】 #味の素KKコンソメ @ajinomoto",
+          "sentiment": "neutral",
+          "dish": "ポトフ",
+          "scene": "unknown"
+        },
+        {
+          "id": 20052,
+          "content": "私が作りたい料理は【 #ポトフ 】 #味の素KKコンソメ @ajinomoto",
+          "sentiment": "neutral",
+          "dish": "ポトフ",
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "ポトフ",
+          "コンソメスープ",
+          "ナポリタン",
+          "カレー",
+          "パスタ"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely",
+          "weekday_dinner_rush",
+          "weekend_dinner",
+          "breakfast"
+        ],
+        "sentiments": {
+          "neutral": 1160,
+          "positive": 169,
+          "negative": 13
+        }
+      },
+      "insight": "コンソメと味の素が同時に言及される投稿が1342件見つかりました。"
+    },
+    {
+      "brand1": "クックドゥ",
+      "brand2": "味の素",
+      "count": 309,
+      "representativePosts": [
+        {
+          "id": 2783,
+          "content": "「キャベツ 「味の素KKおかゆ」紅鮭がゆ 「Cook Do」レンジでつくる 四川式麻婆豆腐用 」のレシピ検索結果 、  「キャベツ 「味の素KKおかゆ」紅鮭がゆ 「Cook Do」レンジでつくる 四川式麻婆豆腐用 」検索結果ページ",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 4727,
+          "content": "https://www.ajinomoto.co.jp/cookdo/?Scid=ot_av_youtube_001024CD14 主婦の声： ：お家で韓国料理？ &TEAM ：ようこそー！ NICHOLASさん/EJさん ：ご飯がすすむ！プルコギ！ FUMAさん/YUMAさん ：甘辛たまらん！ヤンニョム！ &TEAM ：選べる4つのCook Do® KOREA! JOさん ：おうちコリアが &TEAM ：やってきたー！ Eat Well,Live Well.AJINOMOTO 商品名：「Cook Do® KOREA!」豆腐チゲ&タッカルビ用 出演者：&TEAM BGM：オリジナル 商品概要：",
+          "sentiment": "positive",
+          "dish": "プルコギ、ヤンニョム",
+          "scene": "weekday_dinner_leisurely"
+        },
+        {
+          "id": 7061,
+          "content": "「キャベツ 「Cook Do」八宝菜用 「Cook Do」レンジでつくる 四川式麻婆豆腐用 」のレシピ検索結果 、  「キャベツ 「Cook Do」八宝菜用 「Cook Do」レンジでつくる 四川式麻婆豆腐用 」検索結果ページ",
+          "sentiment": "neutral",
+          "dish": "四川式麻婆豆腐",
+          "scene": "unknown"
+        },
+        {
+          "id": 6857,
+          "content": "#食品・飲料・お酒#コチュジャン#特価 🌻🌼 味の素 Cook Do クックドゥ Korea コチュジャン 100g×2個 🔥￥258(￥1 / g)🔥 💍3pt(1%)💍 残り1以上",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 35461,
+          "content": "⑥メシの話をするとCookDoのこの素に挽肉と木綿豆腐以外に舞茸と人参入れるとバリ美味い 追加で味の素と鷹の爪と小ネギ適量いれるとバリバリ美味い 週一で食べたいくらい好き 舞茸と人参と肉があれば大抵美味いもんができる説を唱えます https://t.co/cEFjDz8sU3",
+          "sentiment": "positive",
+          "dish": "麻婆豆腐",
+          "scene": "weekday_dinner_leisurely"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "麻婆豆腐",
+          "ポテトチップス",
+          "回鍋肉",
+          "麻辣回鍋肉",
+          "青椒肉絲"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely",
+          "weekday_dinner_rush",
+          "late_night_snack",
+          "party"
+        ],
+        "sentiments": {
+          "neutral": 146,
+          "positive": 157,
+          "negative": 6
+        }
+      },
+      "insight": "クックドゥと味の素が同時に言及される投稿が309件見つかりました。"
+    },
+    {
+      "brand1": "丸鶏がらスープ",
+      "brand2": "味の素",
+      "count": 299,
+      "representativePosts": [
+        {
+          "id": 62298,
+          "content": "@dana_tomo2023 味の素とか顆粒の鶏がらスープをちょびっと、とかもイケるぅ",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 47632,
+          "content": "@Dongurihou ソーセージと白菜と人参と大根とジャガイモがあればポトフが出来ますからな｡ 味付けには固形のブイヨンも良いけど､味の素の丸鶏がらスープを使うとあっさりとした味わいになります｡ https://t.co/IXiqoLC6uT",
+          "sentiment": "neutral",
+          "dish": "ポトフ",
+          "scene": "unknown"
+        },
+        {
+          "id": 46739,
+          "content": "これ、ラーメン福「みたいな」味が家で楽しめて最高にオススメレシピ。 QT @h_gashiyama: プロが教える町中華風もやしタンメン 現役ラーメン屋のわいが、ガチでまかないでよく作るやつ スープに手間をかけなくても、炒めたもやしとラードの旨味で驚くほど美味くなる <下準備> ①スープとして水350mlに塩小さじ1/2、鶏ガラスープの素小さじ1/2、味の素小さじ1/4位を入れて沸かしておく… https://t.co/9ZTYNE7leY",
+          "sentiment": "positive",
+          "dish": "もやしタンメン",
+          "scene": "unknown"
+        },
+        {
+          "id": 34313,
+          "content": "味の素の休日だしでさっそく鳥ホタテラーメンやってみた - 休日だしホタテ 半袋 - 李錦記 鶏丸ごとがらスープ 小さじ3分の2 - 味の素 4振り - お湯 250ml - オリーブオイル 小さじ2分の1 低脂質ラーメンが気軽にできるの良い ちょっと風味にパンチがほしいので生姜、バター、レモン等試したい https://t.co/WIm8Oggfz1",
+          "sentiment": "positive",
+          "dish": "鳥ホタテラーメン",
+          "scene": "weekend_dinner"
+        },
+        {
+          "id": 28036,
+          "content": "塩コショウ鶏がらスープオイスターソース酒片栗粉味の素 https://t.co/QE1jTQOx8h QT @kikomotu: ここから味付けは何で決める？ https://t.co/ZT2HRQhp8g",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "ポテトチップス",
+          "スープ",
+          "鶏餅湯",
+          "チャーハン",
+          "鶏がらスープ"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely",
+          "weekday_dinner_rush",
+          "late_night_snack",
+          "lunch_box"
+        ],
+        "sentiments": {
+          "positive": 184,
+          "neutral": 112,
+          "negative": 3
+        }
+      },
+      "insight": "丸鶏がらスープと味の素が同時に言及される投稿が299件見つかりました。"
+    },
+    {
+      "brand1": "ほんだし",
+      "brand2": "味の素",
+      "count": 296,
+      "representativePosts": [
+        {
+          "id": 59678,
+          "content": "下賤な民なのでカップうどんに一手間でほんだしを追加しカップラーメンに一手間で味の素を追加し「あじがくどくておいしくなった」と一手間の効果を実感してる。",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 34121,
+          "content": "台湾には日本にない味の素の「ほんだし」ホタテ味が売られている「台湾行ったら自分用にこれ買って帰る」「これでおかゆ作りたい」 https://t.co/qrJZQl4f2g 最近カルディで見かけなくなってしまったので台湾行ったフォロワーさんに頼んだくらい好き。母も気に入っているので国内の販路拡大して。",
+          "sentiment": "positive",
+          "dish": "おかゆ",
+          "scene": "unknown"
+        },
+        {
+          "id": 3314,
+          "content": "味の素株式会社様から商品を提供していただきました。 「無限に食べられるコールスロー」 【材料】 キャベツ…1/4個（150〜170gくらい） にんじん…1/2本 きゅうり…1/2本 カニカマ…4本 コーン…大さじ4 マヨネーズ…大さじ3 酢…小さじ2 無糖ヨーグルト…大さじ1 ほんだし…小さじ1 塩 (塩もみ用)…小さじ1 ①キャベツを千切り、きゅうりとにんじんは細切りする。 ②塩をかけて15分ほど放置。水が出てきたら絞る。酢をかけて混ぜておく。 ③マヨネーズ、ヨーグルト、ほんだしを混ぜる。 ④キャベツの入ったボウルにカニカマ、コーンを追加。 ⑤③を混ぜ合わせる。 kurashiru #pr ",
+          "sentiment": "positive",
+          "dish": "コールスロー",
+          "scene": "unknown"
+        },
+        {
+          "id": 35484,
+          "content": "味噌汁を作ってる途中でほんだしがなくなったから味の素を入れたけど、やっぱり鰹だしがないと物足りないなあ。",
+          "sentiment": "neutral",
+          "dish": "味噌汁",
+          "scene": "unknown"
+        },
+        {
+          "id": 26934,
+          "content": "@aji_spo お肌に膝関節にコラーゲン👍 牛すじ、大量にストックあり 早速やってみます #味の素ほんだし だしを効かせるところが ミソですね😆ｱﾚﾚ？ ありがとうございます🙇 #羽生結弦 #AJINOMOTO",
+          "sentiment": "positive",
+          "dish": "牛すじ煮込み",
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "味噌汁",
+          "だし",
+          "豚汁",
+          "おかゆ",
+          "出汁"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely",
+          "weekday_dinner_rush",
+          "late_night_snack",
+          "weekend_dinner"
+        ],
+        "sentiments": {
+          "positive": 134,
+          "neutral": 152,
+          "negative": 10
+        }
+      },
+      "insight": "ほんだしと味の素が同時に言及される投稿が296件見つかりました。"
+    },
+    {
+      "brand1": "アジシオ",
+      "brand2": "味の素",
+      "count": 166,
+      "representativePosts": [
+        {
+          "id": 62277,
+          "content": "究極の塩むすびやってみたけど、私は普通の炊いた白米に味の素のアジシオかけたおにぎりが好きかな。究極の塩むすび、油入れる影響でラップからツルツル滑るし。",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 46871,
+          "content": "📝アジシオ、味の素（肉にもみ込む）、オリーブオイル、ガーリックパウダー、ケチャップ、コンソメ なんちゃってタルタルも美味しかったな",
+          "sentiment": "positive",
+          "dish": "タルタル",
+          "scene": "unknown"
+        },
+        {
+          "id": 34932,
+          "content": "蒸し玉子 #タマゴ #たまご #egg #味の素と料理油 #少々 #ajinomoto_cookingoil #verylittle #アジシオ #少々 #saltandmsgmixture #verylittle #microwaveheating ・・・ #すき焼きのタレ #少々 #sukiyakisauce #little #sprinkle #お弁当 #bento https://t.co/krx12nwpWE",
+          "sentiment": "neutral",
+          "dish": "蒸し玉子",
+          "scene": "lunch_box"
+        },
+        {
+          "id": 28961,
+          "content": "めも ・アジシオ ・味の素 ・コンソメ ・鶏ガラ ・ほんだし ・ケチャップ ・ごま油 これら全てありませんどういうこと❓早く買って",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 29778,
+          "content": "アンチ味の素ではないけど味の素の味が好きじゃなくて、アジシオとかも使えない……",
+          "sentiment": "negative",
+          "dish": null,
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "アジシオ",
+          "豚バラのバカねぎ巻",
+          "ポテトのカッチョエペペ",
+          "タルタル",
+          "蒸し玉子"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely",
+          "late_night_snack",
+          "weekday_dinner_rush",
+          "breakfast"
+        ],
+        "sentiments": {
+          "neutral": 79,
+          "positive": 75,
+          "negative": 12
+        }
+      },
+      "insight": "アジシオと味の素が同時に言及される投稿が166件見つかりました。"
+    },
+    {
+      "brand1": "ほんだし",
+      "brand2": "コンソメ",
+      "count": 83,
+      "representativePosts": [
+        {
+          "id": 34912,
+          "content": "化学調味料の１番のデメリットは 粗悪なものがそこそこ食えるようになる だと思っている。 それ自身の中毒性とかは正直どうでもいい。 遺伝子組み換えの調味料とうま味調味料、その他の添加物でダンボールでも食えるような味わいにできることが問題。 https://t.co/WLTcP0Pl2O QT @eiyo_counseling: 茅乃舎のだしパック使うけど、味の素は絶対使わない！という人は、余計な経費がかかっているのではないか、と思われます。酵素エキス、味の素とほぼ同じようなものですから。ほんだしもコンソメも、味の素と同じもの入ってます。酵母エキスは添加物扱いじゃないから『無添加』って表示しますけ",
+          "sentiment": "negative",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 28961,
+          "content": "めも ・アジシオ ・味の素 ・コンソメ ・鶏ガラ ・ほんだし ・ケチャップ ・ごま油 これら全てありませんどういうこと❓早く買って",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 35666,
+          "content": "@tata0takochi 自分が見てきたレシピ本ではあまり見なかったですねぇ… 鶏ガラ、ほんだし、コンソメなんかはよく見てたんですがね。 まぁ、そんなに数多くレシピ本を持っていた訳でもないので、自分が持っていた物には載ってなかっただけかも知れませんね。",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 64064,
+          "content": "昨日の晩酌のアテと、今朝の朝ご飯。 昨日の晩は適当が過ぎました。タッパーのはサワラとゴーヤをほんだしとコチュジャンで煮たの。冷え冷えが☺️👍 今朝のご飯、大根キャベツベビーホタテをコンソメにカレー粉クミンで、スープ替わりに。晩はサワラの煮汁と茄子を足して煮直し。😸👍 水羊羹も出して。 https://t.co/0ucVO03F6B",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 64345,
+          "content": "@ajinomoto #味の素社推し商品 →広く出汁！ 丸鶏ガラスープの素もほんだしもコンソメも常にストックしとくほど我が家の定番！無いと困る！",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "コンソメスープ",
+          "ポトフ",
+          "沼",
+          "ミネストローネ",
+          "スープ"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely",
+          "lunch_box",
+          "weekday_dinner_rush"
+        ],
+        "sentiments": {
+          "negative": 3,
+          "neutral": 40,
+          "positive": 40
+        }
+      },
+      "insight": "ほんだしとコンソメが同時に言及される投稿が83件見つかりました。"
+    },
+    {
+      "brand1": "味の素",
+      "brand2": "香味ペースト",
+      "count": 80,
+      "representativePosts": [
+        {
+          "id": 60063,
+          "content": "@ajinomoto 食欲の秋。弁当男子のおじさんとしては、味の素さんにはお世話になっております。 香味ペースト・鳥ガラスープ・オイスターソースなど。 ちなみに鍋つゆの素は「鍋キューブ濃厚白湯」推しです。これからもお世話になります(*´▽｀*)",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 64929,
+          "content": "エコーズ初日に向けて癒しを放ってきた味の素さん最高だった。 https://t.co/gHdT4CiSxk QT @koumi_chakatsu: 羽生結弦さんが料理に挑戦します！ 一週間毎日投稿していくので、日曜日に何が出来上がるかみんなも予想してみてね！ #羽生結弦 #yuzuruhanyu #香味ペースト https://t.co/3zJg1ubhA6",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 26013,
+          "content": "♯PR ♯味の素KK 香味ペースト使って肉野菜炒め作りました。美味しかったです！ ありがとうございます😊 https://t.co/iHcd31XEHV",
+          "sentiment": "positive",
+          "dish": "肉野菜炒め",
+          "scene": "weekday_dinner_rush"
+        },
+        {
+          "id": 72819,
+          "content": "出来上がりが、楽しみです( *´艸｀)💕 #羽生結弦 #HANYUYUZURU #香味ペースト #味の素 #チャー活 https://t.co/Oea0jgKPTr QT @koumi_chakatsu: 🍳羽生結弦さん料理に挑戦中！🍳 三日目の食材はチャーシューと長ネギ！ #羽生結弦 #yuzuruhanyu #香味ペースト https://t.co/BjT6aLn2Tf",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 40879,
+          "content": "@ajinomoto #味の素社推し商品 香味ペースト",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "ポテトチップス",
+          "チャーハン",
+          "炒飯",
+          "肉野菜炒め",
+          "スープ"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_rush",
+          "late_night_snack",
+          "weekend_dinner",
+          "weekday_dinner_leisurely"
+        ],
+        "sentiments": {
+          "positive": 61,
+          "neutral": 18,
+          "negative": 1
+        }
+      },
+      "insight": "味の素と香味ペーストが同時に言及される投稿が80件見つかりました。"
+    },
+    {
+      "brand1": "ほんだし",
+      "brand2": "丸鶏がらスープ",
+      "count": 73,
+      "representativePosts": [
+        {
+          "id": 25719,
+          "content": "鶏もも肉には、うどんスープかほんだし、丸鶏がらスープか。どっちがうまいのだろうか…",
+          "sentiment": "neutral",
+          "dish": "うどんスープ",
+          "scene": "unknown"
+        },
+        {
+          "id": 62822,
+          "content": "@shizuka_aqua うま味調味料とかほんだしとか鶏ガラスープの素とかなしじゃお料理できない😓",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 35304,
+          "content": "そこに自家製のキムチの素をぶち込み、本だし・鶏がらスープの素・味の素・ニンニク・しょうが・醤油・酒を味をみながら入れましょう",
+          "sentiment": "neutral",
+          "dish": "キムチ",
+          "scene": "unknown"
+        },
+        {
+          "id": 35367,
+          "content": "新日本プロレス某選手のちゃんこ鍋レシピ動画見て美味そうだったから季節外れのキムチ鍋😅 桃屋のキムチの素以外に昆布、ホンダシ、鶏がらスープの素で出汁を取って最後、卵をといて入れるとマイルドでコク、深みのあるスープになるって言ってたけど… 美味いやないかーーーい‼️ 今日もお疲れ様です🍺 https://t.co/jHZSQqebfK",
+          "sentiment": "positive",
+          "dish": "キムチ鍋",
+          "scene": "weekday_dinner_leisurely"
+        },
+        {
+          "id": 30532,
+          "content": "今日の晩ごはん。 水炊き風豚しゃぶ。 白菜、椎茸、しめじ、豆腐、長ネギ、春菊 鳥もも切り身、鳥野菜団子。 下味は、水、麺つゆ、日本酒、焼塩、鶏ガラスープ ほんだしで薄めに味を染み込ませます。 #晩ごはん #夜ごはん #八戸市 #豚しゃぶ #水炊き https://t.co/3jyt9ubJiN",
+          "sentiment": "positive",
+          "dish": "水炊き風豚しゃぶ",
+          "scene": "weekday_dinner_leisurely"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "鍋",
+          "鶏がらスープ",
+          "うどんスープ",
+          "キムチ",
+          "キムチ鍋"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely",
+          "weekday_dinner_rush"
+        ],
+        "sentiments": {
+          "neutral": 35,
+          "positive": 37,
+          "negative": 1
+        }
+      },
+      "insight": "ほんだしと丸鶏がらスープが同時に言及される投稿が73件見つかりました。"
+    },
+    {
+      "brand1": "コンソメ",
+      "brand2": "丸鶏がらスープ",
+      "count": 70,
+      "representativePosts": [
+        {
+          "id": 61997,
+          "content": "豚ひき肉(椎茸みじん切り、鶏がらスープの素、酒、醤油、生姜) 水、トマト缶、コンソメ、オリーブオイル、塩コショウ 全部ぶち込んで蓋してタイマーで15分。 お風呂入ってる間にできてる",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 35307,
+          "content": "@guitarrapc 塩☆5 砂糖☆5 鶏がらスープの素☆5 胡椒☆5 醤油☆4 だしの素☆3 コンソメ☆3 味噌☆3 みりん☆3 豆板醤☆3 甜面醤☆3 胡椒以外の各種スパイス☆3 酢☆3 マヨネーズ☆2 ケチャップ☆2 オイスターソース☆2 豆鼓☆2 にんにくチューブ☆1（にがて） しょうがチューブ☆1（にがて） 料理酒☆1（にがて）",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 29136,
+          "content": "今夜のリアルなおかずは、八宝菜だったのですが ミスってしまった事があり😱💦スープの素が3種あって❗鶏がらスープの素、中華だし、顆粒コンソメの素のそのビンの容器がみんな一緒で顆粒の色で判断していたのですが 勘違いしてしまったのです💦 正直❗まず○った😨しかし全部いただきましたｗ😋 https://t.co/1yEnnxhPmw",
+          "sentiment": "negative",
+          "dish": "八宝菜",
+          "scene": "weekday_dinner_rush"
+        },
+        {
+          "id": 35360,
+          "content": "いつも作ってる鶏鍋、コンソメと野菜と鶏肉だけのシンプル鍋なんですけど、鶏がらスープの素を少しだけ入れたら爆裂に美味しくなった✨鶏がらスープの素すごい💫",
+          "sentiment": "positive",
+          "dish": "鶏鍋",
+          "scene": "unknown"
+        },
+        {
+          "id": 30388,
+          "content": "コンソメもなかったので鶏がらスープの素にした 鳥だからええやろと",
+          "sentiment": "neutral",
+          "dish": "スープ",
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "スープ",
+          "八宝菜",
+          "鶏鍋",
+          "具沢山スープ",
+          "キノコスープ"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_rush",
+          "late_night_snack",
+          "breakfast",
+          "weekday_dinner_leisurely"
+        ],
+        "sentiments": {
+          "positive": 29,
+          "neutral": 40,
+          "negative": 1
+        }
+      },
+      "insight": "コンソメと丸鶏がらスープが同時に言及される投稿が70件見つかりました。"
+    },
+    {
+      "brand1": "ピュアセレクト",
+      "brand2": "味の素",
+      "count": 58,
+      "representativePosts": [
+        {
+          "id": 4211,
+          "content": "味の素 「ピュアセレクト® サラリア®」210ｇ×３本 【マヨネーズ AJINOMOTO 調味料 日用品 三重県 四日市市 四日市 四日市市ふるさと納税】の基本スペック  8000 たれ・ドレッシング・酢  味の素「ピュアセレクト® サラリア®」210ｇ×３本  食用植物油脂（菜種油(国内製造)、コーン油）、植物ステロールエステル（大豆を含む）、卵、水あめ、醸造酢、食塩、香辛料、濃縮レモン果汁／調味料（アミノ酸） 四日市市  味の素 「ピュアセレクト® サラリア®」210ｇ×３本 【マヨネーズ ...",
+          "sentiment": "neutral",
+          "dish": "マヨネーズ",
+          "scene": "unknown"
+        },
+        {
+          "id": 45590,
+          "content": "@da_s14 味の素ピュアセレクトマヨヨの 口が細くない🥲 さてさん おざざーー☀️.°",
+          "sentiment": "neutral",
+          "dish": "マヨネーズ",
+          "scene": "unknown"
+        },
+        {
+          "id": 64547,
+          "content": "@mittan0219 マヨは味の素（ピュアセレクト）派です。 ケチャップは食べられません。 醤油はキッコーマンですよねｗ あ、でもマヨはびっくりドンキーのが好きかも！",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 33547,
+          "content": "@Lz61D うちも実家がキューピーだったけど結婚して夫が推す味の素にしたらメチャ美味しくてビビりました😌 酸っぱいの苦手だったけどピュアセレクトは別次元❣️",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 33830,
+          "content": "味の素をkgで買おうとしたのを阻止した結果、家のマヨネーズが味の素ピュアセレクトになったとは常々言っている",
+          "sentiment": "neutral",
+          "dish": "マヨネーズ",
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "マヨネーズ",
+          "卵サンド",
+          "鶏マヨ",
+          "ポテトサラダ",
+          "シュウマイ"
+        ],
+        "scenes": [
+          "unknown",
+          "weekend_brunch",
+          "breakfast",
+          "weekday_dinner_leisurely",
+          "weekday_dinner_rush"
+        ],
+        "sentiments": {
+          "neutral": 26,
+          "positive": 20,
+          "negative": 12
+        }
+      },
+      "insight": "ピュアセレクトと味の素が同時に言及される投稿が58件見つかりました。"
+    },
+    {
+      "brand1": "クックドゥ",
+      "brand2": "香味ペースト",
+      "count": 46,
+      "representativePosts": [
+        {
+          "id": 35365,
+          "content": "@hitozuma_yojyo2 クックドゥの香味ペースト最高",
+          "sentiment": "positive",
+          "dish": "香味ペースト",
+          "scene": "unknown"
+        },
+        {
+          "id": 16,
+          "content": "たこべいさんのmyレシピブック 【レンジ小松菜ナムル】香味ペーストで簡単副菜レシピ／やる気★★  【レンジ小松菜ナムル】香味ペーストで簡単副菜レシピ／やる気★★  たこべい  簡単に野菜の副菜を作りたい人へ、電子レンジで作る小松菜のナムルはいかがでしょうか。クックドゥ香味ペーストを使用するため、簡単に中華の味を出すことができます。ごま油の香りが食欲をそそり、メイン料理を引き...  小松菜 レンジ ペースト ナムル たこ 中華 ゴマ なべ 野菜  2021/04/27 UP!  他の小松菜のレシ...",
+          "sentiment": "neutral",
+          "dish": "小松菜ナムル",
+          "scene": "unknown"
+        },
+        {
+          "id": 63129,
+          "content": "チャーハンの味付け、これ使ってみたら めちゃくちゃ美味しくてびっくり🫢 #香味ペースト #CookDo #やみつきにんにく醤油味 https://t.co/Gavq5Lxc7j",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 34545,
+          "content": "朝ごはん シンプルなチャーハン Cook Doの香味ペーストで味付け！！ シンプルに美味しい😋 https://t.co/wswGT2OByv",
+          "sentiment": "positive",
+          "dish": "チャーハン",
+          "scene": "breakfast"
+        },
+        {
+          "id": 39780,
+          "content": "簡単たまごスープのレシピ👍 メイン食材は卵と香味ペースト お鍋で温めて作ります CookDoの香味ペーストを使って簡単に作れるレシピです😋 仕上げに刻みネギを散らしてどうぞ ▼レシピや作った感想はこちら✅ https://t.co/XV9oKun3Yv #レシピ #スープレシピ",
+          "sentiment": "positive",
+          "dish": "たまごスープ",
+          "scene": "weekday_dinner_rush"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "ポテトチップス",
+          "チャーハン",
+          "香味ペースト",
+          "小松菜ナムル",
+          "たまごスープ"
+        ],
+        "scenes": [
+          "unknown",
+          "breakfast",
+          "weekday_dinner_rush",
+          "late_night_snack"
+        ],
+        "sentiments": {
+          "positive": 32,
+          "neutral": 13,
+          "negative": 1
+        }
+      },
+      "insight": "クックドゥと香味ペーストが同時に言及される投稿が46件見つかりました。"
+    },
+    {
+      "brand1": "丸鶏がらスープ",
+      "brand2": "香味ペースト",
+      "count": 37,
+      "representativePosts": [
+        {
+          "id": 64268,
+          "content": "@kenta_sid 鶏がらスープの素なら米にまわしかけて、香味ペーストなら一番最初に溶かして、ウェイパーなら味見つつ多めに入れると井伊よ‼️ まぁ一人暮らしの自炊コストで卵買うのなかなかよな〜",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 43322,
+          "content": "神の食物だな QT @livedoornews: 【うまそ】カルビー・ポテトチップス「丸鶏がらスープ味」「CookDo香味ペースト味」登場！ https://t.co/Y2adYOPr5z 味の素監修のもと、「丸鶏がらスープ」の鶏のコク深い味わいと、「Cook Do 香味ペースト」の鶏のうまみと香味野菜の香りを再現した。19日から。 https://t.co/FxMlJxx2kV",
+          "sentiment": "positive",
+          "dish": "ポテトチップス",
+          "scene": "late_night_snack"
+        },
+        {
+          "id": 43746,
+          "content": "@kikomotu 塩、胡椒、酒、チューブのCook D oの 香味ペースト（鶏ガラ、ネギ油、こがしニンニク油） とオイスターソースです。最後に醤油で調整。 香味ペーストの代わりに鶏ガラスープでも🆗",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 60634,
+          "content": "食べたい✍️ QT @livedoornews: 【うまそ】カルビー・ポテトチップス「丸鶏がらスープ味」「CookDo香味ペースト味」登場！ https://t.co/Y2adYOPr5z 味の素監修のもと、「丸鶏がらスープ」の鶏のコク深い味わいと、「Cook Do 香味ペースト」の鶏のうまみと香味野菜の香りを再現した。19日から。 https://t.co/FxMlJxx2kV",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 49720,
+          "content": "昨日は #香味ペースト 今日はこっち♡買った♡食べた うすしお味食べてるのと 変わらない気が…σ(･ω･`)？ 食べ終わった口の中は 鶏ガラスープ味っぽい気もするけど 食べてる時はしお味って感じ。 あたしが塩っけ強めの物に弱いってのもあるんだけど ちと、しょっぱかった😣 #丸鶏がらスープ https://t.co/oxqKEhojBs QT @h_sakura_saku_k: えっ(ᵒ̴̷͈ᗨᵒ̴̶̷͈ )✧ 意外とおいしそうだな️♡ #ポテトチップス #Calbee",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "ポテトチップス",
+          "水餃子スープ",
+          "鶏がらスープ",
+          "ラーメン"
+        ],
+        "scenes": [
+          "unknown",
+          "late_night_snack",
+          "weekday_dinner_rush"
+        ],
+        "sentiments": {
+          "neutral": 13,
+          "positive": 23,
+          "negative": 1
+        }
+      },
+      "insight": "丸鶏がらスープと香味ペーストが同時に言及される投稿が37件見つかりました。"
+    },
+    {
+      "brand1": "クックドゥ",
+      "brand2": "丸鶏がらスープ",
+      "count": 36,
+      "representativePosts": [
+        {
+          "id": 35981,
+          "content": "@ajinomoto 1、丸鶏がらスープ 2、Blendy 3、CookDo 4、スープDELI.",
+          "sentiment": "neutral",
+          "dish": "スープ",
+          "scene": "unknown"
+        },
+        {
+          "id": 35405,
+          "content": "夜ご飯はCookDo使って豚肉、ニラ、モヤシ、そしてオリジナルレシピで合いそうだったので、しめじも入れて、隠し味には鶏ガラスープにラー油少々、お昼の残りの青ネギをトッピングして🎵 手前味噌ですがなかなか美味しく出来ました🍚 https://t.co/WSqNA12UGv",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": "weekday_dinner_leisurely"
+        },
+        {
+          "id": 8270,
+          "content": "味の素(株)「丸鶏がらスープ(TM)」のロゴが発売30年目で登録商標に  PR TIMES 4月18日（木）17時16分",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 37982,
+          "content": "昨日作った夕ご飯 回鍋肉(CookDoの素、豚肉、ピーマン、キャベツ)、焼き焼売(イオンのチルド焼売)、サラダ(サニーレタス、きゅうり、ハム、ゆで卵)、スープ(粉末鶏ガラスープ、ワカメ、卵、しめじ)🫠 #料理好きな人と繋がりたい #料理 #VTuber #AICiel #料理 #料理好き https://t.co/YdCeOhm33g",
+          "sentiment": "neutral",
+          "dish": "回鍋肉",
+          "scene": "weekday_dinner_leisurely"
+        },
+        {
+          "id": 43322,
+          "content": "神の食物だな QT @livedoornews: 【うまそ】カルビー・ポテトチップス「丸鶏がらスープ味」「CookDo香味ペースト味」登場！ https://t.co/Y2adYOPr5z 味の素監修のもと、「丸鶏がらスープ」の鶏のコク深い味わいと、「Cook Do 香味ペースト」の鶏のうまみと香味野菜の香りを再現した。19日から。 https://t.co/FxMlJxx2kV",
+          "sentiment": "positive",
+          "dish": "ポテトチップス",
+          "scene": "late_night_snack"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "ポテトチップス",
+          "回鍋肉",
+          "スープ",
+          "麻婆豆腐"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely",
+          "late_night_snack",
+          "weekday_dinner_rush"
+        ],
+        "sentiments": {
+          "neutral": 13,
+          "positive": 22,
+          "negative": 1
+        }
+      },
+      "insight": "クックドゥと丸鶏がらスープが同時に言及される投稿が36件見つかりました。"
+    },
+    {
+      "brand1": "アジシオ",
+      "brand2": "丸鶏がらスープ",
+      "count": 17,
+      "representativePosts": [
+        {
+          "id": 72497,
+          "content": "これめちゃ旨なんですが！！！ こんにゃくと長ネギ、調味料は鶏ガラスープの素と黒胡椒、アジシオ（お好み）だけやで？ みんなも食べてみてほしいこれは！！ 酒飲みは特に！！！ QT @momireborn: で、夜はリュウジさんのやけくそこんにゃくでまた飲む☺️ 明日もおやすみだもの、仕方ない☺️ https://t.co/Zb2mbaKsJ1 https://t.co/R8QNiYroY8",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 66424,
+          "content": "本日のおにぎりは、沖縄そば風おにぎり(おさかなソーセージ入り) 【材料】 ごはん65g そばだし小1(味塩、醤油、鶏ガラスープのもと、味覇、鰹出汁、昆布出汁、ハイミー、水) 紅ショウガ3g 乾燥ネギ おさかなソーセージ20g #おにぎり #おむすび #自炊 https://t.co/KJt7IztilB",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 40615,
+          "content": "きのうのヨル上げ忘れたのでここにぶら下げ レタス（いろいろ手を出すようになって種類がもうアレ） ヤングコーン 紅あずま素揚げチップス(新) 鰹節のジャーキーっぽいヤツ オリーブ油レモン汁アジシオ 豆乳とクリームコーン缶と鶏ガラスープの素でポタージュ https://t.co/bjpoCRAL66",
+          "sentiment": "neutral",
+          "dish": "サラダ",
+          "scene": "late_night_snack"
+        },
+        {
+          "id": 42999,
+          "content": "キャベツとかいう 鶏がらスープの素 味の素 アジシオ ごま油 入れて混ぜるだけでおつまみが完成する最強食材最高だな",
+          "sentiment": "positive",
+          "dish": "キャベツのおつまみ",
+          "scene": "late_night_snack"
+        },
+        {
+          "id": 37517,
+          "content": "伝説の「沼」、リュウジさん版🔥 食べて痩せるを体現したような一品ですね🥦 カレー粉少量で味を変えて食欲を持続させる工夫は本当に秀逸✨ 「痩せる＝味気ない」から抜け出せるのが、沼の強さ。 https://t.co/4gliw6YClX QT @driver_ito: リュウジさんの『沼』！！！ 伝説のダイエット筋肉飯『沼』のリュウジさんバージョン！！！ 栄養満点、味も最高、しかも痩せられる！！！ カレーにならないギリギリの量のカレー粉がホント良い仕事してます……！！！ これを食べて明日の健康診断、良い結果を狙います！！！ 『沼』パワーだ！！！ 【作り方】 ①米150g•えのき200g•冷凍オ",
+          "sentiment": "positive",
+          "dish": "沼",
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "サラダ",
+          "キャベツのおつまみ",
+          "沼",
+          "チャーハン",
+          "お粥"
+        ],
+        "scenes": [
+          "unknown",
+          "late_night_snack",
+          "weekday_dinner_rush"
+        ],
+        "sentiments": {
+          "positive": 6,
+          "neutral": 10,
+          "negative": 1
+        }
+      },
+      "insight": "アジシオと丸鶏がらスープが同時に言及される投稿が17件見つかりました。"
+    },
+    {
+      "brand1": "クックドゥ",
+      "brand2": "コンソメ",
+      "count": 14,
+      "representativePosts": [
+        {
+          "id": 28588,
+          "content": "あ、味の素製品はコンソメやCookDoからアミノバイタル(夫のマラソン用)まで幅広く愛用させていただいてます✨",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 73122,
+          "content": "「レタス 「クノール カップスープ」チキンコンソメ 「Cook Do」レンジでつくる 四川式麻婆豆腐用 」のレシピ検索結果 、  「レタス 「クノール カップスープ」チキンコンソメ 「Cook Do」レンジでつくる 四川式麻婆豆腐用 」検索結果ページ",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 45596,
+          "content": "これぐらい思い切って方向転換して気持ち切り替えるのめっちゃ好き！！！ サンは森で、私はタタラ場で暮らそう。 共には生きんけど。 https://t.co/1HtXYotoFg QT @185_xoxo_: @YS_GPCR 卵 牛乳 キウイ バナナ ツナ缶 クックドゥ麻婆豆腐 豚ひき肉 ピーマン 小松菜 無添加コンソメ",
+          "sentiment": "neutral",
+          "dish": "麻婆豆腐",
+          "scene": "unknown"
+        },
+        {
+          "id": 55019,
+          "content": "@AJINOMOTOPARK 丸鶏がらスープ、香味ペースト、味の素、ほんだし、やさしお、ちょっと贅沢な珈琲店、コンソメ、マヨネーズ、ルーミック、鍋キューブ、クノールポタージュ、Cook Do回鍋肉(←愛してる❤️)…たくさんありすぎる。",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 60290,
+          "content": "@AJINOMOTOPARK ヨシタケシンスケさん 描き下ろしパンフレット貴重です✨ 味の素ほんだし、コンソメ、 CookDo愛用しています ご縁がありますように🍀",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "麻婆豆腐",
+          "青椒肉絲"
+        ],
+        "scenes": [
+          "unknown"
+        ],
+        "sentiments": {
+          "positive": 4,
+          "neutral": 10
+        }
+      },
+      "insight": "クックドゥとコンソメが同時に言及される投稿が14件見つかりました。"
+    },
+    {
+      "brand1": "アジシオ",
+      "brand2": "コンソメ",
+      "count": 11,
+      "representativePosts": [
+        {
+          "id": 46871,
+          "content": "📝アジシオ、味の素（肉にもみ込む）、オリーブオイル、ガーリックパウダー、ケチャップ、コンソメ なんちゃってタルタルも美味しかったな",
+          "sentiment": "positive",
+          "dish": "タルタル",
+          "scene": "unknown"
+        },
+        {
+          "id": 28961,
+          "content": "めも ・アジシオ ・味の素 ・コンソメ ・鶏ガラ ・ほんだし ・ケチャップ ・ごま油 これら全てありませんどういうこと❓早く買って",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 47583,
+          "content": "鶏のむね肉を炊飯器で炊くのにハマっている。しょうゆ、コンソメ、味の素、味塩こしょうで雑に味付けして炊くと箸で簡単にほぐれる。圧力鍋を使用して大根とかニンジンを入れるともっと良くなる気がする。",
+          "sentiment": "positive",
+          "dish": "鶏むね肉",
+          "scene": "unknown"
+        },
+        {
+          "id": 50235,
+          "content": "@satobon09 アジシオは子供の頃好きだったw 一人暮らし始めてからは料理が趣味を兼ねてたから、フォンドボーやコンソメ系の洋出汁以外は自分で出汁取ってたし、中華の合わせ調味料も自作してた。カレーもスパイス調合してたしホワイトソースもマヨネーズも自作。 手間こそが料理だったわ。",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 51491,
+          "content": "【作り方】 ①ジャガイモの皮をむいて適当にカット ②じゃがいも250gに水大さじ1半入れラップし600w6分チン ③ジャガイモを潰して、コンソメ小さじ1、片栗粉小さじ2半、塩1つまみ、チーズ70g入れ混ぜる ④丸めて潰し、多めの油(サラダ油大さじ1～２)を引き強めの中火で焼き、アジシオと黒胡椒 https://t.co/GEvaIOe7Fz QT @ys_docomoPro: 子供がいる人はみんな土日にコレ作って。じゃがいも袋買い必須のカリカリジャガチーズ、おやつ変わりに出したらキッズに秒で全部食べられた。何回作っても美味しいけどカレー粉やチーズ増量のアレンジもおすすめ。大人もおつまみで全然食",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "タルタル",
+          "鶏むね肉",
+          "冷やし中華"
+        ],
+        "scenes": [
+          "unknown"
+        ],
+        "sentiments": {
+          "positive": 5,
+          "neutral": 5,
+          "negative": 1
+        }
+      },
+      "insight": "アジシオとコンソメが同時に言及される投稿が11件見つかりました。"
+    },
+    {
+      "brand1": "ほんだし",
+      "brand2": "アジシオ",
+      "count": 9,
+      "representativePosts": [
+        {
+          "id": 28961,
+          "content": "めも ・アジシオ ・味の素 ・コンソメ ・鶏ガラ ・ほんだし ・ケチャップ ・ごま油 これら全てありませんどういうこと❓早く買って",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 64999,
+          "content": "珍しくキャベツ1玉買ったのでざく切り冷凍作業。今日の副菜として作った蒸しキャベツが美味しくできた。ほんだし、めんつゆ、アジシオ、ごま油なんて不味くなりようがないが（笑）",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 32261,
+          "content": "@mariegohan 舌に残る感じが苦手です…味塩もダメです。 ダイエット甘味料も同じ感じで美味しくないです… こだわりがあるわけでなく、ほんだしとか鶏がらスープとかは普通に使ってるのですが。",
+          "sentiment": "negative",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 28696,
+          "content": "【おじさんの晩ごはん🍚】 焼き肉ごはんと言いつつ きのうの鶏むねミンチで トリごはんになり…🤔 三連休お疲れさまでした🙄 長くなるので割愛しました😑 ・焼き肉ごはん (白ねぎ、椎茸、焼き肉のタレ、紅しょうが、うま味調味料、アジシオ) ・豚肩ヒレカツ＆シャケフライ (冷凍、父) ・白身魚フライ(冷凍、僕) ・春雨サラダ (春雨、キャベツ、ミックスベジタブル、ウインナー、酢、うま味調味料、昆布つゆ、マヨネーズ) ・みそ汁 (木綿豆腐、青ネギ、ワカメ、ほんだし、味噌󠄀) ２人分🍽️",
+          "sentiment": "neutral",
+          "dish": "焼き肉ごはん",
+          "scene": "weekday_dinner_leisurely"
+        },
+        {
+          "id": 34049,
+          "content": "オレ氏は「ほんだし」とか塩胡椒とかフツーに使うけど、味の素は難しすぎて使えないんすよね。アジシオも苦手。どうしても気持ち悪い味になってしまう。",
+          "sentiment": "negative",
+          "dish": null,
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "焼き肉ごはん",
+          "炒飯"
+        ],
+        "scenes": [
+          "unknown",
+          "weekday_dinner_leisurely"
+        ],
+        "sentiments": {
+          "neutral": 5,
+          "positive": 2,
+          "negative": 2
+        }
+      },
+      "insight": "ほんだしとアジシオが同時に言及される投稿が9件見つかりました。"
+    },
+    {
+      "brand1": "コンソメ",
+      "brand2": "香味ペースト",
+      "count": 6,
+      "representativePosts": [
+        {
+          "id": 37296,
+          "content": "@tenkawacrystal1 そうですね、チャーハンはコンソメか鶏ガラがお手軽で美味しいですねw(๑´ㅂ`๑)わたしの中華のおすすめはCoo◯Doの「鶏ガラネギ油こがしニンニク油の香味ペースト」これ一本でチャーハン、スープ、野菜炒めがとても美味しく出来上がりますよ！",
+          "sentiment": "positive",
+          "dish": "チャーハン",
+          "scene": "unknown"
+        },
+        {
+          "id": 63657,
+          "content": "強いコンソメって感じの味 香味ペーストっぽい鶏と野菜がギザギザポテチなのに結構強めに感じられる 8点",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 55019,
+          "content": "@AJINOMOTOPARK 丸鶏がらスープ、香味ペースト、味の素、ほんだし、やさしお、ちょっと贅沢な珈琲店、コンソメ、マヨネーズ、ルーミック、鍋キューブ、クノールポタージュ、Cook Do回鍋肉(←愛してる❤️)…たくさんありすぎる。",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 63667,
+          "content": "#業務用食品 #食品包装資材 #調味料 #冷凍食品 #タスカル #冷凍ケーキ #業務用ケーキ #お買い得 #プライスダウン #香味ペースト #コンソメ #味の素 #唐揚げ",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 44015,
+          "content": "という事で今日はほうれん草グラタンを作りました！ ホワイトソースを目分量で作ったら固まらなくて見事に失敗して こ ん な 時 間 に 味付けは適当に香味ペーストとコンソメとブラックペッパーで仕上げました！美味い！！！ https://t.co/GLsUGDiQRT",
+          "sentiment": "positive",
+          "dish": "ほうれん草グラタン",
+          "scene": "unknown"
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "チャーハン",
+          "ほうれん草グラタン"
+        ],
+        "scenes": [
+          "unknown"
+        ],
+        "sentiments": {
+          "positive": 4,
+          "neutral": 2
+        }
+      },
+      "insight": "コンソメと香味ペーストが同時に言及される投稿が6件見つかりました。"
+    },
+    {
+      "brand1": "ほんだし",
+      "brand2": "クックドゥ",
+      "count": 6,
+      "representativePosts": [
+        {
+          "id": 55019,
+          "content": "@AJINOMOTOPARK 丸鶏がらスープ、香味ペースト、味の素、ほんだし、やさしお、ちょっと贅沢な珈琲店、コンソメ、マヨネーズ、ルーミック、鍋キューブ、クノールポタージュ、Cook Do回鍋肉(←愛してる❤️)…たくさんありすぎる。",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 60290,
+          "content": "@AJINOMOTOPARK ヨシタケシンスケさん 描き下ろしパンフレット貴重です✨ 味の素ほんだし、コンソメ、 CookDo愛用しています ご縁がありますように🍀",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        },
+        {
+          "id": 1878,
+          "content": "味の素株式会社 [2802] から 株主優待を頂きました(7月末頃)。  株主優待  味の素グループの製品詰合せセットとエコバッグです。  「 ほんだし」 40g袋 「味の素 KK コンソメ」 固形7個入箱 「 Cook Do 」 青椒肉絲用 「 Cook Do きょうの大皿」豚もやし用スタミナ醤油炒め 「 クノール カップスープ」豆のポタージュ(3袋入り) 「味の素 KK おかゆ」 紅鮭がゆ 250g 「 アミノバイタル」 ゼリードリンク SUPER SPORTS 「ちょっと贅沢な 珈琲店」 ...",
+          "sentiment": "positive",
+          "dish": "青椒肉絲",
+          "scene": "unknown"
+        },
+        {
+          "id": 4461,
+          "content": "「ほんだし」「丸鶏がらスープ」「CookDo 香味ペースト」――お料理の心強い味方「味の素株式会社」の調味料がキーホルダーになってガチャに登場！ | 電撃ホビーウェブ share.google/7GONNH5AEOkT...",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": "unknown"
+        },
+        {
+          "id": 53403,
+          "content": "@ajinomoto #味の素社推し商品 味の素KKコンソメ ほんだし® 丸鶏がらスープ™ 味の素KK中華あじ Cook Do®オイスターソース ブレンディ®スティック とろけるミルクカフェオレ",
+          "sentiment": "neutral",
+          "dish": null,
+          "scene": null
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "青椒肉絲"
+        ],
+        "scenes": [
+          "unknown"
+        ],
+        "sentiments": {
+          "neutral": 4,
+          "positive": 2
+        }
+      },
+      "insight": "ほんだしとクックドゥが同時に言及される投稿が6件見つかりました。"
+    },
+    {
+      "brand1": "ほんだし",
+      "brand2": "ピュアセレクト",
+      "count": 3,
+      "representativePosts": [
+        {
+          "id": 4974,
+          "content": "朝食の定番といえば、トーストにジャムやバターを塗る人は多いでしょう。  さまざまな食材と相性抜群のトーストですが、実はまだ意外な組み合わせが隠されているようです。  その組み合わせの1つが、味の素株式会社のウェブサイトで紹介されている『ほんだし』を合わせたトースト。  気になった筆者が、アレンジレシピ『ほんだしマヨトースト』を試してみました！  材料（1人分）  食パン6枚切り 1枚  「ピュアセレクト マヨネーズ」 大さじ1  「ほんだし」 小さじ1/3  まず、食パン1枚を用意します。スプー...",
+          "sentiment": "neutral",
+          "dish": "ほんだしマヨトースト",
+          "scene": "breakfast"
+        },
+        {
+          "id": 124,
+          "content": "リュウジさんがツナマヨを最高においしくする方法を公開。ツナ缶、マヨネーズに加え、味の素「ほんだし」と「ピュアセレクトマヨネーズ」を使うことがポイントだという。 作り方は簡単で、ツナ缶にマヨネーズと「ほんだし」を混ぜ、目玉焼きを作りトッピングするだけ。「ほんだし」で和のテイストが加わり、「ピュアセレクトマヨネーズ」の酸味のまろやかさがご飯によりなじむ。 仕上げにはのりや七味唐辛子などを加えると更においしい。ペッパーソースを加えると爽やかな酸味と辛味が楽しめる。リュウジさんおすすめの最高のツナマヨ丼...",
+          "sentiment": "positive",
+          "dish": "ツナマヨ丼",
+          "scene": "weekday_dinner_leisurely"
+        },
+        {
+          "id": 59181,
+          "content": "キューピーでやろう https://t.co/L3gJPSnLBC QT @ore825: 普通のツナマヨに戻れなくなります。ほんだしとマヨが決め手の極上ズボラ丼 「ツナマヨ丼」 ツナ缶1缶の油を切り、「ピュアセレクトマヨネーズ」20g(大1半)、「ほんだし」小匙1/3を混ぜ ご飯に海苔、目玉焼き、ツナマヨ、小ネギ、七味、醤油で完成 ツナマヨだけでも試してほしい #PR #味の素KK https://t.co/hySHcTWpTd",
+          "sentiment": "positive",
+          "dish": null,
+          "scene": null
+        }
+      ],
+      "patterns": {
+        "dishes": [
+          "ほんだしマヨトースト",
+          "ツナマヨ丼"
+        ],
+        "scenes": [
+          "breakfast",
+          "weekday_dinner_leisurely"
+        ],
+        "sentiments": {
+          "neutral": 1,
+          "positive": 2
+        }
+      },
+      "insight": "ほんだしとピュアセレクトが同時に言及される投稿が3件見つかりました。"
+    }
+  ]
+}

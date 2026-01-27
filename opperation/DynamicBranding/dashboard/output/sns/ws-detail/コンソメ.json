@@ -1,0 +1,269 @@
+{
+  "dish_category": [
+    {
+      "category": "汁物",
+      "count": 21,
+      "percentage": 45.7
+    },
+    {
+      "category": "麺類",
+      "count": 7,
+      "percentage": 15.2
+    },
+    {
+      "category": "煮込み",
+      "count": 5,
+      "percentage": 10.9
+    },
+    {
+      "category": "ご飯もの",
+      "count": 5,
+      "percentage": 10.9
+    },
+    {
+      "category": "その他",
+      "count": 3,
+      "percentage": 6.5
+    },
+    {
+      "category": "下味・調味",
+      "count": 3,
+      "percentage": 6.5
+    },
+    {
+      "category": "焼き物",
+      "count": 1,
+      "percentage": 2.2
+    },
+    {
+      "category": "炒め物",
+      "count": 1,
+      "percentage": 2.2
+    }
+  ],
+  "dish_name": [
+    {
+      "name": "豚丼",
+      "count": 4,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "野菜スープ",
+      "count": 3,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "オニオンコンソメスープ",
+      "count": 2,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "コンソメスープ",
+      "count": 2,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "揚げ茄子と新たまねぎの煮物",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "トマトソース",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "海苔山盛パスタ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "だし",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "きのこスパゲティ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "ラタトゥイユ風パスタ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "ゆうげ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "カレーうどん",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "スパゲティ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "冷や茶漬け",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "玉子スープ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "鮭の和風クリーム煮",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "コンソメ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "パスタ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "オニオングラタンスープ",
+      "count": 1,
+      "brand": "コンソメ"
+    },
+    {
+      "name": "ポタージュ",
+      "count": 1,
+      "brand": "コンソメ"
+    }
+  ],
+  "meal_occasion": [
+    {
+      "occasion": "平日夜（ゆっくり）",
+      "count": 8,
+      "percentage": 38.1
+    },
+    {
+      "occasion": "平日夜（急ぎ）",
+      "count": 6,
+      "percentage": 28.6
+    },
+    {
+      "occasion": "お弁当",
+      "count": 3,
+      "percentage": 14.3
+    },
+    {
+      "occasion": "夜食・晩酌",
+      "count": 2,
+      "percentage": 9.5
+    },
+    {
+      "occasion": "週末夕食",
+      "count": 1,
+      "percentage": 4.8
+    },
+    {
+      "occasion": "朝食",
+      "count": 1,
+      "percentage": 4.8
+    }
+  ],
+  "cooking_for": [
+    {
+      "target": "自分用",
+      "count": 29,
+      "percentage": 78.4
+    },
+    {
+      "target": "家族",
+      "count": 7,
+      "percentage": 18.9
+    },
+    {
+      "target": "子ども",
+      "count": 1,
+      "percentage": 2.7
+    }
+  ],
+  "motivation": [
+    {
+      "category": "時間がない",
+      "count": 11,
+      "percentage": 31.4
+    },
+    {
+      "category": "定番・安心感",
+      "count": 6,
+      "percentage": 17.1
+    },
+    {
+      "category": "料理に自信がない",
+      "count": 5,
+      "percentage": 14.3
+    },
+    {
+      "category": "味を失敗したくない",
+      "count": 4,
+      "percentage": 11.4
+    },
+    {
+      "category": "いつもと違うもの",
+      "count": 4,
+      "percentage": 11.4
+    },
+    {
+      "category": "健康志向",
+      "count": 3,
+      "percentage": 8.6
+    },
+    {
+      "category": "節約",
+      "count": 2,
+      "percentage": 5.7
+    }
+  ],
+  "brand_dish": [
+    {
+      "brand": "コンソメ",
+      "category": "煮込み",
+      "count": 5
+    },
+    {
+      "brand": "コンソメ",
+      "category": "汁物",
+      "count": 21
+    },
+    {
+      "brand": "コンソメ",
+      "category": "麺類",
+      "count": 7
+    },
+    {
+      "brand": "コンソメ",
+      "category": "ご飯もの",
+      "count": 5
+    },
+    {
+      "brand": "コンソメ",
+      "category": "下味・調味",
+      "count": 3
+    },
+    {
+      "brand": "コンソメ",
+      "category": "焼き物",
+      "count": 1
+    },
+    {
+      "brand": "コンソメ",
+      "category": "炒め物",
+      "count": 1
+    }
+  ]
+}

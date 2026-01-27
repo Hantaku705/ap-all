@@ -1,0 +1,290 @@
+{
+  "data": [
+    {
+      "brand": "味の素",
+      "color": "#D81B60",
+      "cepName": "味付け不安の解消",
+      "category": "料理不安",
+      "x": 2,
+      "y": 2.8,
+      "quadrant": "コア強化",
+      "size": 320
+    },
+    {
+      "brand": "クックドゥ",
+      "color": "#FB8C00",
+      "cepName": "味付け不安の解消",
+      "category": "料理不安",
+      "x": 2,
+      "y": 2.5,
+      "quadrant": "コア強化",
+      "size": 58
+    },
+    {
+      "brand": "クックドゥ",
+      "color": "#FB8C00",
+      "cepName": "平日夜の時短ニーズ",
+      "category": "平日夕食",
+      "x": 2,
+      "y": 2.4,
+      "quadrant": "コア強化",
+      "size": 52
+    },
+    {
+      "brand": "ほんだし",
+      "color": "#E53935",
+      "cepName": "平日夜の時短ニーズ",
+      "category": "平日夕食",
+      "x": 1.5,
+      "y": 2.1,
+      "quadrant": "コア強化",
+      "size": 45
+    },
+    {
+      "brand": "ほんだし",
+      "color": "#E53935",
+      "cepName": "味付け不安の解消",
+      "category": "料理不安",
+      "x": 2,
+      "y": 1.8,
+      "quadrant": "コア強化",
+      "size": 38
+    },
+    {
+      "brand": "コンソメ",
+      "color": "#5E35B1",
+      "cepName": "週末の本格料理挑戦",
+      "category": "週末料理",
+      "x": 2,
+      "y": 1.8,
+      "quadrant": "コア強化",
+      "size": 85
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "color": "#7CB342",
+      "cepName": "平日夜の時短ニーズ",
+      "category": "平日夕食",
+      "x": 1.5,
+      "y": 1.6,
+      "quadrant": "コア強化",
+      "size": 35
+    },
+    {
+      "brand": "コンソメ",
+      "color": "#5E35B1",
+      "cepName": "残り物リメイク",
+      "category": "節約",
+      "x": 1.5,
+      "y": 1.6,
+      "quadrant": "コア強化",
+      "size": 68
+    },
+    {
+      "brand": "味の素",
+      "color": "#D81B60",
+      "cepName": "平日夜の時短ニーズ",
+      "category": "平日夕食",
+      "x": 1,
+      "y": 1.5,
+      "quadrant": "育成検討",
+      "size": 180
+    },
+    {
+      "brand": "コンソメ",
+      "color": "#5E35B1",
+      "cepName": "子どもの好き嫌い対策",
+      "category": "子育て",
+      "x": 1,
+      "y": 1.4,
+      "quadrant": "育成検討",
+      "size": 55
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "color": "#7CB342",
+      "cepName": "週末の本格料理挑戦",
+      "category": "週末料理",
+      "x": 2,
+      "y": 1.2,
+      "quadrant": "コア強化",
+      "size": 28
+    },
+    {
+      "brand": "香味ペースト",
+      "color": "#00897B",
+      "cepName": "平日夜の時短ニーズ",
+      "category": "平日夕食",
+      "x": 2,
+      "y": 1.2,
+      "quadrant": "コア強化",
+      "size": 8
+    },
+    {
+      "brand": "クックドゥ",
+      "color": "#FB8C00",
+      "cepName": "週末の本格料理挑戦",
+      "category": "週末料理",
+      "x": 1.5,
+      "y": 1,
+      "quadrant": "育成検討",
+      "size": 28
+    },
+    {
+      "brand": "コンソメ",
+      "color": "#5E35B1",
+      "cepName": "おもてなし料理",
+      "category": "おもてなし",
+      "x": 1.5,
+      "y": 1,
+      "quadrant": "育成検討",
+      "size": 42
+    },
+    {
+      "brand": "香味ペースト",
+      "color": "#00897B",
+      "cepName": "味付け不安の解消",
+      "category": "料理不安",
+      "x": 2,
+      "y": 1,
+      "quadrant": "育成検討",
+      "size": 6
+    },
+    {
+      "brand": "ピュアセレクト",
+      "color": "#039BE5",
+      "cepName": "健康意識の高まり",
+      "category": "健康志向",
+      "x": 2,
+      "y": 1,
+      "quadrant": "育成検討",
+      "size": 12
+    },
+    {
+      "brand": "ほんだし",
+      "color": "#E53935",
+      "cepName": "季節の味覚",
+      "category": "季節料理",
+      "x": 1,
+      "y": 0.9,
+      "quadrant": "育成検討",
+      "size": 22
+    },
+    {
+      "brand": "クックドゥ",
+      "color": "#FB8C00",
+      "cepName": "子どもの好き嫌い対策",
+      "category": "子育て",
+      "x": 1,
+      "y": 0.8,
+      "quadrant": "育成検討",
+      "size": 18
+    },
+    {
+      "brand": "アジシオ",
+      "color": "#F4511E",
+      "cepName": "味付け不安の解消",
+      "category": "料理不安",
+      "x": 1.5,
+      "y": 0.8,
+      "quadrant": "育成検討",
+      "size": 25
+    },
+    {
+      "brand": "味の素",
+      "color": "#D81B60",
+      "cepName": "残り物リメイク",
+      "category": "節約",
+      "x": 1.5,
+      "y": 0.7,
+      "quadrant": "育成検討",
+      "size": 75
+    },
+    {
+      "brand": "アジシオ",
+      "color": "#F4511E",
+      "cepName": "朝の時間節約",
+      "category": "朝食",
+      "x": 1,
+      "y": 0.6,
+      "quadrant": "育成検討",
+      "size": 18
+    },
+    {
+      "brand": "ピュアセレクト",
+      "color": "#039BE5",
+      "cepName": "子どもの好き嫌い対策",
+      "category": "子育て",
+      "x": 1.5,
+      "y": 0.6,
+      "quadrant": "育成検討",
+      "size": 8
+    },
+    {
+      "brand": "丸鶏がらスープ",
+      "color": "#7CB342",
+      "cepName": "残り物リメイク",
+      "category": "節約",
+      "x": 1,
+      "y": 0.5,
+      "quadrant": "育成検討",
+      "size": 15
+    },
+    {
+      "brand": "香味ペースト",
+      "color": "#00897B",
+      "cepName": "晩酌のおつまみ",
+      "category": "晩酌",
+      "x": 1,
+      "y": 0.5,
+      "quadrant": "育成検討",
+      "size": 4
+    },
+    {
+      "brand": "ピュアセレクト",
+      "color": "#039BE5",
+      "cepName": "おもてなし料理",
+      "category": "おもてなし",
+      "x": 1,
+      "y": 0.4,
+      "quadrant": "育成検討",
+      "size": 5
+    },
+    {
+      "brand": "ほんだし",
+      "color": "#E53935",
+      "cepName": "健康意識の高まり",
+      "category": "健康志向",
+      "x": -1,
+      "y": -0.2,
+      "quadrant": "低優先",
+      "size": 8
+    },
+    {
+      "brand": "味の素",
+      "color": "#D81B60",
+      "cepName": "健康意識の高まり",
+      "category": "健康志向",
+      "x": -1.5,
+      "y": -0.5,
+      "quadrant": "低優先",
+      "size": 95
+    },
+    {
+      "brand": "アジシオ",
+      "color": "#F4511E",
+      "cepName": "健康意識の高まり",
+      "category": "健康志向",
+      "x": -1,
+      "y": -0.8,
+      "quadrant": "低優先",
+      "size": 10
+    }
+  ],
+  "summary": {
+    "コア強化": 10,
+    "機会獲得": 0,
+    "育成検討": 15,
+    "低優先": 3
+  }
+}

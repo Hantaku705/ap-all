@@ -1,0 +1,334 @@
+{
+  "dish_category": [
+    {
+      "category": "その他",
+      "count": 2039,
+      "percentage": 28.1
+    },
+    {
+      "category": "下味・調味",
+      "count": 1427,
+      "percentage": 19.7
+    },
+    {
+      "category": "揚げ物",
+      "count": 808,
+      "percentage": 11.1
+    },
+    {
+      "category": "ご飯もの",
+      "count": 719,
+      "percentage": 9.9
+    },
+    {
+      "category": "麺類",
+      "count": 669,
+      "percentage": 9.2
+    },
+    {
+      "category": "中華",
+      "count": 559,
+      "percentage": 7.7
+    },
+    {
+      "category": "汁物",
+      "count": 423,
+      "percentage": 5.8
+    },
+    {
+      "category": "サラダ",
+      "count": 188,
+      "percentage": 2.6
+    },
+    {
+      "category": "炒め物",
+      "count": 175,
+      "percentage": 2.4
+    },
+    {
+      "category": "煮込み",
+      "count": 145,
+      "percentage": 2
+    },
+    {
+      "category": "焼き物",
+      "count": 96,
+      "percentage": 1.3
+    }
+  ],
+  "dish_name": [
+    {
+      "name": "餃子",
+      "count": 923,
+      "brand": "味の素"
+    },
+    {
+      "name": "おかゆ",
+      "count": 228,
+      "brand": "味の素"
+    },
+    {
+      "name": "味の素",
+      "count": 195,
+      "brand": "味の素"
+    },
+    {
+      "name": "ラーメン",
+      "count": 151,
+      "brand": "味の素"
+    },
+    {
+      "name": "卵かけご飯",
+      "count": 118,
+      "brand": "味の素"
+    },
+    {
+      "name": "チャーハン",
+      "count": 116,
+      "brand": "味の素"
+    },
+    {
+      "name": "味噌汁",
+      "count": 89,
+      "brand": "味の素"
+    },
+    {
+      "name": "冷凍餃子",
+      "count": 62,
+      "brand": "味の素"
+    },
+    {
+      "name": "トムヤムクンヌードル",
+      "count": 52,
+      "brand": "味の素"
+    },
+    {
+      "name": "パスタ",
+      "count": 52,
+      "brand": "味の素"
+    },
+    {
+      "name": "ご飯",
+      "count": 47,
+      "brand": "味の素"
+    },
+    {
+      "name": "ギョーザ",
+      "count": 40,
+      "brand": "味の素"
+    },
+    {
+      "name": "唐揚げ",
+      "count": 36,
+      "brand": "味の素"
+    },
+    {
+      "name": "コーンスープ",
+      "count": 33,
+      "brand": "味の素"
+    },
+    {
+      "name": "ペペロンチーノ",
+      "count": 31,
+      "brand": "味の素"
+    },
+    {
+      "name": "シュウマイ",
+      "count": 30,
+      "brand": "味の素"
+    },
+    {
+      "name": "YumYum",
+      "count": 28,
+      "brand": "味の素"
+    },
+    {
+      "name": "コーヒー",
+      "count": 28,
+      "brand": "味の素"
+    },
+    {
+      "name": "麻婆豆腐",
+      "count": 25,
+      "brand": "味の素"
+    },
+    {
+      "name": "おにぎり",
+      "count": 25,
+      "brand": "味の素"
+    }
+  ],
+  "meal_occasion": [
+    {
+      "occasion": "夜食・晩酌",
+      "count": 396,
+      "percentage": 24.9
+    },
+    {
+      "occasion": "平日夜（急ぎ）",
+      "count": 373,
+      "percentage": 23.4
+    },
+    {
+      "occasion": "平日夜（ゆっくり）",
+      "count": 330,
+      "percentage": 20.7
+    },
+    {
+      "occasion": "朝食",
+      "count": 231,
+      "percentage": 14.5
+    },
+    {
+      "occasion": "お弁当",
+      "count": 139,
+      "percentage": 8.7
+    },
+    {
+      "occasion": "週末夕食",
+      "count": 60,
+      "percentage": 3.8
+    },
+    {
+      "occasion": "パーティー",
+      "count": 33,
+      "percentage": 2.1
+    },
+    {
+      "occasion": "週末ブランチ",
+      "count": 29,
+      "percentage": 1.8
+    }
+  ],
+  "cooking_for": [
+    {
+      "target": "自分用",
+      "count": 4214,
+      "percentage": 81.6
+    },
+    {
+      "target": "家族",
+      "count": 581,
+      "percentage": 11.2
+    },
+    {
+      "target": "複数",
+      "count": 119,
+      "percentage": 2.3
+    },
+    {
+      "target": "子ども",
+      "count": 102,
+      "percentage": 2
+    },
+    {
+      "target": "来客",
+      "count": 80,
+      "percentage": 1.5
+    },
+    {
+      "target": "配偶者",
+      "count": 56,
+      "percentage": 1.1
+    },
+    {
+      "target": "親・高齢者",
+      "count": 15,
+      "percentage": 0.3
+    }
+  ],
+  "motivation": [
+    {
+      "category": "定番・安心感",
+      "count": 866,
+      "percentage": 20.3
+    },
+    {
+      "category": "時間がない",
+      "count": 796,
+      "percentage": 18.7
+    },
+    {
+      "category": "健康志向",
+      "count": 662,
+      "percentage": 15.5
+    },
+    {
+      "category": "味を失敗したくない",
+      "count": 616,
+      "percentage": 14.4
+    },
+    {
+      "category": "いつもと違うもの",
+      "count": 529,
+      "percentage": 12.4
+    },
+    {
+      "category": "料理に自信がない",
+      "count": 387,
+      "percentage": 9.1
+    },
+    {
+      "category": "節約",
+      "count": 222,
+      "percentage": 5.2
+    },
+    {
+      "category": "相手を喜ばせたい",
+      "count": 187,
+      "percentage": 4.4
+    }
+  ],
+  "brand_dish": [
+    {
+      "brand": "味の素",
+      "category": "中華",
+      "count": 559
+    },
+    {
+      "brand": "味の素",
+      "category": "麺類",
+      "count": 669
+    },
+    {
+      "brand": "味の素",
+      "category": "ご飯もの",
+      "count": 719
+    },
+    {
+      "brand": "味の素",
+      "category": "下味・調味",
+      "count": 1427
+    },
+    {
+      "brand": "味の素",
+      "category": "揚げ物",
+      "count": 808
+    },
+    {
+      "brand": "味の素",
+      "category": "汁物",
+      "count": 423
+    },
+    {
+      "brand": "味の素",
+      "category": "炒め物",
+      "count": 175
+    },
+    {
+      "brand": "味の素",
+      "category": "サラダ",
+      "count": 188
+    },
+    {
+      "brand": "味の素",
+      "category": "焼き物",
+      "count": 96
+    },
+    {
+      "brand": "味の素",
+      "category": "煮込み",
+      "count": 145
+    }
+  ]
+}
