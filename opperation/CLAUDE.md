@@ -12,9 +12,11 @@
 | `clawdbot/` | Clawdbot AIアシスタント設定ガイド | - |
 | `DynamicBranding/` | 味の素グループ「点→線→面」ブランディングフレームワーク（CEP抽出、ダッシュボード） | - |
 | `skills-map/` | Claude Code スキル可視化ダッシュボード（skills/commands/agents/rules 41件） | （Vercelデプロイ予定） |
+| `usage-dashboard/` | Claude Code使用時間トラッキング（/usage, Supabase同期, ダッシュボード） | https://webapp-five-bay.vercel.app |
 
 ## 更新履歴
 
+- 2026-01-28: usage-dashboard/ 追加（Claude Code使用時間トラッキング、/usage, Supabase同期, ダッシュボードWebapp, GitHub Starter Kit更新）
 - 2026-01-27: skills-map/ 追加（Claude Code スキル可視化、将軍システムで並列構築、7/8タスク完了）
 - 2026-01-27: DynamicBranding/ 追加（味の素「点→線→面」ブランディング、CEP抽出、ダッシュボード）
 - 2026-01-27: multi-agent/ を `_claude-code/multi-agent/` に移動（Claude Code実行基盤のため）

@@ -17,7 +17,7 @@ async function checkErrors() {
   });
 
   try {
-    await page.goto("https://dashboard-smoky-six-15.vercel.app", {
+    await page.goto("https://ajinomoto-dashboard.vercel.app", {
       waitUntil: "networkidle",
       timeout: 30000,
     });

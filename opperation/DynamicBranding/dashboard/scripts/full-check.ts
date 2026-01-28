@@ -20,12 +20,12 @@ async function fullCheck() {
     }
   });
 
-  console.log("=== Checking https://dashboard-smoky-six-15.vercel.app ===\n");
+  console.log("=== Checking https://ajinomoto-dashboard.vercel.app ===\n");
 
   try {
     // Navigate to the page
     console.log("1. Navigating to page...");
-    const response = await page.goto("https://dashboard-smoky-six-15.vercel.app", {
+    const response = await page.goto("https://ajinomoto-dashboard.vercel.app", {
       waitUntil: "load",
       timeout: 60000,
     });

@@ -96,7 +96,7 @@
     | UI | フィルタードロップダウン、カードにバッジ表示 |
     | 再ラベリング | 既存18件をLLMで自動分類（自社2件、業界16件） |
   - コミット: `6cc73c8`
-  - 本番確認: https://dashboard-smoky-six-15.vercel.app/corporate/1 → 世の中分析タブ
+  - 本番確認: https://ajinomoto-dashboard.vercel.app/corporate/1 → 世の中分析タブ
 
 ### 2026-01-23（93回目）
 - **株価影響投稿の全件表示・整合優先ソート**

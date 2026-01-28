@@ -10,11 +10,11 @@
 | The Room FX | 28-36回目 | 提案書11ファイル、Webapp、整合性修正 | 18件 |
 | N organic | 37-41回目 | X戦略、Webapp、コンセプト設計スキル | 8件 |
 | なまえデザイン | 42-44回目 | 書籍まとめ Phase 1-2 | 3件 |
-| NADESHIKO | 45-85回目 | 売上管理Webapp、Excel→CSV変換、KSF分析、アルゴリズム解説、全期間データ統合、Webapp改善、再生数シート変換、Viewsタブ追加・強化、Algorithmタブ追加、日別再生数トラッキング、散布図+移動平均、データテーブルソート・バズ強調、投稿数ベースフィルター、MA動的切り替え、code.js API統一、レート制限対策、アカウント別MAトレンド一覧、フィルターヘッダー固定、MAトレンド「全員」行・PR/通常フィルター、MAトレンド期間変更（14/42/100） | 29件 |
+| NADESHIKO | 45-85, 130, 132回目 | 売上管理Webapp、Excel→CSV変換、KSF分析、アルゴリズム解説、全期間データ統合、Webapp改善、再生数シート変換、Viewsタブ追加・強化、Algorithmタブ追加、日別再生数トラッキング、散布図+移動平均、データテーブルソート・バズ強調、投稿数ベースフィルター、MA動的切り替え、code.js API統一、レート制限対策、アカウント別MAトレンド一覧、フィルターヘッダー固定、MAトレンド「全員」行・PR/通常フィルター、MAトレンド期間変更（14/42/100）、TikTok再生数低下アカウント別分析、**code.jsバグ修正3件** | 31件 |
 | サブスク | 60-61, 72, 75回目 | サブスク確認ツール（Gmail API連携、20+サービス自動検出、解約ガイド、テーブルUI、PDF/メール確認、動的解約ガイド取得、Vercelデプロイ） | 4件 |
 | Refa | 73-74回目 | プロモーション変遷分析Webapp（イノベーター理論曲線、4ページ構成、ReFa GINZA・再ブランディング追加、Vercelデプロイ） | 2件 |
 | workflow | 76回目 | プロジェクトワークフローガイド作成（5段階フロー、7プロジェクト分析、/project-workflow スキル） | 1件 |
-| フォルダ整理 | 78, 81回目 | projects/ フォルダ構造整理（5プロジェクト→7プロジェクト、workflow.md準拠→4カテゴリ拡張） | 2件 |
+| フォルダ整理 | 78, 81, 128回目 | projects/ フォルダ構造整理（5プロジェクト→7プロジェクト、workflow.md準拠→4カテゴリ拡張）、日本語フォルダ名英語化、重複削除、_claude-code同期 | 3件 |
 | CLAUDECODE | 86-104回目 | Claude Code オンボーディングWebapp Skills/Starter Kit タブ追加、**Claude Code Starter Kit GitHub作成**、Compareタブ3項目比較化、**Architectureタブ追加**、**Multi-Agent System実装**、**Getting Started ステップ7修正**、**Starter Kit SDK Docs追加**、**レベルベース設計**、**Multi-Agent Shogunオリジナル版再現**、**/shogunスキル作成**、**用語説明＆ペルソナ＆ゴール追加**、**Progate風ミッション形式化**、**ミッションタブ化**、**Google ログイン機能実装** | 13件 |
 | 将軍Claude Code化 | 97回目 | /shogunスキルをTask toolベースに書き換え（tmux不要化）、動作テスト成功 | 1件 |
 | nanobanana + tmux版復活 | 99回目 | nanobanana MCP設定、tmux版multi-agent-shogunパス修正・フル起動成功（10インスタンス） | 2件 |
@@ -22,14 +22,104 @@
 | CLAUDECODE修正 | 101回目 | Getting Started/Starter KitをLv.1専用に修正、multi-agent移動 | 1件 |
 | 将軍ダッシュボード | 102-103回目 | ゲーム性UI改善、skills-map構築、**v3.1スキルパネル（巻物庫）**、**v3.2陣形/統計/アチーブメントUI**、**セルフブラッシュアップ方針策定** | 4件 |
 | シャンプータグライン | 105-123回目 | タグライン収集（35→86ブランド）、ポジショニングマップWebapp作成・デプロイ、PR TIMESデータ追加、workflow整備、URL追加・テーブルリンク化、ファクトチェック、キャッチコピー追加、catchcopyスキル作成、4象限表示、Meltwater CSV分析→17ブランド追加、全86ブランドFC完了・sourceUrl追加・FCリンク化、FC分離（TL/CC個別化）・catchcopyFC実行、テーブルソート・軸別ソート＆フィルター、CC/TL列入れ替え・catchcopyスキル定義更新、**iP§ CC×TL 7案作成・ブランド検索機能追加** | 14件 |
-| スキンケア・リップタグライン | 124回目 | positioning-mapスキル作成、スキンケアWebapp（42ブランド）、リップWebapp（42ブランド）、Vercelデプロイ | 1件 |
+| スキンケア・リップタグライン | 124, 127回目 | positioning-mapスキル作成、スキンケアWebapp（42ブランド）、リップWebapp（42ブランド）、Vercelデプロイ、**ファクトチェック完了（スキンケア41/42, リップ42/42）** | 2件 |
 | ローカル設定同期 | 125回目 | `~/.claude/` → `AP/.claude/` 同期（Commands 22 + Agents 9 + Skills 2 = 33ファイル） | 1件 |
 | スキル・コマンド管理 | 115, 117回目 | `/should-skill`コマンド作成、CLAUDE.md自動提案ルール追加、Command提案基準厳格化、**rules/auto-skills.md作成**（スキル自動適用マッピング） | 2件 |
 | 権限設定 | 126回目 | `~/.claude/settings.json` 権限自動許可設定、`permissions-config.md`スキル作成 | 1件 |
+| Usage Tracking | 131回目 | Claude Code使用時間トラッキングシステム（/usageコマンド、Supabase同期、ダッシュボードWebapp、1日平均時間追加、GitHub Starter Kit更新） | 1件 |
 
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 直近の完了タスク
+- [x] **NADESHIKO code.js バグ修正3件（セッション132）**
+  - ユーザー依頼: code.jsのバグ調査（URLが上書きされる、朝10時に更新されない）
+  - **Plan Mode使用**: code.js分析→バグ原因特定→修正計画立案→ユーザー承認
+  - **修正内容**:
+    | バグ | 原因 | 修正 |
+    |------|------|------|
+    | 朝10時に更新されない | `DAILY_TRIGGER_HOUR: 9`（9時設定） | → `10` に変更 |
+    | URLが上書きされる | 同時実行時のデータ競合 | `LockService` 排他制御を追加 |
+    | シート名ミスマッチ | "1月"固定でフォールバック | 現在月シートを自動判定 |
+  - **トリガー設定確認**: 実際には9時に動作していたことを発見（16:13は別実行）、14.29%エラー率
+  - **変更ファイル**:
+    - `NADESHIKO/code/code.js` - バグ修正3件
+    - `NADESHIKO/code/CLAUDE.md` - 更新履歴・新機能説明追加
+- [x] **Claude Code Usage Tracking Dashboard（セッション131）**
+  - ユーザー依頼: Claude Code使用時間をPC別に追跡し、チーム全体でダッシュボードで可視化したい
+  - **Phase 1: ローカル `/usage` コマンド作成**
+    - `~/.claude/scripts/usage-parser.mjs`: history.jsonl解析、30分以上の間隔を非活動として除外
+    - `~/.claude/commands/usage.md`: /usage, /usage sync, /usage json サブコマンド
+    - 出力: 今日/今週/今月/累計の使用時間とセッション数
+  - **Phase 2: Supabase + ダッシュボードWebapp**
+    - Supabaseプロジェクト: `vwhtiwbulrbwfhjychmo` (claude-code-usage)
+    - `~/.claude/scripts/usage-sync.mjs`: 日別データをUPSERT
+    - Next.js 16 + Recharts ダッシュボード
+    - 本番URL: https://webapp-five-bay.vercel.app
+  - **Phase 3: 1日平均時間カード追加**
+    - StatCards.tsx に `totalDays` prop追加
+    - 計算: `totalMinutes / totalDays`（アクティブな日数）
+    - 5カードレイアウト（累計/今日/1日平均/ユーザー数/平均/人）
+  - **Phase 4: GitHub Starter Kit更新**
+    - https://github.com/Hantaku705/claude-code-starter に追加
+    - `.claude/scripts/usage-parser.mjs`, `usage-sync.mjs`
+    - `.claude/commands/usage.md`
+    - `install.sh`, `README.md` 更新
+  - **変更ファイル**:
+    - `opperation/usage-dashboard/` - 新規フォルダ（Supabase migration, Webapp, usage-sync-kit）
+    - `~/.claude/scripts/usage-parser.mjs` - 使用時間解析
+    - `~/.claude/scripts/usage-sync.mjs` - Supabase同期
+    - `~/.claude/commands/usage.md` - /usageコマンド定義
+- [x] **NADESHIKO TikTok再生数低下 アカウント別詳細分析（セッション130）**
+  - ユーザー依頼: 11月からTikTokの再生数が全体で下がっている原因を詳細に分析したい
+  - **Plan Mode使用**: 再生数シートCSV分析→アカウント別分析計画立案→ユーザー承認
+  - **分析結果**:
+    - 全体推移: 10月→1月で**-86%**の急落（286,341→39,821 views/post）
+    - バズ率: 30.8%→7.5%に低下
+    - フル視聴率: 20.3%→11.2%に低下
+  - **主要原因特定**:
+    - 11月第5週の大量投稿（187件）→移動平均低下
+    - PR案件激減（87件→5件、-94%）
+    - メガバズ消失（100万+再生がほぼゼロ）
+  - **最も下落したアカウント（Top 5）**:
+    - kana: -97.9%（627K→13K）
+    - ビビちゃん: -96.9%
+    - 肌コミちゃん: -96.1%
+    - 突撃ちゃん: -95.8%
+    - モテコスメちゃん: -94.5%
+  - **成果物**: `NADESHIKO/analysis/tiktok-decline-analysis.md`
+  - **変更ファイル**:
+    - `NADESHIKO/analysis/tiktok-decline-analysis.md` - 新規作成（詳細分析レポート）
+    - `NADESHIKO/CLAUDE.md` - フォルダ構成・Key Files・更新履歴に追加
+- [x] **DynamicBranding Brand Personality サブ案追加 + コーポレートロイヤリティ トピックフィルター（セッション129）**
+  - ユーザー依頼1: 現状のBrand Personalityが1つしかないのでサブ案を3つ追加
+  - ユーザー依頼2: ロイヤリティ高の代表口コミにトピックフィルター機能追加
+  - **Brand Personality 4案追加** (`brand.md`):
+    | 案 | 名称 | Tone | ターゲット | 対象ブランド |
+    |-----|------|------|-----------|-------------|
+    | メイン | 料理を支える賢者 | 尊敬・憧れ | 料理に関心が高い層 | 全体 |
+    | サブ1 | 忙しい日の味方 | 親しみ・安心感 | 共働き・子育て世帯 | クックドゥ系 |
+    | サブ2 | だしの匠 | 本格・信頼 | 本格派・こだわり層 | だし系 |
+    | サブ3 | 日常の冒険家 | 遊び心・ワクワク | 料理男子・実験好き | 中華系・調味料系 |
+  - **トピックフィルター機能追加** (`CorporateLoyaltySection.tsx`):
+    - TOPIC_LABELS / TOPIC_COLORS 定数追加（7トピック）
+    - selectedTopics state追加（複数選択可）
+    - getAvailableTopics() / getFilteredPosts() / toggleTopic() / clearFilters() 関数追加
+    - カラフルなチップUI + クリアボタン
+    - ロイヤリティレベル変更時にフィルターリセット
+  - **変更ファイル**:
+    - `opperation/DynamicBranding/brief/brand/brand.md` - Brand Personalityセクション追加
+    - `opperation/DynamicBranding/dashboard/src/components/corporate/CorporateLoyaltySection.tsx` - トピックフィルター機能
+- [x] **APプロジェクト フォルダ整理 + タグラインマップ シャンプー非表示（セッション128）**
+  - Phase 1: 重複削除（opperation/phonefarm削除、統合済みWebapp削除）
+  - Phase 2: _claude-code再同期（commands +22, agents +9, skills +2）
+  - Phase 3: 日本語フォルダ名英語化（5フォルダ）
+  - シャンプータブ非表示→スキンケア・リップのみ表示
+  - 本番URL: https://webapp-five-bay.vercel.app
+- [x] **スキンケア・リップ ファクトチェック完了（セッション127）**
+  - スキンケア: 41/42ブランドFC完了（ディオールのみ未確認）、catchcopy 7件確認
+  - リップ: 42/42ブランドFC完了（100%）、catchcopy 8件確認
+  - 両Webapp Vercelデプロイ完了
+  - 本番URL: https://skincare-tagline-map.vercel.app / https://lip-tagline-map.vercel.app
 - [x] **Claude Code権限自動許可設定 + スキル作成（セッション126）**
   - `~/.claude/settings.json` に `permissions.allow` 追加（WebFetch, Bash, Edit, Write, ~/.claude/**パス）
   - `/should-skill` 実行 → `permissions-config.md` スキル新規作成
@@ -266,30 +356,168 @@
 
 ## 未コミット変更
 ```
- M .claude/rules/auto-skills.md
  M CLAUDE.md
  M HANDOFF.md
+ M NADESHIKO/CLAUDE.md
+ M NADESHIKO/code/CLAUDE.md
+ M NADESHIKO/code/code.js
  m _claude-code/multi-agent
- M _claude-code/skills/catchcopy.md
- M projects/シャンプータグライン/webapp/src/components/TaglineTable.tsx
- M projects/シャンプータグライン/webapp/src/data/tagline-data.ts
-?? .claude/agents/ (9ファイル)
-?? .claude/commands/ (22ファイル)
-?? .claude/skills/permissions-config.md
-?? .claude/skills/positioning-map.md
-?? .claude/skills/security-review/
-?? .claude/skills/tdd-workflow/
-?? projects/シャンプータグライン/source/ips/
-?? projects/スキンケアタグライン/
-?? projects/リップタグライン/
+ M opperation/DynamicBranding/brief/brand/brand.md
+ M opperation/DynamicBranding/dashboard/src/components/corporate-analytics/
+ M opperation/DynamicBranding/dashboard/src/components/corporate/CorporateLoyaltySection.tsx
+ D opperation/phonefarm/
+ D projects/シャンプータグライン → shampoo-tagline (rename)
+ D projects/スキンケアタグライン → skincare-tagline (rename)
+ D projects/リップタグライン → lip-tagline (rename)
+ D projects/タグラインマップ → tagline-map (rename)
+ D projects/Refa → refa (rename)
 ```
 
 ## 最新コミット
 ```
-ae03963 docs: update HANDOFF with session 120 (shampoo table sort/filter)
+e349835 feat: add permissions config skill, sync local settings, and add 3 positioning map webapps
 ```
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-28 (132)
+- **NADESHIKO code.js バグ修正3件**
+  - ユーザー依頼: code.jsのバグ調査（URLが上書きされる、朝10時に更新されない）
+  - **Plan Mode使用**: code.js分析→バグ原因特定→修正計画立案→ユーザー承認
+  - **修正内容**:
+    | バグ | 原因 | 修正 |
+    |------|------|------|
+    | 朝10時に更新されない | `DAILY_TRIGGER_HOUR: 9`（9時設定） | → `10` に変更 |
+    | URLが上書きされる | 同時実行時のデータ競合 | `LockService` 排他制御を追加 |
+    | シート名ミスマッチ | "1月"固定でフォールバック | 現在月シートを自動判定 |
+  - **ユーザー対応**: トリガー設定スクショ確認、9:05:34に実行されていたことを発見（14.29%エラー率）
+  - **推奨アクション**:
+    1. 修正済みコードをGAS Editorにコピー
+    2. `insight_run`トリガー削除（100%エラー）
+    3. 「毎日10時の自動実行を設定」再実行
+  - **変更ファイル**:
+    - `NADESHIKO/code/code.js` - バグ修正3件
+    - `NADESHIKO/code/CLAUDE.md` - 更新履歴・新機能説明追加
+
+### 2026-01-28 (131)
+- **Claude Code Usage Tracking Dashboard作成**
+  - ユーザー依頼: Claude Code使用時間をPC別に追跡し、チーム全体でダッシュボードで可視化したい
+  - **要件確認**:
+    - 識別方法: ホスト名+ユーザー名（自動）
+    - DB: Supabase（新規プロジェクト）
+    - 同期タイミング: `/usage sync` コマンド実行時
+  - **Phase 1 - ローカルコマンド**:
+    - `usage-parser.mjs`: history.jsonl解析（30分以上の間隔は非活動として除外）
+    - `/usage`: 今日/週/月/累計の使用時間表示
+    - `/usage json`: JSON形式出力
+  - **Phase 2 - Supabase + Dashboard**:
+    - プロジェクト: `vwhtiwbulrbwfhjychmo`
+    - テーブル: `usage_logs`（user_id, date, minutes, sessions）
+    - ビュー: `usage_summary`, `usage_daily_total`
+    - Next.js 16 + Recharts ダッシュボード
+  - **Phase 3 - 1日平均時間追加**:
+    - StatCards.tsx に `totalDays` prop追加
+    - 5カード構成: 累計/今日/1日平均/ユーザー数/平均/人
+  - **Phase 4 - GitHub Starter Kit更新**:
+    - https://github.com/Hantaku705/claude-code-starter
+    - scripts/, commands/usage.md, install.sh, README.md 更新
+  - **本番URL**: https://webapp-five-bay.vercel.app
+  - **成果物**: `opperation/usage-dashboard/`（webapp, supabase, usage-sync-kit）
+
+### 2026-01-28 (130)
+- **NADESHIKO TikTok再生数低下 アカウント別詳細分析**
+  - ユーザー依頼: 11月からTikTokの再生数が全体で下がっている、何がボトルネックか詳細に分析したい
+  - **Plan Mode使用**: 2つのExplore agentで並行調査→計画ファイル作成→ユーザー承認
+  - **分析手法**: Python（標準ライブラリのみ、pandas未使用）で756件のTikTok投稿を集計
+  - **主要発見**:
+    - 10月→1月で**-86%**の急落（286,341→39,821 views/post）
+    - バズ率（10万+再生）: 30.8%→7.5%に低下
+    - フル視聴率: 20.3%→11.2%に低下
+    - PR案件: 87件→5件（-94%）
+    - 11月第5週の大量投稿（187件）が移動平均を下げた可能性
+  - **最も下落したアカウント**:
+    - kana: -97.9%（627K→13K）
+    - ビビちゃん: -96.9%
+    - 肌コミちゃん: -96.1%
+  - **改善の兆し**: 韓国オンニが1月に1.2Mバズで回復基調
+  - **成果物**: `NADESHIKO/analysis/tiktok-decline-analysis.md`（詳細レポート）
+  - **CLAUDE.md更新**: フォルダ構成・Key Files・更新履歴に`analysis/`追加
+
+### 2026-01-28 (129)
+- **DynamicBranding Brand Personality サブ案追加**
+  - ユーザー依頼: 現状のBrand Personalityが「料理を支える賢者」の1案しかないのでサブ案を3つ追加したい
+  - **Plan Mode使用**: データ分析（SNS 50,000件、Google Trends相関）から示唆を抽出し計画立案
+  - **データ分析からの示唆**:
+    - ほんだし×コンソメ相関r=0.38（最強）→「だし連合」戦略示唆
+    - 味の素のハブ機能→中華系ブランドのハブ（クックドゥ/丸鶏がら/アジシオと連動）
+    - セグメント分離: ほんだし=こだわり派、クックドゥ=時短派
+    - 香味ペーストの独立性→チャーハン特化、料理男子層
+  - **Brand Personality 4案**:
+    | 案 | 名称 | Tone | ターゲット | 対象ブランド |
+    |-----|------|------|-----------|-------------|
+    | メイン | 料理を支える賢者 | 尊敬・憧れ | 料理に関心が高い層 | 全体 |
+    | サブ1 | 忙しい日の味方 | 親しみ・安心感 | 共働き・子育て世帯 | クックドゥ系 |
+    | サブ2 | だしの匠 | 本格・信頼 | 本格派・こだわり層 | だし系 |
+    | サブ3 | 日常の冒険家 | 遊び心・ワクワク | 料理男子・実験好き | 中華系・調味料系 |
+  - **変更ファイル**: `opperation/DynamicBranding/brief/brand/brand.md`
+- **コーポレートロイヤリティ トピックフィルター機能追加**
+  - ユーザー依頼: ロイヤリティ高の代表口コミに対してトピック（rnd, employment, csr_sustainability等）でフィルタリングしたい
+  - **実装内容**:
+    - TOPIC_LABELS / TOPIC_COLORS 定数追加（7種: 株価・IR、CSR・採用等、採用・働き方、企業ニュース、研究開発、経営・理念、その他）
+    - selectedTopics state追加（複数選択対応）
+    - getAvailableTopics(): 選択中のロイヤリティレベルに存在するトピックのみ表示
+    - getFilteredPosts(): トピックフィルター適用後の投稿を返す
+    - toggleTopic() / clearFilters(): フィルター操作関数
+    - カラフルなチップUI（選択時は背景色塗りつぶし）
+    - ロイヤリティレベル変更時にフィルターリセット
+  - **ビルドエラー**: `.next` キャッシュクリアで解決
+  - **変更ファイル**: `opperation/DynamicBranding/dashboard/src/components/corporate/CorporateLoyaltySection.tsx`
+
+### 2026-01-28 (128)
+- **APプロジェクト フォルダ整理**
+  - ユーザー依頼: フォルダを整理するべきところがあれば教えて
+  - **Plan Mode使用**: Explore agentでフォルダ構造分析→計画ファイル作成→ユーザー承認
+  - **Phase 1: 重複削除**
+    - `opperation/phonefarm/` 削除（`3c.md`は`projects/phonefarm/docs/`に保存）
+    - 統合済みWebapp削除（シャンプー/スキンケア/リップのwebapp/フォルダ）
+  - **Phase 2: _claude-code再同期**
+    - `.claude/` → `_claude-code/` にrsync
+    - commands +22, agents +9, skills +2
+  - **Phase 3: 日本語フォルダ名英語化（5フォルダ）**
+    - シャンプータグライン → shampoo-tagline
+    - スキンケアタグライン → skincare-tagline
+    - リップタグライン → lip-tagline
+    - タグラインマップ → tagline-map
+    - Refa → refa
+  - **CLAUDE.md更新**: フォルダ構成、プロジェクト詳細、更新履歴
+- **タグラインマップ シャンプータブ非表示**
+  - ユーザー依頼: 一旦シャンプーは非表示にして、スキンケア/リップのみにして
+  - `categories.ts`: shampoo設定をコメントアウト
+  - `defaultCategory`: "shampoo" → "skincare"
+  - **Vercelデプロイ完了**: https://webapp-five-bay.vercel.app
+- **変更ファイル**:
+  - `CLAUDE.md` - フォルダ構成・更新履歴更新
+  - `projects/tagline-map/webapp/src/config/categories.ts` - シャンプー非表示
+
+### 2026-01-28 (127)
+- **スキンケア・リップ タグライン＆キャッチコピー ファクトチェック完了**
+  - ユーザー依頼: スキンケア、リップ、キャッチコピーとタグライン両方ともファクトチェックさせて
+  - **スキンケア結果**（前回セッションで完了）:
+    - 41/42ブランドFC完了（97.6%）
+    - 未確認: ディオール（サイトアクセス不可）
+    - catchcopy確認: 肌ラボ(極潤)、なめらか本舗(豆乳イソフラボン)、ELIXIR(つや玉)、エトヴォス(セラミドスキンケア)、SK-II(ピテラの力)、コスメデコルテ(リポソーム技術)、シャネル(N°1 ドゥ シャネル)
+  - **リップ結果**:
+    - 42/42ブランドFC完了（100%）
+    - catchcopy確認: キャンメイク、セザンヌ、ケイト、エクセル、ETUDE、UZU、ジルスチュアート、THREE
+  - **データ更新**:
+    - `taglineFC: true` 設定、`taglineSourceUrl` 追加
+    - `catchcopyFC: true` 設定、`catchcopySourceUrl` 追加
+  - **Vercelデプロイ完了**:
+    - スキンケア: https://skincare-tagline-map.vercel.app
+    - リップ: https://lip-tagline-map.vercel.app
+  - **変更ファイル**:
+    - `projects/スキンケアタグライン/webapp/src/data/tagline-data.ts` - FC更新済み
+    - `projects/リップタグライン/webapp/src/data/tagline-data.ts` - FC更新済み
 
 ### 2026-01-28 (126)
 - **Claude Code権限自動許可設定 + スキル作成**

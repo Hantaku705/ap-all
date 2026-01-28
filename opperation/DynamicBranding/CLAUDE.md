@@ -641,7 +641,7 @@ vercel project ls
 | 「path does not exist」 | 二重パス（dashboard/dashboard） | プロジェクト再作成 |
 
 **本番URL例**:
-- Production: `https://dashboard-smoky-six-15.vercel.app`
+- Production: `https://ajinomoto-dashboard.vercel.app`
 - Git連携: `https://dashboard-git-main-xxx.vercel.app`（自動生成）
 
 ---
