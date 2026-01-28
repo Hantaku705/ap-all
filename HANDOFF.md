@@ -4,9 +4,9 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最終セッション | #143 |
+| 最終セッション | #144 |
 | 最終更新 | 2026-01-29 |
-| 最新コミット | 70f586c |
+| 最新コミット | 195d603 |
 
 ### 作業中のタスク
 
@@ -25,18 +25,7 @@
 ## 未コミット変更
 
 ```
- M .claude/commands/handoff.md
- M CLAUDE.md
- M HANDOFF.md
- M opperation/DynamicBranding/... (CLAUDE.md, page.tsx, CorporateLoyaltySection.tsx等)
-?? opperation/DynamicBranding/dashboard/src/app/api/corporate/[corpId]/loyalty-summary/
-?? opperation/DynamicBranding/dashboard/src/app/api/corporate/[corpId]/strategy/
-?? opperation/DynamicBranding/dashboard/src/components/corporate-strategy/
-?? opperation/DynamicBranding/dashboard/src/components/corporate/LoyaltySummaryReport.tsx
-?? opperation/DynamicBranding/dashboard/src/data/
-?? opperation/DynamicBranding/dashboard/tests/e2e/check-fan.spec.ts
-?? opperation/DynamicBranding/dashboard/tests/e2e/verify-fan.spec.ts
-?? projects/*/HANDOFF.md (11 files)
+なし（全てコミット済み）
 ```
 
 ## プロジェクト別履歴
@@ -56,6 +45,25 @@
 | mascode | 2026-01-19 | - | [詳細](projects/mascode/HANDOFF.md) |
 
 ## セッション履歴
+
+### 2026-01-29（#144）
+- **DynamicBranding useEffect依存配列修正 + エラーハンドリング改善**
+  - `/error` コマンドで検出された問題を修正:
+    | 優先度 | 問題 | 修正 |
+    |--------|------|------|
+    | HIGH | useEffect依存配列に`strategyData`/`loyaltyGrowthData`含む（無限ループリスク） | 依存配列から除去 |
+    | HIGH | fetchSummaryにエラー状態表示なし | `summaryError`状態追加、エラー画面実装 |
+  - 変更ファイル: `src/app/corporate/[corpId]/page.tsx`
+  - ビルド確認: 成功（57ページ生成）
+- **全未コミット変更をコミット＆プッシュ**
+  - コミット: `195d603` (62ファイル, +4130/-1424行)
+  - 含まれる機能:
+    - 戦略タブ追加（5つ目のタブ）
+    - マルチペルソナ化（1レベル2-3ペルソナ）
+    - ロイヤリティ成長トラッキング
+    - Usage Dashboardトークン計測
+    - HANDOFFハイブリッド方式（11プロジェクト分割）
+    - llm-to-static, usage-daily, usage-syncスキル/コマンド追加
 
 ### 2026-01-29（#143）
 - **DynamicBranding ファン資産タブ パフォーマンス改善＋スキル化**
@@ -115,7 +123,7 @@
 | NADESHIKO | 45-85回 | 売上管理Webapp、アルゴリズム解説 | 31 |
 | タグライン | 105-127回 | シャンプー86+スキンケア42+リップ42 | 16 |
 | CLAUDECODE | 86-104回 | Starter Kit、Multi-Agent | 13 |
-| インフラ | 125-143回 | 設定同期、権限管理、フォルダ統合、HANDOFFハイブリッド化、戦略タブ静的化、ロイヤリティインサイト、llm-to-staticスキル | 15 |
+| インフラ | 125-144回 | 設定同期、権限管理、フォルダ統合、HANDOFFハイブリッド化、戦略タブ静的化、ロイヤリティインサイト、llm-to-staticスキル、useEffect修正 | 16 |
 
 ## 未解決の問題
 
