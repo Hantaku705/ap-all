@@ -1,0 +1,24 @@
+{
+  "name": "multi-agent",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "dashboard-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yohey-w/multi-agent-shogun.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yohey-w/multi-agent-shogun/issues"
+  },
+  "homepage": "https://github.com/yohey-w/multi-agent-shogun#readme",
+  "dependencies": {
+    "ws": "^8.19.0"
+  }
+}

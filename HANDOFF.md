@@ -14,7 +14,7 @@
 | サブスク | 60-61, 72, 75回目 | サブスク確認ツール（Gmail API連携、20+サービス自動検出、解約ガイド、テーブルUI、PDF/メール確認、動的解約ガイド取得、Vercelデプロイ） | 4件 |
 | Refa | 73-74回目 | プロモーション変遷分析Webapp（イノベーター理論曲線、4ページ構成、ReFa GINZA・再ブランディング追加、Vercelデプロイ） | 2件 |
 | workflow | 76回目 | プロジェクトワークフローガイド作成（5段階フロー、7プロジェクト分析、/project-workflow スキル） | 1件 |
-| フォルダ整理 | 78, 81, 128回目 | projects/ フォルダ構造整理（5プロジェクト→7プロジェクト、workflow.md準拠→4カテゴリ拡張）、日本語フォルダ名英語化、重複削除、_claude-code同期 | 3件 |
+| フォルダ整理 | 78, 81, 128, 135回目 | projects/ フォルダ構造整理（5プロジェクト→7プロジェクト、workflow.md準拠→4カテゴリ拡張）、日本語フォルダ名英語化、重複削除、_claude-code同期、**`.claude/`統合（_claude-code削除）** | 4件 |
 | CLAUDECODE | 86-104回目 | Claude Code オンボーディングWebapp Skills/Starter Kit タブ追加、**Claude Code Starter Kit GitHub作成**、Compareタブ3項目比較化、**Architectureタブ追加**、**Multi-Agent System実装**、**Getting Started ステップ7修正**、**Starter Kit SDK Docs追加**、**レベルベース設計**、**Multi-Agent Shogunオリジナル版再現**、**/shogunスキル作成**、**用語説明＆ペルソナ＆ゴール追加**、**Progate風ミッション形式化**、**ミッションタブ化**、**Google ログイン機能実装** | 13件 |
 | 将軍Claude Code化 | 97回目 | /shogunスキルをTask toolベースに書き換え（tmux不要化）、動作テスト成功 | 1件 |
 | nanobanana + tmux版復活 | 99回目 | nanobanana MCP設定、tmux版multi-agent-shogunパス修正・フル起動成功（10インスタンス） | 2件 |
@@ -24,13 +24,63 @@
 | シャンプータグライン | 105-123回目 | タグライン収集（35→86ブランド）、ポジショニングマップWebapp作成・デプロイ、PR TIMESデータ追加、workflow整備、URL追加・テーブルリンク化、ファクトチェック、キャッチコピー追加、catchcopyスキル作成、4象限表示、Meltwater CSV分析→17ブランド追加、全86ブランドFC完了・sourceUrl追加・FCリンク化、FC分離（TL/CC個別化）・catchcopyFC実行、テーブルソート・軸別ソート＆フィルター、CC/TL列入れ替え・catchcopyスキル定義更新、**iP§ CC×TL 7案作成・ブランド検索機能追加** | 14件 |
 | スキンケア・リップタグライン | 124, 127回目 | positioning-mapスキル作成、スキンケアWebapp（42ブランド）、リップWebapp（42ブランド）、Vercelデプロイ、**ファクトチェック完了（スキンケア41/42, リップ42/42）** | 2件 |
 | ローカル設定同期 | 125回目 | `~/.claude/` → `AP/.claude/` 同期（Commands 22 + Agents 9 + Skills 2 = 33ファイル） | 1件 |
-| スキル・コマンド管理 | 115, 117回目 | `/should-skill`コマンド作成、CLAUDE.md自動提案ルール追加、Command提案基準厳格化、**rules/auto-skills.md作成**（スキル自動適用マッピング） | 2件 |
+| スキル・コマンド管理 | 115, 117, 134回目 | `/should-skill`コマンド作成、CLAUDE.md自動提案ルール追加、Command提案基準厳格化、**rules/auto-skills.md作成**（スキル自動適用マッピング）、**/should-skill 4種別対応化（Skill/Command/Rules/Hooks）** | 3件 |
 | 権限設定 | 126回目 | `~/.claude/settings.json` 権限自動許可設定、`permissions-config.md`スキル作成 | 1件 |
 | Usage Tracking | 131回目 | Claude Code使用時間トラッキングシステム（/usageコマンド、Supabase同期、ダッシュボードWebapp、1日平均時間追加、GitHub Starter Kit更新） | 1件 |
+| タグラインマップ統合 | 133回目 | Vercelプロジェクト分離（usage-dashboard/tagline-map）、tagline-positioning-map.vercel.app新規作成、170ブランド統合版 | 1件 |
 
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 直近の完了タスク
+- [x] **`.claude/` フォルダ統合（セッション135）**
+  - ユーザー依頼: `.claude/` と `_claude-code/` の違いを説明し、どちらか一つに集約したい
+  - **Plan Mode使用**: 両フォルダ調査→統合計画立案→ユーザー承認
+  - **問題**: agents/, commands/, skills/, rules/ が完全重複（同期管理が煩雑）
+  - **解決**: `_claude-code/` の固有コンテンツを `.claude/` に移動し、`_claude-code/` を完全削除
+  - **移動したフォルダ**: examples/, hooks/, mcp-configs/, multi-agent/, plugins/
+  - **マージしたファイル**: skills/CLAUDE.md
+  - **削除した重複**: agents/(18), commands/(37), rules/(9), skills/(12)
+  - **変更ファイル**:
+    - `.claude/skills/CLAUDE.md` - マージ追加
+    - `.claude/examples/` - 移動
+    - `.claude/hooks/` - 移動
+    - `.claude/mcp-configs/` - 移動
+    - `.claude/multi-agent/` - 移動
+    - `.claude/plugins/` - 移動
+    - `.claude/rules/auto-skills.md` - パス更新（`_claude-code/skills/` → `.claude/skills/`）
+    - `CLAUDE.md` - フォルダ構成更新、`_claude-code/` 参照を `.claude/` に変更、更新履歴追加
+- [x] **/should-skill 4種別対応化（セッション134）**
+  - ユーザー依頼: /should-skill を拡張して、Skill/Command だけでなく Rules と Hooks も提案するようにしたい
+  - **Plan Mode使用**: 計画ファイル作成→ユーザー承認後に実装
+  - **変更内容**:
+    | 種別 | 用途 | 保存先 |
+    |------|------|--------|
+    | Skill | 考え方・フレームワーク | `.claude/skills/` |
+    | Command | ツール実行・手順 | `.claude/commands/` |
+    | Rules | 常時適用ルール | `.claude/rules/` |
+    | Hooks | 操作トリガー自動実行 | `~/.claude/settings.json` |
+  - **判断フローチャート追加**: 常に自動適用？→特定操作の前後？→手順？思考？
+  - **各種別の判断条件**: S1-S5（Skill）、C1-C5（Command）、R1-R4（Rules）、H1-H4（Hooks）
+  - **変更ファイル**:
+    - `.claude/commands/should-skill.md` - 4種別対応に拡張
+    - `_claude-code/commands/should-skill.md` - 同期
+- [x] **タグラインマップ Vercelプロジェクト分離（セッション133）**
+  - ユーザー依頼: webapp-five-bay.vercel.appが上書きされてタグラインマップが消えた、両方残したい
+  - **問題**: usage-dashboard, concept-learning, tagline-mapが同じVercelプロジェクトIDを共有していた
+  - **解決策**: tagline-mapに新規Vercelプロジェクト作成
+  - **実施内容**:
+    - 旧`.vercel/`設定を削除
+    - `vercel link --project tagline-positioning-map` で新規プロジェクト作成
+    - `vercel --prod --yes` で本番デプロイ
+  - **結果**:
+    | アプリ | URL |
+    |--------|-----|
+    | タグラインマップ | https://tagline-positioning-map.vercel.app |
+    | usage-dashboard | https://webapp-five-bay.vercel.app（変更なし） |
+  - **データ**: 170ブランド（シャンプー86 + スキンケア42 + リップ42）
+  - **変更ファイル**:
+    - `projects/tagline-map/webapp/.vercel/project.json` - 新規プロジェクトID
+    - `projects/tagline-map/CLAUDE.md` - 新規作成
 - [x] **NADESHIKO code.js バグ修正3件（セッション132）**
   - ユーザー依頼: code.jsのバグ調査（URLが上書きされる、朝10時に更新されない）
   - **Plan Mode使用**: code.js分析→バグ原因特定→修正計画立案→ユーザー承認
@@ -356,29 +406,85 @@
 
 ## 未コミット変更
 ```
+ M .claude/commands/should-skill.md
+ M .claude/rules/auto-skills.md
  M CLAUDE.md
  M HANDOFF.md
- M NADESHIKO/CLAUDE.md
- M NADESHIKO/code/CLAUDE.md
- M NADESHIKO/code/code.js
- m _claude-code/multi-agent
- M opperation/DynamicBranding/brief/brand/brand.md
- M opperation/DynamicBranding/dashboard/src/components/corporate-analytics/
- M opperation/DynamicBranding/dashboard/src/components/corporate/CorporateLoyaltySection.tsx
- D opperation/phonefarm/
- D projects/シャンプータグライン → shampoo-tagline (rename)
- D projects/スキンケアタグライン → skincare-tagline (rename)
- D projects/リップタグライン → lip-tagline (rename)
- D projects/タグラインマップ → tagline-map (rename)
- D projects/Refa → refa (rename)
+ D _claude-code/ (全ファイル - .claudeに統合)
+?? .claude/examples/
+?? .claude/hooks/
+?? .claude/mcp-configs/
+?? .claude/multi-agent/
+?? .claude/plugins/
+?? .claude/rules/deployment.md
+?? .claude/rules/permissions-reference.md
+?? .claude/skills/CLAUDE.md
+?? projects/tagline-map/CLAUDE.md
 ```
 
 ## 最新コミット
 ```
-e349835 feat: add permissions config skill, sync local settings, and add 3 positioning map webapps
+59f5546 chore: consolidate Vercel project to ajinomoto-dashboard (remove dashboard-smoky-six-15 references)
 ```
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-28 (135)
+- **`.claude/` フォルダ統合**
+  - ユーザー依頼: `.claude/` と `_claude-code/` の違いを説明し、どちらか一つに集約したい
+  - **Plan Mode使用**: 両フォルダ調査→統合計画立案→ユーザー承認
+  - **調査結果**:
+    | フォルダ | `.claude/` | `_claude-code/` | 状態 |
+    |----------|------------|-----------------|------|
+    | agents/ | 18 | 18 | 完全重複 |
+    | commands/ | 37 | 37 | 完全重複 |
+    | rules/ | 11 | 9 | .claudeの方が多い |
+    | skills/ | 12 | 13 | ほぼ同じ |
+    | examples/ | ✗ | ✓ | _claude-code固有 |
+    | hooks/ | ✗ | ✓ | _claude-code固有 |
+    | mcp-configs/ | ✗ | ✓ | _claude-code固有 |
+    | multi-agent/ | ✗ | ✓ | _claude-code固有 |
+    | plugins/ | ✗ | ✓ | _claude-code固有 |
+  - **実行手順**:
+    1. skills差分マージ（CLAUDE.md 1ファイル）
+    2. 固有フォルダ移動（examples, hooks, mcp-configs, multi-agent, plugins）
+    3. `_claude-code/` 完全削除
+    4. `CLAUDE.md` 更新（パス参照を `.claude/` に統一）
+    5. `auto-skills.md` 更新（skillsパス修正）
+  - **統合後の `.claude/` 構造**:
+    - agents/ (18) - commands/ (38) - rules/ (11) - skills/ (13)
+    - examples/ - hooks/ - mcp-configs/ - multi-agent/ - plugins/
+  - **変更ファイル**:
+    - `.claude/skills/CLAUDE.md` - マージ追加
+    - `.claude/examples/` - 移動
+    - `.claude/hooks/` - 移動
+    - `.claude/mcp-configs/` - 移動
+    - `.claude/multi-agent/` - 移動（将軍システム）
+    - `.claude/plugins/` - 移動
+    - `.claude/rules/auto-skills.md` - パス更新
+    - `CLAUDE.md` - フォルダ構成更新、更新履歴追加
+    - `_claude-code/` - 完全削除（約90ファイル）
+
+### 2026-01-28 (133)
+- **タグラインマップ Vercelプロジェクト分離**
+  - ユーザー依頼: webapp-five-bay.vercel.appがusage-dashboardで上書きされ、元のタグラインマップが消えた。両方残したい。
+  - **Plan Mode使用**: Explore agentでコードベース調査→分離計画策定→ユーザー承認
+  - **問題分析**:
+    - `webapp-five-bay.vercel.app` (prj_sHGsYMq8zSXxmUAeVAkqGOgCUK8M) を複数プロジェクトが共有
+    - concept-learning, usage-dashboard, tagline-map すべて同じVercelプロジェクトを参照
+  - **解決手順**:
+    1. `projects/tagline-map/webapp/.vercel/` 削除
+    2. `vercel link --project tagline-positioning-map` で新規プロジェクト作成
+    3. `vercel --prod --yes` で本番デプロイ
+  - **結果**:
+    | アプリ | URL |
+    |--------|-----|
+    | タグラインマップ | https://tagline-positioning-map.vercel.app |
+    | usage-dashboard | https://webapp-five-bay.vercel.app（変更なし） |
+  - **タグラインマップデータ**: 170ブランド（シャンプー86 + スキンケア42 + リップ42）の3カテゴリ統合版
+  - **変更ファイル**:
+    - `projects/tagline-map/webapp/.vercel/project.json` - 新規プロジェクトID設定
+    - `projects/tagline-map/CLAUDE.md` - 新規作成（本番URL、データ概要、軸設計等）
 
 ### 2026-01-28 (132)
 - **NADESHIKO code.js バグ修正3件**
@@ -620,76 +726,8 @@ e349835 feat: add permissions config skill, sync local settings, and add 3 posit
   - 複数選択可（例: 機能訴求+特別感 = 左上象限のみ表示）
   - catchcopyスキル更新検討（「定義を明確にしたい/何の目的で必要か」）→ 具体内容未確定、次セッションへ
 
-### 2026-01-28 (119)
-- **_claude-code/ → .claude/ 一括コピー**
-  - `_claude-code/` がリファレンス集のみで `.claude/` に未登録だったことを発見
-  - commands 14個、rules 9個、skills 10個、agents 9個を `.claude/` にコピー
-  - Claude Codeが全コマンド・ルール・スキル・エージェントを認識可能に
-- **ゴミフォルダ削除**: `-p/`、`-type/`（コマンド誤実行で生成された空ディレクトリ）を削除
-
-### 2026-01-28 (117)
-- **rules/auto-skills.md作成 + Claude Code設定体系の理解整理**
-  - ユーザー依頼: スキルが自動で使われる仕組みを構築したい
-  - **`_claude-code/rules/auto-skills.md` 新規作成**: 5スキルのトリガー→自動適用マッピング
-    - 商品コンセプト→concept-design.md、キャッチコピー→catchcopy.md 等
-  - **設定体系の整理**（Q&A形式で理解を共有）:
-    - CLAUDE.md = プロジェクト設定（常時読み込み）
-    - rules/ = テーマ別ルール（常時読み込み、CLAUDE.mdの分割版）
-    - skills/ = 知識・フレームワーク（`/スキル名`で手動実行、またはrules/マッピングで自動）
-    - commands/ = 実行手順（`/コマンド名`で手動実行）
-    - hooks/ = ツール実行前後の自動シェルコマンド（settings.json）
-  - **Skills vs Subagent判断基準**: 対話が必要→rules/マッピング、丸投げ可能→subagent
-
-### 2026-01-28 (116)
-- **シャンプータグライン 全86ブランド ファクトチェック完了 + FCリンク化**
-  - ユーザー依頼: 全ブランドのタグライン/キャッチコピーを公式サイトで検証し、チェックマーク（✓）クリックでソースに飛べるようにする
-  - **3並列subagent実行**: プチプラ(18)/ドラコス(26)/美容専売品(42)を同時検証
-  - **結果**: 84/86ブランド確認済み（未確認: SALA=販売終了、マシェリ=ブランド名のみ）
-  - **データ変更** (`tagline-data.ts`):
-    - `sourceUrl?: string` フィールド追加（82ブランドにURL設定）
-    - タグライン修正13件: いち髪、TSUBAKI、エッセンシャル、カウブランド、ルシードエル、fino、DROAS、anummy、KUNDAL、haru、ハホニコ、シュワルツコフ、MEMEME
-    - キャッチコピー修正: OLES(70%→80%)、YOLU(忙しい→いそがしい)
-    - `factChecked`更新: いち髪/LUX/ダヴ → true、ルシードエル/ハホニコ/シュワルツコフ → true
-  - **UI変更** (`TaglineTable.tsx`): FC列✓を`<a>`リンク化（sourceUrlがある場合クリックで新タブ）
-  - **Vercelデプロイ完了**: https://webapp-five-bay.vercel.app
-
-### 2026-01-28 (115)
-- **`/should-skill`コマンド作成・自動提案ルール整備**
-  - ユーザー依頼: セッション中にスキル/コマンド化すべきパターンを判定・提案する仕組みを構築
-  - **`/should-skill`コマンド作成**: `_claude-code/commands/should-skill.md`
-    - 5条件で判定（3回以上繰り返し/複数PJ再利用/5ステップ以上/判断基準含む/忘れやすい）
-    - 3つ以上該当→Skill提案、Command提案はさらに厳格条件あり
-  - **CLAUDE.md自動提案ルール追加**: 「スキル・コマンド自動提案ルール（常時適用）」セクション
-    - 全セッションで自動的にパターン検出→提案（`/should-skill`不要）
-  - **Command提案基準厳格化**: ユーザーFB「commandが多くても覚えられない」
-    - 5条件3つ以上 + プロジェクト横断 + 毎セッション級頻度 + `/handoff`レベル普遍性
-    - 「迷ったらSkillにする」原則
-  - **変更ファイル**: `should-skill.md`(新規), `AP/CLAUDE.md`(更新), `commands/CLAUDE.md`(更新)
-
-### 2026-01-28 (114)
-- **シャンプータグライン Meltwater CSV分析→17ブランド追加**
-  - ユーザー依頼: CSVにあってWebappにないブランドを追加
-  - **CSV分析**: Meltwater 10,000件SNS投稿を解析、ペット関連ノイズ除外、ブランド言及数を集計
-  - **17ブランド特定・追加**（69→86ブランド）:
-    - プチプラ6: SALA(481言及), シャボン玉石けん, カウブランド無添加, ルシードエル, マシェリ, fino
-    - ドラコス6: CLAYGE(97), KUNDAL(79), haru(32), cocone(26), ululis(11), キュレル
-    - 美容専売品5: ミルボン(52), ReFa(35), アリミノ(33), デミ(16), アジュバン
-  - **タグライン調査**: Web検索で各ブランド公式タグラインを取得
-  - **変更ファイル**: `tagline-data.ts`（17エントリ追加）
-  - ビルド成功
-
-### 2026-01-28 (113)
-- **シャンプータグライン ファクトチェック→キャッチコピー→スキル→4象限**
-  - セッション110: ファクトチェックマーク（FC列）追加
-  - セッション111: キャッチコピー＝課題の提示、タグライン＝便益性の定義確立。~25ブランドにcatchcopy追加、テーブル列追加、マップTooltip追加
-  - セッション112: `_claude-code/skills/catchcopy.md` 新規作成（5つの型分類、評価チェックリスト）
-  - セッション113: TaglineTableに「象限」列追加（x,y座標から4象限を自動算出）
-  - **変更ファイル**:
-    - `projects/シャンプータグライン/webapp/src/data/tagline-data.ts` - catchcopy追加
-    - `projects/シャンプータグライン/webapp/src/components/TaglineTable.tsx` - FC列、キャッチコピー列、象限列追加
-    - `projects/シャンプータグライン/webapp/src/components/PositioningMap.tsx` - Tooltipにcatchcopy表示
-    - `_claude-code/skills/catchcopy.md` - 新規作成
-    - `_claude-code/skills/CLAUDE.md` - catchcopy追加
+---
+過去のセッション履歴: [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md)
 
 ### 2026-01-28 (109)
 - **シャンプータグライン テーブルURL追加・リンク化**
@@ -948,6 +986,12 @@ e349835 feat: add permissions config skill, sync local settings, and add 3 posit
     - `page.tsx`: GlossarySection、ペルソナ＆ゴールバナー追加
     - `CLAUDE.md`: 収録コンテンツ・用語説明・ペルソナ＆ゴール・更新履歴
   - **Vercelデプロイ完了**: https://claude-code-onboarding-ten.vercel.app
+
+### 2026-01-28 (134)
+- **/should-skill 4種別対応化**
+  - Skill / Command / Rules / Hooks の4種別を判定・提案
+  - 判断フローチャート・各種別の判断条件を追加
+  - Hooks追加時は `~/.claude/settings.json` を直接編集
 
 ### 2026-01-27 (95)
 - **/shogun スキル作成**

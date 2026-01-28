@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚔️ SHOGUN BATTLE DASHBOARD</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #c9a96e;
+    --gold-dim: #8b7355;
+    --bg-dark: #0a0a0f;
+    --bg-panel: #1a1a2e;
+    --bg-card: #16213e;
+    --green: #4caf50;
+    --yellow: #ffc107;
+    --red: #f44336;
+    --blue: #2196f3;
+    --purple: #9c27b0;
+  }
+
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    background: var(--bg-dark);
+    background-image:
+      radial-gradient(ellipse at top, #1a1a2e 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, #0f0f1a 0%, transparent 50%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header h1 {
+    font-size: 22px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px rgba(201, 169, 110, 0.5);
+  }
+
+  .status-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    background: rgba(0,0,0,0.4);
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--gold-dim);
+  }
+
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 10px var(--green);
+  }
+
+  .dot.disconnected {
+    background: var(--red);
+    animation: none;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Stats Bar */
+  .stats-bar {
+    background: linear-gradient(90deg, var(--bg-panel), var(--bg-card));
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--gold-dim);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .mission-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .mission-name {
+    font-size: 16px;
+    color: var(--gold);
+    font-weight: bold;
+  }
+
+  .xp-display {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .xp-badge {
+    background: linear-gradient(135deg, #4a148c, #7b1fa2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .title-badge {
+    background: linear-gradient(135deg, #b8860b, #daa520);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  /* Main Layout */
+  main {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 16px;
+    padding: 16px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1100px) {
+    main { grid-template-columns: 1fr; }
+    .log-panel { max-height: 280px; }
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .log-panel {
+    flex: 1;
+    min-height: 200px;
+  }
+
+  .main-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Progress Section */
+  .progress-section {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid var(--gold-dim);
+  }
+
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .progress-title {
+    font-size: 14px;
+    color: var(--gold);
+  }
+
+  .progress-stats {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .progress-bar {
+    height: 16px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--red), var(--yellow), var(--green));
+    border-radius: 8px;
+    transition: width 0.5s ease;
+    position: relative;
+  }
+
+  .progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Battlefield */
+  .battlefield {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--gold-dim);
+  }
+
+  .battlefield-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gold-dim);
+  }
+
+  .army-label {
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .army-label.ally { color: var(--blue); }
+  .army-label.enemy { color: var(--red); }
+
+  .vs-badge {
+    background: var(--gold);
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  /* Battle Grid */
+  .battle-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .battle-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 140px;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    min-height: 56px;
+  }
+
+  /* Ally Card */
+  .ally-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .ally-card.idle { opacity: 0.4; border-color: #333; }
+  .ally-card.running { border-color: var(--yellow); animation: allyPulse 1.5s infinite; }
+  .ally-card.complete { border-color: var(--green); }
+  .ally-card.waiting { border-color: var(--blue); opacity: 0.6; }
+
+  @keyframes allyPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+    50% { box-shadow: 0 0 15px 3px rgba(255, 193, 7, 0.3); }
+  }
+
+  .ally-icon { font-size: 20px; }
+  .ally-name { font-size: 11px; font-weight: bold; color: #fff; }
+
+  /* Attack Line */
+  .attack-line {
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .attack-line.running::after {
+    content: '⚔️';
+    position: absolute;
+    font-size: 16px;
+    animation: attackMove 1s infinite linear;
+  }
+
+  .attack-line.complete {
+    background: var(--green);
+  }
+
+  .attack-line.complete::after {
+    content: '💥';
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+    animation: explode 0.5s ease-out forwards;
+  }
+
+  @keyframes attackMove {
+    0% { left: 0; }
+    100% { left: calc(100% - 20px); }
+  }
+
+  @keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+
+  /* Enemy Card */
+  .enemy-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(244, 67, 54, 0.1);
+    border-radius: 8px;
+    border: 2px solid var(--red);
+    transition: all 0.3s;
+  }
+
+  .enemy-card.defeated {
+    border-color: #333;
+    opacity: 0.5;
+    background: rgba(0,0,0,0.3);
+    text-decoration: line-through;
+  }
+
+  .enemy-card.burning {
+    border-color: var(--yellow);
+    animation: burn 0.5s infinite alternate;
+  }
+
+  @keyframes burn {
+    0% { background: rgba(244, 67, 54, 0.2); }
+    100% { background: rgba(255, 152, 0, 0.3); }
+  }
+
+  .enemy-icon { font-size: 20px; }
+  .enemy-name { font-size: 11px; color: #fff; flex: 1; }
+
+  /* Combo Display */
+  .combo-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--yellow);
+    text-shadow: 0 0 30px var(--yellow), 0 0 60px var(--yellow);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .combo-display.show {
+    animation: comboShow 1.5s ease-out forwards;
+  }
+
+  @keyframes comboShow {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  }
+
+  /* Victory Banner */
+  .victory-banner {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .victory-banner.show {
+    opacity: 1;
+    pointer-events: auto;
+    animation: victoryFade 0.5s ease-out;
+  }
+
+  .victory-text {
+    font-size: 64px;
+    font-weight: bold;
+    color: var(--gold);
+    text-shadow: 0 0 40px var(--gold);
+    animation: victoryPulse 1s infinite;
+  }
+
+  .victory-sub {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 16px;
+  }
+
+  @keyframes victoryFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes victoryPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  /* Confetti */
+  .confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    z-index: 2001;
+    animation: confettiFall 3s linear forwards;
+  }
+
+  @keyframes confettiFall {
+    0% { top: -10px; opacity: 1; transform: rotate(0deg); }
+    100% { top: 100vh; opacity: 0; transform: rotate(720deg); }
+  }
+
+  /* Level Up */
+  .levelup-display {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--purple);
+    text-shadow: 0 0 30px var(--purple);
+    z-index: 1500;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .levelup-display.show {
+    animation: levelUp 2s ease-out forwards;
+  }
+
+  @keyframes levelUp {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1.3); }
+    60% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) translateY(-50px); }
+  }
+
+  /* Log Panel */
+  .log-panel {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 180px);
+    position: sticky;
+    top: 100px;
+  }
+
+  .log-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 12px 12px 0 0;
+  }
+
+  .log-header h3 {
+    font-size: 13px;
+    color: var(--gold);
+  }
+
+  .log-count {
+    background: var(--gold);
+    color: #000;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+  .log-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+  }
+
+  .log-entry {
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    border-left: 3px solid var(--gold-dim);
+    font-size: 11px;
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .log-entry.new {
+    border-left-color: var(--green);
+    background: rgba(76, 175, 80, 0.15);
+  }
+
+  .log-entry.xp {
+    border-left-color: var(--purple);
+    background: rgba(156, 39, 176, 0.15);
+  }
+
+  .log-entry.combo {
+    border-left-color: var(--yellow);
+    background: rgba(255, 193, 7, 0.15);
+  }
+
+  @keyframes slideIn {
+    0% { transform: translateX(20px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .log-time {
+    color: #555;
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+
+  .log-message {
+    color: #ccc;
+    line-height: 1.3;
+  }
+
+  .log-entry.shogun .log-message { color: var(--gold); }
+  .log-entry.karo .log-message { color: var(--purple); }
+  .log-entry.ashigaru .log-message { color: var(--blue); }
+  .log-entry.complete .log-message { color: var(--green); }
+  .log-entry.error .log-message { color: var(--red); }
+
+  /* Dashboard Content (hidden by default, shows raw md) */
+  .dashboard-content {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--gold-dim);
+    display: none;
+  }
+
+  .dashboard-content.expanded { display: block; }
+
+  .toggle-raw {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  .toggle-raw:hover { background: var(--bg-panel); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 12px;
+    color: #333;
+    font-size: 10px;
+  }
+
+  /* Skill Panel (巻物庫) */
+  .skill-panel {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--gold-dim);
+    margin-bottom: 16px;
+  }
+
+  .skill-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gold-dim);
+  }
+
+  .skill-panel-header h3 {
+    font-size: 14px;
+    color: var(--gold);
+  }
+
+  .skill-section {
+    margin-bottom: 16px;
+  }
+
+  .skill-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-section-title {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* 秘伝書カード (Skill Candidate) */
+  .hiden-card {
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.15), rgba(139, 115, 85, 0.1));
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    animation: hidenGlow 2s infinite;
+  }
+
+  @keyframes hidenGlow {
+    0%, 100% { box-shadow: 0 0 5px rgba(201, 169, 110, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(201, 169, 110, 0.6); }
+  }
+
+  .hiden-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .hiden-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hiden-status {
+    font-size: 10px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hiden-desc {
+    font-size: 11px;
+    color: #aaa;
+  }
+
+  .hiden-empty {
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+    padding: 8px;
+  }
+
+  /* 奥義バッジ (Generated Skill) */
+  .ougi-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ougi-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, var(--bg-card), rgba(156, 39, 176, 0.2));
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    min-width: 70px;
+    transition: transform 0.2s;
+  }
+
+  .ougi-badge:hover {
+    transform: scale(1.05);
+  }
+
+  .ougi-badge.new {
+    animation: ougiPulse 0.5s ease-out;
+  }
+
+  @keyframes ougiPulse {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .ougi-buff {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .ougi-name {
+    font-size: 9px;
+    color: #aaa;
+    margin-top: 2px;
+    text-align: center;
+    max-width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ougi-empty {
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+    padding: 8px;
+  }
+
+  /* バフサマリー */
+  .buff-summary {
+    display: flex;
+    gap: 16px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+
+  .buff-item {
+    font-size: 11px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .buff-value {
+    font-weight: bold;
+    color: var(--green);
+  }
+
+  /* 味方カードのオーラ */
+  .ally-card.aura-weak {
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.4);
+  }
+
+  .ally-card.aura-strong {
+    box-shadow: 0 0 20px rgba(201, 169, 110, 0.6);
+    animation: strongAura 2s infinite;
+  }
+
+  @keyframes strongAura {
+    0%, 100% { box-shadow: 0 0 15px rgba(201, 169, 110, 0.4); }
+    50% { box-shadow: 0 0 25px rgba(201, 169, 110, 0.8); }
+  }
+
+  /* 奥義習得演出 */
+  .ougi-acquired {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--purple);
+    text-shadow: 0 0 30px var(--purple);
+    z-index: 1500;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ougi-acquired.show {
+    animation: ougiAcquired 2s ease-out forwards;
+  }
+
+  @keyframes ougiAcquired {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+    60% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) translateY(-30px); }
+  }
+
+  /* ============ v3.2 NEW FEATURES ============ */
+
+  /* 戦場背景装飾 */
+  .battlefield {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .battlefield::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(135deg, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+      linear-gradient(225deg, rgba(178, 34, 34, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* 旗アニメーション */
+  .flag-container {
+    position: absolute;
+    top: 8px;
+    display: flex;
+    gap: 4px;
+    font-size: 16px;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  .flag-container.left { left: 8px; }
+  .flag-container.right { right: 8px; }
+
+  .flag {
+    animation: flagWave 2s ease-in-out infinite;
+  }
+
+  .flag:nth-child(2) { animation-delay: 0.3s; }
+  .flag:nth-child(3) { animation-delay: 0.6s; }
+
+  @keyframes flagWave {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+  }
+
+  /* 足軽タイプバッジ */
+  .ally-type {
+    font-size: 8px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-left: 2px;
+  }
+
+  .ally-type.atk { background: var(--red); color: #fff; }
+  .ally-type.def { background: var(--blue); color: #fff; }
+  .ally-type.spd { background: var(--green); color: #fff; }
+
+  /* 敵難易度表示 */
+  .enemy-difficulty {
+    display: flex;
+    gap: 1px;
+    margin-left: auto;
+  }
+
+  .diff-star {
+    font-size: 8px;
+    color: var(--gold);
+  }
+
+  .diff-star.empty {
+    opacity: 0.3;
+  }
+
+  /* 陣形セレクター */
+  .formation-panel {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 1px solid var(--gold-dim);
+    margin-bottom: 16px;
+  }
+
+  .formation-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .formation-title {
+    font-size: 13px;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .formation-selector {
+    display: flex;
+    gap: 8px;
+  }
+
+  .formation-btn {
+    padding: 6px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--gold-dim);
+    border-radius: 6px;
+    color: #aaa;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .formation-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .formation-btn.active {
+    background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+    color: #000;
+    border-color: var(--gold);
+    font-weight: bold;
+  }
+
+  .formation-bonus {
+    font-size: 10px;
+    color: var(--green);
+    text-align: center;
+    padding: 4px;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 4px;
+  }
+
+  /* 統計パネル */
+  .stats-panel {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 1px solid var(--gold-dim);
+    margin-top: 16px;
+  }
+
+  .stats-panel-header {
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .stat-item {
+    background: rgba(0,0,0,0.3);
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--gold);
+  }
+
+  .stat-label {
+    font-size: 9px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  /* アチーブメントパネル */
+  .achievements-panel {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 1px solid var(--gold-dim);
+    margin-top: 16px;
+  }
+
+  .achievements-header {
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .achievements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .achievement {
+    padding: 4px 8px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 4px;
+    font-size: 10px;
+    color: #666;
+    border: 1px solid #333;
+    transition: all 0.3s;
+  }
+
+  .achievement.unlocked {
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.2), rgba(139, 115, 85, 0.1));
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .achievement.new {
+    animation: achievementUnlock 1s ease-out;
+  }
+
+  @keyframes achievementUnlock {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.2); box-shadow: 0 0 20px var(--gold); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* アチーブメント解除演出 */
+  .achievement-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 16px 24px;
+    z-index: 2000;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .achievement-popup.show {
+    animation: popupShow 3s ease-out forwards;
+  }
+
+  @keyframes popupShow {
+    0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  }
+
+  .achievement-popup-title {
+    font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .achievement-popup-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  /* 階級表示 */
+  .rank-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.2), transparent);
+    border: 1px solid var(--gold-dim);
+    border-radius: 8px;
+  }
+
+  .rank-icon {
+    font-size: 20px;
+  }
+
+  .rank-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rank-name {
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: bold;
+  }
+
+  .rank-progress {
+    font-size: 9px;
+    color: #888;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>⚔️ SHOGUN BATTLE</h1>
+  <div class="status-area">
+    <div class="status-badge">
+      <div class="dot" id="statusDot"></div>
+      <span id="statusText">接続中...</span>
+    </div>
+    <div class="status-badge">
+      🕐 <span id="lastUpdate">--:--:--</span>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="mission-info">
+    <span class="mission-name" id="missionName">📊 作戦待機中...</span>
+  </div>
+  <div class="xp-display">
+    <div class="xp-badge">⭐ Lv.<span id="level">1</span> (<span id="xp">0</span> XP)</div>
+    <div class="title-badge">🏆 <span id="title">足軽見習い</span></div>
+  </div>
+</div>
+
+<main>
+  <div class="main-panel">
+    <!-- Progress -->
+    <div class="progress-section">
+      <div class="progress-header">
+        <span class="progress-title">🏯 敵拠点制圧状況</span>
+        <span class="progress-stats"><span id="completedCount">0</span> / <span id="totalCount">0</span> 撃破</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Skill Panel (巻物庫) -->
+    <div class="skill-panel">
+      <div class="skill-panel-header">
+        <span>📜</span>
+        <h3>巻物庫</h3>
+        <span id="skillCount" style="font-size:11px;color:#888;">(0)</span>
+      </div>
+
+      <!-- 秘伝書・発見 (スキル化候補) -->
+      <div class="skill-section">
+        <div class="skill-section-title">🎯 秘伝書・発見（承認待ち）</div>
+        <div id="hidenList">
+          <div class="hiden-empty">なし</div>
+        </div>
+      </div>
+
+      <!-- 奥義・習得済み (生成されたスキル) -->
+      <div class="skill-section">
+        <div class="skill-section-title">🛠️ 奥義・習得済み（味方軍バフ）</div>
+        <div class="ougi-grid" id="ougiGrid">
+          <div class="ougi-empty">なし</div>
+        </div>
+        <div class="buff-summary" id="buffSummary" style="display:none;">
+          <div class="buff-item">⚔️ 攻撃力 <span class="buff-value" id="buffAtk">+0</span></div>
+          <div class="buff-item">🛡️ 防御力 <span class="buff-value" id="buffDef">+0</span></div>
+          <div class="buff-item">🏃 機動力 <span class="buff-value" id="buffSpd">+0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formation Panel (陣形) -->
+    <div class="formation-panel">
+      <div class="formation-header">
+        <span class="formation-title">🎌 陣形選択</span>
+        <div class="formation-selector">
+          <button class="formation-btn active" data-formation="balanced" onclick="setFormation('balanced')">⚖️ 均衡</button>
+          <button class="formation-btn" data-formation="attack" onclick="setFormation('attack')">⚔️ 攻撃</button>
+          <button class="formation-btn" data-formation="defense" onclick="setFormation('defense')">🛡️ 守備</button>
+          <button class="formation-btn" data-formation="speed" onclick="setFormation('speed')">🏃 機動</button>
+        </div>
+      </div>
+      <div class="formation-bonus" id="formationBonus">現在のボーナス: なし</div>
+    </div>
+
+    <!-- Battlefield -->
+    <div class="battlefield">
+      <!-- 旗装飾 -->
+      <div class="flag-container left">
+        <span class="flag">🏁</span>
+        <span class="flag">🎌</span>
+      </div>
+      <div class="flag-container right">
+        <span class="flag">🚩</span>
+        <span class="flag">🏴</span>
+      </div>
+      <div class="battlefield-header">
+        <span class="army-label ally">👥 味方軍</span>
+        <span class="vs-badge">VS</span>
+        <span class="army-label enemy">🏯 敵陣営</span>
+      </div>
+      <div class="battle-grid" id="battleGrid">
+        <!-- 動的生成 -->
+      </div>
+    </div>
+
+    <button class="toggle-raw" onclick="toggleRaw()">📄 戦況報告書を表示</button>
+    <div class="dashboard-content" id="dashboardContent">
+      <div class="dashboard" id="content">読み込み中...</div>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-column">
+    <!-- Log Panel -->
+    <div class="log-panel">
+      <div class="log-header">
+        <h3>📜 戦況実況</h3>
+        <span class="log-count" id="logCount">0</span>
+      </div>
+      <div class="log-content" id="logContent"></div>
+    </div>
+
+    <!-- Stats Panel (累計統計) -->
+    <div class="stats-panel">
+      <div class="stats-panel-header">📊 累計統計</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value" id="statKills">0</div>
+          <div class="stat-label">総撃破数</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="statMissions">0</div>
+          <div class="stat-label">作戦完了</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="statMaxCombo">0</div>
+          <div class="stat-label">最高コンボ</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="statStreak">0</div>
+          <div class="stat-label">連勝記録</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements Panel (アチーブメント) -->
+    <div class="achievements-panel">
+      <div class="achievements-header">🏆 アチーブメント</div>
+      <div class="achievements-grid" id="achievementsGrid">
+        <!-- 動的生成 -->
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="footer">SHOGUN Multi-Agent System — Battle Dashboard v3.2</div>
+
+<!-- Effects -->
+<div class="combo-display" id="comboDisplay">🔥 連撃！</div>
+<div class="levelup-display" id="levelupDisplay">⬆️ LEVEL UP!</div>
+<div class="ougi-acquired" id="ougiAcquired">📜 奥義習得！</div>
+<div class="achievement-popup" id="achievementPopup">
+  <div class="achievement-popup-title">🏆 アチーブメント解除！</div>
+  <div class="achievement-popup-name" id="achievementPopupName">---</div>
+</div>
+<div class="victory-banner" id="victoryBanner">
+  <div class="victory-text">🎉 勝利！</div>
+  <div class="victory-sub">全敵拠点を制圧しました</div>
+</div>
+
+<script>
+  // DOM Elements
+  const content = document.getElementById('content');
+  const statusDot = document.getElementById('statusDot');
+  const statusText = document.getElementById('statusText');
+  const lastUpdate = document.getElementById('lastUpdate');
+  const battleGrid = document.getElementById('battleGrid');
+  const logContent = document.getElementById('logContent');
+  const logCount = document.getElementById('logCount');
+  const progressFill = document.getElementById('progressFill');
+  const completedCount = document.getElementById('completedCount');
+  const totalCount = document.getElementById('totalCount');
+  const missionName = document.getElementById('missionName');
+  const levelEl = document.getElementById('level');
+  const xpEl = document.getElementById('xp');
+  const titleEl = document.getElementById('title');
+  const comboDisplay = document.getElementById('comboDisplay');
+  const levelupDisplay = document.getElementById('levelupDisplay');
+  const victoryBanner = document.getElementById('victoryBanner');
+  const dashboardContent = document.getElementById('dashboardContent');
+  // Skill panel elements
+  const hidenList = document.getElementById('hidenList');
+  const ougiGrid = document.getElementById('ougiGrid');
+  const buffSummary = document.getElementById('buffSummary');
+  const buffAtk = document.getElementById('buffAtk');
+  const buffDef = document.getElementById('buffDef');
+  const buffSpd = document.getElementById('buffSpd');
+  const skillCount = document.getElementById('skillCount');
+  const ougiAcquired = document.getElementById('ougiAcquired');
+
+  // State
+  let logs = [];
+  let previousTroops = {};
+  let previousSkills = { candidates: [], generated: [] };
+  let currentBuffs = { atk: 0, def: 0, spd: 0 };
+  let gameState = {
+    xp: parseInt(localStorage.getItem('shogun_xp') || '0'),
+    level: parseInt(localStorage.getItem('shogun_level') || '1'),
+    totalKills: parseInt(localStorage.getItem('shogun_kills') || '0'),
+    combo: 0,
+    lastKillTime: 0
+  };
+
+  // Title thresholds
+  const titles = [
+    { kills: 0, title: '足軽見習い' },
+    { kills: 5, title: '一人前の武士' },
+    { kills: 15, title: '電光石火' },
+    { kills: 30, title: '百人斬り' },
+    { kills: 50, title: '天下無双' },
+    { kills: 100, title: '神域の剣聖' }
+  ];
+
+  function getTime() {
+    return new Date().toLocaleTimeString('ja-JP');
+  }
+
+  function updateStats() {
+    levelEl.textContent = gameState.level;
+    xpEl.textContent = gameState.xp;
+
+    // Find title
+    let currentTitle = titles[0].title;
+    for (const t of titles) {
+      if (gameState.totalKills >= t.kills) currentTitle = t.title;
+    }
+    titleEl.textContent = currentTitle;
+
+    // Save to localStorage
+    localStorage.setItem('shogun_xp', gameState.xp);
+    localStorage.setItem('shogun_level', gameState.level);
+    localStorage.setItem('shogun_kills', gameState.totalKills);
+  }
+
+  function addXP(amount, reason) {
+    const oldLevel = gameState.level;
+    gameState.xp += amount;
+    gameState.level = Math.floor(gameState.xp / 100) + 1;
+
+    addLog(`+${amount} XP (${reason})`, 'xp');
+
+    if (gameState.level > oldLevel) {
+      showLevelUp();
+    }
+
+    updateStats();
+  }
+
+  function showCombo(count) {
+    comboDisplay.textContent = `🔥 連撃！ ×${count}`;
+    comboDisplay.classList.remove('show');
+    void comboDisplay.offsetWidth;
+    comboDisplay.classList.add('show');
+    addLog(`🔥 連撃 ×${count}！ ボーナス +${count * 10} XP`, 'combo');
+  }
+
+  function showLevelUp() {
+    levelupDisplay.textContent = `⬆️ LEVEL ${gameState.level}!`;
+    levelupDisplay.classList.remove('show');
+    void levelupDisplay.offsetWidth;
+    levelupDisplay.classList.add('show');
+    addLog(`⬆️ レベルアップ！ Lv.${gameState.level} に到達！`, 'xp');
+  }
+
+  function showVictory() {
+    victoryBanner.classList.add('show');
+    spawnConfetti();
+    setTimeout(() => victoryBanner.classList.remove('show'), 5000);
+  }
+
+  function spawnConfetti() {
+    const colors = ['#c9a96e', '#4caf50', '#ffc107', '#f44336', '#2196f3'];
+    for (let i = 0; i < 50; i++) {
+      setTimeout(() => {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 4000);
+      }, i * 50);
+    }
+  }
+
+  function addLog(message, type = 'info') {
+    logs.unshift({ time: getTime(), message, type });
+    if (logs.length > 50) logs.pop();
+    renderLogs();
+  }
+
+  function renderLogs() {
+    logContent.innerHTML = logs.map((log, i) => `
+      <div class="log-entry ${log.type} ${i === 0 ? 'new' : ''}">
+        <div class="log-time">${log.time}</div>
+        <div class="log-message">${log.message}</div>
+      </div>
+    `).join('');
+    logCount.textContent = logs.length;
+  }
+
+  // Convert task name to enemy fortress name
+  function toFortressName(task) {
+    // Remove common suffixes and clean up
+    let name = task
+      .replace(/作成|追加|実装|修正|更新|設定|構築/g, '')
+      .replace(/（.*?）/g, '')
+      .replace(/\(.*?\)/g, '')
+      .trim();
+
+    if (name.length > 15) name = name.substring(0, 15);
+    if (name.length === 0) name = 'タスク';
+
+    const suffixes = ['の砦', 'の城', 'の要塞', 'の陣', 'の塔'];
+    const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+
+    return name + suffix;
+  }
+
+  function parseTroops(md) {
+    const troops = [];
+    const lines = md.split('\n');
+    let inProgressSection = false;
+
+    // Extract mission name from first heading or progress section
+    for (const line of lines) {
+      if (line.startsWith('# ')) {
+        const match = line.match(/# (.+)/);
+        if (match) missionName.textContent = '📊 ' + match[1];
+        break;
+      }
+    }
+
+    for (const line of lines) {
+      if (line.includes('進行中')) inProgressSection = true;
+      if (line.includes('本日の戦果')) inProgressSection = false;
+
+      if (inProgressSection && line.startsWith('|') && !line.includes('任務') && !line.includes('---')) {
+        const parts = line.split('|').map(p => p.trim()).filter(p => p);
+        if (parts.length >= 3) {
+          const task = parts[0];
+          const status = parts[1];
+          const assignee = parts[2];
+
+          let state = 'idle';
+          if (status.includes('🟢') || status.includes('完了')) state = 'complete';
+          else if (status.includes('🟡') || status.includes('実行中')) state = 'running';
+          else if (status.includes('⏳') || status.includes('待機')) state = 'waiting';
+
+          troops.push({ task, status, assignee, state, fortressName: toFortressName(task) });
+        }
+      }
+    }
+    return troops;
+  }
+
+  function renderBattlefield(troops) {
+    let html = '';
+    const now = Date.now();
+
+    for (let i = 1; i <= 8; i++) {
+      const troop = troops.find(t => t.assignee.includes(`足軽${i}`));
+      const prevTroop = previousTroops[i];
+
+      let allyState = 'idle';
+      let allyIcon = '👤';
+      let enemyIcon = '🏯';
+      let enemyState = '';
+      let attackState = '';
+      let enemyName = '---';
+
+      if (troop) {
+        allyState = troop.state;
+        enemyName = troop.fortressName;
+
+        if (troop.state === 'running') {
+          allyIcon = '⚔️';
+          enemyIcon = '🔥';
+          enemyState = 'burning';
+          attackState = 'running';
+        } else if (troop.state === 'complete') {
+          allyIcon = '🎌';
+          enemyIcon = '💀';
+          enemyState = 'defeated';
+          attackState = 'complete';
+        } else if (troop.state === 'waiting') {
+          allyIcon = '⏳';
+        }
+
+        // State change detection
+        if (!prevTroop || prevTroop.state !== troop.state) {
+          if (troop.state === 'running') {
+            addLog(`⚔️ 足軽${i}号「${troop.fortressName}」に突撃開始！`, 'ashigaru');
+          } else if (troop.state === 'complete' && prevTroop && prevTroop.state === 'running') {
+            // Kill registered
+            gameState.totalKills++;
+
+            // Combo check (60 seconds)
+            if (now - gameState.lastKillTime < 60000) {
+              gameState.combo++;
+              if (gameState.combo >= 2) {
+                showCombo(gameState.combo);
+                addXP(100 + gameState.combo * 10, `${troop.fortressName}撃破 + コンボ`);
+              } else {
+                addXP(100, `${troop.fortressName}撃破`);
+              }
+            } else {
+              gameState.combo = 1;
+              addXP(100, `${troop.fortressName}撃破`);
+            }
+            gameState.lastKillTime = now;
+
+            addLog(`💥 足軽${i}号「${troop.fortressName}」を攻略！`, 'complete');
+            updateStats();
+          }
+        }
+      }
+
+      previousTroops[i] = troop ? { ...troop } : null;
+
+      // Aura based on skill count
+      const auraClass = getAuraClass(previousSkills.generated.length);
+
+      html += `
+        <div class="battle-row">
+          <div class="ally-card ${allyState} ${auraClass}">
+            <span class="ally-icon">${allyIcon}</span>
+            <span class="ally-name">足軽${i}</span>
+          </div>
+          <div class="attack-line ${attackState}"></div>
+          <div class="enemy-card ${enemyState}">
+            <span class="enemy-icon">${enemyIcon}</span>
+            <span class="enemy-name">${enemyName}</span>
+          </div>
+        </div>
+      `;
+    }
+    battleGrid.innerHTML = html;
+
+    // Progress
+    const total = troops.length || 1;
+    const completed = troops.filter(t => t.state === 'complete').length;
+    const percent = Math.round((completed / total) * 100);
+
+    progressFill.style.width = percent + '%';
+    completedCount.textContent = completed;
+    totalCount.textContent = total;
+
+    // Victory check
+    if (total > 0 && completed === total) {
+      showVictory();
+      addLog('🎉 作戦完了！ 全敵拠点を制圧しました！', 'shogun');
+    }
+  }
+
+  function mdToHtml(md) {
+    const lines = md.split('\n');
+    const out = [];
+    let i = 0;
+
+    while (i < lines.length) {
+      let line = lines[i];
+      if (line.startsWith('最終更新:')) { i++; continue; }
+      if (line.match(/^### /)) { out.push('<h3>' + line.slice(4) + '</h3>'); i++; continue; }
+      if (line.match(/^## /)) { out.push('<h2>' + line.slice(3) + '</h2>'); i++; continue; }
+      if (line.match(/^# /)) { out.push('<h1>' + line.slice(2) + '</h1>'); i++; continue; }
+
+      if (line.indexOf('|') !== -1 && line.trim().charAt(0) === '|') {
+        const tableLines = [];
+        while (i < lines.length && lines[i].indexOf('|') !== -1 && lines[i].trim().charAt(0) === '|') {
+          tableLines.push(lines[i]);
+          i++;
+        }
+        if (tableLines.length >= 2) {
+          const parseRow = r => r.split('|').slice(1, -1).map(c => c.trim());
+          const headers = parseRow(tableLines[0]);
+          const isSep = /^[\s|:-]+$/.test(tableLines[1]);
+          const startIdx = isSep ? 2 : 1;
+          let t = '<table><thead><tr>' + headers.map(h => '<th>' + h + '</th>').join('') + '</tr></thead><tbody>';
+          for (let r = startIdx; r < tableLines.length; r++) {
+            const cells = parseRow(tableLines[r]);
+            t += '<tr>' + cells.map(c => '<td>' + c + '</td>').join('') + '</tr>';
+          }
+          t += '</tbody></table>';
+          out.push(t);
+        }
+        continue;
+      }
+
+      line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      if (line.trim() === '') { i++; continue; }
+      out.push('<p>' + line + '</p>');
+      i++;
+    }
+    return out.join('\n');
+  }
+
+  function toggleRaw() {
+    dashboardContent.classList.toggle('expanded');
+  }
+
+  // ============ SKILL SYSTEM (v3.1) ============
+
+  // Skill buff mapping
+  function getSkillBuff(skillName) {
+    const name = skillName.toLowerCase();
+    if (name.includes('commit') || name.includes('push')) return { icon: '⚔️', type: 'atk', value: 10 };
+    if (name.includes('review')) return { icon: '🛡️', type: 'def', value: 5 };
+    if (name.includes('tdd') || name.includes('test')) return { icon: '🏃', type: 'spd', value: 15 };
+    if (name.includes('security')) return { icon: '🔒', type: 'def', value: 20 };
+    if (name.includes('deploy')) return { icon: '🚀', type: 'atk', value: 15 };
+    if (name.includes('refactor')) return { icon: '🔧', type: 'spd', value: 10 };
+    return { icon: '📜', type: 'atk', value: 5 };
+  }
+
+  // Parse skills from markdown
+  function parseSkills(md) {
+    const lines = md.split('\n');
+    const candidates = [];
+    const generated = [];
+    let inCandidateSection = false;
+    let inGeneratedSection = false;
+
+    for (const line of lines) {
+      // Section detection
+      if (line.includes('スキル化候補')) {
+        inCandidateSection = true;
+        inGeneratedSection = false;
+        continue;
+      }
+      if (line.includes('生成されたスキル')) {
+        inCandidateSection = false;
+        inGeneratedSection = true;
+        continue;
+      }
+      // Exit sections
+      if (line.startsWith('## ') && !line.includes('スキル化候補') && !line.includes('生成されたスキル')) {
+        inCandidateSection = false;
+        inGeneratedSection = false;
+        continue;
+      }
+
+      // Parse skill entries
+      const trimmed = line.trim();
+      if (trimmed === 'なし' || trimmed === '' || trimmed.startsWith('|') && trimmed.includes('---')) continue;
+
+      if (inCandidateSection && trimmed.startsWith('-')) {
+        const skillName = trimmed.replace(/^-\s*/, '').replace(/\*\*/g, '').trim();
+        if (skillName && skillName !== 'なし') {
+          candidates.push({ name: skillName, ...getSkillBuff(skillName) });
+        }
+      }
+
+      if (inGeneratedSection && trimmed.startsWith('-')) {
+        const skillName = trimmed.replace(/^-\s*/, '').replace(/\*\*/g, '').trim();
+        if (skillName && skillName !== 'なし') {
+          generated.push({ name: skillName, ...getSkillBuff(skillName) });
+        }
+      }
+    }
+
+    return { candidates, generated };
+  }
+
+  // Show ougi acquired effect
+  function showOugiAcquired(skillName) {
+    ougiAcquired.textContent = `📜 奥義習得！「${skillName}」`;
+    ougiAcquired.classList.remove('show');
+    void ougiAcquired.offsetWidth;
+    ougiAcquired.classList.add('show');
+    addLog(`📜 新たな奥義「${skillName}」を習得！ 味方軍が強化された！`, 'karo');
+  }
+
+  // Render skills
+  function renderSkills(skills) {
+    const { candidates, generated } = skills;
+
+    // Update total count
+    const total = candidates.length + generated.length;
+    skillCount.textContent = `(${total})`;
+
+    // Render candidates (秘伝書)
+    if (candidates.length === 0) {
+      hidenList.innerHTML = '<div class="hiden-empty">なし</div>';
+    } else {
+      hidenList.innerHTML = candidates.map(s => `
+        <div class="hiden-card">
+          <div class="hiden-header">
+            <span class="hiden-name">${s.icon} ${s.name}</span>
+            <span class="hiden-status">⏳ 殿の承認待ち</span>
+          </div>
+          <div class="hiden-desc">発見された秘伝。承認されれば奥義となる。</div>
+        </div>
+      `).join('');
+    }
+
+    // Render generated (奥義)
+    if (generated.length === 0) {
+      ougiGrid.innerHTML = '<div class="ougi-empty">なし</div>';
+      buffSummary.style.display = 'none';
+    } else {
+      // Check for new skills
+      const prevNames = previousSkills.generated.map(s => s.name);
+
+      ougiGrid.innerHTML = generated.map(s => {
+        const isNew = !prevNames.includes(s.name);
+        return `
+          <div class="ougi-badge ${isNew ? 'new' : ''}">
+            <span class="ougi-buff">${s.icon}+${s.value}</span>
+            <span class="ougi-name">${s.name}</span>
+          </div>
+        `;
+      }).join('');
+
+      // Show effect for new skills
+      for (const s of generated) {
+        if (!prevNames.includes(s.name)) {
+          showOugiAcquired(s.name);
+          break; // Only show one at a time
+        }
+      }
+
+      // Calculate buffs
+      currentBuffs = { atk: 0, def: 0, spd: 0 };
+      for (const s of generated) {
+        currentBuffs[s.type] += s.value;
+      }
+
+      buffAtk.textContent = `+${currentBuffs.atk}`;
+      buffDef.textContent = `+${currentBuffs.def}`;
+      buffSpd.textContent = `+${currentBuffs.spd}`;
+      buffSummary.style.display = 'flex';
+    }
+
+    // Update previous state
+    previousSkills = { candidates: [...candidates], generated: [...generated] };
+  }
+
+  // Get aura class based on skill count
+  function getAuraClass(skillCount) {
+    if (skillCount >= 4) return 'aura-strong';
+    if (skillCount >= 1) return 'aura-weak';
+    return '';
+  }
+
+  let lastContent = '';
+
+  function connect() {
+    const ws = new WebSocket('ws://' + location.host + '/ws');
+
+    ws.onopen = () => {
+      statusDot.classList.remove('disconnected');
+      statusText.textContent = 'LIVE';
+      addLog('📢 将軍「戦場に接続完了！」', 'shogun');
+    };
+
+    ws.onmessage = (e) => {
+      const md = e.data;
+
+      if (md !== lastContent) {
+        lastContent = md;
+        // Parse and render troops
+        const troops = parseTroops(md);
+        // Parse and render skills (must be before renderBattlefield for aura)
+        const skills = parseSkills(md);
+        renderSkills(skills);
+        renderBattlefield(troops);
+        content.innerHTML = mdToHtml(md);
+      }
+
+      lastUpdate.textContent = getTime();
+    };
+
+    ws.onclose = () => {
+      statusDot.classList.add('disconnected');
+      statusText.textContent = '再接続中...';
+      addLog('⚠️ 通信途絶。再接続を試みています...', 'error');
+      setTimeout(connect, 2000);
+    };
+
+    ws.onerror = () => ws.close();
+  }
+
+  // Init
+  for (let i = 1; i <= 8; i++) previousTroops[i] = null;
+  updateStats();
+  renderSkills({ candidates: [], generated: [] });
+  renderBattlefield([]);
+  addLog('🏯 戦場ダッシュボード v3.1 起動中...', 'info');
+  connect();
+</script>
+</body>
+</html>

@@ -4,9 +4,9 @@
 
 | トリガー | 読むスキル |
 |---------|-----------|
-| 商品コンセプト作成 | `_claude-code/skills/concept-design.md` |
-| キャッチコピー作成 | `_claude-code/skills/catchcopy.md` |
-| 市場構造・競合分析 | `_claude-code/skills/what-game.md` |
-| Webappデータ設計 | `_claude-code/skills/webapp-data-pattern.md` |
-| 新規プロジェクト開始 | `_claude-code/skills/project-workflow.md` |
+| 商品コンセプト作成 | `.claude/skills/concept-design.md` |
+| キャッチコピー作成 | `.claude/skills/catchcopy.md` |
+| 市場構造・競合分析 | `.claude/skills/what-game.md` |
+| Webappデータ設計 | `.claude/skills/webapp-data-pattern.md` |
+| 新規プロジェクト開始 | `.claude/skills/project-workflow.md` |
 | ポジショニングマップ作成 | `.claude/skills/positioning-map.md` |

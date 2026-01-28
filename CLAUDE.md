@@ -27,15 +27,16 @@ AP/
 │   ├── prompts/            # システムプロンプト
 │   └── CLAUDE.md           # Agent SDK設定
 │
-├── _claude-code/           # Claude Code設定リファレンス（読み取り専用アーカイブ、実運用は .claude/）
-│   ├── agents/             # Subagent定義
-│   ├── commands/           # Skillコマンド定義
-│   ├── rules/              # ルール定義
-│   ├── skills/             # Skill定義
+├── .claude/                # Claude Code設定
+│   ├── agents/             # Subagent定義（18）
+│   ├── commands/           # Skillコマンド定義（37）
+│   ├── rules/              # ルール定義（11）
+│   ├── skills/             # Skill定義（13）
 │   ├── hooks/              # Hook定義
 │   ├── mcp-configs/        # MCP設定
 │   ├── examples/           # 設定例
-│   └── multi-agent/        # マルチエージェントシステム（将軍/家老/足軽、戦国モチーフ）
+│   ├── multi-agent/        # マルチエージェントシステム（将軍/家老/足軽）
+│   └── plugins/            # プラグイン
 │
 ├── _archive/               # アーカイブ
 │
@@ -75,9 +76,6 @@ AP/
 
 **グローバル（`~/.claude/`）ではなく、APプロジェクト内に保存する。**
 
-> **注意**: `_claude-code/` はリファレンス・アーカイブ専用。Claude Codeが実際に読み込むのは `.claude/` のみ。
-> スキル・コマンド・ルールの新規作成・編集は **必ず `.claude/` 配下** で行うこと。`_claude-code/` には書き込まない。
-
 ### スキル・コマンド自動提案ルール（常時適用）
 
 作業中に以下の条件を**3つ以上**満たすパターンを検出したら、**スキルまたはコマンドとして保存することを提案する**:
@@ -93,8 +91,8 @@ AP/
 **提案のタイミング**: タスク完了時またはパターン検出時に「このパターンをスキルまたはコマンドとして保存しますか？」と提案する。
 
 **Skill vs Command の判断**:
-- **Skill**（`_claude-code/skills/`）: 考え方・判断基準・チェックリスト・フレームワーク → 5条件中3つで提案
-- **Command**（`_claude-code/commands/`）: ツール実行・エージェント起動・ファイル操作の手順 → 5条件中3つ **かつ** プロジェクト横断・毎セッション級の普遍性がある場合のみ提案（`/handoff`、`/resume`レベル）。**迷ったらSkillにする。**
+- **Skill**（`.claude/skills/`）: 考え方・判断基準・チェックリスト・フレームワーク → 5条件中3つで提案
+- **Command**（`.claude/commands/`）: ツール実行・エージェント起動・ファイル操作の手順 → 5条件中3つ **かつ** プロジェクト横断・毎セッション級の普遍性がある場合のみ提案（`/handoff`、`/resume`レベル）。**迷ったらSkillにする。**
 
 ### 既存スキル一覧
 
@@ -502,7 +500,7 @@ vercel --prod --yes
 
 シャンプー・スキンケア・リップの3カテゴリを統合したタグラインポジショニングマップWebapp。
 
-**本番URL**: https://webapp-five-bay.vercel.app
+**本番URL**: https://tagline-positioning-map.vercel.app
 
 **技術スタック**:
 - Next.js 16.1.5 (App Router)
@@ -553,20 +551,22 @@ vercel --prod --yes
 
 ---
 
-### _claude-code（Claude Code設定）
+### .claude（Claude Code設定）
 
-Claude Codeの設定リファレンス実装。
+Claude Codeの設定ディレクトリ。
 
 **ディレクトリ**:
 | フォルダ | 内容 |
 |---------|------|
-| `agents/` | Subagent定義 |
-| `commands/` | Skillコマンド定義 |
-| `rules/` | ルール定義 |
-| `skills/` | Skill定義 |
+| `agents/` | Subagent定義（18） |
+| `commands/` | Skillコマンド定義（37） |
+| `rules/` | ルール定義（11） |
+| `skills/` | Skill定義（13） |
 | `hooks/` | Hook定義 |
 | `mcp-configs/` | MCP設定 |
 | `examples/` | 設定例（CLAUDE.md等） |
+| `multi-agent/` | マルチエージェントシステム（将軍/家老/足軽） |
+| `plugins/` | プラグイン |
 
 ---
 
@@ -621,6 +621,8 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-28: **`.claude/` に統合**（`_claude-code/` の固有コンテンツ（multi-agent, examples, hooks, mcp-configs, plugins）を `.claude/` に移動し、`_claude-code/` を削除。重複解消）
+- 2026-01-28: **/should-skill 4種別対応化**（Skill/Command/Rules/Hooks判定、判断フローチャート追加、Hooks自動編集対応）
 - 2026-01-28: **Claude Code Usage Tracking Dashboard**（`opperation/usage-dashboard/`新規作成、/usageコマンド、Supabase同期、ダッシュボードWebapp、1日平均時間追加、GitHub Starter Kit更新、https://webapp-five-bay.vercel.app）
 - 2026-01-28: **NADESHIKO TikTok再生数低下分析**（`analysis/tiktok-decline-analysis.md`新規作成、756件データ分析、-86%原因特定、アカウント別詳細レポート）
 - 2026-01-28: **フォルダ整理**（日本語フォルダ名英語化、重複削除、`_claude-code`同期）
@@ -631,7 +633,8 @@ vercel --prod --yes
   - `Refa` → `refa`
   - `opperation/phonefarm/` 削除（`projects/phonefarm/`に統合）
   - `_claude-code/` を `.claude/` から再同期（commands +22, agents +9, skills +2）
-- 2026-01-28: **タグラインマップ統合Webapp作成**（3カテゴリタブ切り替え、170ブランド、https://webapp-five-bay.vercel.app）
+- 2026-01-28: **タグラインマップ Vercelプロジェクト分離**（usage-dashboardと分離、新URL: https://tagline-positioning-map.vercel.app、170ブランド3カテゴリ統合）
+- 2026-01-28: **タグラインマップ統合Webapp作成**（3カテゴリタブ切り替え、170ブランド）
 - 2026-01-28: **スキンケア・リップ ファクトチェック完了**（スキンケア41/42+catchcopy 7件、リップ42/42+catchcopy 8件、両Webappデプロイ完了）
 - 2026-01-28: **ローカル設定をAPに同期**（`~/.claude/` → `AP/.claude/`、Commands +22, Agents +9, Skills +2 = 33ファイル追加）
 - 2026-01-28: **スキンケア・リップ タグラインWebapp作成**（positioning-mapスキル作成、各42ブランド、スキンケア: https://skincare-tagline-map.vercel.app、リップ: https://lip-tagline-map.vercel.app）
