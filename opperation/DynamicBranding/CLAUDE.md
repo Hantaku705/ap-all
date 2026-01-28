@@ -312,6 +312,11 @@ vercel --prod --yes
 - 2026-01-23: **株価影響投稿改善（全件表示+整合優先ソート、ツールチップに投稿詳細表示）**
 - 2026-01-28: **スパイクレポート機能追加（SpikeReport.tsx、7/28リュウジ味噌汁炎上事件、統計的スパイク検出: 平均+2σ）**
 - 2026-01-28: **Vercel新プロジェクト作成（ajinomoto-dashboard）**、本番URL: https://ajinomoto-dashboard.vercel.app
+- 2026-01-28: **戦略タブ追加（5つ目のタブ）** - 4タブの分析結果を統合しLLM（Gemini 2.0 Flash）で戦略提案を自動生成。コンポーネント4種（StrategySummary, ChallengeOpportunity, StrategyRecommendations, ActionPlan）、キャッシュ24時間TTL
+- 2026-01-28: **戦略タブ静的ファイル化** - LLM動的生成→静的JSONファイル（`src/data/corporate-strategy/corp-1.json`）に変更。APIルート554行→28行に簡素化。更新ボタン削除
+- 2026-01-28: **ロイヤリティ別顧客インサイト機能追加** - 各ロイヤリティレベル（高/中/低）に対して顧客像・関心事・声のトーン・キーワード・トピック分布を表示。LLM（Gemini 2.0 Flash）でインサイト生成 + フォールバック対応 + 24時間キャッシュ
+- 2026-01-29: **ロイヤリティ別顧客インサイト本番動作確認** - Playwright E2Eテストで「ファン資産」タブの動作検証、スクリーンショット確認完了
+- 2026-01-29: **ロイヤリティ別顧客インサイト マルチペルソナ化** - 「1レベル1顧客像」から「1レベル2-3ペルソナ」に拡張。PersonaCard.tsx新規作成、LoyaltySummaryReport.tsxでグリッド表示、8ペルソナデータ（高3/中3/低2）追加
 
 ---
 
@@ -321,7 +326,7 @@ vercel --prod --yes
 
 製品ブランド分析（8ブランド、50,000 SNS投稿）を拡張し、コーポレートレベルの分析機能を提供。
 
-### 新規DBテーブル（017_corporate_schema.sql）
+### 新規DBテーブル（017_corporate_schema.sql, 022_corporate_strategy_cache.sql）
 
 | テーブル | 用途 |
 |---------|------|
@@ -331,6 +336,7 @@ vercel --prod --yes
 | `corporate_mvv` | MVV/パーソナリティキャッシュ（LLM生成、7日TTL） |
 | `fan_assets` | ファンセグメント（関係強度、距離） |
 | `stock_ugc_correlations` | 株価×UGC相関係数（ラグ考慮） |
+| `corporate_strategy_cache` | **戦略提案キャッシュ（LLM生成、24時間TTL）（NEW）** |
 
 ### 新規APIエンドポイント
 
@@ -341,6 +347,8 @@ vercel --prod --yes
 | `GET /api/corporate/[corpId]/stock` | 株価時系列 |
 | `GET /api/corporate/[corpId]/stock/correlation` | 株価×UGC相関（ピアソン相関、ラグ-7〜+7日） |
 | `GET /api/corporate/[corpId]/fans` | ファン資産（セグメント分類） |
+| `GET /api/corporate/[corpId]/loyalty-summary` | **ロイヤリティ別顧客インサイト（LLM生成、24時間キャッシュ）（NEW）** |
+| `GET /api/corporate/[corpId]/strategy` | **戦略提案（4タブ統合+LLM生成、24時間キャッシュ）** |
 
 ### 新規コンポーネント（src/components/corporate/）
 
@@ -351,7 +359,17 @@ vercel --prod --yes
 | `StockUGCChart.tsx` | 株価×UGC 2軸時系列チャート |
 | `FanUrchinChart.tsx` | ウニ型ファン可視化（SVG/React） |
 | `FanTireChart.tsx` | タイヤ型ファン可視化（SVG/React） |
-| `CorporateLoyaltySection.tsx` | **コーポレートロイヤリティ分布（円グラフ+代表口コミ）（NEW）** |
+| `CorporateLoyaltySection.tsx` | コーポレートロイヤリティ分布（円グラフ+代表口コミ） |
+| `LoyaltySummaryReport.tsx` | **ロイヤリティ別顧客インサイト（顧客像・関心事・トーン・KW・トピック分布）（NEW）** |
+
+### 新規コンポーネント（src/components/corporate-strategy/）
+
+| コンポーネント | 説明 |
+|--------------|------|
+| `StrategySummary.tsx` | 4タブの要約サマリーカード |
+| `ChallengeOpportunity.tsx` | 課題/機会セクション（2カラム） |
+| `StrategyRecommendations.tsx` | 戦略提案カード（優先度付き、展開可能） |
+| `ActionPlan.tsx` | アクションプランタイムライン（短期/中期/長期） |
 
 ### 型定義（src/types/corporate.types.ts）
 
@@ -363,8 +381,14 @@ vercel --prod --yes
 | `FanSegmentType` | core_fan/loyal_fan/new_fan/casual_user/at_risk/detractor |
 | `LoyaltyLevel` | **'high' \| 'medium' \| 'low'（NEW）** |
 | `CorporateLoyalty` | **ロイヤリティ分布データ（total/levels/representative_posts）（NEW）** |
+| `StrategyInput` | **戦略入力（UGC/株価/ファン/世の中の集約データ）（NEW）** |
+| `StrategyOutput` | **戦略出力（strengths/challenges/opportunities/recommendations/actionPlan）（NEW）** |
+| `StrategyResponse` | 戦略APIレスポンス全体（input/strategy/generatedAt/cached） |
+| `TopicDistribution` | **トピック分布（topic/topicLabel/count/percentage/color）（NEW）** |
+| `LoyaltySummaryInsight` | **ロイヤリティ別インサイト（顧客像/関心事/トーン/KW/トピック分布）（NEW）** |
+| `LoyaltySummaryResponse` | **ロイヤリティサマリーAPIレスポンス（insights/generatedAt/cached）（NEW）** |
 
-### コーポレートロイヤリティ（NEW）
+### コーポレートロイヤリティ
 
 コーポレート投稿（is_corporate=true）のセンチメントに基づくロイヤリティ分類。
 
@@ -385,8 +409,9 @@ vercel --prod --yes
 
 ### アクセス
 
-- `/corporate/1` - 味の素株式会社のコーポレートダッシュボード
+- `/corporate/1` - 味の素株式会社のコーポレートダッシュボード（5タブ: UGC分析/株価×UGC/ファン資産/世の中分析/戦略提案）
 - メインページ「Corporate分析」ボタンからリンク
+- **本番URL**: https://ajinomoto-dashboard.vercel.app/corporate/1
 
 ---
 

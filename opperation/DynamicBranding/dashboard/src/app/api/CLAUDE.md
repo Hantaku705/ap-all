@@ -13,6 +13,7 @@ Next.js API Routes。Supabaseからデータを取得しフロントエンドに
 | `keywords/` | 関連KW分析API |
 | `data/` | 生データAPI |
 | `reports/` | レポート管理API |
+| `corporate/` | コーポレート分析API |
 
 ## ファイル一覧
 
@@ -64,6 +65,18 @@ Next.js API Routes。Supabaseからデータを取得しフロントエンドに
 |---------|---------------|------|
 | `reports/route.ts` | `GET/POST /api/reports` | レポート一覧・作成 |
 | `reports/[id]/route.ts` | `GET/PUT/DELETE /api/reports/:id` | レポート詳細・更新・削除 |
+
+### corporate/ - コーポレート分析API
+
+| ファイル | エンドポイント | 説明 |
+|---------|---------------|------|
+| `corporate/[corpId]/route.ts` | `GET /api/corporate/:id` | コーポレートサマリー |
+| `corporate/[corpId]/mvv/route.ts` | `GET /api/corporate/:id/mvv` | MVV抽出（LLM生成） |
+| `corporate/[corpId]/stock/route.ts` | `GET /api/corporate/:id/stock` | 株価時系列 |
+| `corporate/[corpId]/fans/route.ts` | `GET /api/corporate/:id/fans` | ファン資産（ロイヤリティ分布） |
+| `corporate/[corpId]/loyalty-summary/route.ts` | `GET /api/corporate/:id/loyalty-summary` | **ロイヤリティ別顧客インサイト（NEW）** |
+| `corporate/[corpId]/strategy/route.ts` | `GET /api/corporate/:id/strategy` | 戦略提案 |
+| `corporate/[corpId]/world-news/route.ts` | `GET /api/corporate/:id/world-news` | 世の中分析ニュース |
 
 ## API共通パターン
 

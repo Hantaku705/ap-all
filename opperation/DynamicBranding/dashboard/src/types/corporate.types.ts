@@ -685,3 +685,287 @@ export const WORLD_NEWS_COMPANY_RELEVANCE_COLORS: Record<WorldNewsCompanyRelevan
   competitor: '#EF4444', // 赤
   industry: '#F59E0B',   // オレンジ
 };
+
+// ============================================
+// 戦略提案（Strategy）
+// ============================================
+
+// 戦略入力データ（各タブからの集約）
+export interface StrategyInput {
+  // UGC分析から
+  ugc: {
+    totalPosts: number;
+    positiveRate: number;
+    topTopics: { name: string; count: number }[];
+    recentSpikes: { date: string; event: string; impact: string }[];
+    sentimentTrend: 'improving' | 'stable' | 'declining';
+  };
+
+  // 株価×UGCから
+  stockCorrelation: {
+    coefficient: number;           // ピアソン相関係数
+    optimalLag: number;            // 最適ラグ日数
+    significance: 'high' | 'medium' | 'low';
+  };
+
+  // ファン資産から
+  loyalty: {
+    high: { count: number; percentage: number };
+    medium: { count: number; percentage: number };
+    low: { count: number; percentage: number };
+    trend: 'growing' | 'stable' | 'shrinking';
+  };
+
+  // 世の中分析から
+  worldNews: {
+    topCategories: string[];
+    emergingTrends: string[];
+    competitorMoves: string[];
+  };
+}
+
+// 課題
+export interface StrategyChallenge {
+  description: string;
+  severity: 'high' | 'medium' | 'low';
+  source: 'ugc' | 'stock' | 'loyalty' | 'world';
+}
+
+// 機会
+export interface StrategyOpportunity {
+  description: string;
+  potential: 'high' | 'medium' | 'low';
+  source: 'ugc' | 'stock' | 'loyalty' | 'world';
+}
+
+// 戦略提案
+export interface StrategyRecommendation {
+  title: string;
+  description: string;
+  priority: 1 | 2 | 3;
+  expectedImpact: string;
+  relatedData: string;           // 根拠となるデータ
+}
+
+// アクションプラン
+export interface StrategyActionPlan {
+  shortTerm: string[];           // 1ヶ月
+  midTerm: string[];             // 3ヶ月
+  longTerm: string[];            // 1年
+}
+
+// 戦略生成出力
+export interface StrategyOutput {
+  strengths: string[];           // 現状の強み
+  challenges: StrategyChallenge[];
+  opportunities: StrategyOpportunity[];
+  recommendations: StrategyRecommendation[];
+  actionPlan: StrategyActionPlan;
+}
+
+// 戦略APIレスポンス
+export interface StrategyResponse {
+  input: StrategyInput;
+  strategy: StrategyOutput;
+  generatedAt: string;
+  model: string;                 // 使用したLLMモデル
+  cached: boolean;
+}
+
+// 戦略定数
+export const STRATEGY_SOURCE_LABELS: Record<StrategyChallenge['source'], string> = {
+  ugc: 'UGC分析',
+  stock: '株価×UGC',
+  loyalty: 'ファン資産',
+  world: '世の中分析',
+};
+
+export const STRATEGY_SEVERITY_COLORS: Record<StrategyChallenge['severity'], string> = {
+  high: '#ef4444',
+  medium: '#f59e0b',
+  low: '#6b7280',
+};
+
+export const STRATEGY_POTENTIAL_COLORS: Record<StrategyOpportunity['potential'], string> = {
+  high: '#22c55e',
+  medium: '#3b82f6',
+  low: '#6b7280',
+};
+
+export const STRATEGY_PRIORITY_LABELS: Record<StrategyRecommendation['priority'], string> = {
+  1: '最優先',
+  2: '重要',
+  3: '推奨',
+};
+
+// ============================================
+// ロイヤリティサマリーインサイト
+// ============================================
+
+// トピック分布
+export interface TopicDistribution {
+  topic: string;
+  topicLabel: string;
+  count: number;
+  percentage: number;
+  color: string;
+}
+
+// ロイヤリティレベル内の個別ペルソナ
+export interface LoyaltyPersona {
+  id: string;                        // "high_p1", "high_p2"
+  personaName: string;               // "株式投資家"
+  ageRange: string;                  // "40-50代"
+  lifeStage: string;                 // "投資家・ビジネスパーソン"
+  interests: string[];               // ["株価動向", "企業業績"]
+  motivations: string[];             // ["資産運用", "情報収集"]
+  voiceTone: string[];               // ["期待", "分析的"]
+  representativeQuote: string;       // 実際の投稿から引用
+  postCount: number;
+  percentage: number;                // このレベル内の割合
+}
+
+// ロイヤリティレベル別インサイト
+export interface LoyaltySummaryInsight {
+  level: LoyaltyLevel;
+  levelName: string;
+  levelColor: string;
+  count: number;
+  percentage: string;
+  personas: LoyaltyPersona[];        // 2-3ペルソナ
+  topicDistribution: TopicDistribution[];
+  // 後方互換（deprecated）
+  customerProfile?: string;          // 顧客像
+  mainInterests?: string[];          // 主な関心事
+  voiceTone?: string[];              // 声のトーン
+  keywords?: string[];               // キーワード
+}
+
+// ロイヤリティサマリーレスポンス
+export interface LoyaltySummaryResponse {
+  insights: LoyaltySummaryInsight[];
+  generatedAt: string;
+  cached: boolean;
+}
+
+// ============================================
+// ロイヤリティ成長戦略（Loyalty Growth Strategy）
+// ============================================
+
+// 転換トリガー
+export interface ConversionTrigger {
+  type: 'topic' | 'event' | 'content' | 'engagement';
+  name: string;
+  description: string;
+  impactScore: number;           // 0-100
+  frequency: number;             // 観測回数
+}
+
+// 転換ファネルデータ
+export interface LoyaltyConversionFunnel {
+  fromLevel: LoyaltyLevel;
+  toLevel: LoyaltyLevel;
+  conversionRate: number;        // 0-100%
+  averageTimeToConvert: number;  // 日数
+  sampleSize: number;
+  topTriggers: ConversionTrigger[];
+}
+
+// トピック嗜好
+export interface TopicPreference {
+  topic: string;
+  topicLabel: string;
+  engagementRate: number;        // 平均比
+  loyaltyCorrelation: number;    // -1 to 1
+}
+
+// エンゲージメント指標
+export interface EngagementMetrics {
+  avgPostFrequency: number;      // 月間投稿数
+  avgLikes: number;
+  avgRetweets: number;
+  avgReplies: number;
+}
+
+// 行動パターン分析
+export interface LoyaltyBehavioralPattern {
+  level: LoyaltyLevel;
+  engagementMetrics: EngagementMetrics;
+  topicPreferences: TopicPreference[];
+}
+
+// 予測マイルストーン
+export interface ProjectedMilestone {
+  date: string;
+  highPercentage: number;
+  mediumPercentage: number;
+  lowPercentage: number;
+  keyAction: string;
+}
+
+// ロイヤリティ成長目標
+export interface LoyaltyGrowthTarget {
+  currentDistribution: {
+    high: { count: number; percentage: number };
+    medium: { count: number; percentage: number };
+    low: { count: number; percentage: number };
+  };
+  targetDistribution: {
+    high: { percentage: number; targetDate: string };
+    medium: { percentage: number };
+    low: { percentage: number };
+  };
+  projectedTimeline: ProjectedMilestone[];
+}
+
+// 戦略KPI
+export interface StrategyKPI {
+  name: string;
+  currentValue: number;
+  targetValue: number;
+  unit: string;
+}
+
+// ロイヤリティ戦略提案
+export interface LoyaltyStrategyRecommendation {
+  segment: 'medium_to_high' | 'low_to_medium' | 'retention';
+  title: string;
+  description: string;
+  expectedImpact: string;
+  implementationEffort: 'low' | 'medium' | 'high';
+  timeToResult: string;
+  requiredResources: string[];
+  kpis: StrategyKPI[];
+}
+
+// ロイヤリティ成長APIレスポンス
+export interface LoyaltyGrowthResponse {
+  conversionFunnels: LoyaltyConversionFunnel[];
+  behavioralPatterns: LoyaltyBehavioralPattern[];
+  growthTargets: LoyaltyGrowthTarget;
+  recommendations: LoyaltyStrategyRecommendation[];
+  generatedAt: string;
+  cached: boolean;
+}
+
+// ============================================
+// ロイヤリティ成長戦略 定数
+// ============================================
+
+export const LOYALTY_SEGMENT_LABELS: Record<LoyaltyStrategyRecommendation['segment'], string> = {
+  medium_to_high: '中→高転換',
+  low_to_medium: '低→中転換',
+  retention: '高層維持',
+};
+
+export const IMPLEMENTATION_EFFORT_LABELS: Record<LoyaltyStrategyRecommendation['implementationEffort'], string> = {
+  low: '低',
+  medium: '中',
+  high: '高',
+};
+
+export const IMPLEMENTATION_EFFORT_COLORS: Record<LoyaltyStrategyRecommendation['implementationEffort'], string> = {
+  low: '#22c55e',
+  medium: '#f59e0b',
+  high: '#ef4444',
+};

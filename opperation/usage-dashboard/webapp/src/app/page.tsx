@@ -34,6 +34,7 @@ export default function Dashboard() {
 
   const totalMinutes = summary.reduce((sum, u) => sum + u.total_minutes, 0)
   const totalSessions = summary.reduce((sum, u) => sum + u.total_sessions, 0)
+  const totalTokens = summary.reduce((sum, u) => sum + (u.total_tokens || 0), 0)
   const activeUsers = summary.length
 
   const today = new Date().toISOString().split('T')[0]
@@ -73,6 +74,7 @@ export default function Dashboard() {
               activeUsers={activeUsers}
               todayMinutes={todayMinutes}
               totalDays={dailyTotals.length}
+              totalTokens={totalTokens}
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

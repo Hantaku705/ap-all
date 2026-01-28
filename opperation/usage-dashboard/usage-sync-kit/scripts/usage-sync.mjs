@@ -18,8 +18,23 @@ import { homedir, hostname, userInfo } from 'os'
 import { join } from 'path'
 
 const HISTORY_FILE = join(homedir(), '.claude', 'history.jsonl')
+const STATS_CACHE_FILE = join(homedir(), '.claude', 'stats-cache.json')
 const LAST_SYNC_FILE = join(homedir(), '.claude', 'usage-last-sync.txt')
 const INACTIVITY_THRESHOLD_MS = 30 * 60 * 1000 // 30分
+
+/**
+ * トークン数をフォーマット（K/M/B表記）
+ */
+function formatTokens(tokens) {
+  if (tokens >= 1_000_000_000) {
+    return `${(tokens / 1_000_000_000).toFixed(1)}B`
+  } else if (tokens >= 1_000_000) {
+    return `${(tokens / 1_000_000).toFixed(1)}M`
+  } else if (tokens >= 1_000) {
+    return `${(tokens / 1_000).toFixed(1)}K`
+  }
+  return tokens.toString()
+}
 
 /**
  * 環境変数チェック
@@ -141,7 +156,7 @@ function aggregateByDay(sessionTimes) {
     const dateStr = session.startTime.toISOString().split('T')[0]
 
     if (!dailyStats.has(dateStr)) {
-      dailyStats.set(dateStr, { minutes: 0, sessions: 0 })
+      dailyStats.set(dateStr, { minutes: 0, sessions: 0, inputTokens: 0, outputTokens: 0 })
     }
 
     const stats = dailyStats.get(dateStr)
@@ -150,6 +165,92 @@ function aggregateByDay(sessionTimes) {
   }
 
   return dailyStats
+}
+
+/**
+ * stats-cache.json から日別トークン情報を取得
+ */
+function loadTokenStats() {
+  if (!existsSync(STATS_CACHE_FILE)) {
+    console.log('Note: stats-cache.json not found, skipping token data')
+    return new Map()
+  }
+
+  try {
+    const content = readFileSync(STATS_CACHE_FILE, 'utf-8')
+    const stats = JSON.parse(content)
+    const tokensByDate = new Map()
+
+    // dailyModelTokens から日別トークンを集計
+    if (stats.dailyModelTokens && Array.isArray(stats.dailyModelTokens)) {
+      for (const entry of stats.dailyModelTokens) {
+        const date = entry.date
+        let totalTokens = 0
+
+        if (entry.tokensByModel) {
+          for (const model in entry.tokensByModel) {
+            totalTokens += entry.tokensByModel[model] || 0
+          }
+        }
+
+        tokensByDate.set(date, totalTokens)
+      }
+    }
+
+    return tokensByDate
+  } catch (error) {
+    console.error('Warning: Failed to parse stats-cache.json:', error.message)
+    return new Map()
+  }
+}
+
+/**
+ * modelUsage から累計トークン情報を取得（Input/Output分離）
+ */
+function loadModelUsageTokens() {
+  if (!existsSync(STATS_CACHE_FILE)) {
+    return { inputTokens: 0, outputTokens: 0 }
+  }
+
+  try {
+    const content = readFileSync(STATS_CACHE_FILE, 'utf-8')
+    const stats = JSON.parse(content)
+    let totalInput = 0
+    let totalOutput = 0
+
+    if (stats.modelUsage) {
+      for (const model in stats.modelUsage) {
+        const usage = stats.modelUsage[model]
+        totalInput += usage.inputTokens || 0
+        totalOutput += usage.outputTokens || 0
+      }
+    }
+
+    return { inputTokens: totalInput, outputTokens: totalOutput }
+  } catch {
+    return { inputTokens: 0, outputTokens: 0 }
+  }
+}
+
+/**
+ * dailyStats にトークン情報をマージ
+ */
+function mergeTokenStats(dailyStats, tokensByDate, totalTokens) {
+  // dailyModelTokens のデータがある日には分配
+  // ない場合は累計から均等配分（簡易版）
+  const dates = Array.from(dailyStats.keys()).sort()
+
+  if (dates.length === 0) return
+
+  // 日別トークンデータがある場合はそれを使用
+  for (const [date, stats] of dailyStats) {
+    const dayTokens = tokensByDate.get(date)
+    if (dayTokens) {
+      // dailyModelTokens は合計のみなので、input:output = 1:3 で概算分配
+      stats.inputTokens = Math.round(dayTokens * 0.25)
+      stats.outputTokens = Math.round(dayTokens * 0.75)
+    }
+  }
 }
 
 /**
@@ -170,6 +271,8 @@ async function syncToSupabase(dailyStats, supabaseUrl, supabaseKey) {
       date,
       minutes: stats.minutes,
       sessions: stats.sessions,
+      input_tokens: stats.inputTokens || 0,
+      output_tokens: stats.outputTokens || 0,
       last_sync: new Date().toISOString()
     })
   }
@@ -204,7 +307,14 @@ async function syncToSupabase(dailyStats, supabaseUrl, supabaseKey) {
   // 期間サマリー
   const totalMinutes = records.reduce((sum, r) => sum + r.minutes, 0)
   const totalSessions = records.reduce((sum, r) => sum + r.sessions, 0)
+  const totalInputTokens = records.reduce((sum, r) => sum + (r.input_tokens || 0), 0)
+  const totalOutputTokens = records.reduce((sum, r) => sum + (r.output_tokens || 0), 0)
+  const totalTokens = totalInputTokens + totalOutputTokens
+
   console.log(`  Total: ${Math.floor(totalMinutes / 60)}h ${totalMinutes % 60}m (${totalSessions} sessions)`)
+  if (totalTokens > 0) {
+    console.log(`  Tokens: ${formatTokens(totalTokens)} (${formatTokens(totalInputTokens)} in / ${formatTokens(totalOutputTokens)} out)`)
+  }
 }
 
 /**
@@ -225,6 +335,11 @@ async function main() {
 
   const sessionTimes = calculateSessionTimes(events)
   const dailyStats = aggregateByDay(sessionTimes)
+
+  // トークン情報を読み込んでマージ
+  const tokensByDate = loadTokenStats()
+  const totalTokens = loadModelUsageTokens()
+  mergeTokenStats(dailyStats, tokensByDate, totalTokens)
 
   await syncToSupabase(dailyStats, url, key)
 

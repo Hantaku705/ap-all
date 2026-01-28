@@ -16,6 +16,7 @@ Claude Codeで使用するスキル（Skill）の定義ファイル。
 | `frontend-patterns.md` | フロントエンドパターン |
 | `clickhouse-io.md` | ClickHouse I/Oパターン |
 | `project-guidelines-example.md` | プロジェクトガイドライン例 |
+| `llm-to-static.md` | LLM事前生成→静的ファイル化パターン（動的API→静的JSON+データ解像度UP） |
 
 ## サブフォルダ一覧
 
@@ -26,6 +27,7 @@ Claude Codeで使用するスキル（Skill）の定義ファイル。
 
 ## 更新履歴
 
+- 2026-01-29: llm-to-static.md 追加（動的LLM API→静的JSON+データ解像度UPパターン、DynamicBranding LoyaltySummary適用例含む）
 - 2026-01-28: catchcopy.md 追加（キャッチコピー5型分類、60+ブランド調査ベース）
 - 2026-01-26: project-workflow.md 追加（5段階ワークフロー、7プロジェクト分析に基づく）
 - 2026-01-23: what-game.md 追加（「何ゲーか」分析フレームワーク）

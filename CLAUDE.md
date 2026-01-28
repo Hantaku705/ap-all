@@ -27,16 +27,22 @@ AP/
 │   ├── prompts/            # システムプロンプト
 │   └── CLAUDE.md           # Agent SDK設定
 │
-├── .claude/                # Claude Code設定
+├── .claude/                # Claude Code設定（実運用）
 │   ├── agents/             # Subagent定義（18）
-│   ├── commands/           # Skillコマンド定義（37）
+│   ├── commands/           # Skillコマンド定義（39）
 │   ├── rules/              # ルール定義（11）
-│   ├── skills/             # Skill定義（13）
+│   ├── skills/             # Skill定義（16）
 │   ├── hooks/              # Hook定義
 │   ├── mcp-configs/        # MCP設定
 │   ├── examples/           # 設定例
 │   ├── multi-agent/        # マルチエージェントシステム（将軍/家老/足軽）
 │   └── plugins/            # プラグイン
+│
+├── claude-code-starter/    # チームメンバー共有用スターターキット
+│   ├── .claude/            # AP/.claude/から同期される設定
+│   ├── examples/           # 設定例
+│   ├── install.sh          # インストールスクリプト
+│   └── README.md           # 使い方
 │
 ├── _archive/               # アーカイブ
 │
@@ -107,6 +113,7 @@ AP/
 | `backend-patterns.md` | バックエンドパターン |
 | `frontend-patterns.md` | フロントエンドパターン |
 | `permissions-config.md` | Claude Code権限設定リファレンス（`permissions.allow`構文・ツール名・パス指定） |
+| `llm-to-static.md` | LLM事前生成→静的ファイル化パターン（動的API→静的JSON+データ解像度UP） |
 
 ### 既存コマンド一覧
 
@@ -114,6 +121,7 @@ AP/
 |---------|------|
 | `/address-lookup` | 企業サイトから住所を取得し配送フォーム形式（英語）に変換 |
 | `/api-debug` | API統合デバッグ自動化 |
+| `/auto-y` | セッション中に許可した権限を自動永続化 |
 | `/build-fix` | ビルドエラーの自動修正 |
 | `/code-review` | コードレビュー実行 |
 | `/commit-push-pr` | コミット→プッシュ→PR作成 |
@@ -139,6 +147,7 @@ AP/
 | `/tdd` | TDDワークフロー |
 | `/test-and-fix` | テスト実行→失敗分析→修正→再実行 |
 | `/update-brain` | 共通設定の更新 |
+| `/update-claude-code-starter` | AP設定をclaude-code-starterに同期（チーム共有用） |
 | `/validate-api-integration` | API統合の検証 |
 | `/verify-worker-deployment` | ワーカーデプロイの検証 |
 
@@ -621,6 +630,9 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-28: **HANDOFFハイブリッド方式再構築**（ルート70行に軽量化、プロジェクト別HANDOFF.md 11件作成、HANDOFF_ARCHIVE.md削除、/handoffスキル更新）
+- 2026-01-28: **claude-code-starter APリポジトリ統合**（`.git`削除、`/update-claude-code-starter`同期コマンド作成、83ファイル同期、チームメンバー共有用）
+- 2026-01-28: **/auto-y コマンド作成**（セッション中に許可した権限を自動永続化、デバッグログから権限抽出、`settings.local.json`/`permissions-reference.md`に記録）
 - 2026-01-28: **`.claude/` に統合**（`_claude-code/` の固有コンテンツ（multi-agent, examples, hooks, mcp-configs, plugins）を `.claude/` に移動し、`_claude-code/` を削除。重複解消）
 - 2026-01-28: **/should-skill 4種別対応化**（Skill/Command/Rules/Hooks判定、判断フローチャート追加、Hooks自動編集対応）
 - 2026-01-28: **Claude Code Usage Tracking Dashboard**（`opperation/usage-dashboard/`新規作成、/usageコマンド、Supabase同期、ダッシュボードWebapp、1日平均時間追加、GitHub Starter Kit更新、https://webapp-five-bay.vercel.app）

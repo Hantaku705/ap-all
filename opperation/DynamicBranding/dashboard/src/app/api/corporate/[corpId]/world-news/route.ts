@@ -74,21 +74,28 @@ export async function GET(
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    return NextResponse.json({
-      news: news || [],
-      total: count || 0,
-      page,
-      limit,
-      filters: {
-        category: category || undefined,
-        sentiment: sentiment || undefined,
-        source_type: sourceType || undefined,
-        company_relevance: companyRelevance || undefined,
-        is_important: isImportant === "true" ? true : undefined,
-        start_date: startDate || undefined,
-        end_date: endDate || undefined,
+    return NextResponse.json(
+      {
+        news: news || [],
+        total: count || 0,
+        page,
+        limit,
+        filters: {
+          category: category || undefined,
+          sentiment: sentiment || undefined,
+          source_type: sourceType || undefined,
+          company_relevance: companyRelevance || undefined,
+          is_important: isImportant === "true" ? true : undefined,
+          start_date: startDate || undefined,
+          end_date: endDate || undefined,
+        },
       },
-    });
+      {
+        headers: {
+          "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
+        },
+      }
+    );
   } catch (error) {
     console.error("Failed to fetch world news:", error);
     return NextResponse.json(

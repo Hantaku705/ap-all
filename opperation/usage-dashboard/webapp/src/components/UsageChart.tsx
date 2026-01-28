@@ -13,7 +13,8 @@ export function UsageChart({ data }: Props) {
     date: format(parseISO(d.date), 'M/d'),
     hours: Math.round(d.total_minutes / 60 * 10) / 10,
     sessions: d.total_sessions,
-    users: d.active_users
+    users: d.active_users,
+    tokens: Math.round((d.total_tokens || 0) / 1000000 * 10) / 10 // M単位
   }))
 
   return (
@@ -28,7 +29,7 @@ export function UsageChart({ data }: Props) {
           <Tooltip
             formatter={(value, name) => {
               if (name === 'hours') return [`${value}時間`, '使用時間']
-              if (name === 'users') return [`${value}人`, 'アクティブユーザー']
+              if (name === 'tokens') return [`${value}M`, 'トークン']
               return [String(value), String(name)]
             }}
           />
@@ -45,10 +46,10 @@ export function UsageChart({ data }: Props) {
           <Line
             yAxisId="right"
             type="monotone"
-            dataKey="users"
-            stroke="#10B981"
+            dataKey="tokens"
+            stroke="#F59E0B"
             strokeWidth={2}
-            name="アクティブユーザー"
+            name="トークン(M)"
             dot={false}
           />
         </LineChart>

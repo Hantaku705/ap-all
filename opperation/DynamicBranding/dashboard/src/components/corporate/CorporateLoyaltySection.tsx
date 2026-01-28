@@ -17,6 +17,7 @@ import {
 } from "recharts";
 import { Heart, MessageCircle, ThumbsUp, ThumbsDown, Minus, TrendingUp, ChevronDown, ChevronUp, Filter, X, Calendar } from "lucide-react";
 import type { CorporateLoyalty, LoyaltyLevelData, LoyaltyPost, LoyaltyTrendPoint } from "@/types/corporate.types";
+import { LoyaltySummaryReport } from "./LoyaltySummaryReport";
 
 // トピックラベル定義
 const TOPIC_LABELS: Record<string, string> = {
@@ -365,6 +366,9 @@ export function CorporateLoyaltySection({ corporateId }: CorporateLoyaltySection
           </CardContent>
         </Card>
       )}
+
+      {/* ロイヤリティ別 顧客インサイト */}
+      <LoyaltySummaryReport corporateId={corporateId} />
 
       {/* 代表口コミ */}
       {selectedLevelData && (

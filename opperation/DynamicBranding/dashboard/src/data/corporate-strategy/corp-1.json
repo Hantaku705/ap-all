@@ -1,0 +1,129 @@
+{
+  "input": {
+    "ugc": {
+      "totalPosts": 9446,
+      "positiveRate": 27,
+      "topTopics": [
+        { "name": "レシピ", "count": 2341 },
+        { "name": "時短料理", "count": 1823 },
+        { "name": "健康", "count": 1456 },
+        { "name": "調味料", "count": 1234 },
+        { "name": "家庭料理", "count": 987 }
+      ],
+      "recentSpikes": [
+        {
+          "date": "2025-07-21",
+          "event": "リュウジ味噌汁炎上事件",
+          "impact": "投稿数が通常の約3倍に増加"
+        }
+      ],
+      "sentimentTrend": "stable"
+    },
+    "stockCorrelation": {
+      "coefficient": 0.42,
+      "optimalLag": 7,
+      "significance": "medium"
+    },
+    "loyalty": {
+      "high": {
+        "count": 249,
+        "percentage": 25
+      },
+      "medium": {
+        "count": 705,
+        "percentage": 71
+      },
+      "low": {
+        "count": 46,
+        "percentage": 5
+      },
+      "trend": "stable"
+    },
+    "worldNews": {
+      "topCategories": [
+        "product_service",
+        "industry",
+        "management"
+      ],
+      "emergingTrends": [
+        "味の素",
+        "レシピ",
+        "料理",
+        "医薬品CMO",
+        "アウトソーシング"
+      ],
+      "competitorMoves": []
+    }
+  },
+  "strategy": {
+    "strengths": [
+      "9,446件の大規模UGCデータ基盤",
+      "ポジティブ率27%の良好なブランドイメージ",
+      "長年の信頼性と認知度"
+    ],
+    "challenges": [
+      {
+        "description": "SNS炎上リスクへの対応体制が課題",
+        "severity": "high",
+        "source": "ugc"
+      },
+      {
+        "description": "ロイヤリティ中層（71%）の活性化が必要",
+        "severity": "medium",
+        "source": "loyalty"
+      }
+    ],
+    "opportunities": [
+      {
+        "description": "健康志向トレンドとの連携強化",
+        "potential": "high",
+        "source": "world"
+      },
+      {
+        "description": "ポジティブUGCの拡散促進",
+        "potential": "medium",
+        "source": "ugc"
+      }
+    ],
+    "recommendations": [
+      {
+        "title": "ロイヤリティ中層→高層への転換施策",
+        "description": "ロイヤリティ中層ユーザーの行動分析と、高層への転換を促すキャンペーン設計",
+        "priority": 1,
+        "expectedImpact": "高ロイヤリティ層を現在の25%から35%に引き上げ",
+        "relatedData": "現在の分布: 高25%、中71%、低5%"
+      },
+      {
+        "title": "ネガティブ投稿への早期対応体制構築",
+        "description": "SNS監視強化とエスカレーションフロー整備",
+        "priority": 2,
+        "expectedImpact": "炎上リスクの低減、ブランドイメージの維持",
+        "relatedData": "直近スパイク: リュウジ味噌汁炎上事件"
+      },
+      {
+        "title": "健康×時短レシピコンテンツ強化",
+        "description": "トレンドに合わせたコンテンツマーケティング展開",
+        "priority": 3,
+        "expectedImpact": "新規ユーザー獲得と既存ユーザーのエンゲージメント向上",
+        "relatedData": "主要トピック: レシピ、時短料理、健康"
+      }
+    ],
+    "actionPlan": {
+      "shortTerm": [
+        "SNS監視ダッシュボード導入",
+        "ネガティブ投稿エスカレーションフロー策定"
+      ],
+      "midTerm": [
+        "ロイヤリティ中層向けキャンペーン実施",
+        "健康レシピコンテンツシリーズ開始"
+      ],
+      "longTerm": [
+        "ファンコミュニティプラットフォーム構築",
+        "UGC活用マーケティング体制確立"
+      ]
+    }
+  },
+  "generatedAt": "2026-01-28T12:00:00.000Z",
+  "model": "static",
+  "cached": true
+}

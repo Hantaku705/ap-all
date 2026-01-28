@@ -27,6 +27,9 @@ export type UsageSummary = {
   username: string
   total_minutes: number
   total_sessions: number
+  total_input_tokens: number
+  total_output_tokens: number
+  total_tokens: number
   last_active_date: string
   last_sync: string
 }
@@ -35,6 +38,9 @@ export type DailyTotal = {
   date: string
   total_minutes: number
   total_sessions: number
+  total_input_tokens: number
+  total_output_tokens: number
+  total_tokens: number
   active_users: number
 }
 

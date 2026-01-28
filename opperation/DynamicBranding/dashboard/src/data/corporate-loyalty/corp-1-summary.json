@@ -1,0 +1,164 @@
+{
+  "insights": [
+    {
+      "level": "high",
+      "levelName": "ロイヤリティ高",
+      "levelColor": "#22c55e",
+      "count": 2548,
+      "percentage": "27.0",
+      "personas": [
+        {
+          "id": "high_p1",
+          "personaName": "長期株式投資家",
+          "ageRange": "40-50代",
+          "lifeStage": "投資家・資産運用者",
+          "interests": ["株価動向", "配当利回り", "自社株買い", "IR情報"],
+          "motivations": ["長期資産形成", "安定配当", "企業成長への期待"],
+          "voiceTone": ["期待", "分析的", "肯定的"],
+          "representativeQuote": "味の素が2年ぶり最高益、自社株買い発表。長期保有の判断は正しかった。食品業界の中でも安定感がある。",
+          "postCount": 612,
+          "percentage": 24
+        },
+        {
+          "id": "high_p2",
+          "personaName": "ホワイト企業志望学生",
+          "ageRange": "20代前半",
+          "lifeStage": "就活生・新社会人",
+          "interests": ["働きやすさ", "福利厚生", "年収", "企業文化"],
+          "motivations": ["安定企業への就職", "ワークライフバランス", "キャリア形成"],
+          "voiceTone": ["称賛", "羨望", "期待"],
+          "representativeQuote": "味の素、ホワイト企業ランキング上位常連。有給取得率も高いし、リモートワークも進んでる。マジで入りたい。",
+          "postCount": 408,
+          "percentage": 16
+        },
+        {
+          "id": "high_p3",
+          "personaName": "サステナ共感層",
+          "ageRange": "30-40代",
+          "lifeStage": "意識高い消費者",
+          "interests": ["CSR活動", "環境配慮", "社会貢献", "SDGs"],
+          "motivations": ["企業の社会的責任への共感", "エシカル消費", "サステナブルな選択"],
+          "voiceTone": ["感謝", "共感", "応援"],
+          "representativeQuote": "味の素のフードロス削減の取り組み、すごく共感する。アミノ酸の研究を社会課題解決に活かしてるのがいい。",
+          "postCount": 561,
+          "percentage": 22
+        }
+      ],
+      "topicDistribution": [
+        { "topic": "stock_ir", "topicLabel": "株価・IR", "count": 612, "percentage": 24, "color": "#3B82F6" },
+        { "topic": "csr_sustainability", "topicLabel": "CSR・採用等", "count": 561, "percentage": 22, "color": "#10B981" },
+        { "topic": "rnd", "topicLabel": "研究開発", "count": 510, "percentage": 20, "color": "#EC4899" },
+        { "topic": "employment", "topicLabel": "採用・働き方", "count": 408, "percentage": 16, "color": "#F59E0B" },
+        { "topic": "company_news", "topicLabel": "企業ニュース", "count": 306, "percentage": 12, "color": "#8B5CF6" },
+        { "topic": "management", "topicLabel": "経営・理念", "count": 151, "percentage": 6, "color": "#06B6D4" }
+      ],
+      "customerProfile": "企業の研究開発やイノベーションに注目する層。味の素の技術力や社会貢献活動を高く評価し、長期的な企業価値に関心がある。投資家や業界関係者も含まれる。",
+      "mainInterests": ["革新的な研究開発", "働きやすい職場環境", "社会貢献活動", "株価・IR", "CSR・サステナビリティ"],
+      "voiceTone": ["称賛", "感謝", "期待"],
+      "keywords": ["イノベーション", "研究開発", "働きやすさ", "社会貢献", "ホワイト企業", "技術力", "成長"]
+    },
+    {
+      "level": "medium",
+      "levelName": "ロイヤリティ中",
+      "levelColor": "#eab308",
+      "count": 6503,
+      "percentage": "68.8",
+      "personas": [
+        {
+          "id": "medium_p1",
+          "personaName": "転職検討リサーチャー",
+          "ageRange": "25-35歳",
+          "lifeStage": "中堅社会人・転職検討中",
+          "interests": ["年収水準", "キャリアパス", "労働環境", "口コミ評判"],
+          "motivations": ["キャリアアップ", "待遇改善", "働き方の変化"],
+          "voiceTone": ["冷静", "比較検討", "情報収集"],
+          "representativeQuote": "味の素の年収、食品業界ではトップクラスだな。ただ転勤多いのがネック。もう少し調べてみよう。",
+          "postCount": 2276,
+          "percentage": 35
+        },
+        {
+          "id": "medium_p2",
+          "personaName": "業界ウォッチャー",
+          "ageRange": "30-50代",
+          "lifeStage": "ビジネスパーソン・業界関係者",
+          "interests": ["業界動向", "競合比較", "M&A", "新規事業"],
+          "motivations": ["業界トレンド把握", "競合分析", "ビジネス情報収集"],
+          "voiceTone": ["客観的", "分析的", "ニュートラル"],
+          "representativeQuote": "味の素、ヘルスケア事業を強化してるな。アミノ酸の知見を活かして医療分野に進出か。動向要チェック。",
+          "postCount": 1626,
+          "percentage": 25
+        },
+        {
+          "id": "medium_p3",
+          "personaName": "個人投資家（様子見）",
+          "ageRange": "30-40代",
+          "lifeStage": "投資初〜中級者",
+          "interests": ["株価推移", "PER・PBR", "配当", "決算情報"],
+          "motivations": ["投資判断の材料収集", "ポートフォリオ検討", "リスク評価"],
+          "voiceTone": ["慎重", "検討中", "観察"],
+          "representativeQuote": "味の素、業績は安定してるけど株価が割高感ある。配当利回りも2%台だし、もう少し下がったら買いたい。",
+          "postCount": 1301,
+          "percentage": 20
+        }
+      ],
+      "topicDistribution": [
+        { "topic": "employment", "topicLabel": "採用・働き方", "count": 2276, "percentage": 35, "color": "#F59E0B" },
+        { "topic": "company_news", "topicLabel": "企業ニュース", "count": 1626, "percentage": 25, "color": "#8B5CF6" },
+        { "topic": "stock_ir", "topicLabel": "株価・IR", "count": 1301, "percentage": 20, "color": "#3B82F6" },
+        { "topic": "csr_sustainability", "topicLabel": "CSR・採用等", "count": 650, "percentage": 10, "color": "#10B981" },
+        { "topic": "management", "topicLabel": "経営・理念", "count": 390, "percentage": 6, "color": "#06B6D4" },
+        { "topic": "rnd", "topicLabel": "研究開発", "count": 260, "percentage": 4, "color": "#EC4899" }
+      ],
+      "customerProfile": "採用情報や企業ニュースに関心を持つ一般層。就活生や転職検討者が多く、企業情報を客観的に収集している。ブランドへの関与度は中程度。",
+      "mainInterests": ["採用情報", "企業ニュース", "労働環境", "年収・待遇", "企業文化"],
+      "voiceTone": ["ニュートラル", "情報収集", "関心"],
+      "keywords": ["採用", "年収", "働き方", "企業情報", "就活", "転職", "福利厚生"]
+    },
+    {
+      "level": "low",
+      "levelName": "ロイヤリティ低",
+      "levelColor": "#ef4444",
+      "count": 395,
+      "percentage": "4.2",
+      "personas": [
+        {
+          "id": "low_p1",
+          "personaName": "失望した株主",
+          "ageRange": "40-60代",
+          "lifeStage": "個人投資家",
+          "interests": ["株価下落", "業績悪化", "経営判断", "株主還元"],
+          "motivations": ["投資損失への不満", "経営陣への批判", "改善要求"],
+          "voiceTone": ["失望", "批判", "不満"],
+          "representativeQuote": "味の素、円安でも利益伸びず。海外展開の効果が見えない。経営陣は株主価値をもっと意識すべき。",
+          "postCount": 158,
+          "percentage": 40
+        },
+        {
+          "id": "low_p2",
+          "personaName": "添加物懸念層",
+          "ageRange": "30-50代",
+          "lifeStage": "健康志向消費者",
+          "interests": ["食品添加物", "健康影響", "原材料", "自然派"],
+          "motivations": ["健康への不安", "安全性の確認", "代替品探し"],
+          "voiceTone": ["懐疑的", "警戒", "批判"],
+          "representativeQuote": "うま味調味料って結局化学調味料でしょ？子どもには使いたくない。もっと自然な調味料使いたい。",
+          "postCount": 99,
+          "percentage": 25
+        }
+      ],
+      "topicDistribution": [
+        { "topic": "stock_ir", "topicLabel": "株価・IR", "count": 158, "percentage": 40, "color": "#3B82F6" },
+        { "topic": "management", "topicLabel": "経営・理念", "count": 99, "percentage": 25, "color": "#06B6D4" },
+        { "topic": "company_news", "topicLabel": "企業ニュース", "count": 79, "percentage": 20, "color": "#8B5CF6" },
+        { "topic": "csr_sustainability", "topicLabel": "CSR・採用等", "count": 40, "percentage": 10, "color": "#10B981" },
+        { "topic": "other", "topicLabel": "その他", "count": 19, "percentage": 5, "color": "#6B7280" }
+      ],
+      "customerProfile": "株価や経営方針に懸念を持つ投資家・ステークホルダー。業績悪化や経営判断への批判的な意見が多い。企業の問題点に敏感に反応する層。",
+      "mainInterests": ["株価動向", "経営方針", "業績", "企業不祥事", "リスク要因"],
+      "voiceTone": ["懸念", "批判", "不満"],
+      "keywords": ["株価", "業績", "経営", "不祥事", "問題", "下落", "リスク"]
+    }
+  ],
+  "generatedAt": "2026-01-29T12:00:00.000Z",
+  "cached": true
+}

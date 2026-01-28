@@ -14,6 +14,8 @@
 | `FanUrchinChart.tsx` | ウニ型ファン可視化（SVG/React） |
 | `FanTireChart.tsx` | タイヤ型ファン可視化（SVG/React） |
 | `CorporateLoyaltySection.tsx` | コーポレートロイヤリティ分布（円グラフ+代表口コミ） |
+| `LoyaltySummaryReport.tsx` | ロイヤリティ別顧客インサイト（マルチペルソナ+トピック分布） |
+| `PersonaCard.tsx` | **ペルソナカード（名前・年代・関心事・動機・声のトーン・代表的な引用）（NEW）** |
 | `index.ts` | バレルエクスポート |
 
 ## データソース
@@ -22,7 +24,8 @@
 |--------------|-----|
 | MVVSection | `/api/corporate/[corpId]/mvv` |
 | StockUGCChart | `/api/corporate/[corpId]/stock`, `/api/corporate/[corpId]/stock/correlation` |
-| CorporateLoyaltySection | `/api/corporate/[corpId]/loyalty` |
+| CorporateLoyaltySection | `/api/corporate/[corpId]/fans` |
+| LoyaltySummaryReport | `/api/corporate/[corpId]/loyalty-summary` |
 
 ## 関連ディレクトリ
 
@@ -39,4 +42,6 @@
 
 ## 更新履歴
 
+- 2026-01-29: PersonaCard追加、LoyaltySummaryReportマルチペルソナ対応（8ペルソナ: 高3/中3/低2）
+- 2026-01-28: LoyaltySummaryReport追加（ロイヤリティ別顧客インサイト）
 - 2026-01-23: 初版作成

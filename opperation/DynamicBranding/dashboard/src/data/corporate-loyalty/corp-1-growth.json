@@ -1,0 +1,188 @@
+{
+  "conversionFunnels": [
+    {
+      "fromLevel": "medium",
+      "toLevel": "high",
+      "conversionRate": 8.5,
+      "averageTimeToConvert": 45,
+      "sampleSize": 553,
+      "topTriggers": [
+        {
+          "type": "topic",
+          "name": "rnd",
+          "description": "研究開発・イノベーションコンテンツへのエンゲージメントが最も強い転換トリガー",
+          "impactScore": 85,
+          "frequency": 234
+        },
+        {
+          "type": "topic",
+          "name": "csr_sustainability",
+          "description": "CSR・サステナビリティコンテンツへのエンゲージメント",
+          "impactScore": 72,
+          "frequency": 189
+        },
+        {
+          "type": "content",
+          "name": "positive_ir",
+          "description": "ポジティブなIR・業績ニュースへの反応",
+          "impactScore": 68,
+          "frequency": 156
+        }
+      ]
+    },
+    {
+      "fromLevel": "low",
+      "toLevel": "medium",
+      "conversionRate": 40,
+      "averageTimeToConvert": 30,
+      "sampleSize": 158,
+      "topTriggers": [
+        {
+          "type": "engagement",
+          "name": "customer_service_response",
+          "description": "ブランドからの直接的なエンゲージメント（クレーム対応等）",
+          "impactScore": 90,
+          "frequency": 67
+        },
+        {
+          "type": "event",
+          "name": "product_improvement",
+          "description": "製品改善・リニューアル発表への反応",
+          "impactScore": 75,
+          "frequency": 52
+        }
+      ]
+    },
+    {
+      "fromLevel": "high",
+      "toLevel": "medium",
+      "conversionRate": 8,
+      "averageTimeToConvert": 90,
+      "sampleSize": 204,
+      "topTriggers": [
+        {
+          "type": "event",
+          "name": "negative_news",
+          "description": "ネガティブなニュース・炎上への反応",
+          "impactScore": 85,
+          "frequency": 89
+        },
+        {
+          "type": "content",
+          "name": "competitor_positive",
+          "description": "競合ブランドへのポジティブな言及増加",
+          "impactScore": 62,
+          "frequency": 78
+        }
+      ]
+    }
+  ],
+  "behavioralPatterns": [
+    {
+      "level": "high",
+      "engagementMetrics": {
+        "avgPostFrequency": 2.3,
+        "avgLikes": 45,
+        "avgRetweets": 12,
+        "avgReplies": 8
+      },
+      "topicPreferences": [
+        { "topic": "rnd", "topicLabel": "研究開発", "engagementRate": 1.8, "loyaltyCorrelation": 0.72 },
+        { "topic": "csr_sustainability", "topicLabel": "CSR・サステナ", "engagementRate": 1.5, "loyaltyCorrelation": 0.65 },
+        { "topic": "product_innovation", "topicLabel": "製品イノベーション", "engagementRate": 1.4, "loyaltyCorrelation": 0.58 }
+      ]
+    },
+    {
+      "level": "medium",
+      "engagementMetrics": {
+        "avgPostFrequency": 1.1,
+        "avgLikes": 12,
+        "avgRetweets": 3,
+        "avgReplies": 2
+      },
+      "topicPreferences": [
+        { "topic": "employment", "topicLabel": "採用・働き方", "engagementRate": 1.2, "loyaltyCorrelation": 0.15 },
+        { "topic": "recipe", "topicLabel": "レシピ", "engagementRate": 1.1, "loyaltyCorrelation": 0.12 },
+        { "topic": "general", "topicLabel": "一般", "engagementRate": 1.0, "loyaltyCorrelation": 0.05 }
+      ]
+    },
+    {
+      "level": "low",
+      "engagementMetrics": {
+        "avgPostFrequency": 0.4,
+        "avgLikes": 3,
+        "avgRetweets": 1,
+        "avgReplies": 1
+      },
+      "topicPreferences": [
+        { "topic": "stock", "topicLabel": "株価", "engagementRate": 1.5, "loyaltyCorrelation": -0.45 },
+        { "topic": "scandal", "topicLabel": "不祥事", "engagementRate": 2.1, "loyaltyCorrelation": -0.72 },
+        { "topic": "complaint", "topicLabel": "クレーム", "engagementRate": 1.8, "loyaltyCorrelation": -0.65 }
+      ]
+    }
+  ],
+  "growthTargets": {
+    "currentDistribution": {
+      "high": { "count": 2548, "percentage": 25 },
+      "medium": { "count": 6503, "percentage": 71 },
+      "low": { "count": 395, "percentage": 5 }
+    },
+    "targetDistribution": {
+      "high": { "percentage": 35, "targetDate": "2026-07-29" },
+      "medium": { "percentage": 62 },
+      "low": { "percentage": 3 }
+    },
+    "projectedTimeline": [
+      { "date": "2026-01-29", "highPercentage": 25, "mediumPercentage": 71, "lowPercentage": 5, "keyAction": "現状" },
+      { "date": "2026-03-01", "highPercentage": 27, "mediumPercentage": 69, "lowPercentage": 4, "keyAction": "R&Dコンテンツキャンペーン開始" },
+      { "date": "2026-05-01", "highPercentage": 31, "mediumPercentage": 65, "lowPercentage": 4, "keyAction": "コミュニティエンゲージメント強化" },
+      { "date": "2026-07-29", "highPercentage": 35, "mediumPercentage": 62, "lowPercentage": 3, "keyAction": "目標達成" }
+    ]
+  },
+  "recommendations": [
+    {
+      "segment": "medium_to_high",
+      "title": "R&D・イノベーションコンテンツ強化",
+      "description": "研究開発やイノベーションに関するコンテンツへのエンゲージメントが、ロイヤリティ向上と最も強い相関（r=0.72）を示しています。中層ユーザーの10%を高層に転換するための主要施策です。",
+      "expectedImpact": "高ロイヤリティ層を3-5%増加（約290-485名の転換）",
+      "implementationEffort": "medium",
+      "timeToResult": "2-3ヶ月",
+      "requiredResources": ["コンテンツ制作チーム", "R&D広報担当", "SNS運用チーム"],
+      "kpis": [
+        { "name": "R&Dコンテンツエンゲージメント率", "currentValue": 2.1, "targetValue": 4.5, "unit": "%" },
+        { "name": "中→高転換率", "currentValue": 8.5, "targetValue": 12, "unit": "%" },
+        { "name": "高ロイヤリティ層比率", "currentValue": 25, "targetValue": 30, "unit": "%" }
+      ]
+    },
+    {
+      "segment": "low_to_medium",
+      "title": "ネガティブ投稿への迅速対応体制",
+      "description": "低ロイヤリティユーザーの40%が中層に転換する際、ブランドからの直接的なエンゲージメント（impactScore=90）が最も効果的なトリガーです。24時間以内の対応体制を構築します。",
+      "expectedImpact": "低ロイヤリティ層を2%削減（約80名の転換）",
+      "implementationEffort": "low",
+      "timeToResult": "1ヶ月",
+      "requiredResources": ["カスタマーサポートチーム", "SNS監視ツール"],
+      "kpis": [
+        { "name": "ネガティブ投稿対応率", "currentValue": 15, "targetValue": 80, "unit": "%" },
+        { "name": "平均対応時間", "currentValue": 48, "targetValue": 24, "unit": "時間" },
+        { "name": "低ロイヤリティ層比率", "currentValue": 5, "targetValue": 3, "unit": "%" }
+      ]
+    },
+    {
+      "segment": "retention",
+      "title": "高ロイヤリティ層の維持・アンバサダー化",
+      "description": "高ロイヤリティ層の8%が中層に降下しています。コアファンとの関係強化とUGC活用プログラムで維持率を高め、アンバサダーとして活用します。",
+      "expectedImpact": "高ロイヤリティ維持率を92%から96%に向上",
+      "implementationEffort": "high",
+      "timeToResult": "3-6ヶ月",
+      "requiredResources": ["コミュニティマネージャー", "キャンペーン企画", "インセンティブ予算"],
+      "kpis": [
+        { "name": "高ロイヤリティ維持率", "currentValue": 92, "targetValue": 96, "unit": "%" },
+        { "name": "UGC投稿数", "currentValue": 120, "targetValue": 300, "unit": "件/月" },
+        { "name": "アンバサダー登録数", "currentValue": 0, "targetValue": 50, "unit": "名" }
+      ]
+    }
+  ],
+  "generatedAt": "2026-01-29T00:00:00.000Z",
+  "cached": true
+}

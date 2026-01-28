@@ -18,6 +18,7 @@ import { homedir, hostname, userInfo } from 'os'
 import { join } from 'path'
 
 const HISTORY_FILE = join(homedir(), '.claude', 'history.jsonl')
+const STATS_CACHE_FILE = join(homedir(), '.claude', 'stats-cache.json')
 const INACTIVITY_THRESHOLD_MS = 30 * 60 * 1000 // 30分
 
 /**
@@ -178,6 +179,53 @@ function formatDuration(minutes) {
 }
 
 /**
+ * トークン数をフォーマット（K/M/B表記）
+ */
+function formatTokens(tokens) {
+  if (tokens >= 1_000_000_000) {
+    return `${(tokens / 1_000_000_000).toFixed(1)}B`
+  } else if (tokens >= 1_000_000) {
+    return `${(tokens / 1_000_000).toFixed(1)}M`
+  } else if (tokens >= 1_000) {
+    return `${(tokens / 1_000).toFixed(1)}K`
+  }
+  return tokens.toString()
+}
+
+/**
+ * stats-cache.json からトークン情報を取得
+ */
+function loadTokenStats() {
+  if (!existsSync(STATS_CACHE_FILE)) {
+    return null
+  }
+
+  try {
+    const content = readFileSync(STATS_CACHE_FILE, 'utf-8')
+    const stats = JSON.parse(content)
+
+    let totalInput = 0
+    let totalOutput = 0
+
+    if (stats.modelUsage) {
+      for (const model in stats.modelUsage) {
+        const usage = stats.modelUsage[model]
+        totalInput += usage.inputTokens || 0
+        totalOutput += usage.outputTokens || 0
+      }
+    }
+
+    return {
+      inputTokens: totalInput,
+      outputTokens: totalOutput,
+      totalTokens: totalInput + totalOutput
+    }
+  } catch {
+    return null
+  }
+}
+
+/**
  * メイン処理
  */
 function main() {
@@ -211,11 +259,13 @@ function main() {
   }
 
   if (jsonOutput) {
+    const tokenStats = loadTokenStats()
     const result = {
       userId,
       hostname: hostname(),
       username: userInfo().username,
       stats: periodStats,
+      tokens: tokenStats,
       lastSession: lastSession ? {
         startTime: lastSession.startTime.toISOString(),
         endTime: lastSession.endTime.toISOString(),
@@ -227,16 +277,28 @@ function main() {
     return
   }
 
+  // トークン情報を取得
+  const tokenStats = loadTokenStats()
+
   // テキスト出力
   console.log('')
   console.log('📊 Claude Code 使用時間レポート')
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
   console.log(`ユーザー: ${userId}`)
   console.log('')
-  console.log(`📅 今日: ${formatDuration(periodStats.today.minutes)}（${periodStats.today.sessions}セッション）`)
-  console.log(`📆 今週: ${formatDuration(periodStats.week.minutes)}（${periodStats.week.sessions}セッション）`)
-  console.log(`📅 今月: ${formatDuration(periodStats.month.minutes)}（${periodStats.month.sessions}セッション）`)
-  console.log(`📈 累計: ${formatDuration(periodStats.total.minutes)}（${periodStats.total.sessions}セッション）`)
+  console.log('⏱️  使用時間')
+  console.log(`  📅 今日: ${formatDuration(periodStats.today.minutes)}（${periodStats.today.sessions}セッション）`)
+  console.log(`  📆 今週: ${formatDuration(periodStats.week.minutes)}（${periodStats.week.sessions}セッション）`)
+  console.log(`  📅 今月: ${formatDuration(periodStats.month.minutes)}（${periodStats.month.sessions}セッション）`)
+  console.log(`  📈 累計: ${formatDuration(periodStats.total.minutes)}（${periodStats.total.sessions}セッション）`)
+
+  if (tokenStats) {
+    console.log('')
+    console.log('🎯 トークン使用量')
+    console.log(`  📊 累計: ${formatTokens(tokenStats.totalTokens)} tokens`)
+    console.log(`     └ 入力: ${formatTokens(tokenStats.inputTokens)} / 出力: ${formatTokens(tokenStats.outputTokens)}`)
+  }
+
   console.log('')
 
   if (lastSession) {

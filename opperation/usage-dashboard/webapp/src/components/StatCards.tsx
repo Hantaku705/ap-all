@@ -6,6 +6,7 @@ type Props = {
   activeUsers: number
   todayMinutes: number
   totalDays: number
+  totalTokens: number
 }
 
 function formatDuration(minutes: number): string {
@@ -18,7 +19,18 @@ function formatDuration(minutes: number): string {
   return `${hours}時間${mins}分`
 }
 
-export function StatCards({ totalMinutes, totalSessions, activeUsers, todayMinutes, totalDays }: Props) {
+function formatTokens(tokens: number): string {
+  if (tokens >= 1_000_000_000) {
+    return `${(tokens / 1_000_000_000).toFixed(1)}B`
+  } else if (tokens >= 1_000_000) {
+    return `${(tokens / 1_000_000).toFixed(1)}M`
+  } else if (tokens >= 1_000) {
+    return `${(tokens / 1_000).toFixed(1)}K`
+  }
+  return tokens.toString()
+}
+
+export function StatCards({ totalMinutes, totalSessions, activeUsers, todayMinutes, totalDays, totalTokens }: Props) {
   const dailyAverage = totalDays > 0 ? Math.round(totalMinutes / totalDays) : 0
 
   const stats = [
@@ -35,6 +47,12 @@ export function StatCards({ totalMinutes, totalSessions, activeUsers, todayMinut
       color: 'bg-green-500'
     },
     {
+      label: '累計トークン',
+      value: `${formatTokens(totalTokens)}`,
+      subtext: 'Input + Output',
+      color: 'bg-amber-500'
+    },
+    {
       label: '1日平均時間',
       value: formatDuration(dailyAverage),
       subtext: `${totalDays}日間の平均`,
@@ -45,17 +63,11 @@ export function StatCards({ totalMinutes, totalSessions, activeUsers, todayMinut
       value: `${activeUsers}人`,
       subtext: '累計',
       color: 'bg-purple-500'
-    },
-    {
-      label: '平均使用時間/人',
-      value: activeUsers > 0 ? formatDuration(Math.round(totalMinutes / activeUsers)) : '0分',
-      subtext: '累計',
-      color: 'bg-orange-500'
     }
   ]
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
       {stats.map((stat, i) => (
         <div key={i} className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center">

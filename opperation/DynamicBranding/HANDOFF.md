@@ -10,9 +10,9 @@
 | データ分析 | 11-30回目 | SNS分析、Google Trends、仮説検証、ダッシュボード基盤構築 | 28件 |
 | ダッシュボード拡張 | 31-50回目 | CEP可視化、ラベリング、ブランド詳細ページ、レポート機能 | 24件 |
 | 高度機能 | 51-70回目 | W's詳細分析、DPT、ペルソナk-means、レポート98問構成 | 22件 |
-| 拡張機能 | 71-97回目 | ファイルベースレポート、コーポレート分析、世の中分析、スパイクレポート | 21件 |
+| 拡張機能 | 71-100回目 | ファイルベースレポート、コーポレート分析、世の中分析、スパイクレポート、戦略タブ、ロイヤリティインサイト、マルチペルソナ、静的化パフォーマンス改善 | 25件 |
 
-**合計: 107件**
+**合計: 111件**
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 作業中のタスク
@@ -29,6 +29,55 @@
 ---
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-29（100回目）
+- **ファン資産タブ パフォーマンス改善＋llm-to-staticスキル化**
+  - 要件: /corporate/1 のレスポンス速度改善
+  - 実施内容:
+    | 改善項目 | Before | After | 改善率 |
+    |----------|--------|-------|--------|
+    | LoyaltySummary API | 330ms（OpenAI動的生成） | 118ms（静的JSON） | 64% |
+    | WorldNews API | 1042ms | 140ms（Cache-Control追加） | 87% |
+  - 変更ファイル:
+    | ファイル | 変更内容 |
+    |---------|----------|
+    | `src/data/corporate-loyalty/corp-1-summary.json` | 静的JSONファイル新規作成（8ペルソナ、トピック分布含む） |
+    | `src/app/api/corporate/[corpId]/loyalty-summary/route.ts` | 350行→34行に簡素化 |
+    | `src/app/api/corporate/[corpId]/world-news/route.ts` | Cache-Controlヘッダ追加 |
+  - スキル化: `AP/.claude/skills/llm-to-static.md`（LLM事前生成→静的ファイル化パターン）
+  - 本番デプロイ完了: https://ajinomoto-dashboard.vercel.app/corporate/1
+
+### 2026-01-29（99回目）
+- **ロイヤリティ別顧客インサイト マルチペルソナ化**
+  - 要件: 「1ロイヤリティレベル = 1顧客像」から「1レベル = 2-3ペルソナ」に拡張
+  - ユーザー選択: カード並列表示（グリッド）
+  - 実装内容:
+    | 変更 | 詳細 |
+    |------|------|
+    | `corporate.types.ts` | `LoyaltyPersona`型追加（id/personaName/ageRange/lifeStage/interests/motivations/voiceTone/representativeQuote/percentage） |
+    | `corp-1-summary.json` | 8ペルソナデータ追加（高3/中3/低2） |
+    | `PersonaCard.tsx` | 新規コンポーネント（名前・年代・関心事・動機・声のトーン・代表的な引用） |
+    | `LoyaltySummaryReport.tsx` | ペルソナグリッド表示対応（xl:2-3列、md:2列、sm:1列） |
+    | `index.ts` | PersonaCard, LoyaltySummaryReportエクスポート追加 |
+  - ペルソナ一覧:
+    | ロイヤリティ | ペルソナ |
+    |------------|---------|
+    | 高（27%） | 長期株式投資家、ホワイト企業志望学生、サステナ共感層 |
+    | 中（76.8%） | 転職検討リサーチャー、業界ウォッチャー、個人投資家（様子見） |
+    | 低（5.1%） | 失望した株主、添加物懸念層 |
+  - 確認: Playwright E2Eテスト成功、スクリーンショット取得
+  - 本番URL: https://ajinomoto-dashboard.vercel.app/corporate/1
+
+### 2026-01-29（98回目）
+- **Gemini APIキー期限切れ → OpenAI移行**
+  - 問題: `/api/corporate/1/loyalty-summary` でGemini APIキー期限切れエラー発生
+  - 解決:
+    | 変更 | 詳細 |
+    |------|------|
+    | `loyalty-summary/route.ts` | Gemini → OpenAI (gpt-4o-mini) に変更 |
+    | Vercel環境変数 | `OPENAI_API_KEYS` 追加 |
+  - 確認: Playwright E2Eテストで本番動作確認（全API 200 OK、データ表示正常）
+- **本番URL**: https://ajinomoto-dashboard.vercel.app/corporate/1
 
 ### 2026-01-28（97回目）
 - **7/28スパイク要因分析＆レポート機能追加**
@@ -153,15 +202,28 @@
 ## 未コミット変更
 
 ```
- M src/components/corporate-analytics/CorporateTrendsChart.tsx
- M src/components/corporate-analytics/index.ts
-?? src/components/corporate-analytics/SpikeReport.tsx
+ M src/app/api/corporate/[corpId]/world-news/route.ts
+ M src/app/corporate/[corpId]/page.tsx
+ M src/components/corporate/CLAUDE.md
+ M src/components/corporate/CorporateLoyaltySection.tsx
+ M src/components/corporate/index.ts
+ M src/types/corporate.types.ts
+?? src/app/api/corporate/[corpId]/loyalty-growth/
+?? src/app/api/corporate/[corpId]/loyalty-summary/
+?? src/app/api/corporate/[corpId]/strategy/
+?? src/components/corporate-strategy/
+?? src/components/corporate/LoyaltySummaryReport.tsx
+?? src/components/corporate/PersonaCard.tsx
+?? src/components/loyalty-growth/
+?? src/data/
+?? supabase/migrations/022_corporate_strategy_cache.sql
+?? tests/e2e/verify-personas.spec.ts
 ```
 
 ## 最新コミット
 
 ```
-e349835 feat: add permissions config skill, sync local settings, and add 3 positioning map webapps
+70f586c feat: integrate claude-code-starter into AP repo with sync command
 ```
 
 ---

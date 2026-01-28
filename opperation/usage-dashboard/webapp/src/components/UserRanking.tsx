@@ -17,6 +17,18 @@ function formatDuration(minutes: number): string {
   return `${hours}時間${mins}分`
 }
 
+function formatTokens(tokens: number): string {
+  if (!tokens) return '-'
+  if (tokens >= 1_000_000_000) {
+    return `${(tokens / 1_000_000_000).toFixed(1)}B`
+  } else if (tokens >= 1_000_000) {
+    return `${(tokens / 1_000_000).toFixed(1)}M`
+  } else if (tokens >= 1_000) {
+    return `${(tokens / 1_000).toFixed(1)}K`
+  }
+  return tokens.toString()
+}
+
 export function UserRanking({ data }: Props) {
   return (
     <div className="bg-white rounded-lg shadow p-6">
@@ -28,6 +40,7 @@ export function UserRanking({ data }: Props) {
               <th className="text-left py-2 px-3 text-sm font-medium text-gray-500">#</th>
               <th className="text-left py-2 px-3 text-sm font-medium text-gray-500">ユーザー</th>
               <th className="text-right py-2 px-3 text-sm font-medium text-gray-500">使用時間</th>
+              <th className="text-right py-2 px-3 text-sm font-medium text-gray-500">トークン</th>
               <th className="text-right py-2 px-3 text-sm font-medium text-gray-500">セッション</th>
               <th className="text-right py-2 px-3 text-sm font-medium text-gray-500">最終アクティブ</th>
             </tr>
@@ -53,6 +66,9 @@ export function UserRanking({ data }: Props) {
                 <td className="py-3 px-3 text-right font-mono text-sm">
                   {formatDuration(user.total_minutes)}
                 </td>
+                <td className="py-3 px-3 text-right font-mono text-sm text-amber-600">
+                  {formatTokens(user.total_tokens)}
+                </td>
                 <td className="py-3 px-3 text-right text-sm text-gray-600">
                   {user.total_sessions}回
                 </td>
@@ -65,7 +81,7 @@ export function UserRanking({ data }: Props) {
             ))}
             {data.length === 0 && (
               <tr>
-                <td colSpan={5} className="py-8 text-center text-gray-500">
+                <td colSpan={6} className="py-8 text-center text-gray-500">
                   データがありません
                 </td>
               </tr>

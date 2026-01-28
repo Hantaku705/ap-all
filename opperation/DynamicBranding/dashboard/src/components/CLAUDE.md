@@ -14,9 +14,10 @@ Reactコンポーネントディレクトリ。可視化、データ表示、UI�
 | `reports/` | レポート管理コンポーネント |
 | `chat/` | AIチャットコンポーネント |
 | `ui/` | shadcn/ui汎用コンポーネント |
-| `corporate/` | コーポレート分析コンポーネント（7種） |
+| `corporate/` | コーポレート分析コンポーネント（8種） |
 | `corporate-analytics/` | コーポレートUGC分析コンポーネント（7種） |
 | `corporate-world-news/` | 世の中分析コンポーネント（9種） |
+| `corporate-strategy/` | **戦略提案コンポーネント（4種）（NEW）** |
 | `persona/` | ペルソナ分析タブコンポーネント（1種） |
 | `strategy/` | 戦略分析コンポーネント（1種） |
 
@@ -30,9 +31,10 @@ Reactコンポーネントディレクトリ。可視化、データ表示、UI�
 | reports | 1 |
 | chat | 1 |
 | ui | 3 |
-| corporate | 7 |
+| corporate | 8 |
 | corporate-analytics | 7 |
 | corporate-world-news | 9 |
+| corporate-strategy | 4 |
 | persona | 1 |
 | strategy | 1 |
 
