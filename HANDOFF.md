@@ -4,9 +4,9 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最終セッション | #144 |
+| 最終セッション | #146 |
 | 最終更新 | 2026-01-29 |
-| 最新コミット | 195d603 |
+| 最新コミット | ad95267 |
 
 ### 作業中のタスク
 
@@ -25,7 +25,19 @@
 ## 未コミット変更
 
 ```
-なし（全てコミット済み）
+ M HANDOFF.md
+ M opperation/DynamicBranding/CLAUDE.md
+ M opperation/DynamicBranding/HANDOFF.md
+ M opperation/DynamicBranding/dashboard/output/corporate/1-mvv.json
+ M opperation/DynamicBranding/dashboard/scripts/CLAUDE.md
+ M opperation/DynamicBranding/dashboard/src/app/api/corporate/[corpId]/loyalty-growth/route.ts
+ M opperation/DynamicBranding/dashboard/src/app/corporate/[corpId]/page.tsx
+ M opperation/DynamicBranding/dashboard/src/components/corporate/*.tsx (5ファイル)
+ M opperation/DynamicBranding/dashboard/src/types/corporate.types.ts
+?? opperation/DynamicBranding/dashboard/scripts/analyze-tribes.ts
+?? opperation/DynamicBranding/dashboard/src/lib/loyalty-growth/
+?? opperation/DynamicBranding/dashboard/supabase/migrations/023_loyalty_growth_cache.sql
+?? opperation/DynamicBranding/dashboard/supabase/migrations/024_loyalty_growth_rpc.sql
 ```
 
 ## プロジェクト別履歴
@@ -45,6 +57,41 @@
 | mascode | 2026-01-19 | - | [詳細](projects/mascode/HANDOFF.md) |
 
 ## セッション履歴
+
+### 2026-01-29（#146）
+- **DynamicBranding 戦略提案タブ LLM動的生成基盤実装**
+  - 要件: 「戦略提案」タブの6コンポーネントをハードコード値→SNS50,000件ベースのLLM動的生成に移行
+  - 実装フェーズ:
+    | Phase | 内容 | 状態 |
+    |-------|------|------|
+    | Phase 1 | データ基盤（data-fetcher.ts, metrics-calculator.ts） | ✅完了 |
+    | Phase 2 | LLM生成（llm-generator.ts, cache.ts, types.ts） | ✅完了 |
+    | Phase 3 | API統合（loyalty-growth/route.ts） | ✅完了 |
+    | Phase 4 | コンポーネント調整（isFallbackバッジ表示） | ✅完了 |
+  - 新規ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `src/lib/loyalty-growth/` | LLM動的生成モジュール（5ファイル） |
+    | `supabase/migrations/023_loyalty_growth_cache.sql` | キャッシュテーブル |
+    | `supabase/migrations/024_loyalty_growth_rpc.sql` | 集計RPC 4種 |
+    | `scripts/analyze-tribes.ts` | トライブ分析スクリプト |
+  - PersonalityTraits双極軸化（0-100 → -50〜+50）
+  - フォールバック動作: LLM失敗時は静的JSONを返却
+  - 本番デプロイ完了: https://ajinomoto-dashboard.vercel.app/corporate/1
+  - **次のアクション**: Supabase SQL Editorで023/024マイグレーション適用
+
+### 2026-01-29（#145）
+- **DynamicBranding 代表口コミ ロイヤリティフィルター追加**
+  - 要件: 「ロイヤリティ高の代表口コミ」→「代表口コミ」に変更し、ロイヤリティ高/中/低のフィルタリング機能を追加
+  - 実装内容:
+    | 変更 | 詳細 |
+    |------|------|
+    | タイトル変更 | `ロイヤリティ{level}の代表口コミ` → `代表口コミ` |
+    | フィルター追加 | ロイヤリティ高/中/低の切り替えボタン（各レベルの色とパーセンテージ表示） |
+    | フィルター順序 | ロイヤリティ → 月 → トピック の順で配置 |
+  - 変更ファイル: `src/components/corporate/CorporateLoyaltySection.tsx`
+  - ビルド確認: 成功（57ページ生成）
+  - 本番デプロイ完了: https://ajinomoto-dashboard.vercel.app/corporate/1
 
 ### 2026-01-29（#144）
 - **DynamicBranding useEffect依存配列修正 + エラーハンドリング改善**
@@ -123,7 +170,7 @@
 | NADESHIKO | 45-85回 | 売上管理Webapp、アルゴリズム解説 | 31 |
 | タグライン | 105-127回 | シャンプー86+スキンケア42+リップ42 | 16 |
 | CLAUDECODE | 86-104回 | Starter Kit、Multi-Agent | 13 |
-| インフラ | 125-144回 | 設定同期、権限管理、フォルダ統合、HANDOFFハイブリッド化、戦略タブ静的化、ロイヤリティインサイト、llm-to-staticスキル、useEffect修正 | 16 |
+| インフラ | 125-146回 | 設定同期、権限管理、フォルダ統合、HANDOFFハイブリッド化、戦略タブ静的化、ロイヤリティインサイト、llm-to-staticスキル、useEffect修正、代表口コミフィルター、LLM動的生成基盤 | 18 |
 
 ## 未解決の問題
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { ExternalLink } from "lucide-react";
 import { LoyaltyPersona } from "@/types/corporate.types";
 
 interface PersonaCardProps {
@@ -74,9 +75,21 @@ export function PersonaCard({ persona, levelColor }: PersonaCardProps) {
       <div className="mt-3 pt-3 border-t border-gray-100">
         <div className="flex items-start gap-2">
           <span className="text-gray-400">💬</span>
-          <p className="text-sm text-gray-600 italic leading-relaxed">
-            &ldquo;{persona.representativeQuote}&rdquo;
-          </p>
+          {persona.representativeQuoteUrl ? (
+            <a
+              href={persona.representativeQuoteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-blue-600 italic leading-relaxed hover:underline group"
+            >
+              &ldquo;{persona.representativeQuote}&rdquo;
+              <ExternalLink className="inline-block h-3 w-3 ml-1 opacity-60 group-hover:opacity-100" />
+            </a>
+          ) : (
+            <p className="text-sm text-gray-600 italic leading-relaxed">
+              &ldquo;{persona.representativeQuote}&rdquo;
+            </p>
+          )}
         </div>
       </div>
     </div>

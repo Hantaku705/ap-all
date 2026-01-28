@@ -26,14 +26,8 @@ import {
   CorporateTopPosts,
 } from "@/components/corporate-analytics";
 import { WorldNewsSection } from "@/components/corporate-world-news";
-import {
-  StrategySummary,
-  ChallengeOpportunity,
-  StrategyRecommendations,
-  ActionPlan,
-} from "@/components/corporate-strategy";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { CorporateSummaryResponse, StrategyResponse, LoyaltyGrowthResponse } from "@/types/corporate.types";
+import type { CorporateSummaryResponse, LoyaltyGrowthResponse } from "@/types/corporate.types";
 import {
   Building2,
   TrendingUp,
@@ -57,9 +51,6 @@ export default function CorporateDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [summaryError, setSummaryError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<ActiveTab>("ugc");
-  const [strategyData, setStrategyData] = useState<StrategyResponse | null>(null);
-  const [strategyLoading, setStrategyLoading] = useState(false);
-  const [strategyError, setStrategyError] = useState<string | null>(null);
 
   // Loyalty Growth Strategy state
   const [loyaltyGrowthData, setLoyaltyGrowthData] = useState<LoyaltyGrowthResponse | null>(null);
@@ -91,38 +82,10 @@ export default function CorporateDashboardPage() {
     }
   }, [corporateId]);
 
-  // 戦略タブがアクティブになったらデータを取得
-  useEffect(() => {
-    async function fetchStrategy() {
-      if (activeTab !== "strategy" || strategyData) return;
-
-      try {
-        setStrategyLoading(true);
-        setStrategyError(null);
-        const res = await fetch(`/api/corporate/${corporateId}/strategy`);
-        if (res.ok) {
-          const json: StrategyResponse = await res.json();
-          setStrategyData(json);
-        } else {
-          const errorData = await res.json();
-          setStrategyError(errorData.error || "戦略データの取得に失敗しました");
-        }
-      } catch (err) {
-        console.error("Error fetching strategy:", err);
-        setStrategyError("戦略データの取得中にエラーが発生しました");
-      } finally {
-        setStrategyLoading(false);
-      }
-    }
-    if (!isNaN(corporateId)) {
-      fetchStrategy();
-    }
-  }, [activeTab, corporateId]);
-
-  // ファンタブがアクティブになったらロイヤリティ成長データを取得
+  // 戦略タブがアクティブになったらロイヤリティ成長データを取得
   useEffect(() => {
     async function fetchLoyaltyGrowth() {
-      if (activeTab !== "fan" || loyaltyGrowthData) return;
+      if (activeTab !== "strategy" || loyaltyGrowthData) return;
 
       try {
         setLoyaltyGrowthLoading(true);
@@ -404,8 +367,49 @@ export default function CorporateDashboardPage() {
           <div className="space-y-6">
             {/* コーポレートロイヤリティ */}
             <CorporateLoyaltySection corporateId={corporateId} />
+          </div>
+        )}
 
-            {/* ロイヤリティ成長戦略セクション */}
+        {/* 世の中分析タブ */}
+        {activeTab === "world" && (
+          <WorldNewsSection corpId={corporateId} />
+        )}
+
+        {/* 戦略提案タブ - ロイヤリティ成長戦略 */}
+        {activeTab === "strategy" && (
+          <div className="space-y-6">
+            {/* ヘッダー */}
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-lg font-semibold flex items-center gap-2">
+                  <Target className="h-5 w-5 text-green-600" />
+                  ロイヤリティ成長戦略
+                  {loyaltyGrowthData?.isFallback && (
+                    <span className="ml-2 px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-800 rounded-full">
+                      静的データ
+                    </span>
+                  )}
+                  {loyaltyGrowthData && !loyaltyGrowthData.isFallback && loyaltyGrowthData.cached && (
+                    <span className="ml-2 px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
+                      キャッシュ
+                    </span>
+                  )}
+                </h2>
+                <p className="text-sm text-muted-foreground mt-1">
+                  SNS 50,000件のデータからAIが生成した戦略提案
+                </p>
+              </div>
+              {/* 生成情報 */}
+              {loyaltyGrowthData && (
+                <div className="text-xs text-muted-foreground text-right">
+                  {loyaltyGrowthData.generatedAt && (
+                    <p>生成: {new Date(loyaltyGrowthData.generatedAt).toLocaleString("ja-JP")}</p>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* ローディング */}
             {loyaltyGrowthLoading && (
               <Card>
                 <CardContent className="py-12">
@@ -419,6 +423,7 @@ export default function CorporateDashboardPage() {
               </Card>
             )}
 
+            {/* エラー */}
             {loyaltyGrowthError && !loyaltyGrowthLoading && (
               <Card className="border-red-200 bg-red-50">
                 <CardContent className="py-6">
@@ -427,6 +432,7 @@ export default function CorporateDashboardPage() {
               </Card>
             )}
 
+            {/* ロイヤリティ成長戦略コンテンツ */}
             {loyaltyGrowthData && !loyaltyGrowthLoading && (
               <>
                 {/* 目標概要 */}
@@ -455,77 +461,10 @@ export default function CorporateDashboardPage() {
                   targetDate={loyaltyGrowthData.growthTargets.targetDistribution.high.targetDate}
                 />
 
-                {/* 戦略提案 */}
+                {/* 戦略提案カード */}
                 <LoyaltyStrategyCards
                   recommendations={loyaltyGrowthData.recommendations}
                 />
-              </>
-            )}
-          </div>
-        )}
-
-        {/* 世の中分析タブ */}
-        {activeTab === "world" && (
-          <WorldNewsSection corpId={corporateId} />
-        )}
-
-        {/* 戦略提案タブ */}
-        {activeTab === "strategy" && (
-          <div className="space-y-6">
-            {/* ヘッダー */}
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="text-lg font-semibold flex items-center gap-2">
-                  <Target className="h-5 w-5 text-blue-600" />
-                  戦略提案ダッシュボード
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  4タブのデータを統合し、戦略を提案
-                </p>
-              </div>
-              {strategyData && (
-                <span className="text-xs text-muted-foreground">
-                  最終更新: {new Date(strategyData.generatedAt).toLocaleString("ja-JP")}
-                </span>
-              )}
-            </div>
-
-            {/* ローディング */}
-            {strategyLoading && (
-              <Card>
-                <CardContent className="py-12">
-                  <div className="flex flex-col items-center gap-4">
-                    <div className="h-8 w-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
-                    <p className="text-sm text-muted-foreground">
-                      戦略データを読み込み中...
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* エラー */}
-            {strategyError && !strategyLoading && (
-              <Card className="border-red-200 bg-red-50">
-                <CardContent className="py-6">
-                  <p className="text-sm text-red-600">{strategyError}</p>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* 戦略コンテンツ */}
-            {strategyData && !strategyLoading && (
-              <>
-                <StrategySummary input={strategyData.input} />
-                <ChallengeOpportunity
-                  challenges={strategyData.strategy.challenges}
-                  opportunities={strategyData.strategy.opportunities}
-                />
-                <StrategyRecommendations
-                  recommendations={strategyData.strategy.recommendations}
-                  strengths={strategyData.strategy.strengths}
-                />
-                <ActionPlan actionPlan={strategyData.strategy.actionPlan} />
               </>
             )}
           </div>

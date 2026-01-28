@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PersonalityRadar } from "./PersonalityRadar";
-import type { MVVResponse, CorporateMVV, PersonalityAxisDetail } from "@/types/corporate.types";
+import type { MVVResponse, CorporateMVV, PersonalityAxisDetail, PersonalityTraits, PersonalityAlternative } from "@/types/corporate.types";
+import { PERSONALITY_TRAIT_LABELS } from "@/types/corporate.types";
 import {
   Target,
   Eye,
@@ -103,6 +104,11 @@ export function MVVSection({ corporateId }: MVVSectionProps) {
               Tone: {data.personality_tone}
             </span>
           )}
+          {data.personality_shadow && (
+            <div className="mt-3 text-xs text-gray-500 bg-gray-100/50 rounded px-3 py-1 inline-block">
+              <span className="text-gray-400">Shadow:</span> {data.personality_shadow}
+            </div>
+          )}
         </div>
 
         {/* LLM選定理由 */}
@@ -113,18 +119,41 @@ export function MVVSection({ corporateId }: MVVSectionProps) {
           </div>
         )}
 
-        {/* 代替案 */}
+        {/* 代替案（拡張カード表示） */}
         {data.personality_alternatives && data.personality_alternatives.length > 0 && (
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-sm text-muted-foreground">代替案:</span>
-            {data.personality_alternatives.map((alt, i) => (
-              <span
-                key={i}
-                className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-600"
-              >
-                {alt}
-              </span>
-            ))}
+          <div>
+            <h4 className="text-sm font-medium text-muted-foreground mb-3">代替案</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {data.personality_alternatives.map((alt, i) => {
+                // PersonalityAlternativeオブジェクトか文字列かを判定
+                const altObj = typeof alt === 'string'
+                  ? { name: alt, description: '', tone: '', shadow: '' }
+                  : alt as PersonalityAlternative;
+                return (
+                  <div
+                    key={i}
+                    className="p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-indigo-300 transition-colors"
+                  >
+                    <p className="font-medium text-gray-800 mb-1">{altObj.name}</p>
+                    {altObj.description && (
+                      <p className="text-xs text-gray-600 mb-2 line-clamp-2">{altObj.description}</p>
+                    )}
+                    <div className="flex flex-wrap gap-1">
+                      {altObj.tone && (
+                        <span className="px-2 py-0.5 bg-indigo-100 text-indigo-600 rounded text-xs">
+                          Tone: {altObj.tone}
+                        </span>
+                      )}
+                      {altObj.shadow && (
+                        <span className="px-2 py-0.5 bg-gray-200 text-gray-500 rounded text-xs">
+                          Shadow: {altObj.shadow}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
 
@@ -190,13 +219,7 @@ export function MVVSection({ corporateId }: MVVSectionProps) {
             </h4>
             <div className="space-y-3">
               {data.personality_traits && Object.entries(data.personality_traits).map(([key, value]) => {
-                const labels: Record<string, string> = {
-                  intellect: "知性",
-                  innovation: "革新性",
-                  warmth: "親しみやすさ",
-                  reliability: "信頼性",
-                  boldness: "挑戦心",
-                };
+                const bipolarLabels = PERSONALITY_TRAIT_LABELS[key as keyof PersonalityTraits];
                 const colors: Record<string, string> = {
                   intellect: "bg-blue-500",
                   innovation: "bg-purple-500",
@@ -209,7 +232,8 @@ export function MVVSection({ corporateId }: MVVSectionProps) {
                   <AxisScoreItem
                     key={key}
                     axisKey={key}
-                    label={labels[key]}
+                    leftLabel={bipolarLabels.left}
+                    rightLabel={bipolarLabels.right}
                     score={value}
                     colorClass={colors[key]}
                     detail={detail}
@@ -271,21 +295,27 @@ export function MVVSection({ corporateId }: MVVSectionProps) {
   );
 }
 
-// 軸別スコアアイテム（展開可能）
+// 軸別スコアアイテム（展開可能、双極軸対応）
 function AxisScoreItem({
   axisKey,
-  label,
+  leftLabel,
+  rightLabel,
   score,
   colorClass,
   detail,
 }: {
   axisKey: string;
-  label: string;
+  leftLabel: string;
+  rightLabel: string;
   score: number;
   colorClass: string;
   detail?: PersonalityAxisDetail;
 }) {
   const [expanded, setExpanded] = useState(false);
+
+  // -50〜+50 を 0%〜100% に変換
+  const percentage = ((score + 50) / 100) * 100;
+  const formattedScore = score > 0 ? `+${score}` : `${score}`;
 
   return (
     <div className="border rounded-lg overflow-hidden">
@@ -294,22 +324,35 @@ function AxisScoreItem({
         className={`w-full text-left p-2 ${detail ? "cursor-pointer hover:bg-muted/30" : ""}`}
         disabled={!detail}
       >
-        <div className="flex justify-between text-sm mb-1">
-          <span className="flex items-center gap-1">
-            {label}
-            {detail && (
-              <span className="text-xs text-muted-foreground">
-                {expanded ? <ChevronUp className="h-3 w-3 inline" /> : <ChevronDown className="h-3 w-3 inline" />}
-              </span>
-            )}
-          </span>
-          <span className="font-mono font-bold">{score}</span>
+        {/* 左右ラベル */}
+        <div className="flex justify-between text-xs text-muted-foreground mb-1">
+          <span>{leftLabel}</span>
+          <span>{rightLabel}</span>
         </div>
-        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+
+        {/* 双極プログレスバー */}
+        <div className="h-3 bg-gray-200 rounded-full overflow-hidden relative">
+          {/* 中央線 */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-400 z-10" />
+
+          {/* マーカー */}
           <div
-            className={`h-full ${colorClass} rounded-full transition-all duration-500`}
-            style={{ width: `${score}%` }}
+            className={`absolute top-0 bottom-0 w-3 ${colorClass} rounded-full transition-all duration-500 z-20`}
+            style={{ left: `calc(${percentage}% - 6px)` }}
           />
+        </div>
+
+        {/* スコア表示 */}
+        <div className="flex justify-between items-center mt-1">
+          <span className="text-xs text-muted-foreground flex items-center gap-1">
+            {detail && (
+              expanded ? <ChevronUp className="h-3 w-3 inline" /> : <ChevronDown className="h-3 w-3 inline" />
+            )}
+            {detail ? "根拠を表示" : ""}
+          </span>
+          <span className="font-mono font-bold text-sm">
+            {formattedScore}
+          </span>
         </div>
       </button>
 

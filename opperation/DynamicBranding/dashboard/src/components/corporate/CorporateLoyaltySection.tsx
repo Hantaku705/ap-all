@@ -376,10 +376,7 @@ export function CorporateLoyaltySection({ corporateId }: CorporateLoyaltySection
           <CardHeader className="pb-2">
             <CardTitle className="text-base flex items-center gap-2">
               <MessageCircle className="h-4 w-4" />
-              {selectedLevelData.name}の代表口コミ
-              <span className="text-sm font-normal text-muted-foreground ml-2">
-                {selectedLevelData.description}
-              </span>
+              代表口コミ
               <span className="ml-auto text-sm font-normal text-muted-foreground">
                 全{getFilteredPosts(selectedLevelData.representative_posts).length.toLocaleString()}件
               </span>
@@ -387,22 +384,61 @@ export function CorporateLoyaltySection({ corporateId }: CorporateLoyaltySection
           </CardHeader>
           <CardContent>
             {/* フィルター */}
-            {(getAvailableTopics().length > 0 || getAvailableMonths().length > 0) && (
-              <div className="mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                <div className="flex items-center gap-2 mb-3">
-                  <Filter className="h-4 w-4 text-gray-500" />
-                  <span className="text-sm font-medium text-gray-700">フィルター</span>
-                  {(selectedTopics.length > 0 || selectedMonth) && (
-                    <button
-                      onClick={clearFilters}
-                      className="ml-auto text-xs text-blue-600 hover:text-blue-800 flex items-center gap-1"
-                    >
-                      <X className="h-3 w-3" />
-                      すべてクリア
-                    </button>
-                  )}
-                </div>
+            <div className="mb-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="flex items-center gap-2 mb-3">
+                <Filter className="h-4 w-4 text-gray-500" />
+                <span className="text-sm font-medium text-gray-700">フィルター</span>
+                {(selectedTopics.length > 0 || selectedMonth) && (
+                  <button
+                    onClick={clearFilters}
+                    className="ml-auto text-xs text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                  >
+                    <X className="h-3 w-3" />
+                    すべてクリア
+                  </button>
+                )}
+              </div>
 
+              {/* ロイヤリティフィルター */}
+              <div className="mb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Heart className="h-3.5 w-3.5 text-gray-500" />
+                  <span className="text-xs font-medium text-gray-600">ロイヤリティ</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {data.levels.map((level) => {
+                    const isSelected = selectedLevel === level.level;
+                    return (
+                      <button
+                        key={level.level}
+                        onClick={() => {
+                          setSelectedLevel(level.level);
+                          setShowAllPosts(false);
+                        }}
+                        className={`px-3 py-1.5 text-xs rounded-full border transition-all flex items-center gap-1.5 ${
+                          isSelected
+                            ? "text-white border-transparent"
+                            : "bg-white hover:bg-gray-50"
+                        }`}
+                        style={{
+                          backgroundColor: isSelected ? level.color : undefined,
+                          borderColor: isSelected ? level.color : "#d1d5db",
+                          color: isSelected ? "white" : "#374151",
+                        }}
+                      >
+                        <span
+                          className="w-2 h-2 rounded-full"
+                          style={{ backgroundColor: isSelected ? "white" : level.color }}
+                        />
+                        {level.name}
+                        <span className="opacity-70">({level.percentage}%)</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {(getAvailableTopics().length > 0 || getAvailableMonths().length > 0) && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* 月フィルター */}
                   {getAvailableMonths().length > 0 && (
@@ -460,8 +496,8 @@ export function CorporateLoyaltySection({ corporateId }: CorporateLoyaltySection
                     </div>
                   )}
                 </div>
-              </div>
-            )}
+              )}
+            </div>
 
             <div className={`space-y-3 ${showAllPosts ? "max-h-[600px] overflow-y-auto pr-2" : ""}`}>
               {getFilteredPosts(selectedLevelData.representative_posts).length === 0 ? (

@@ -18,12 +18,17 @@ interface PersonalityRadarProps {
 }
 
 export function PersonalityRadar({ traits, size = "md" }: PersonalityRadarProps) {
-  // Recharts用のデータ形式に変換
-  const data = Object.entries(traits).map(([key, value]) => ({
-    trait: PERSONALITY_TRAIT_LABELS[key as keyof PersonalityTraits],
-    value,
-    fullMark: 100,
-  }));
+  // Recharts用のデータ形式に変換（双極軸ラベル）
+  const data = Object.entries(traits).map(([key, value]) => {
+    const labels = PERSONALITY_TRAIT_LABELS[key as keyof PersonalityTraits];
+    return {
+      trait: `${labels.left} ↔ ${labels.right}`,
+      leftLabel: labels.left,
+      rightLabel: labels.right,
+      value,
+      fullMark: 50,
+    };
+  });
 
   const heights = {
     sm: 200,
@@ -37,11 +42,11 @@ export function PersonalityRadar({ traits, size = "md" }: PersonalityRadarProps)
         <PolarGrid strokeDasharray="3 3" />
         <PolarAngleAxis
           dataKey="trait"
-          tick={{ fontSize: size === "sm" ? 10 : 12 }}
+          tick={{ fontSize: size === "sm" ? 8 : 10 }}
         />
         <PolarRadiusAxis
           angle={90}
-          domain={[0, 100]}
+          domain={[-50, 50]}
           tick={{ fontSize: 10 }}
           tickCount={5}
         />
@@ -57,10 +62,15 @@ export function PersonalityRadar({ traits, size = "md" }: PersonalityRadarProps)
           content={({ active, payload }) => {
             if (!active || !payload?.length) return null;
             const item = payload[0];
+            const value = item.value as number;
+            const formattedValue = value > 0 ? `+${value}` : `${value}`;
             return (
               <div className="bg-white border rounded-lg shadow-lg p-2 text-sm">
-                <p className="font-medium">{item.payload.trait}</p>
-                <p className="text-blue-600 font-mono">{item.value}/100</p>
+                <p className="font-medium text-xs">{item.payload.trait}</p>
+                <p className="text-blue-600 font-mono text-lg">{formattedValue}</p>
+                <p className="text-gray-500 text-xs">
+                  {value < 0 ? item.payload.leftLabel : value > 0 ? item.payload.rightLabel : '中立'}寄り
+                </p>
               </div>
             );
           }}

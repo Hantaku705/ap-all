@@ -317,6 +317,10 @@ vercel --prod --yes
 - 2026-01-28: **ロイヤリティ別顧客インサイト機能追加** - 各ロイヤリティレベル（高/中/低）に対して顧客像・関心事・声のトーン・キーワード・トピック分布を表示。LLM（Gemini 2.0 Flash）でインサイト生成 + フォールバック対応 + 24時間キャッシュ
 - 2026-01-29: **ロイヤリティ別顧客インサイト本番動作確認** - Playwright E2Eテストで「ファン資産」タブの動作検証、スクリーンショット確認完了
 - 2026-01-29: **ロイヤリティ別顧客インサイト マルチペルソナ化** - 「1レベル1顧客像」から「1レベル2-3ペルソナ」に拡張。PersonaCard.tsx新規作成、LoyaltySummaryReport.tsxでグリッド表示、8ペルソナデータ（高3/中3/低2）追加
+- 2026-01-29: **ペルソナ拡充＋カルーセルUI** - 8→13ペルソナ（高5/中5/低3）に拡充。analyze-tribes.tsでトライブ分析、LoyaltySummaryReportにカルーセルUI追加（左右ボタン+ドットインジケーター）
+- 2026-01-29: **戦略提案タブ LLM動的生成基盤** - SNS50,000件ベースのLLM動的生成インフラ実装。loyalty-growthモジュール（data-fetcher/metrics-calculator/llm-generator/cache）、Gemini 2.0 Flash + OpenAI GPT-4o-miniフォールバック、24時間TTLキャッシュ、isFallbackバッジ表示
+- 2026-01-29: **Brand Personality双極軸対応** - personality_shadow追加、代替案4案をカード形式で表示（食卓の頭脳派サポーター/研究熱心な料理の相棒/食の実験者/理系の料理好きおじさん）、PersonalityAlternative型追加
+- 2026-01-29: **PersonalityTraits双極軸化** - 0-100スケール → -50〜+50双極軸に変更。MVVSection.tsxにAxisScoreItem追加（左右ラベル表示）、PersonalityRadar.tsx双極軸対応
 
 ---
 

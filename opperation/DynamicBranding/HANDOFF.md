@@ -10,9 +10,9 @@
 | データ分析 | 11-30回目 | SNS分析、Google Trends、仮説検証、ダッシュボード基盤構築 | 28件 |
 | ダッシュボード拡張 | 31-50回目 | CEP可視化、ラベリング、ブランド詳細ページ、レポート機能 | 24件 |
 | 高度機能 | 51-70回目 | W's詳細分析、DPT、ペルソナk-means、レポート98問構成 | 22件 |
-| 拡張機能 | 71-101回目 | ファイルベースレポート、コーポレート分析、世の中分析、スパイクレポート、戦略タブ、ロイヤリティインサイト、マルチペルソナ、静的化パフォーマンス改善、useEffect修正 | 26件 |
+| 拡張機能 | 71-106回目 | ファイルベースレポート、コーポレート分析、世の中分析、スパイクレポート、戦略タブ、ロイヤリティインサイト、マルチペルソナ、静的化パフォーマンス改善、useEffect修正、代表口コミフィルター、戦略タブ移動、ペルソナ拡充＋カルーセルUI、LLM動的生成基盤、Brand Personality双極軸対応 | 31件 |
 
-**合計: 112件**
+**合計: 117件**
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 作業中のタスク
@@ -29,6 +29,129 @@
 ---
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-29（106回目）
+- **Brand Personality双極軸対応**
+  - 要件: パーソナリティ5軸を双極軸化したため、Brand Personalityも「影（Shadow）」と「代替案4案」を表示
+  - 実装内容:
+    | 変更 | 詳細 |
+    |------|------|
+    | `corporate.types.ts` | `PersonalityAlternative`型追加（name, description, tone, shadow）、`personality_shadow`プロパティ追加 |
+    | `1-mvv.json` | personality_shadow追加、代替案4オブジェクトに拡張 |
+    | `MVVSection.tsx` | Shadow表示追加、代替案カード形式表示（2×2グリッド） |
+  - 代替案4案:
+    | 案 | 名前 | トーン | Shadow |
+    |----|------|--------|--------|
+    | 1 | 食卓の頭脳派サポーター | 安心・信頼 | エモーショナルな共感より、解決策を先に出しがち |
+    | 2 | 研究熱心な料理の相棒 | 信頼・親しみ | 時に理屈っぽく、直感的な料理の楽しさを見落としがち |
+    | 3 | 食の実験者 | 好奇心・ワクワク | 定番・安定より実験を優先しがち。時に「変わりすぎ」と言われることも |
+    | 4 | 理系の料理好きおじさん | 親しみ・ユーモア | 説明が長くなりがち。シンプルな感想より分析が先に出る |
+  - ビルド確認: 成功（57ページ生成）
+  - 本番デプロイ完了: https://ajinomoto-dashboard.vercel.app/corporate/1
+
+### 2026-01-29（105回目）
+- **戦略提案タブ LLM動的生成基盤実装**
+  - 要件: 「戦略提案」タブの6コンポーネントをハードコード値→SNS50,000件ベースのLLM動的生成に移行
+  - 実装フェーズ:
+    | Phase | 内容 | 状態 |
+    |-------|------|------|
+    | Phase 1 | データ基盤（data-fetcher.ts, metrics-calculator.ts） | ✅完了 |
+    | Phase 2 | LLM生成（llm-generator.ts, cache.ts, types.ts） | ✅完了 |
+    | Phase 3 | API統合（loyalty-growth/route.ts） | ✅完了 |
+    | Phase 4 | コンポーネント調整（isFallbackバッジ表示） | ✅完了 |
+  - 新規ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `src/lib/loyalty-growth/data-fetcher.ts` | Supabase RPC呼び出し |
+    | `src/lib/loyalty-growth/metrics-calculator.ts` | 転換率・相関算出 |
+    | `src/lib/loyalty-growth/llm-generator.ts` | Gemini 2.0 Flash + OpenAI GPT-4o-miniフォールバック |
+    | `src/lib/loyalty-growth/cache.ts` | 24時間TTLキャッシュ |
+    | `src/lib/loyalty-growth/types.ts` | LLM入出力型定義 |
+    | `supabase/migrations/023_loyalty_growth_cache.sql` | キャッシュテーブル |
+    | `supabase/migrations/024_loyalty_growth_rpc.sql` | 集計RPC 4種 |
+  - 変更ファイル:
+    | ファイル | 変更内容 |
+    |---------|----------|
+    | `src/app/api/corporate/[corpId]/loyalty-growth/route.ts` | LLM生成 + フォールバック実装 |
+    | `src/app/corporate/[corpId]/page.tsx` | isFallback/cachedバッジ表示追加 |
+    | `src/types/corporate.types.ts` | isFallback/inputHashプロパティ追加、PersonalityTraits双極軸化（-50〜+50） |
+    | `src/components/corporate/MVVSection.tsx` | 双極軸対応（AxisScoreItem）、leftLabel/rightLabel表示 |
+    | `src/components/corporate/PersonalityRadar.tsx` | -50〜+50スケール対応 |
+  - 現状:
+    - **フォールバック動作**: LLM失敗時は静的JSON（corp-1-growth.json）を返却、`isFallback: true`フラグ付与
+    - **RPC未適用**: Supabaseにマイグレーション（023/024）適用後にLLM動的生成が有効化
+  - ビルド確認: ローカル・Vercel両方成功
+  - 本番デプロイ完了: https://ajinomoto-dashboard.vercel.app/corporate/1
+  - 次のアクション: Supabase SQL Editorで023/024マイグレーション適用
+
+### 2026-01-29（104回目）
+- **ペルソナ拡充＋カルーセルUI実装**
+  - 要件: 低ロイヤリティに「インフルエンサー懐疑層」追加、高/中にも追加トライブ、カルーセル表示
+  - 分析スクリプト作成: `scripts/analyze-tribes.ts`（キーワードベースのトライブ分類）
+  - トライブ分析結果:
+    | ロイヤリティ | 主要トライブ |
+    |------------|-------------|
+    | 高（positive） | スポーツ・アスリートファン（166件）、タレント・CM関心層（126件）、投資家・IR関心層（108件） |
+    | 中（neutral） | 投資家・IR関心層（170件）、エンタメ・CM視聴層（77件）、就活関心層（51件） |
+    | 低（negative） | 添加物懸念層（92件）、ステマ・PR批判層（42件）、企業姿勢批判層（34件） |
+  - ペルソナ拡充（8→13ペルソナ）:
+    | ロイヤリティ | Before | After |
+    |------------|--------|-------|
+    | 高（27%） | 3 | 5（+アスリートファン、タレント・CM応援層） |
+    | 中（68.8%） | 3 | 5（+エンタメ視聴層、就活情報収集層） |
+    | 低（4.2%） | 2 | 3（+インフルエンサー懐疑層） |
+  - カルーセルUI実装:
+    | 機能 | 詳細 |
+    |------|------|
+    | 左右矢印ボタン | 各ロイヤリティレベルでペルソナ切り替え |
+    | ドットインジケーター | 直接ジャンプ可能 |
+    | ページ番号表示 | 「1/5」形式 |
+  - 変更ファイル:
+    | ファイル | 変更内容 |
+    |---------|----------|
+    | `scripts/analyze-tribes.ts` | 新規作成（トライブ分析スクリプト） |
+    | `src/data/corporate-loyalty/corp-1-summary.json` | 8→13ペルソナに拡充 |
+    | `src/components/corporate/LoyaltySummaryReport.tsx` | カルーセルUI追加（useState + ChevronLeft/Right） |
+  - ビルド確認: 成功（57ページ生成）
+  - 本番デプロイ完了: https://ajinomoto-dashboard.vercel.app/corporate/1
+
+### 2026-01-29（103回目）
+- **ロイヤリティ成長戦略を戦略提案タブに移動**
+  - 要件: 「ファン資産」タブのロイヤリティ成長戦略6コンポーネントを「戦略提案」タブに移動
+  - 実装内容:
+    | 変更 | 詳細 |
+    |------|------|
+    | useEffect修正 | `activeTab === "fan"` → `activeTab === "strategy"` でデータ取得タイミング変更 |
+    | ファン資産タブ | CorporateLoyaltySectionのみ残す（6コンポーネント削除） |
+    | 戦略提案タブ | 既存4コンポーネント（StrategySummary等）を削除、ロイヤリティ成長戦略6コンポーネントを配置 |
+    | 不要import削除 | StrategySummary, ChallengeOpportunity, StrategyRecommendations, ActionPlan, StrategyResponse |
+    | 不要state削除 | strategyData, strategyLoading, strategyError + fetchStrategy useEffect |
+  - 移動したコンポーネント:
+    | コンポーネント | 説明 |
+    |--------------|------|
+    | LoyaltyGrowthTargets | KPI目標（25%→35%） |
+    | LoyaltyConversionFunnel | 転換フロー（低→中 40%、中→高 8.5%） |
+    | LoyaltyBehavioralPatterns | 行動パターン比較 |
+    | LoyaltyTriggerAnalysis | 転換トリガー分析 |
+    | LoyaltyProjectionChart | 成長予測タイムライン |
+    | LoyaltyStrategyCards | 戦略提案カード |
+  - 変更ファイル: `src/app/corporate/[corpId]/page.tsx`
+  - ビルド確認: 成功（57ページ生成）
+  - 本番デプロイ完了: https://ajinomoto-dashboard.vercel.app/corporate/1
+  - E2Eテスト: 戦略提案タブで全6コンポーネント表示確認
+
+### 2026-01-29（102回目）
+- **代表口コミ ロイヤリティフィルター追加**
+  - 要件: 「ロイヤリティ高の代表口コミ」→「代表口コミ」に変更し、ロイヤリティ高/中/低のフィルタリング機能を追加
+  - 実装内容:
+    | 変更 | 詳細 |
+    |------|------|
+    | タイトル変更 | `ロイヤリティ{level}の代表口コミ` → `代表口コミ` |
+    | フィルター追加 | ロイヤリティ高/中/低の切り替えボタン（各レベルの色とパーセンテージ表示） |
+    | フィルター順序 | ロイヤリティ → 月 → トピック の順で配置 |
+  - 変更ファイル: `src/components/corporate/CorporateLoyaltySection.tsx`
+  - ビルド確認: 成功（57ページ生成）
+  - 本番デプロイ完了: https://ajinomoto-dashboard.vercel.app/corporate/1
 
 ### 2026-01-29（101回目）
 - **useEffect依存配列修正 + エラーハンドリング改善**
@@ -199,42 +322,39 @@
   - 元投稿リンクボタン追加
   - コミット: `f743f05`
 
-### 2026-01-22（85-87回目）
-- **コーポレートロイヤリティ機能追加**（85回目）
-  - ファン資産にロイヤリティ高/中/低分布 + 代表口コミ表示
-  - 分布: 高27.0%、中68.8%、低4.2%
-- **株価×UGC相関チャートのUGC表示修正**（86回目）
-  - コーポレートタグUGC数推移を正しく表示
-- **SNS生データ ブランドタグ修正**（87回目）
-  - is_corporate=trueの投稿を「コーポレート」タグ表示
-
 ---
 
 ## 未コミット変更
 
 ```
- M src/app/api/corporate/[corpId]/world-news/route.ts
+ M ../../../HANDOFF.md
+ M ../CLAUDE.md
+ M ../HANDOFF.md
+ M output/corporate/1-mvv.json
+ M scripts/CLAUDE.md
+ M src/app/api/corporate/[corpId]/loyalty-growth/route.ts
  M src/app/corporate/[corpId]/page.tsx
  M src/components/corporate/CLAUDE.md
  M src/components/corporate/CorporateLoyaltySection.tsx
- M src/components/corporate/index.ts
+ M src/components/corporate/LoyaltySummaryReport.tsx
+ M src/components/corporate/MVVSection.tsx
+ M src/components/corporate/PersonaCard.tsx
+ M src/components/corporate/PersonalityRadar.tsx
+ M src/data/corporate-loyalty/CLAUDE.md
+ M src/data/corporate-loyalty/corp-1-summary.json
+ M src/lib/CLAUDE.md
  M src/types/corporate.types.ts
-?? src/app/api/corporate/[corpId]/loyalty-growth/
-?? src/app/api/corporate/[corpId]/loyalty-summary/
-?? src/app/api/corporate/[corpId]/strategy/
-?? src/components/corporate-strategy/
-?? src/components/corporate/LoyaltySummaryReport.tsx
-?? src/components/corporate/PersonaCard.tsx
-?? src/components/loyalty-growth/
-?? src/data/
-?? supabase/migrations/022_corporate_strategy_cache.sql
-?? tests/e2e/verify-personas.spec.ts
+?? scripts/analyze-tribes.ts
+?? scripts/update-persona-urls.ts
+?? src/lib/loyalty-growth/
+?? supabase/migrations/023_loyalty_growth_cache.sql
+?? supabase/migrations/024_loyalty_growth_rpc.sql
 ```
 
 ## 最新コミット
 
 ```
-70f586c feat: integrate claude-code-starter into AP repo with sync command
+ad95267 docs: add URL sharing error check rule to deployment.md
 ```
 
 ---

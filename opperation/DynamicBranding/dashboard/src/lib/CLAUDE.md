@@ -13,6 +13,7 @@
 | `clustering/` | k-meansクラスタリング（ペルソナ分析用） |
 | `personality/` | ブランドパーソナリティ5軸スコア算出 |
 | `report-quality/` | レポート品質検出・改善モジュール |
+| `loyalty-growth/` | **ロイヤリティ成長戦略LLM動的生成モジュール（NEW）** |
 
 ## 関連ディレクトリ
 

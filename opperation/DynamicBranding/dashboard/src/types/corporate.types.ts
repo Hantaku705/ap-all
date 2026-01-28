@@ -54,13 +54,13 @@ export interface StockPricePoint {
 // MVV（Mission/Vision/Value）
 // ============================================
 
-// パーソナリティ5軸
+// パーソナリティ5軸（双極軸: -50〜+50）
 export interface PersonalityTraits {
-  intellect: number;            // 知性 0-100
-  innovation: number;           // 革新性 0-100
-  warmth: number;               // 親しみやすさ 0-100
-  reliability: number;          // 信頼性 0-100
-  boldness: number;             // 挑戦心 0-100
+  intellect: number;            // エモーショナル(-50) ↔ ラショナル(+50)
+  innovation: number;           // クラシック(-50) ↔ トレンディ(+50)
+  warmth: number;               // 独立的(-50) ↔ 共感的(+50)
+  reliability: number;          // カジュアル(-50) ↔ フォーマル(+50)
+  boldness: number;             // 抑制的(-50) ↔ 表現的(+50)
 }
 
 // パーソナリティ軸詳細（スコア根拠）
@@ -77,6 +77,14 @@ export interface PersonalityTraitsDetailed {
   warmth: PersonalityAxisDetail;
   reliability: PersonalityAxisDetail;
   boldness: PersonalityAxisDetail;
+}
+
+// パーソナリティ代替案（拡張版）
+export interface PersonalityAlternative {
+  name: string;           // '食卓の頭脳派サポーター'
+  description: string;    // 説明文
+  tone: string;           // 'トーン: 安心・信頼'
+  shadow: string;         // 影（弱点・課題）
 }
 
 // MVVエビデンス
@@ -102,8 +110,9 @@ export interface CorporateMVV {
   personality: string | null;   // '料理を支える賢者' 等
   personality_description?: string | null;  // パーソナリティの説明
   personality_tone?: string | null;         // トーン（親しみやすい/尊敬等）
+  personality_shadow?: string | null;       // 影（弱点・課題）
   personality_reasoning?: string | null;    // LLMの選定理由
-  personality_alternatives?: string[];      // 代替案
+  personality_alternatives?: PersonalityAlternative[];  // 代替案（拡張版）
   personality_traits: PersonalityTraits;
   personality_traits_detailed?: PersonalityTraitsDetailed;  // 詳細スコア根拠
 
@@ -460,19 +469,25 @@ export const EVENT_TYPE_LABELS: Record<EventType, string> = {
 // ============================================
 
 export const DEFAULT_PERSONALITY_TRAITS: PersonalityTraits = {
-  intellect: 50,
-  innovation: 50,
-  warmth: 50,
-  reliability: 50,
-  boldness: 50,
+  intellect: 0,
+  innovation: 0,
+  warmth: 0,
+  reliability: 0,
+  boldness: 0,
 };
 
-export const PERSONALITY_TRAIT_LABELS: Record<keyof PersonalityTraits, string> = {
-  intellect: '知性',
-  innovation: '革新性',
-  warmth: '親しみやすさ',
-  reliability: '信頼性',
-  boldness: '挑戦心',
+// 双極軸ラベル
+export interface BipolarLabel {
+  left: string;   // -50側
+  right: string;  // +50側
+}
+
+export const PERSONALITY_TRAIT_LABELS: Record<keyof PersonalityTraits, BipolarLabel> = {
+  intellect: { left: 'エモーショナル', right: 'ラショナル' },
+  innovation: { left: 'クラシック', right: 'トレンディ' },
+  warmth: { left: '独立的', right: '共感的' },
+  reliability: { left: 'カジュアル', right: 'フォーマル' },
+  boldness: { left: '抑制的', right: '表現的' },
 };
 
 // ============================================
@@ -821,6 +836,8 @@ export interface LoyaltyPersona {
   motivations: string[];             // ["資産運用", "情報収集"]
   voiceTone: string[];               // ["期待", "分析的"]
   representativeQuote: string;       // 実際の投稿から引用
+  representativeQuoteUrl?: string;   // 投稿URL（クリックで元投稿に遷移）
+  representativeQuotePostId?: number; // sns_posts.id
   postCount: number;
   percentage: number;                // このレベル内の割合
 }
@@ -946,6 +963,8 @@ export interface LoyaltyGrowthResponse {
   recommendations: LoyaltyStrategyRecommendation[];
   generatedAt: string;
   cached: boolean;
+  isFallback?: boolean;          // LLM失敗時の静的フォールバックフラグ
+  inputHash?: string;            // 入力データハッシュ（キャッシュ検証用）
 }
 
 // ============================================
