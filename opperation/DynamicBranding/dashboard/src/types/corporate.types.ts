@@ -988,3 +988,106 @@ export const IMPLEMENTATION_EFFORT_COLORS: Record<LoyaltyStrategyRecommendation[
   medium: '#f59e0b',
   high: '#ef4444',
 };
+
+// ============================================
+// ネガティブ分析（Negative Analysis）
+// ============================================
+
+// ネガティブカテゴリ
+export type NegativeCategory =
+  | 'additive_concern'    // 添加物懸念
+  | 'stealth_marketing'   // ステマ・PR批判
+  | 'scandal_reaction'    // 企業スキャンダル反応
+  | 'cost_performance'    // コスパ不満
+  | 'white_company_gap'   // ホワイト企業ギャップ
+  | 'quality_taste'       // 品質・味
+  | 'portfolio_confusion' // ポートフォリオ混乱
+  | 'stock_criticism'     // 株価批判
+  | 'uncategorized';      // 未分類
+
+// 時系列データポイント
+export interface NegativeTrendPoint {
+  week: string;                                    // "2024-01-01"
+  total: number;                                   // 総ネガ数
+  categories: Record<NegativeCategory, number>;   // カテゴリ別件数
+}
+
+// カテゴリ別深刻度
+export interface CategorySeverity {
+  category: NegativeCategory;
+  categoryLabel: string;                           // 日本語名
+  count: number;                                   // 件数
+  avgLikes: number;                                // 平均いいね数
+  avgRetweets: number;                             // 平均リツイート数
+  severityScore: number;                           // 総合スコア（0-100）
+  trend: 'increasing' | 'stable' | 'decreasing';  // トレンド方向
+  topPosts: Array<{ id: string; text: string; likes: number; published: string }>;
+}
+
+// ネガティブ分析APIレスポンス
+export interface NegativeAnalysisResponse {
+  timeSeries: NegativeTrendPoint[];
+  categories: CategorySeverity[];
+  summary: {
+    totalNegative: number;
+    categorizedCount: number;
+    uncategorizedCount: number;
+    overallTrend: 'increasing' | 'stable' | 'decreasing';
+    mostCriticalCategory: NegativeCategory;
+  };
+  generatedAt: string;
+  cached: boolean;
+}
+
+// ============================================
+// ネガティブ分析 定数
+// ============================================
+
+export const NEGATIVE_CATEGORY_LABELS: Record<NegativeCategory, string> = {
+  additive_concern: '添加物懸念',
+  stealth_marketing: 'ステマ・PR批判',
+  scandal_reaction: '企業スキャンダル',
+  cost_performance: 'コスパ不満',
+  white_company_gap: 'ホワイト企業ギャップ',
+  quality_taste: '品質・味',
+  portfolio_confusion: 'ポートフォリオ混乱',
+  stock_criticism: '株価批判',
+  uncategorized: '未分類',
+};
+
+export const NEGATIVE_CATEGORY_COLORS: Record<NegativeCategory, string> = {
+  additive_concern: '#ef4444',     // 赤
+  stealth_marketing: '#f97316',    // オレンジ
+  scandal_reaction: '#dc2626',     // 濃い赤
+  cost_performance: '#eab308',     // 黄
+  white_company_gap: '#a855f7',    // 紫
+  quality_taste: '#f43f5e',        // ローズ
+  portfolio_confusion: '#6366f1',  // インディゴ
+  stock_criticism: '#64748b',      // スレート
+  uncategorized: '#9ca3af',        // グレー
+};
+
+// カテゴリ分類用キーワード
+export const NEGATIVE_CATEGORY_KEYWORDS: Record<NegativeCategory, string[]> = {
+  additive_concern: ['MSG', '化学調味料', '添加物', '人工', '合成', 'うま味調味料', '体に悪い', '発がん', '健康被害', 'グルタミン酸'],
+  stealth_marketing: ['ステマ', 'PR', '案件', '広告', 'タイアップ', '宣伝', 'プロモーション', 'インフルエンサー', '押し売り'],
+  scandal_reaction: ['不祥事', '問題', '謝罪', '隠蔽', '説明責任', '炎上', 'リュウジ', 'スキャンダル', '不正'],
+  cost_performance: ['値上げ', '高い', '代わり', '代替', '乗り換え', 'コスパ', '安い方', '割高', '価格'],
+  white_company_gap: ['ブラック', '労働', '残業', '採用', '落ちた', '福利厚生', '退職', 'パワハラ', '過労'],
+  quality_taste: ['まずい', '美味しくない', '味が変わった', '品質', 'リニューアル', '劣化', '不味い', '味落ちた'],
+  portfolio_confusion: ['半導体', '多角化', '本業', '事業拡大', '迷走', 'バイオ', '何の会社'],
+  stock_criticism: ['株', '配当', '株主', '株価', '投資', '損', '暴落', '下落'],
+  uncategorized: [],
+};
+
+export const NEGATIVE_TREND_LABELS: Record<CategorySeverity['trend'], string> = {
+  increasing: '増加傾向',
+  stable: '横ばい',
+  decreasing: '減少傾向',
+};
+
+export const NEGATIVE_TREND_COLORS: Record<CategorySeverity['trend'], string> = {
+  increasing: '#ef4444',
+  stable: '#6b7280',
+  decreasing: '#22c55e',
+};

@@ -10,9 +10,9 @@
 | データ分析 | 11-30回目 | SNS分析、Google Trends、仮説検証、ダッシュボード基盤構築 | 28件 |
 | ダッシュボード拡張 | 31-50回目 | CEP可視化、ラベリング、ブランド詳細ページ、レポート機能 | 24件 |
 | 高度機能 | 51-70回目 | W's詳細分析、DPT、ペルソナk-means、レポート98問構成 | 22件 |
-| 拡張機能 | 71-107回目 | ファイルベースレポート、コーポレート分析、世の中分析、スパイクレポート、戦略タブ、ロイヤリティインサイト、マルチペルソナ、静的化パフォーマンス改善、useEffect修正、代表口コミフィルター、戦略タブ移動、ペルソナ拡充＋カルーセルUI、LLM動的生成基盤、Brand Personality双極軸対応、**ロイヤリティ低層隠れインサイト分析** | 32件 |
+| 拡張機能 | 71-108回目 | ファイルベースレポート、コーポレート分析、世の中分析、スパイクレポート、戦略タブ、ロイヤリティインサイト、マルチペルソナ、静的化パフォーマンス改善、useEffect修正、代表口コミフィルター、戦略タブ移動、ペルソナ拡充＋カルーセルUI、LLM動的生成基盤、Brand Personality双極軸対応、ロイヤリティ低層隠れインサイト分析、**ロイヤリティ低分析タブ** | 33件 |
 
-**合計: 118件**
+**合計: 119件**
 詳細は [HANDOFF_ARCHIVE.md](./HANDOFF_ARCHIVE.md) を参照。
 
 ### 作業中のタスク
@@ -29,6 +29,49 @@
 ---
 
 ## セッション履歴（直近10回分）
+
+### 2026-01-29（108回目）
+- **ロイヤリティ低分析タブ実装**
+  - 要件: コーポレートダッシュボードに6つ目のタブ「ロイヤリティ低分析」を追加。ネガティブ投稿の時系列トレンドとカテゴリ別分布を可視化
+  - 実装内容:
+    | 作業 | 詳細 |
+    |------|------|
+    | 型定義 | `NegativeCategory`（8カテゴリ）、`NegativeTrendPoint`、`CategorySeverity`、`NegativeAnalysisResponse` |
+    | APIエンドポイント | `/api/corporate/[corpId]/negative-analysis/route.ts`（キーワード分類、週次集計、深刻度計算） |
+    | メインコンポーネント | `NegativeAnalysisSection.tsx`（サマリーカード、AreaChart、PieChart、深刻度テーブル、代表投稿） |
+    | ページ統合 | `page.tsx`に`negative`タブ追加、AlertTriangleアイコン |
+  - カテゴリ分類（8種）:
+    | カテゴリ | キーワード例 | 件数 |
+    |---------|-------------|------|
+    | 添加物懸念 | MSG、化学調味料、添加物、発がん | 110件 |
+    | ステマ・PR批判 | ステマ、PR、案件、宣伝 | 66件 |
+    | 企業スキャンダル反応 | 不祥事、謝罪、炎上、リュウジ | 23件 |
+    | コスパ不満 | 値上げ、高い、代替、コスパ | 16件 |
+    | ホワイト企業ギャップ | ブラック、労働、残業、退職 | 11件 |
+    | 品質・味 | まずい、品質、リニューアル | 7件 |
+    | ポートフォリオ混乱 | 半導体、多角化、迷走 | 3件 |
+    | 株価批判 | 株、配当、株主、株価 | 6件 |
+  - 可視化機能:
+    | 機能 | 説明 |
+    |------|------|
+    | サマリーカード | 総ネガティブ数、全体トレンド、最深刻カテゴリ、分類率 |
+    | 時系列チャート | 週次AreaChart（8カテゴリスタック、フィルター機能付き） |
+    | 円グラフ | カテゴリ分布（未分類除外） |
+    | 深刻度テーブル | 件数×平均いいね×スコア×トレンド |
+    | 代表投稿 | カテゴリ別上位2件表示 |
+  - 新規ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `src/app/api/corporate/[corpId]/negative-analysis/route.ts` | ネガティブ分析API（~200行） |
+    | `src/components/corporate/NegativeAnalysisSection.tsx` | メインコンポーネント（~370行） |
+  - 変更ファイル:
+    | ファイル | 変更内容 |
+    |---------|----------|
+    | `src/types/corporate.types.ts` | 型定義+定数追加（~100行） |
+    | `src/components/corporate/index.ts` | NegativeAnalysisSectionエクスポート追加 |
+    | `src/app/corporate/[corpId]/page.tsx` | negativeタブ追加、AlertTriangleインポート |
+  - ビルド確認: 成功（57ページ生成）
+  - アクセス: `/corporate/1` → 「ロイヤリティ低分析」タブ
 
 ### 2026-01-29（107回目）
 - **ロイヤリティ低層の隠れたインサイト分析（Deep版）**
@@ -360,17 +403,21 @@
 ## 未コミット変更
 
 ```
- M src/data/corporate-loyalty/corp-1-summary.json
-?? scripts/analyze-low-loyalty.ts
-?? scripts/analyze-low-loyalty-deep.ts
-?? scripts/analyze-low-loyalty-insights.ts
-?? output/low-loyalty-insights.json
+ M NADESHIKO/code/code.js
+ M opperation/DynamicBranding/dashboard/src/app/corporate/[corpId]/page.tsx
+ M opperation/DynamicBranding/dashboard/src/components/corporate/index.ts
+ M opperation/DynamicBranding/dashboard/src/types/corporate.types.ts
+?? NADESHIKO/code/test-tiktok-api-debug.js
+?? NADESHIKO/code/test-tiktok-api-fixed.js
+?? NADESHIKO/code/test-tiktok-api.js
+?? opperation/DynamicBranding/dashboard/src/app/api/corporate/[corpId]/negative-analysis/
+?? opperation/DynamicBranding/dashboard/src/components/corporate/NegativeAnalysisSection.tsx
 ```
 
 ## 最新コミット
 
 ```
-55cf048 feat: Brand Personality双極軸対応 + ロイヤリティ成長LLM基盤
+63e8717 feat: NADESHIKO再生数更新スキル + DynamicBrandingロイヤリティ低層分析
 ```
 
 ---

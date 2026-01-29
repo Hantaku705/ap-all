@@ -16,6 +16,7 @@
 | `CorporateLoyaltySection.tsx` | コーポレートロイヤリティ分布（円グラフ+代表口コミ） |
 | `LoyaltySummaryReport.tsx` | ロイヤリティ別顧客インサイト（カルーセルUI+トピック分布、13ペルソナ対応） |
 | `PersonaCard.tsx` | ペルソナカード（名前・年代・関心事・動機・声のトーン・代表的な引用） |
+| `NegativeAnalysisSection.tsx` | **ネガティブ分析（時系列AreaChart、PieChart、深刻度テーブル、代表投稿）（NEW）** |
 | `index.ts` | バレルエクスポート |
 
 ## データソース
@@ -26,6 +27,7 @@
 | StockUGCChart | `/api/corporate/[corpId]/stock`, `/api/corporate/[corpId]/stock/correlation` |
 | CorporateLoyaltySection | `/api/corporate/[corpId]/fans` |
 | LoyaltySummaryReport | `/api/corporate/[corpId]/loyalty-summary` |
+| NegativeAnalysisSection | `/api/corporate/[corpId]/negative-analysis` |
 
 ## 関連ディレクトリ
 
@@ -42,6 +44,7 @@
 
 ## 更新履歴
 
+- 2026-01-29: NegativeAnalysisSection追加（ネガティブ分析タブ、8カテゴリ分類、時系列AreaChart、深刻度テーブル）
 - 2026-01-29: Brand Personality双極軸対応（personality_shadow追加、代替案4案カード表示、PersonalityAlternative型）
 - 2026-01-29: ペルソナ拡充（8→13: 高5/中5/低3）、LoyaltySummaryReportカルーセルUI追加
 - 2026-01-29: PersonaCard追加、LoyaltySummaryReportマルチペルソナ対応（8ペルソナ: 高3/中3/低2）

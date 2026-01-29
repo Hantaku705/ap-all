@@ -38,9 +38,11 @@ import {
   BarChart3,
   Globe,
   Target,
+  AlertTriangle,
 } from "lucide-react";
+import { NegativeAnalysisSection } from "@/components/corporate/NegativeAnalysisSection";
 
-type ActiveTab = "ugc" | "stock" | "fan" | "world" | "strategy";
+type ActiveTab = "ugc" | "stock" | "fan" | "world" | "strategy" | "negative";
 
 export default function CorporateDashboardPage() {
   const params = useParams();
@@ -332,6 +334,17 @@ export default function CorporateDashboardPage() {
             <Target className="h-4 w-4 inline mr-2" />
             戦略提案
           </button>
+          <button
+            onClick={() => setActiveTab("negative")}
+            className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
+              activeTab === "negative"
+                ? "border-blue-600 text-blue-600"
+                : "border-transparent text-gray-500 hover:text-gray-700"
+            }`}
+          >
+            <AlertTriangle className="h-4 w-4 inline mr-2" />
+            ロイヤリティ低分析
+          </button>
         </div>
 
         {/* UGC分析タブ */}
@@ -468,6 +481,11 @@ export default function CorporateDashboardPage() {
               </>
             )}
           </div>
+        )}
+
+        {/* ロイヤリティ低分析タブ */}
+        {activeTab === "negative" && (
+          <NegativeAnalysisSection corporateId={corporateId} />
         )}
 
         {/* 分析のポイント */}

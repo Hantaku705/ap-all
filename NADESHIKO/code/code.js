@@ -678,24 +678,24 @@ function fetchTikTokInfo_(url) {
     return { sns: 'TikTok', title: '', view: '', like: '', comment: '', share: '', save: '', durationSec: '' };
   }
 
-  // tiktok-video-downloader-api のレスポンス構造: data.statistics
-  const data = json.data || json;
-  if (!data) {
-    Logger.log(`TikTok no data for ${url}`);
+  // tiktok-video-downloader-api のレスポンス構造: トップレベルにstats
+  // フィールド名: views, likes, comments, shares, saves
+  if (!json || !json.stats) {
+    Logger.log(`TikTok no stats for ${url}`);
     return { sns: 'TikTok', title: '', view: '', like: '', comment: '', share: '', save: '', durationSec: '' };
   }
 
-  const st = data.statistics || data.stats || {};
-  Logger.log(`TikTok API response for ${url}: playCount=${st.playCount || st.play_count}, diggCount=${st.diggCount || st.digg_count}, shareCount=${st.shareCount || st.share_count}`);
+  const st = json.stats;
+  Logger.log(`TikTok API response for ${url}: views=${st.views}, likes=${st.likes}, shares=${st.shares}, saves=${st.saves}`);
   return {
     sns: 'TikTok',
-    title: data.title || data.desc || '',
-    view: toNum_(st.playCount || st.play_count),
-    like: toNum_(st.diggCount || st.digg_count),
-    comment: toNum_(st.commentCount || st.comment_count),
-    share: toNum_(st.shareCount || st.share_count),
-    save: toNum_(st.collectCount || st.collect_count),
-    durationSec: toNum_(data.duration),
+    title: json.description || '',
+    view: toNum_(st.views),
+    like: toNum_(st.likes),
+    comment: toNum_(st.comments),
+    share: toNum_(st.shares),
+    save: toNum_(st.saves),
+    durationSec: '',  // このAPIはdurationを返さない
     type: INSIGHT_CONF.DEFAULT_TYPE
   };
 }

@@ -9,6 +9,7 @@
 ```
 AP/
 ├── projects/               # 全プロジェクト
+│   ├── anybrand/           # AnyBrand TikTokアフィリエイトプラットフォーム
 │   ├── concept-learning/   # コンセプト学習
 │   ├── dr.melaxin/         # Dr.Melaxin
 │   ├── lip-tagline/        # リップポジショニングマップ（source/docs）
@@ -30,8 +31,8 @@ AP/
 ├── .claude/                # Claude Code設定（実運用）
 │   ├── agents/             # Subagent定義（18）
 │   ├── commands/           # Skillコマンド定義（39）
-│   ├── rules/              # ルール定義（11）
-│   ├── skills/             # Skill定義（16）
+│   ├── rules/              # ルール定義（12）
+│   ├── skills/             # Skill定義（17）
 │   ├── hooks/              # Hook定義
 │   ├── mcp-configs/        # MCP設定
 │   ├── examples/           # 設定例
@@ -48,6 +49,7 @@ AP/
 │
 ├── opperation/             # 運用・学習資料
 │   ├── CLAUDECODE/          # Claude Code オンボーディングWebapp
+│   ├── TikTokCAP/           # TikTok Shop Affiliateスクレイピングツール
 │   ├── なまえデザイン_フォルダ/  # 「なまえ」デザイン書籍まとめ
 │   ├── サブスク/            # サブスク確認ツール（Gmail API連携）
 │   ├── clawdbot/           # Clawdbot AIアシスタント設定ガイド
@@ -115,6 +117,7 @@ AP/
 | `permissions-config.md` | Claude Code権限設定リファレンス（`permissions.allow`構文・ツール名・パス指定） |
 | `llm-to-static.md` | LLM事前生成→静的ファイル化パターン（動的API→静的JSON+データ解像度UP） |
 | `nadeshiko-views-update.md` | NADESHIKO再生数更新（構造解析スキップ、サマリー即時生成） |
+| `playwright-auth-scraper.md` | Playwright認証付きスクレイピング構築パターン（手動ログイン、Cookie永続化） |
 
 ### 既存コマンド一覧
 
@@ -151,10 +154,61 @@ AP/
 | `/update-claude-code-starter` | AP設定をclaude-code-starterに同期（チーム共有用） |
 | `/validate-api-integration` | API統合の検証 |
 | `/verify-worker-deployment` | ワーカーデプロイの検証 |
+| `/sync-tiktokcap` | TikTokCAP スプレッドシート同期（Google Docs MCP → JSON） |
 
 ---
 
 ## プロジェクト別詳細
+
+### anybrand（AnyBrand）
+
+日本市場向けTikTokクリエイターアフィリエイトプラットフォーム。anyStarr（https://anystarr.com/）を参考に構築。
+
+**本番URL**: https://anybrand-platform.vercel.app
+
+**技術スタック**:
+- Next.js 16.1.6 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Recharts
+
+**ページ構成**:
+| パス | 内容 |
+|-----|------|
+| `/` | ランディングページ（6セクション） |
+| `/login` | ログイン |
+| `/register` | 新規登録（3ステップ） |
+| `/dashboard` | ダッシュボード（統計・グラフ・通知） |
+| `/products` | 商品カタログ（検索・フィルター） |
+| `/products/[id]` | 商品詳細（申請機能） |
+
+**ビジネスモデル**:
+```
+ブランド → AnyBrand（マッチング） → クリエイター → TikTokで紹介 → 購入 → コミッション
+```
+
+**Key Files**:
+| ファイル | 用途 |
+|---------|------|
+| `projects/anybrand/CLAUDE.md` | プロジェクト概要 |
+| `projects/anybrand/webapp/src/data/mock-data.ts` | モックデータ（商品10件、カテゴリ6件） |
+| `projects/anybrand/webapp/src/app/page.tsx` | ランディングページ |
+| `projects/anybrand/webapp/src/app/(auth)/dashboard/page.tsx` | ダッシュボード |
+
+**開発コマンド**:
+```bash
+cd projects/anybrand/webapp
+npm run dev
+```
+
+**デプロイ**:
+```bash
+cd projects/anybrand/webapp
+vercel --prod --yes
+```
+
+---
 
 ### concept-learning（コンセプト学習）
 
@@ -570,7 +624,7 @@ Claude Codeの設定ディレクトリ。
 |---------|------|
 | `agents/` | Subagent定義（18） |
 | `commands/` | Skillコマンド定義（37） |
-| `rules/` | ルール定義（11） |
+| `rules/` | ルール定義（12） |
 | `skills/` | Skill定義（13） |
 | `hooks/` | Hook定義 |
 | `mcp-configs/` | MCP設定 |
@@ -631,6 +685,10 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-29: **TikTokCAP スプレッドシート同期機能追加**（`/sync-tiktokcap`コマンド、Google Docs MCP→JSON変換、299件同期成功、`scripts/sync-spreadsheet.ts`）
+- 2026-01-29: **Playwright認証スクレイピングスキル + バックグラウンドタスクルール追加**（`playwright-auth-scraper.md`、`background-tasks.md`）
+- 2026-01-29: **TikTokCAP スクレイピングツール作成**（`opperation/TikTokCAP/`、Node.js + TypeScript + Playwright、TikTok Shop Partner Center商品プールからデータ取得、Cookie管理・ページネーション対応）
+- 2026-01-29: **AnyBrand TikTokアフィリエイトプラットフォーム作成**（`projects/anybrand/webapp/`、Next.js 16 + Tailwind CSS + Recharts、ランディング6セクション + ログイン/登録 + ダッシュボード + 商品カタログ、https://anybrand-platform.vercel.app）
 - 2026-01-29: **NADESHIKO再生数更新スキル作成**（`nadeshiko-views-update.md`、構造解析スキップ、サマリー即時生成）
 - 2026-01-28: **HANDOFFハイブリッド方式再構築**（ルート70行に軽量化、プロジェクト別HANDOFF.md 11件作成、HANDOFF_ARCHIVE.md削除、/handoffスキル更新）
 - 2026-01-28: **claude-code-starter APリポジトリ統合**（`.git`削除、`/update-claude-code-starter`同期コマンド作成、83ファイル同期、チームメンバー共有用）

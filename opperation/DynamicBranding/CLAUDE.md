@@ -322,6 +322,7 @@ vercel --prod --yes
 - 2026-01-29: **Brand Personality双極軸対応** - personality_shadow追加、代替案4案をカード形式で表示（食卓の頭脳派サポーター/研究熱心な料理の相棒/食の実験者/理系の料理好きおじさん）、PersonalityAlternative型追加
 - 2026-01-29: **PersonalityTraits双極軸化** - 0-100スケール → -50〜+50双極軸に変更。MVVSection.tsxにAxisScoreItem追加（左右ラベル表示）、PersonalityRadar.tsx双極軸対応
 - 2026-01-29: **ロイヤリティ低層隠れインサイト分析** - analyze-low-loyalty-insights.ts作成。387件negative投稿を8カテゴリ分類。新発見5カテゴリ（企業スキャンダル反応23件、コスパ不満16件、ホワイト企業ギャップ11件、品質・味7件、ポートフォリオ混乱3件）
+- 2026-01-29: **ロイヤリティ低分析タブ追加** - コーポレートダッシュボード6つ目のタブ。ネガティブ投稿の時系列トレンド（週次AreaChart）、8カテゴリ分類（添加物懸念/ステマ/スキャンダル反応/コスパ/ホワイト企業ギャップ/品質・味/ポートフォリオ混乱/株価批判）、深刻度スコア、代表投稿表示
 
 ---
 
@@ -352,8 +353,9 @@ vercel --prod --yes
 | `GET /api/corporate/[corpId]/stock` | 株価時系列 |
 | `GET /api/corporate/[corpId]/stock/correlation` | 株価×UGC相関（ピアソン相関、ラグ-7〜+7日） |
 | `GET /api/corporate/[corpId]/fans` | ファン資産（セグメント分類） |
-| `GET /api/corporate/[corpId]/loyalty-summary` | **ロイヤリティ別顧客インサイト（LLM生成、24時間キャッシュ）（NEW）** |
+| `GET /api/corporate/[corpId]/loyalty-summary` | **ロイヤリティ別顧客インサイト（LLM生成、24時間キャッシュ）** |
 | `GET /api/corporate/[corpId]/strategy` | **戦略提案（4タブ統合+LLM生成、24時間キャッシュ）** |
+| `GET /api/corporate/[corpId]/negative-analysis` | **ネガティブ分析（8カテゴリ分類、週次集計、深刻度スコア）（NEW）** |
 
 ### 新規コンポーネント（src/components/corporate/）
 
@@ -365,7 +367,8 @@ vercel --prod --yes
 | `FanUrchinChart.tsx` | ウニ型ファン可視化（SVG/React） |
 | `FanTireChart.tsx` | タイヤ型ファン可視化（SVG/React） |
 | `CorporateLoyaltySection.tsx` | コーポレートロイヤリティ分布（円グラフ+代表口コミ） |
-| `LoyaltySummaryReport.tsx` | **ロイヤリティ別顧客インサイト（顧客像・関心事・トーン・KW・トピック分布）（NEW）** |
+| `LoyaltySummaryReport.tsx` | **ロイヤリティ別顧客インサイト（顧客像・関心事・トーン・KW・トピック分布）** |
+| `NegativeAnalysisSection.tsx` | **ネガティブ分析（時系列AreaChart、PieChart、深刻度テーブル、代表投稿）（NEW）** |
 
 ### 新規コンポーネント（src/components/corporate-strategy/）
 
@@ -390,8 +393,12 @@ vercel --prod --yes
 | `StrategyOutput` | **戦略出力（strengths/challenges/opportunities/recommendations/actionPlan）（NEW）** |
 | `StrategyResponse` | 戦略APIレスポンス全体（input/strategy/generatedAt/cached） |
 | `TopicDistribution` | **トピック分布（topic/topicLabel/count/percentage/color）（NEW）** |
-| `LoyaltySummaryInsight` | **ロイヤリティ別インサイト（顧客像/関心事/トーン/KW/トピック分布）（NEW）** |
-| `LoyaltySummaryResponse` | **ロイヤリティサマリーAPIレスポンス（insights/generatedAt/cached）（NEW）** |
+| `LoyaltySummaryInsight` | **ロイヤリティ別インサイト（顧客像/関心事/トーン/KW/トピック分布）** |
+| `LoyaltySummaryResponse` | **ロイヤリティサマリーAPIレスポンス（insights/generatedAt/cached）** |
+| `NegativeCategory` | **ネガティブ8カテゴリ（additive_concern等）（NEW）** |
+| `NegativeTrendPoint` | **週次ネガティブ集計（week/total/categories）（NEW）** |
+| `CategorySeverity` | **カテゴリ別深刻度（count/avgLikes/severityScore/trend/topPosts）（NEW）** |
+| `NegativeAnalysisResponse` | **ネガティブ分析APIレスポンス（NEW）** |
 
 ### コーポレートロイヤリティ
 

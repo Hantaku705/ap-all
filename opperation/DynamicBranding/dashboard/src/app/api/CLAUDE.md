@@ -77,6 +77,7 @@ Next.js API Routes。Supabaseからデータを取得しフロントエンドに
 | `corporate/[corpId]/loyalty-summary/route.ts` | `GET /api/corporate/:id/loyalty-summary` | **ロイヤリティ別顧客インサイト（NEW）** |
 | `corporate/[corpId]/strategy/route.ts` | `GET /api/corporate/:id/strategy` | 戦略提案 |
 | `corporate/[corpId]/world-news/route.ts` | `GET /api/corporate/:id/world-news` | 世の中分析ニュース |
+| `corporate/[corpId]/negative-analysis/route.ts` | `GET /api/corporate/:id/negative-analysis` | **ネガティブ分析（8カテゴリ、週次集計、深刻度）（NEW）** |
 
 ## API共通パターン
 

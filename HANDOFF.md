@@ -4,39 +4,45 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最終セッション | #148 |
+| 最終セッション | #154 |
 | 最終更新 | 2026-01-29 |
-| 最新コミット | 55cf048 |
+| 最新コミット | 63e8717 |
 
 ### 作業中のタスク
 
-- [ ] Google Docs MCP 再認証 → スプレッドシート読み取り
 - [ ] 将軍ダッシュボード v3.2 JavaScript実装
 - [ ] CLAUDECODE Webapp ログイン機能 - Supabase設定待ち
 - [ ] skills-map Webapp CLAUDE.md作成
 - [ ] The Room FX 提案書 Google Docs書き込み（5〜11章）
+- [x] **AnyBrand 商品カタログ実データ化**（299件、TikTokCAPスプレッドシート連携）
+- [x] **TikTokCAP スプレッドシート同期機能実装**（/sync-tiktokcap、299件同期成功）
+- [x] **AnyBrand Phase 2完了**（/orders, /commissions, /settings, /guide）
+- [x] **TikTokCAP スクレイピングツール Phase 1実装**
+- [x] **Playwright認証スクレイピングスキル＆バックグラウンドタスクルール作成**
 
 ### 次のアクション
 
 1. CLAUDECODE ログイン機能 - Supabase設定
 2. /shogun セルフブラッシュアップ実行
-3. skills-map CLAUDE.md作成＆Vercelデプロイ
+3. AnyBrand 商品画像をスプレッドシートに追加して再同期
 
 ## 未コミット変更
 
 ```
-M HANDOFF.md
+ M CLAUDE.md
+ M HANDOFF.md
  M NADESHIKO/code/code.js
- M opperation/DynamicBranding/CLAUDE.md
- M opperation/DynamicBranding/HANDOFF.md
- M opperation/DynamicBranding/dashboard/scripts/CLAUDE.md
- M opperation/DynamicBranding/dashboard/src/data/corporate-loyalty/corp-1-summary.json
-?? .claude/skills/nadeshiko-views-update.md
-?? NADESHIKO/data/再生数シート/NADESHIKO 分析 - 1月 (2).csv
-?? opperation/DynamicBranding/dashboard/output/low-loyalty-insights.json
-?? opperation/DynamicBranding/dashboard/scripts/analyze-low-loyalty-deep.ts
-?? opperation/DynamicBranding/dashboard/scripts/analyze-low-loyalty-insights.ts
-?? opperation/DynamicBranding/dashboard/scripts/analyze-low-loyalty.ts
+ M opperation/DynamicBranding/...（複数ファイル）
+ M projects/anybrand/webapp/src/data/mock-data.ts
+ M projects/anybrand/webapp/src/types/index.ts
+?? .claude/commands/sync-tiktokcap.md（新規）
+?? .claude/rules/background-tasks.md
+?? .claude/skills/playwright-auth-scraper.md
+?? NADESHIKO/code/test-tiktok-api*.js（3ファイル）
+?? opperation/DynamicBranding/dashboard/src/.../negative-analysis/
+?? opperation/TikTokCAP/scripts/convert-to-anybrand.ts（新規）
+?? opperation/TikTokCAP/（scraper + scripts + data）
+?? projects/anybrand/webapp/src/data/products-data.ts（299件）
 ```
 
 ## プロジェクト別履歴
@@ -54,8 +60,132 @@ M HANDOFF.md
 | refa | 2026-01-26 | [refa-report](https://refa-report.vercel.app) | [詳細](projects/refa/HANDOFF.md) |
 | phonefarm | 2026-01-20 | [phonefarm-threat-intel](https://phonefarm-threat-intel.vercel.app) | [詳細](projects/phonefarm/HANDOFF.md) |
 | mascode | 2026-01-19 | - | [詳細](projects/mascode/HANDOFF.md) |
+| anybrand | 2026-01-29 | [anybrand-platform](https://anybrand-platform.vercel.app) | [詳細](projects/anybrand/HANDOFF.md) |
 
 ## セッション履歴
+
+### 2026-01-29（#154）
+- **AnyBrand 商品カタログ実データ化**
+  - 要件: モックデータ10件 → TikTokCAPスプレッドシートの実データ299件に置き換え
+  - 作成ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `opperation/TikTokCAP/scripts/convert-to-anybrand.ts` | TAPProduct→AnyBrand Product変換スクリプト |
+    | `projects/anybrand/webapp/src/data/products-data.ts` | 実データ299件（自動生成） |
+  - データマッピング:
+    | TikTokCAP | AnyBrand | 変換 |
+    |-----------|----------|------|
+    | `no` | `id` | そのまま |
+    | `product` | `name` | そのまま |
+    | `brand` | `brandName` | そのまま |
+    | `price` | `price` | `¥1,890` → `1890` |
+    | `capRate` | `commissionRate` | `15%` → `15` |
+    | `tapLink` | `affiliateUrl` | 新フィールド |
+    | `productUrl` | `shopUrl` | 新フィールド |
+  - カテゴリ統合（12→6）:
+    | AnyBrand | 件数 | 元カテゴリ |
+    |---------|------|-----------|
+    | その他 | 123件 | 不明、おもちゃ |
+    | 食品・健康 | 74件 | 食品、スナック、インナーケア、健康 |
+    | 美容・コスメ | 58件 | コスメ、スキンケア |
+    | 家電・ガジェット | 23件 | ガジェット |
+    | ファッション | 11件 | アパレル、アクセサリー |
+    | ホーム・インテリア | 10件 | 日用品 |
+  - 型定義更新: `affiliateUrl`, `shopUrl`, `campaignPeriod` 追加
+  - 本番デプロイ完了: https://anybrand-platform.vercel.app/products
+  - 今後の更新方法:
+    ```bash
+    /sync-tiktokcap                                    # スプレッドシート同期
+    cd opperation/TikTokCAP/scripts && npx tsx convert-to-anybrand.ts  # 変換
+    cd projects/anybrand/webapp && vercel --prod --yes # デプロイ
+    ```
+
+### 2026-01-29（#153）
+- **TikTokCAP スプレッドシート同期機能実装**
+  - 要件: Google スプレッドシートをClaude Code上で同期したいタイミングで読み込み
+  - Google Docs MCP でスプレッドシート接続確認（303行 × 50列）
+  - 作成ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `.claude/commands/sync-tiktokcap.md` | 同期コマンド定義 |
+    | `scripts/sync-spreadsheet.ts` | MCP出力→JSON変換スクリプト |
+    | `data/products.json` | 同期データ（299件） |
+  - 同期結果:
+    | 項目 | 値 |
+    |------|-----|
+    | 総商品数 | 299件 |
+    | ブランド数 | 47社（魚耕29、医食同源20、FOODOLOGY10等） |
+    | カテゴリ | 12種類（食品42、コスメ39、ガジェット23等） |
+  - 使い方: `/sync-tiktokcap` → MCP読み取り → スクリプト変換 → JSON出力
+
+### 2026-01-29（#152）
+- **/should-skill 実行 → Skill＆Rules 2件作成**
+  - TikTokCAPセッションで繰り返されたパターンを抽出・自動化
+  - 作成ファイル:
+    | ファイル | 種別 | 内容 |
+    |---------|------|------|
+    | `.claude/skills/playwright-auth-scraper.md` | Skill | Playwright認証付きスクレイピング構築パターン（ディレクトリ構成、Cookie管理、手動ログインモード実装） |
+    | `.claude/rules/background-tasks.md` | Rules | バックグラウンドタスク管理ルール（run_in_background, TaskOutput, KillShell、タイムアウト設定） |
+  - CLAUDE.md更新: skills +1, rules +1
+
+### 2026-01-29（#151）
+- **AnyBrand Phase 2完了**
+  - `/orders` 注文履歴ページ（フィルター、検索、テーブル、ページネーション）
+  - `/commissions` コミッション管理ページ（KPI 4枚、AreaChart、振込申請モーダル）
+  - `/settings` 設定ページ（3タブ: プロフィール、銀行口座、通知）
+  - `/guide` ガイドページ（カテゴリ、FAQ、始め方ステップ）
+  - `mock-data.ts` に `commissionPayouts`（4件）、`faqs`（8件）追加
+  - 本番デプロイ完了（認証なしでアクセス可能）
+  - URL: https://anybrand-platform.vercel.app
+- **TikTokCAP スクレイピングツール Phase 1実装**
+  - 要件: TikTok Shop Partner Center アフィリエイト商品プールからデータ取得
+  - 対象URL: https://partner.tiktokshop.com/affiliate-product-management/affiliate-product-pool?market=20
+  - 技術スタック: Node.js + TypeScript + Playwright
+  - 実装ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `scraper/src/index.ts` | CLIエントリー（login/scrapeコマンド） |
+    | `scraper/src/config.ts` | 環境変数・設定管理 |
+    | `scraper/src/playwright/browser.ts` | ブラウザ起動、Cookie保存/読み込み |
+    | `scraper/src/playwright/login.ts` | Partner Centerログイン処理 |
+    | `scraper/src/playwright/product-pool.ts` | 商品プールスクレイピング |
+    | `scraper/src/types/product.ts` | 商品データ型定義 |
+  - 使い方:
+    ```bash
+    cd opperation/TikTokCAP/scraper
+    npm install && npx playwright install chromium
+    # .env にログイン情報設定
+    npm run login   # Cookie保存
+    npm run scrape  # データ取得
+    ```
+  - 出力: `scraper/data/products/` にJSON/CSV
+  - Phase 2（公式API統合）は後日
+
+### 2026-01-29（#150）
+- **AnyBrand TikTokアフィリエイトプラットフォーム作成**
+  - 要件: anystarr.com を日本市場向けに再現
+  - 技術スタック: Next.js 16.1.6 + React 19 + TypeScript + Tailwind CSS 4 + Recharts
+  - 実装ページ:
+    | パス | 内容 |
+    |------|------|
+    | `/` | ランディング（6セクション：Hero, Features, HowItWorks, Stats, FAQ, CTA） |
+    | `/login` | ログイン |
+    | `/register` | 新規登録（3ステップ） |
+    | `/dashboard` | ダッシュボード（統計、グラフ、通知、最近の注文） |
+    | `/products` | 商品カタログ（検索、フィルター、ソート） |
+    | `/products/[id]` | 商品詳細（申請機能） |
+  - モックデータ: 商品10件、カテゴリ6件、注文5件、通知4件
+  - 型修正: Recharts Tooltip formatter（`value as number` でキャスト）
+  - 本番デプロイ完了: https://anybrand-platform.vercel.app
+  - CLAUDE.md作成: `projects/anybrand/CLAUDE.md`
+
+### 2026-01-29（#149）
+- **DynamicBranding ネガティブ分析セクション実装中**
+  - NegativeAnalysisSection.tsx 新規作成
+  - negative-analysis API エンドポイント作成中
+  - corporate.types.ts に型定義追加
+- **NADESHIKO TikTok API デバッグ**
+  - test-tiktok-api.js / test-tiktok-api-fixed.js / test-tiktok-api-debug.js 作成
 
 ### 2026-01-29（#148）
 - **NADESHIKO再生数更新スキル作成**
@@ -206,6 +336,7 @@ M HANDOFF.md
 | タグライン | 105-127回 | シャンプー86+スキンケア42+リップ42 | 16 |
 | CLAUDECODE | 86-104回 | Starter Kit、Multi-Agent | 13 |
 | インフラ | 125-146回 | 設定同期、権限管理、フォルダ統合、HANDOFFハイブリッド化、戦略タブ静的化、ロイヤリティインサイト、llm-to-staticスキル、useEffect修正、代表口コミフィルター、LLM動的生成基盤 | 18 |
+| TikTokCAP | 151-153回 | TikTok Shop Affiliateスクレイピング + スプレッドシート同期 | 3 |
 
 ## 未解決の問題
 

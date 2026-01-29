@@ -24,6 +24,8 @@
 | 株価×UGC | `StockUGCChart` | 株価とUGCの相関分析 |
 | ファン資産 | `CorporateLoyaltySection` | ロイヤリティ分布 |
 | 世の中分析 | `WorldNewsSection` | NewsAPI連携ニュース分析 |
+| 戦略提案 | `LoyaltyGrowthTargets` 等 | ロイヤリティ成長戦略 |
+| ロイヤリティ低分析 | `NegativeAnalysisSection` | **ネガティブ投稿分析（時系列・カテゴリ・深刻度）（NEW）** |
 
 ## 関連ディレクトリ
 
@@ -41,4 +43,5 @@
 
 ## 更新履歴
 
+- 2026-01-29: ロイヤリティ低分析タブ追加（6つ目のタブ、NegativeAnalysisSection）
 - 2026-01-23: 初版作成

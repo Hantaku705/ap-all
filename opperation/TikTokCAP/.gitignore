@@ -1,0 +1,21 @@
+# 環境変数
+.env
+.env.local
+
+# Node
+node_modules/
+
+# 出力データ
+scraper/data/cookies/
+scraper/data/products/
+scraper/data/logs/
+
+# ビルド
+scraper/dist/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store

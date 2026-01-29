@@ -5,3 +5,4 @@ export { FanUrchinChart } from "./FanUrchinChart";
 export { FanTireChart } from "./FanTireChart";
 export { PersonaCard } from "./PersonaCard";
 export { LoyaltySummaryReport } from "./LoyaltySummaryReport";
+export { NegativeAnalysisSection } from "./NegativeAnalysisSection";
