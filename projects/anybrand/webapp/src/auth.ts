@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import TikTok from "next-auth/providers/tiktok";
 
 // TikTok プロフィール型
 export interface TikTokProfile {
@@ -27,27 +26,81 @@ declare module "next-auth" {
   }
 }
 
-declare module "next-auth/jwt" {
-  interface JWT {
-    accessToken?: string;
-    refreshToken?: string;
-    expiresAt?: number;
-    tiktok?: TikTokProfile;
-  }
-}
+// JWT型はcallback内で型アサーションを使用
+
+// カスタムTikTok OAuthプロバイダー
+const TikTokProvider = {
+  id: "tiktok",
+  name: "TikTok",
+  type: "oauth" as const,
+  authorization: {
+    url: "https://www.tiktok.com/v2/auth/authorize",
+    params: {
+      client_key: process.env.TIKTOK_CLIENT_KEY,
+      scope: "user.info.basic,user.info.profile,user.info.stats",
+      response_type: "code",
+    },
+  },
+  token: {
+    url: "https://open.tiktokapis.com/v2/oauth/token/",
+    async request({ params, provider }: { params: { code: string; redirect_uri: string }; provider: { callbackUrl: string } }) {
+      const response = await fetch("https://open.tiktokapis.com/v2/oauth/token/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          client_key: process.env.TIKTOK_CLIENT_KEY!,
+          client_secret: process.env.TIKTOK_CLIENT_SECRET!,
+          code: params.code,
+          grant_type: "authorization_code",
+          redirect_uri: provider.callbackUrl,
+        }),
+      });
+
+      const tokens = await response.json();
+      return { tokens };
+    },
+  },
+  userinfo: {
+    url: "https://open.tiktokapis.com/v2/user/info/",
+    async request({ tokens }: { tokens: { access_token: string } }) {
+      const response = await fetch(
+        "https://open.tiktokapis.com/v2/user/info/?fields=open_id,union_id,avatar_url,display_name,bio_description,follower_count,following_count,likes_count,video_count",
+        {
+          headers: {
+            Authorization: `Bearer ${tokens.access_token}`,
+          },
+        }
+      );
+
+      const data = await response.json();
+      return data.data?.user || data;
+    },
+  },
+  profile(profile: {
+    open_id?: string;
+    display_name?: string;
+    avatar_url?: string;
+    follower_count?: number;
+    following_count?: number;
+    likes_count?: number;
+    video_count?: number;
+    bio_description?: string;
+  }) {
+    return {
+      id: profile.open_id || "",
+      name: profile.display_name || "",
+      email: null,
+      image: profile.avatar_url || "",
+    };
+  },
+  clientId: process.env.TIKTOK_CLIENT_KEY!,
+  clientSecret: process.env.TIKTOK_CLIENT_SECRET!,
+};
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  providers: [
-    TikTok({
-      clientId: process.env.TIKTOK_CLIENT_KEY!,
-      clientSecret: process.env.TIKTOK_CLIENT_SECRET!,
-      authorization: {
-        params: {
-          scope: "user.info.basic,user.info.stats",
-        },
-      },
-    }),
-  ],
+  providers: [TikTokProvider],
   pages: {
     signIn: "/login",
   },
@@ -63,42 +116,27 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const tiktokProfile = profile as any;
         token.tiktok = {
-          openId: tiktokProfile.open_id || tiktokProfile.data?.user?.open_id,
-          displayName:
-            tiktokProfile.display_name ||
-            tiktokProfile.data?.user?.display_name,
-          avatarUrl:
-            tiktokProfile.avatar_url || tiktokProfile.data?.user?.avatar_url,
-          followerCount:
-            tiktokProfile.follower_count ||
-            tiktokProfile.data?.user?.follower_count ||
-            0,
-          followingCount:
-            tiktokProfile.following_count ||
-            tiktokProfile.data?.user?.following_count ||
-            0,
-          likesCount:
-            tiktokProfile.likes_count ||
-            tiktokProfile.data?.user?.likes_count ||
-            0,
-          videoCount:
-            tiktokProfile.video_count ||
-            tiktokProfile.data?.user?.video_count ||
-            0,
-          bioDescription:
-            tiktokProfile.bio_description ||
-            tiktokProfile.data?.user?.bio_description,
+          openId: tiktokProfile.open_id || tiktokProfile.id || "",
+          displayName: tiktokProfile.display_name || tiktokProfile.name || "",
+          avatarUrl: tiktokProfile.avatar_url || tiktokProfile.image || "",
+          followerCount: tiktokProfile.follower_count || 0,
+          followingCount: tiktokProfile.following_count || 0,
+          likesCount: tiktokProfile.likes_count || 0,
+          videoCount: tiktokProfile.video_count || 0,
+          bioDescription: tiktokProfile.bio_description || "",
         };
       }
       return token;
     },
     async session({ session, token }) {
       // セッションにTikTok情報を追加
-      if (token.tiktok) {
-        session.user.tiktok = token.tiktok;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const extendedToken = token as any;
+      if (extendedToken.tiktok) {
+        session.user.tiktok = extendedToken.tiktok as TikTokProfile;
       }
-      if (token.accessToken) {
-        session.user.accessToken = token.accessToken;
+      if (extendedToken.accessToken) {
+        session.user.accessToken = extendedToken.accessToken as string;
       }
       return session;
     },

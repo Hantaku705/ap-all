@@ -4,7 +4,7 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最終セッション | #155 |
+| 最終セッション | #156 |
 | 最終更新 | 2026-01-29 |
 | 本番URL | https://anybrand-platform.vercel.app |
 
@@ -61,15 +61,33 @@
 - [x] **商品詳細ボタン連携** - サンプル申請/アフィリエイト追加ボタンがモーダルを開くように
 - [x] **依存追加** - qrcode.react
 
+#### TikTokログイン連携（#156）
+- [x] **Auth.js v5導入** - next-auth@latest + @auth/core
+- [x] **カスタムTikTok OAuthプロバイダー** - `src/auth.ts`作成
+  - TikTok APIエンドポイント設定（認証、トークン、ユーザー情報）
+  - JWT/Sessionコールバックでプロフィール情報保存
+  - TikTokProfile型定義
+- [x] **APIルート作成** - `src/app/api/auth/[...nextauth]/route.ts`
+- [x] **Middleware作成** - 保護ページ設定（/dashboard, /profile等）
+- [x] **SessionProvider追加** - `src/components/providers/SessionProvider.tsx`
+- [x] **プロフィールページ作成** - `src/app/(auth)/profile/page.tsx`
+  - anystarr.comスタイルUI
+  - TikTok統計表示（フォロワー、フォロー、いいね、動画数）
+  - サイドバーナビゲーション
+- [x] **プロフィールコンポーネント** - ProfileSidebar, StatCard
+- [x] **ログインページ更新** - TikTokログインボタン追加
+- [x] **環境変数テンプレート** - `.env.example`作成
+
 ### 作業中のタスク
 
+- [ ] TikTok Developer Portal設定（Client Key/Secret、Redirect URI登録）
 - [ ] QRコード実URL対応（計画策定済み、実装待ち）
 
-### 次のアクション（Phase 3）
+### 次のアクション（Phase 4）
 
+- [ ] **TikTok Developer Portal設定** - 本番環境でのOAuth動作確認
 - [ ] **QRコード実TikTok Shop URL対応**（計画: `.claude/plans/jiggly-puzzling-spring.md`）
 - [ ] Supabase認証連携
-- [ ] 実データ連携
 - [ ] サンプル管理機能
 - [ ] 支払い機能（Stripe Connect）
 
@@ -94,6 +112,21 @@ vercel --prod --yes
 ```
 
 ## セッション履歴
+
+### 2026-01-29（#156）
+- **TikTokログイン連携実装**
+- Auth.js v5 (next-auth@latest) 導入
+- カスタムTikTok OAuthプロバイダー作成
+  - TikTokにはbuilt-inプロバイダーがないため、`src/auth.ts`にカスタム実装
+  - Authorization URL: `https://www.tiktok.com/v2/auth/authorize`
+  - Token URL: `https://open.tiktokapis.com/v2/oauth/token/`
+  - UserInfo URL: `https://open.tiktokapis.com/v2/user/info/`
+- プロフィールページ（anystarr.comスタイル）作成
+  - サイドバー: マイプロフィール、サンプル記録、メッセージ等
+  - 統計カード: フォロワー、フォロー、いいね、動画数
+- TypeScript型エラー修正
+  - `@auth/core/jwt`モジュール拡張エラー → 型アサーションで解決
+- ビルド成功確認
 
 ### 2026-01-29（#155）
 - **QRコード実URL対応計画**

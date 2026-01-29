@@ -20,7 +20,9 @@ export default function AddAffiliateModal({
 
   if (!isOpen) return null;
 
-  const affiliateUrl = `https://shop.tiktok.com/affiliate/product/${product.id}?ref=anybrand`;
+  // 商品データのaffiliateUrlを使用、なければフォールバック
+  const affiliateUrl = product.affiliateUrl ||
+    `https://shop.tiktok.com/affiliate/product/${product.id}?ref=anybrand`;
   const tiktokSellerUrl = "https://seller-us.tiktok.com/affiliate/creator";
 
   const handleCopyLink = () => {
