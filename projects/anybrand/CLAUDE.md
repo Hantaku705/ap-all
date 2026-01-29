@@ -194,6 +194,7 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-29: **QRコード実URL化 + レイアウト修正** - AddAffiliateModalでproduct.affiliateUrl使用、コピーボタンflex-shrink-0修正
 - 2026-01-29: **TikTokログイン連携** - Auth.js v5導入、カスタムTikTok OAuthプロバイダー作成、プロフィールページ（anystarr.comスタイル）、SessionProvider、Middleware
 - 2026-01-29: **Phase 3 実データ連携** - TikTokCAPスプレッドシート299件同期（`convert-to-anybrand.ts`作成、カテゴリ12→6統合、型定義に`affiliateUrl`/`shopUrl`追加）
 - 2026-01-29: **anystarr.com UI/UX改善** - 商品一覧・詳細ページをanystarr.comスタイルに全面改修（バッジ、獲得額緑表示、コミッション段階、販売統計、Playwrightテスト10件）

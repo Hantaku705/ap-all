@@ -4,9 +4,9 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最終セッション | #154 |
+| 最終セッション | #155 |
 | 最終更新 | 2026-01-29 |
-| 最新コミット | 63e8717 |
+| 最新コミット | 61b301c |
 
 ### 作業中のタスク
 
@@ -14,6 +14,7 @@
 - [ ] CLAUDECODE Webapp ログイン機能 - Supabase設定待ち
 - [ ] skills-map Webapp CLAUDE.md作成
 - [ ] The Room FX 提案書 Google Docs書き込み（5〜11章）
+- [x] **AnyBrand QRコード実URL化 + レイアウト修正**（affiliateUrl使用、flex-shrink-0修正）
 - [x] **AnyBrand 商品カタログ実データ化**（299件、TikTokCAPスプレッドシート連携）
 - [x] **TikTokCAP スプレッドシート同期機能実装**（/sync-tiktokcap、299件同期成功）
 - [x] **AnyBrand Phase 2完了**（/orders, /commissions, /settings, /guide）
@@ -29,20 +30,12 @@
 ## 未コミット変更
 
 ```
- M CLAUDE.md
- M HANDOFF.md
- M NADESHIKO/code/code.js
- M opperation/DynamicBranding/...（複数ファイル）
- M projects/anybrand/webapp/src/data/mock-data.ts
- M projects/anybrand/webapp/src/types/index.ts
-?? .claude/commands/sync-tiktokcap.md（新規）
-?? .claude/rules/background-tasks.md
-?? .claude/skills/playwright-auth-scraper.md
-?? NADESHIKO/code/test-tiktok-api*.js（3ファイル）
-?? opperation/DynamicBranding/dashboard/src/.../negative-analysis/
-?? opperation/TikTokCAP/scripts/convert-to-anybrand.ts（新規）
-?? opperation/TikTokCAP/（scraper + scripts + data）
-?? projects/anybrand/webapp/src/data/products-data.ts（299件）
+M CLAUDE.md
+?? opperation/TikTokCAP/data/test-page.png
+?? opperation/TikTokCAP/scripts/fetch-product-images.ts
+?? opperation/TikTokCAP/scripts/gas.js
+?? opperation/TikTokCAP/scripts/package*.json
+?? opperation/TikTokCAP/scripts/test-single-image.ts
 ```
 
 ## プロジェクト別履歴
@@ -63,6 +56,25 @@
 | anybrand | 2026-01-29 | [anybrand-platform](https://anybrand-platform.vercel.app) | [詳細](projects/anybrand/HANDOFF.md) |
 
 ## セッション履歴
+
+### 2026-01-29（#155）
+- **AnyBrand QRコード実URL化**
+  - 要件: 「アフィリエイトに追加」モーダルのQRコードを実TikTokアフィリエイトリンクに変更
+  - 変更ファイル: `projects/anybrand/webapp/src/components/modals/AddAffiliateModal.tsx`
+  - 変更内容:
+    | Before | After |
+    |--------|-------|
+    | ダミーURL `https://shop.tiktok.com/affiliate/product/${id}` | `product.affiliateUrl` を使用（フォールバック付き） |
+  - コミット: `0c09768` feat: QRコードに実TikTokアフィリエイトURL使用
+- **AnyBrand モーダルレイアウト修正**
+  - 問題: コピーボタンが右端で切れる
+  - 修正:
+    | 要素 | 追加クラス |
+    |------|-----------|
+    | 入力フィールド | `min-w-0`（縮小可能に） |
+    | コピーボタン | `flex-shrink-0`（縮小しない） |
+  - コミット: `61b301c` fix: アフィリエイトモーダルのコピーボタンレイアウト修正
+  - 本番デプロイ完了: https://anybrand-platform.vercel.app
 
 ### 2026-01-29（#154）
 - **AnyBrand 商品カタログ実データ化**
@@ -337,6 +349,7 @@
 | CLAUDECODE | 86-104回 | Starter Kit、Multi-Agent | 13 |
 | インフラ | 125-146回 | 設定同期、権限管理、フォルダ統合、HANDOFFハイブリッド化、戦略タブ静的化、ロイヤリティインサイト、llm-to-staticスキル、useEffect修正、代表口コミフィルター、LLM動的生成基盤 | 18 |
 | TikTokCAP | 151-153回 | TikTok Shop Affiliateスクレイピング + スプレッドシート同期 | 3 |
+| AnyBrand | 150-155回 | TikTokアフィリエイトプラットフォーム（Phase 1-3 + QRコード実URL化） | 6 |
 
 ## 未解決の問題
 
