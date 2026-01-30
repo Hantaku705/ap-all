@@ -1,0 +1,1943 @@
+[
+  {
+    "id": "yc-31259",
+    "source": "yc",
+    "name": "Tsenta",
+    "description": "AI-Native, On-Device Job Automation",
+    "url": "https://tsenta.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Summer 2026"
+    },
+    "category": "Consumer",
+    "tags": [
+      "Consumer",
+      "Recruiting",
+      "HR Tech",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.262Z"
+  },
+  {
+    "id": "yc-31048",
+    "source": "yc",
+    "name": "FullSeam",
+    "description": "FullSeam is an AI employee for finance and accounting teams.",
+    "url": "https://www.fullseam.com",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "FinOps",
+      "Fintech",
+      "SaaS",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31085",
+    "source": "yc",
+    "name": "Ruma Care",
+    "description": "We help clinics get patients on biologics faster",
+    "url": "https://rumacare.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Healthcare",
+    "tags": [
+      "Healthcare",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31176",
+    "source": "yc",
+    "name": "Rhizome AI",
+    "description": "Always know what the FDA thinks",
+    "url": "https://rhizomeai.com/",
+    "metrics": {
+      "teamSize": 1,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "SaaS",
+      "Biotech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31120",
+    "source": "yc",
+    "name": "Kyten Technologies",
+    "description": "Custom aerospace-grade battery pack factory",
+    "url": "https://kytentech.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Manufacturing",
+      "Aerospace"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31208",
+    "source": "yc",
+    "name": "Oximy",
+    "description": "The system of record for enterprise AI usage.",
+    "url": "https://oximy.com",
+    "metrics": {
+      "teamSize": 5,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Security",
+      "Enterprise Software"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31154",
+    "source": "yc",
+    "name": "Orthogonal",
+    "description": "Agentic Payments for APIs",
+    "url": "https://orthogonal.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Crypto / Web3",
+      "Payments",
+      "API"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31187",
+    "source": "yc",
+    "name": "Fenrock AI (YC W26)",
+    "description": "The most powerful AI agents for Financial Crime Compliance",
+    "url": "https://fenrock.ai/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Fintech",
+    "tags": [
+      "Artificial Intelligence",
+      "Fintech",
+      "Compliance",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31108",
+    "source": "yc",
+    "name": "Strand AI",
+    "description": "Curated multimodal datasets for biology AI",
+    "url": "https://strandai.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Healthcare",
+    "tags": [
+      "Biotech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31040",
+    "source": "yc",
+    "name": "CatchBack Cards",
+    "description": "a platform for maximizing the thrill of collecting trading cards",
+    "url": "https://catchbackcards.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Consumer",
+    "tags": [
+      "Crypto / Web3",
+      "Consumer",
+      "NFT"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31224",
+    "source": "yc",
+    "name": "Servo7",
+    "description": "Autonomous Warehouse Robots",
+    "url": "https://servo7.com",
+    "metrics": {
+      "teamSize": null,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Robotics",
+      "Logistics"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31283",
+    "source": "yc",
+    "name": "Librar Labs",
+    "description": "Intelligence for physical knowledge starting with libraries",
+    "url": "https://www.librarlabs.com",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Machine Learning",
+      "Computer Vision",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31023",
+    "source": "yc",
+    "name": "Inviscid AI",
+    "description": "Real-time Building Simulations to Optimize Energy and Operational…",
+    "url": "https://inviscidai.com/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Warehouse Management Tech",
+      "IoT",
+      "Sustainability",
+      "Proptech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31274",
+    "source": "yc",
+    "name": "Pollinate",
+    "description": "AI Agents for the supply chain.",
+    "url": "https://www.pollinate.tech/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Logistics",
+      "Supply Chain"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31242",
+    "source": "yc",
+    "name": "Booko",
+    "description": "Dynamic pricing for service businesses",
+    "url": "https://bookoapp.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Machine Learning",
+      "SaaS",
+      "B2B",
+      "Analytics"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31210",
+    "source": "yc",
+    "name": "Mendral",
+    "description": "AI DevOps Engineer",
+    "url": "https://mendral.com/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Developer Tools",
+      "DevOps"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31252",
+    "source": "yc",
+    "name": "Moda",
+    "description": "Product analytics for AI-powered products.",
+    "url": "https://modaflows.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "SaaS",
+      "Analytics",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31092",
+    "source": "yc",
+    "name": "Axis",
+    "description": "Models for Monitoring Commodities Markets",
+    "url": "https://axisanalysis.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Fintech",
+    "tags": [
+      "Fintech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31135",
+    "source": "yc",
+    "name": "RoboDock",
+    "description": "Enabling autonomous EV and AV depot operations",
+    "url": "https://www.robodock.tech/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "SaaS",
+      "Robotics",
+      "Energy",
+      "Electric Vehicles",
+      "Automation"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31292",
+    "source": "yc",
+    "name": "Aurorin CAD",
+    "description": "We help hardware companies ship faster",
+    "url": "https://aurorincad.com",
+    "metrics": {
+      "teamSize": 1,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Hard Tech",
+      "Hardware",
+      "B2B",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31132",
+    "source": "yc",
+    "name": "MouseCat",
+    "description": "The AI Toolkit for Risk Teams",
+    "url": "https://www.mousecat.ai",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Fintech",
+      "Fraud Detection"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31054",
+    "source": "yc",
+    "name": "ARC Prize Foundation",
+    "description": "AI benchmarks that measure general intelligence and inspire new ideas",
+    "url": "https://arcprize.org/",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Artificial Intelligence",
+      "Generative AI",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31217",
+    "source": "yc",
+    "name": "Polymath",
+    "description": "Long-horizon RL",
+    "url": "https://polymathlabs.ai/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "B2B",
+      "Big Data",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31140",
+    "source": "yc",
+    "name": "CodeWisp",
+    "description": "Anyone can create real games with AI",
+    "url": "https://codewisp.net/",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "Consumer",
+    "tags": [
+      "Artificial Intelligence",
+      "Consumer",
+      "Gaming",
+      "Web Development",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31236",
+    "source": "yc",
+    "name": "Balance",
+    "description": "Full-Stack AI Accounting",
+    "url": "https://getbalance.ai",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Fintech",
+      "Automation"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31255",
+    "source": "yc",
+    "name": "Grade",
+    "description": "Payroll for performance",
+    "url": "https://usegrade.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Fintech",
+    "tags": [
+      "Fintech",
+      "B2B"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31174",
+    "source": "yc",
+    "name": "Hex Security",
+    "description": "Agentic Offensive Security at Scale",
+    "url": "https://hex.co",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Reinforcement Learning",
+      "Cybersecurity"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31287",
+    "source": "yc",
+    "name": "DAIVIN!",
+    "description": "Tankless Dive Gear - Breath Autonomy at Sea, Land & Space",
+    "url": "https://www.daivin.tech/",
+    "metrics": {
+      "teamSize": 1,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Hard Tech",
+      "Hardware",
+      "Fuel Cells",
+      "Aerospace",
+      "Maritime"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31089",
+    "source": "yc",
+    "name": "Lance",
+    "description": "AI Voice Agent for Hotel Operations",
+    "url": "https://www.lance.live",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "SaaS",
+      "B2B",
+      "Customer Service",
+      "Conversational AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31278",
+    "source": "yc",
+    "name": "Zymbly",
+    "description": "Automates admin for aircraft technicians",
+    "url": "https://www.zymbly.com",
+    "metrics": {
+      "teamSize": 0,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "AIOps",
+      "Workflow Automation",
+      "Transportation"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31144",
+    "source": "yc",
+    "name": "DroneTector",
+    "description": "Technology to detect and track hostile drones",
+    "url": "https://www.dronetector.com/",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Hard Tech",
+      "Drones"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31244",
+    "source": "yc",
+    "name": "Crow",
+    "description": "Let users control your app through chat",
+    "url": "https://www.usecrow.ai/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Generative AI",
+      "Chatbot",
+      "Enterprise",
+      "AI Assistant"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31164",
+    "source": "yc",
+    "name": "Compresr",
+    "description": "LLM-native context compression ",
+    "url": "https://compresr.ai",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Developer Tools",
+      "B2B",
+      "Enterprise Software"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31204",
+    "source": "yc",
+    "name": "Forum",
+    "description": "The first regulated exchange to trade on attention.",
+    "url": "https://www.forum.market/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Fintech",
+    "tags": [
+      "Finance",
+      "Investing",
+      "Trading"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31149",
+    "source": "yc",
+    "name": "EigenPal",
+    "description": "AI Document Workflows for Enterprises",
+    "url": "https://www.eigenpal.com/",
+    "metrics": {
+      "teamSize": null,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Documents",
+      "Artificial Intelligence",
+      "Automation"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31179",
+    "source": "yc",
+    "name": "Jinba",
+    "description": "Automate any enterprise workflow through chat",
+    "url": "https://jinba.io",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Developer Tools",
+      "B2B",
+      "Workflow Automation",
+      "Enterprise",
+      "Enterprise Software"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31219",
+    "source": "yc",
+    "name": "Voxel Energy",
+    "description": "Energy independent data centers with solar and repurposed batteries. ",
+    "url": "https://voxelenergy.com/",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Renewable Energy",
+      "Infrastructure",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31153",
+    "source": "yc",
+    "name": "Perfectly",
+    "description": "The AI-native Recruiting Operating System",
+    "url": "http://perfectly.so/",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Recruiting",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31107",
+    "source": "yc",
+    "name": "BaseFrame",
+    "description": "AI agents for hardware design that catch risks and tradeoffs early",
+    "url": "https://baseframe.co",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Hardware",
+      "Workflow Automation",
+      "Electronics"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31213",
+    "source": "yc",
+    "name": "Byteport",
+    "description": "Global upload acceleration for 1GB-100TB files.",
+    "url": "https://byteport.io/",
+    "metrics": {
+      "teamSize": 1,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "SaaS",
+      "B2B",
+      "Infrastructure"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31306",
+    "source": "yc",
+    "name": "Martini",
+    "description": "Collaborative AI-native filmmaking for professionals",
+    "url": "https://martini.film",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Generative AI",
+      "Entertainment",
+      "Design Tools",
+      "Video",
+      "Media"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31151",
+    "source": "yc",
+    "name": "Sparkles",
+    "description": "Make everyone on your team an engineer",
+    "url": "https://sparkles.dev",
+    "metrics": {
+      "teamSize": 1,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Developer Tools",
+      "Productivity"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31285",
+    "source": "yc",
+    "name": "GrazeMate",
+    "description": "Robot Cowboys that Muster Cattle with AI Drones",
+    "url": "https://grazemate.com",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Livestock Health",
+      "Reinforcement Learning",
+      "Robotics",
+      "Drones",
+      "Sustainable Agriculture"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31300",
+    "source": "yc",
+    "name": "Shofo",
+    "description": "Common Crawl for Videos",
+    "url": "https://shofo.ai/",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Social Media",
+      "API",
+      "Data Labeling",
+      "Big Data"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31128",
+    "source": "yc",
+    "name": "Cumulus Labs",
+    "description": "The Optimized GPU Cloud",
+    "url": "https://cumuluslabs.io",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Machine Learning",
+      "B2B",
+      "Infrastructure"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31245",
+    "source": "yc",
+    "name": "Squid",
+    "description": "AI-powered grid planning in your browser 🦑 (squid.energy)",
+    "url": "https://squid.energy",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "SaaS",
+      "Energy",
+      "Infrastructure"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31180",
+    "source": "yc",
+    "name": "Seeing Systems",
+    "description": "AI Drone Systems for Defence",
+    "url": "https://www.seeing-systems.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Hardware",
+      "Swarm AI",
+      "Robotics"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31155",
+    "source": "yc",
+    "name": "Q2Q",
+    "description": "We help private equity firms find potential acquisitions faster",
+    "url": "https://tryq2q.com/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Fintech",
+      "SaaS",
+      "B2B"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31276",
+    "source": "yc",
+    "name": "Ritivel",
+    "description": "We turn clinical trial data into FDA submission documents in minutes",
+    "url": "https://www.ritivel.com",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "Healthcare",
+    "tags": [
+      "Generative AI",
+      "Compliance",
+      "Enterprise Software",
+      "Regtech",
+      "Biotechnology"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31243",
+    "source": "yc",
+    "name": "Scout Out",
+    "description": "AI generated proposals for residential construction projects",
+    "url": "https://scoutout.ai/",
+    "metrics": {
+      "teamSize": 1,
+      "batch": "Winter 2026"
+    },
+    "category": "Real Estate and Construction",
+    "tags": [
+      "Artificial Intelligence",
+      "Real Estate",
+      "Construction",
+      "Proptech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31163",
+    "source": "yc",
+    "name": "Opalite Health",
+    "description": "Solving language barriers in healthcare",
+    "url": "http://opalitehealth.com/",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "Healthcare",
+    "tags": [
+      "Artificial Intelligence",
+      "Health Tech",
+      "Digital Health",
+      "Healthcare"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31098",
+    "source": "yc",
+    "name": "10x Science",
+    "description": "The AI-native platform for next-generation protein characterization.",
+    "url": "https://10xscience.com",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "SaaS",
+      "B2B",
+      "Biotech",
+      "Enterprise Software",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31152",
+    "source": "yc",
+    "name": "Ishiki Labs",
+    "description": "Building the Future of Multimodal AI",
+    "url": "https://www.ishikilabs.ai/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Deep Learning",
+      "Generative AI",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-30792",
+    "source": "yc",
+    "name": "Bizzy AI",
+    "description": "Bizzy works 24/7 so you never miss a lead.",
+    "url": "https://www.usebizzy.com/",
+    "metrics": {
+      "teamSize": null,
+      "batch": "Summer 2025"
+    },
+    "category": "B2B",
+    "tags": [
+      "Workflow Automation",
+      "Sales",
+      "Marketing",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31129",
+    "source": "yc",
+    "name": "Verdex",
+    "description": "Asset Intelligence for Farmland",
+    "url": "https://www.verdexai.com/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Agriculture",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31178",
+    "source": "yc",
+    "name": "Cardboard",
+    "description": "Agentic video editor",
+    "url": "https://cardboard.sh",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "SaaS",
+      "Video",
+      "Media"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31247",
+    "source": "yc",
+    "name": "Fed10",
+    "description": "AI agents that replace your policy consultants",
+    "url": "https://www.fed10.ai",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "SaaS",
+      "GovTech",
+      "B2B",
+      "Legal",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31185",
+    "source": "yc",
+    "name": "Chamber",
+    "description": "Autopiloting your AI infrastructure",
+    "url": "https://www.usechamber.io",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Developer Tools",
+      "B2B",
+      "Enterprise Software",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31146",
+    "source": "yc",
+    "name": "Arcline",
+    "description": "Startup legal work handled by elite lawyers & same-day turnaround",
+    "url": "https://www.arcline-ai.com/",
+    "metrics": {
+      "teamSize": 5,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Marketplace",
+      "Compliance",
+      "Legal",
+      "LegalTech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31273",
+    "source": "yc",
+    "name": "SpotPay",
+    "description": "Cross-border Personal Finance on Stablecoins",
+    "url": "https://www.spotpay.ai/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Fintech",
+    "tags": [
+      "Fintech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31173",
+    "source": "yc",
+    "name": "Laurence",
+    "description": "RL for performance marketing",
+    "url": "https://trylaurence.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Marketing",
+      "Advertising",
+      "Trading",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31227",
+    "source": "yc",
+    "name": "Sequence Markets",
+    "description": "Smarter and faster trade execution for digital assets",
+    "url": "https://sequencemkts.com/",
+    "metrics": {
+      "teamSize": 5,
+      "batch": "Winter 2026"
+    },
+    "category": "Fintech",
+    "tags": [
+      "Artificial Intelligence",
+      "Fintech",
+      "Cryptocurrency"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31078",
+    "source": "yc",
+    "name": "Tensol",
+    "description": "Multi-agent systems orchestration",
+    "url": "https://www.tensol.ai",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "B2B",
+      "Enterprise Software",
+      "Infrastructure",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-30635",
+    "source": "yc",
+    "name": "Galactic Resource Utilization Space, Inc. (GRU Space)",
+    "description": "Building the First Hotel on the Moon",
+    "url": "https://gru.space",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Space Exploration",
+      "Construction",
+      "Travel",
+      "Aerospace"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31083",
+    "source": "yc",
+    "name": "Kita",
+    "description": "Turn documents into signals for lenders",
+    "url": "https://www.usekita.com/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Fintech",
+    "tags": [
+      "Fintech",
+      "SaaS",
+      "Emerging Markets"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31241",
+    "source": "yc",
+    "name": "Corelayer",
+    "description": "AI on-call engineer that debugs using data",
+    "url": "https://www.corelayer.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Developer Tools",
+      "B2B",
+      "Enterprise Software",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31145",
+    "source": "yc",
+    "name": "RamAIn",
+    "description": "Super fast computer-use agents to automate complex workflows.",
+    "url": "https://ramain.ai",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Machine Learning",
+      "Computer Vision",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31182",
+    "source": "yc",
+    "name": "Visibl Semiconductors",
+    "description": "AI agents for chip design.",
+    "url": "https://visiblsemi.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Enterprise Software",
+      "Semiconductors",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31192",
+    "source": "yc",
+    "name": "SideKit",
+    "description": "One package to take your mobile app to production. ",
+    "url": "https://appsidekit.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "API",
+      "Enterprise Software",
+      "Infrastructure"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31106",
+    "source": "yc",
+    "name": "Protent",
+    "description": "AI intelligence for mission-critical operations",
+    "url": "https://protent.ai",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Hardware",
+      "Machine Learning",
+      "SaaS",
+      "Security",
+      "Monitoring"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31205",
+    "source": "yc",
+    "name": "Human Archive",
+    "description": "Multimodal data provider for robotics learning",
+    "url": "https://www.humanarchive.ai/",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Robotics",
+      "Data Labeling",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31263",
+    "source": "yc",
+    "name": "Veriad",
+    "description": "AI compliance officers",
+    "url": "https://veriad.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "B2B",
+      "Compliance",
+      "Marketing"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31088",
+    "source": "yc",
+    "name": "RunAnywhere",
+    "description": "The default way of running On-Device AI at Scale",
+    "url": "https://www.runanywhere.ai/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Developer Tools",
+      "Enterprise",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31191",
+    "source": "yc",
+    "name": "Traverse",
+    "description": "Reinforcement learning environments for long horizon agent journeys",
+    "url": "https://www.traverse.so",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Reinforcement Learning",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31223",
+    "source": "yc",
+    "name": "Arzule",
+    "description": "AI agents for strategic partnership research",
+    "url": "https://www.arzule.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "SaaS",
+      "B2B",
+      "Market Research"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31112",
+    "source": "yc",
+    "name": "Burt",
+    "description": "Easily fine tune and deploy specialized models",
+    "url": "https://www.trainburt.com/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Machine Learning",
+      "Reinforcement Learning",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31077",
+    "source": "yc",
+    "name": "Panta",
+    "description": "Commercial insurance brokerage run by AI agents. Scales like software.",
+    "url": "https://pantainsure.com",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "Fintech",
+    "tags": [
+      "Insurance",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31094",
+    "source": "yc",
+    "name": "Lexius",
+    "description": "AI Crime Detection",
+    "url": "https://www.lexius.ai",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "SaaS",
+      "Computer Vision"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31175",
+    "source": "yc",
+    "name": "Pax Historia",
+    "description": "The first AI-powered grand strategy platform",
+    "url": "https://www.paxhistoria.co",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "Consumer",
+    "tags": [
+      "Artificial Intelligence",
+      "Marketplace",
+      "Consumer",
+      "Gaming"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31117",
+    "source": "yc",
+    "name": "Bujo AI",
+    "description": "AI voice & chat agents for sales and customer support at large B2C…",
+    "url": "https://www.getbujo.com/",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Spring 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "AI",
+      "AI Assistant"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31141",
+    "source": "yc",
+    "name": "OctaPulse",
+    "description": "Computer vision to automate fish farming from hatchery to harvest",
+    "url": "https://www.tryoctapulse.com/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Robotics",
+      "Computer Vision",
+      "Food Tech",
+      "Maritime"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31030",
+    "source": "yc",
+    "name": "Haladir",
+    "description": "AI-Enabled Mainframe Modernization and Code Translation.",
+    "url": "https://www.haladir.com/",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Data Engineering",
+      "Enterprise Software"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31212",
+    "source": "yc",
+    "name": "Constellation Space",
+    "description": "AI for space mission assurance. ",
+    "url": "https://constellation-io.com/",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Satellites",
+      "Aerospace"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31003",
+    "source": "yc",
+    "name": "Voltair",
+    "description": "Self Charging Drones",
+    "url": "https://voltairlabs.com/",
+    "metrics": {
+      "teamSize": 5,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Drones",
+      "Energy",
+      "Infrastructure"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31036",
+    "source": "yc",
+    "name": "Mantis Biotechnology",
+    "description": "The Infrastructure Powering Human-In-Computer Models",
+    "url": "https://mantisbiotech.com/",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Sports Tech",
+      "Biotech",
+      "Architecture",
+      "Biotechnology"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31209",
+    "source": "yc",
+    "name": "AxionOrbital Space",
+    "description": "Foundation models for 24/7 Earth Observation",
+    "url": "https://axionorbital.space/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "Industrials",
+    "tags": [
+      "Deep Learning",
+      "Satellites",
+      "Weather"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-30905",
+    "source": "yc",
+    "name": "Travo",
+    "description": "We use AI to collect and analyze real estate data",
+    "url": "https://www.travoai.com/",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "Real Estate and Construction",
+    "tags": [
+      "Artificial Intelligence",
+      "Real Estate",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31177",
+    "source": "yc",
+    "name": "Prana",
+    "description": "An AI primary care doctor in your pocket",
+    "url": "https://pranadoc.com",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "Healthcare",
+    "tags": [
+      "Health Tech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31200",
+    "source": "yc",
+    "name": "Ressl AI",
+    "description": "AI Agents for ERP / CRM Configuration, starting with Salesforce",
+    "url": "https://ressl.ai",
+    "metrics": {
+      "teamSize": 5,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "B2B",
+      "Workflow Automation",
+      "CRM",
+      "Operations"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-30927",
+    "source": "yc",
+    "name": "Oxus",
+    "description": "AI-powered automation for internal audit workflows",
+    "url": "https://oxus-ai.com/",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "B2B",
+      "Workflow Automation",
+      "Compliance"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31101",
+    "source": "yc",
+    "name": "LegalOS",
+    "description": "The AI-powered law firm for complex work visas",
+    "url": "https://www.legalos.ai",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "B2B",
+      "Legal",
+      "HR Tech",
+      "Immigration"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31091",
+    "source": "yc",
+    "name": "Sonarly",
+    "description": "Start trusting your production alerts.",
+    "url": "https://sonarly.com",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Developer Tools",
+      "Generative AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31207",
+    "source": "yc",
+    "name": "Caretta",
+    "description": "24/7 Sales Intelligence ",
+    "url": "https://www.caretta.so",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "SaaS",
+      "Sales",
+      "Sales Enablement",
+      "AI Assistant"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31123",
+    "source": "yc",
+    "name": "21st",
+    "description": "Ai programming tools",
+    "url": "https://21st.dev",
+    "metrics": {
+      "teamSize": 3,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Developer Tools",
+      "B2B",
+      "Design Tools"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31130",
+    "source": "yc",
+    "name": "AutoSitu",
+    "description": "AI-native workspace for municipal development review",
+    "url": "https://autositu.com/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Generative AI",
+      "GovTech",
+      "Real Estate",
+      "LegalTech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31133",
+    "source": "yc",
+    "name": "Skillsync",
+    "description": "Find anyone in open source",
+    "url": "https://skillsync.wiki",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Recruiting",
+      "Open Source",
+      "HR Tech"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31233",
+    "source": "yc",
+    "name": "Chasi",
+    "description": "AI Concierge for Equipment sales, service & rentals",
+    "url": "https://chasi.co/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "SaaS",
+      "Industrial"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31230",
+    "source": "yc",
+    "name": "o11",
+    "description": "The Most Integrated M365 AI Suite",
+    "url": "https://o11.ai",
+    "metrics": {
+      "teamSize": 4,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Fintech",
+      "SaaS",
+      "Finance",
+      "B2B",
+      "AI"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31214",
+    "source": "yc",
+    "name": "Pocket",
+    "description": "The world's best AI note-taking device and app",
+    "url": "https://heypocket.com/",
+    "metrics": {
+      "teamSize": 6,
+      "batch": "Winter 2026"
+    },
+    "category": "Consumer",
+    "tags": [
+      "Hardware",
+      "Productivity",
+      "AI",
+      "Note-taking"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  },
+  {
+    "id": "yc-31215",
+    "source": "yc",
+    "name": "Bubble Lab",
+    "description": "Open-source, Typescript-native agentic workflow builder ",
+    "url": "https://bubblelab.ai/",
+    "metrics": {
+      "teamSize": 2,
+      "batch": "Winter 2026"
+    },
+    "category": "B2B",
+    "tags": [
+      "Artificial Intelligence",
+      "Developer Tools",
+      "Workflow Automation"
+    ],
+    "japanExists": false,
+    "fetchedAt": "2026-01-30T08:41:16.263Z"
+  }
+]

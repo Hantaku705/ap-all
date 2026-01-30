@@ -510,6 +510,48 @@ export const dealsData: Deal[] = [
     return ts_code
 
 
+def extract_version_number(filename: str) -> int:
+    """ファイル名から (N) 形式のバージョン番号を抽出。なければ0を返す"""
+    match = re.search(r'\((\d+)\)\.csv$', filename)
+    if match:
+        return int(match.group(1))
+    return 0
+
+
+def select_latest_version_files(csv_files: list, priority_prefixes: list, exclude_patterns: list) -> dict:
+    """同じ月のファイルがある場合、最新版（番号最大）のみを選択"""
+    # 月ごとにファイルをグループ化
+    month_files = {}
+
+    for csv_file in csv_files:
+        filename = csv_file.name
+
+        # 除外パターンチェック
+        if any(p in filename for p in exclude_patterns):
+            continue
+
+        # 優先プレフィックスがあるファイルのみ
+        has_priority = any(p in filename for p in priority_prefixes)
+        if not has_priority:
+            continue
+
+        month = parse_month_from_filename(filename)
+        if not month:
+            continue
+
+        version = extract_version_number(filename)
+
+        # 同じ月のファイルがあれば、バージョン番号が大きい方を採用
+        if month not in month_files:
+            month_files[month] = (csv_file, version)
+        else:
+            existing_version = month_files[month][1]
+            if version > existing_version:
+                month_files[month] = (csv_file, version)
+
+    return {month: file_info[0] for month, file_info in month_files.items()}
+
+
 def main():
     csv_dir = Path('/Users/hantaku/Downloads/AP/NADESHIKO/data/利益管理シート')
     output_file = Path('/Users/hantaku/Downloads/AP/NADESHIKO/webapp/src/data/deals-data.ts')
@@ -529,26 +571,20 @@ def main():
     print(f"CSVファイル数: {len(csv_files)}")
     print("-" * 50)
 
-    # 1. 新フォーマット（優先プレフィックス付き）を先に処理
-    for csv_file in csv_files:
-        filename = csv_file.name
+    # 1. 新フォーマット（優先プレフィックス付き）から最新版のみ選択
+    latest_files = select_latest_version_files(csv_files, priority_prefixes, exclude_patterns)
 
-        # 除外パターンチェック
-        if any(p in filename for p in exclude_patterns):
-            print(f"  除外: {filename}")
-            continue
+    print(f"新フォーマット最新版: {len(latest_files)}ファイル")
+    for month, csv_file in sorted(latest_files.items()):
+        print(f"  {month}: {csv_file.name}")
+    print("-" * 50)
 
-        # 優先プレフィックスがあるファイルのみ処理
-        has_priority = any(p in filename for p in priority_prefixes)
-        if not has_priority:
-            continue
-
-        month = parse_month_from_filename(filename)
-        if month:
-            deals = process_csv_file(str(csv_file))
-            all_deals.extend(deals)
-            processed_months.add(month)
-            print(f"    → 登録月: {month}")
+    # 2. 最新版のファイルを処理
+    for month, csv_file in sorted(latest_files.items()):
+        deals = process_csv_file(str(csv_file))
+        all_deals.extend(deals)
+        processed_months.add(month)
+        print(f"    → 登録月: {month} ({len(deals)}件)")
 
     print("-" * 50)
     print(f"処理済み月: {sorted(processed_months)}")

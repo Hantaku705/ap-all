@@ -1,0 +1,39 @@
+{
+  "name": "webapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "remotion": "remotion studio src/remotion/index.ts",
+    "remotion:render": "remotion render src/remotion/index.ts ProductVideo out/video.mp4",
+    "remotion:demo": "remotion render src/remotion/index.ts TikTokDemoVideo out/tiktok-demo.mp4"
+  },
+  "dependencies": {
+    "@auth/core": "^0.34.3",
+    "@remotion/cli": "4.0.379",
+    "@remotion/player": "4.0.379",
+    "@supabase/supabase-js": "^2.93.2",
+    "lucide-react": "^0.563.0",
+    "next": "16.1.6",
+    "next-auth": "^5.0.0-beta.30",
+    "qrcode.react": "^4.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "recharts": "^3.7.0",
+    "remotion": "4.0.379"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

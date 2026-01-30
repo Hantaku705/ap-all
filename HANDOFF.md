@@ -4,17 +4,25 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最終セッション | #155 |
-| 最終更新 | 2026-01-29 |
-| 最新コミット | 61b301c |
+| 最終セッション | #167 |
+| 最終更新 | 2026-01-30 |
+| 最新コミット | 7f0c959 |
 
 ### 作業中のタスク
 
+- [ ] **AnyBrand TikTokログイン** - TikTok Developer Portal審査待ち
 - [ ] 将軍ダッシュボード v3.2 JavaScript実装
 - [ ] CLAUDECODE Webapp ログイン機能 - Supabase設定待ち
 - [ ] skills-map Webapp CLAUDE.md作成
 - [ ] The Room FX 提案書 Google Docs書き込み（5〜11章）
+- [x] **US B2B SaaS EXIT Dashboard コアバリュー列追加**（テーブルに21件のビジネスモデル要約）
+- [x] **AnyBrand 商品カードUI anystarr仕様対応**（Sample/Addボタン、ピル形状コミッション、英語化）
+- [x] **TikTokCAP Webapp画像反映完了**（147件、Google Drive CDN URL変換、デプロイ完了）
+- [x] **TikTokCAP スプレッドシートF列画像→G列URL変換完了**（142件、rclone+MCP）
+- [x] **spreadsheet-image-to-url スキル作成**
+- [x] **AnyBrand TikTok Developer Portal設定**（URL検証、Login Kit、Sandbox環境構築）
 - [x] **AnyBrand QRコード実URL化 + レイアウト修正**（affiliateUrl使用、flex-shrink-0修正）
+- [x] **AnyMind Monthly Report Dashboard作成**（Excel 102シート→CSV変換、Next.js 16 Webapp、4タブ構成）
 - [x] **AnyBrand 商品カタログ実データ化**（299件、TikTokCAPスプレッドシート連携）
 - [x] **TikTokCAP スプレッドシート同期機能実装**（/sync-tiktokcap、299件同期成功）
 - [x] **AnyBrand Phase 2完了**（/orders, /commissions, /settings, /guide）
@@ -23,19 +31,22 @@
 
 ### 次のアクション
 
-1. CLAUDECODE ログイン機能 - Supabase設定
-2. /shogun セルフブラッシュアップ実行
-3. AnyBrand 商品画像をスプレッドシートに追加して再同期
+1. **AnyBrand TikTok審査完了待ち** - 審査完了後、本番でTikTokログインテスト
+2. CLAUDECODE ログイン機能 - Supabase設定
+3. /shogun セルフブラッシュアップ実行
 
 ## 未コミット変更
 
 ```
-M CLAUDE.md
-?? opperation/TikTokCAP/data/test-page.png
-?? opperation/TikTokCAP/scripts/fetch-product-images.ts
-?? opperation/TikTokCAP/scripts/gas.js
-?? opperation/TikTokCAP/scripts/package*.json
-?? opperation/TikTokCAP/scripts/test-single-image.ts
+?? opperation/Startup/ (新規プロジェクト、US B2B SaaS EXIT Dashboard)
+M opperation/TikTokCAP/scripts/sync-spreadsheet.ts
+M opperation/TikTokCAP/scripts/convert-to-anybrand.ts
+M opperation/TikTokCAP/data/products.json
+?? .claude/commands/spreadsheet-image-to-url.md
+?? opperation/TikTokCAP/webapp/
+?? opperation/TikTokCAP/data/images_by_row/ (142件)
+?? opperation/TikTokCAP/scripts/*.ts (新規スクリプト複数)
+D projects/anybrand/ (TikTokCAPに統合済み)
 ```
 
 ## プロジェクト別履歴
@@ -53,9 +64,231 @@ M CLAUDE.md
 | refa | 2026-01-26 | [refa-report](https://refa-report.vercel.app) | [詳細](projects/refa/HANDOFF.md) |
 | phonefarm | 2026-01-20 | [phonefarm-threat-intel](https://phonefarm-threat-intel.vercel.app) | [詳細](projects/phonefarm/HANDOFF.md) |
 | mascode | 2026-01-19 | - | [詳細](projects/mascode/HANDOFF.md) |
-| anybrand | 2026-01-29 | [anybrand-platform](https://anybrand-platform.vercel.app) | [詳細](projects/anybrand/HANDOFF.md) |
+| TikTokCAP (AnyBrand統合) | 2026-01-29 | [anybrand-platform](https://anybrand-platform.vercel.app) | [詳細](opperation/TikTokCAP/HANDOFF.md) |
+| Startup | 2026-01-30 | [us-saas-exit-dashboard](https://us-saas-exit-dashboard.vercel.app) | [詳細](opperation/Startup/CLAUDE.md) |
+| AnyMind | 2026-01-30 | [anymind-dashboard](https://anymind-dashboard.vercel.app) | [詳細](projects/AnyMind/CLAUDE.md) |
 
 ## セッション履歴
+
+### 2026-01-30（#167）
+- **AnyMind Monthly Report Dashboard作成**
+  - 要件: Excel月次レポート（102シート）をWebダッシュボード化
+  - 技術スタック: Next.js 16 + React 19 + TypeScript + Tailwind CSS + Recharts
+  - データ変換:
+    | ステップ | 内容 |
+    |---------|------|
+    | Excel読み込み | pandas + openpyxl（venv環境構築） |
+    | CSV出力 | 102シート → 102 CSVファイル |
+    | TypeScript化 | `report-data.ts`（グループKPI、事業部門、予算進捗、月別P/L） |
+  - ページ構成:
+    | パス | 内容 |
+    |-----|------|
+    | `/` | Overview（Global/Japan KPI、月次推移グラフ） |
+    | `/pl` | P/L Summary（売上・粗利・営利推移、マージン、Per Head、コスト内訳） |
+    | `/units` | Business Units（11事業部門予実比較、構成比、ACM Rate） |
+    | `/budget` | Budget Progress（粗利・営利進捗率、ヒートマップ） |
+  - TypeScript型修正:
+    | 問題 | 解決 |
+    |------|------|
+    | Recharts Tooltip formatter型エラー | `value as number` キャスト |
+    | Pie chart label name undefined | `(name \|\| '')` でnull対策 |
+  - 変更ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `projects/AnyMind/csv/` | CSV 102ファイル |
+    | `projects/AnyMind/webapp/` | Next.js Webアプリ |
+    | `projects/AnyMind/webapp/app/data/report-data.ts` | 全データ |
+  - 本番URL: https://anymind-dashboard.vercel.app
+
+### 2026-01-30（#166）
+- **US B2B SaaS EXIT Dashboard - コアバリュー列追加**
+  - 要件: テーブルビューに「コアバリュー」列を追加し、各サービスのビジネスモデルを一目で把握できるようにする
+  - 変更内容:
+    | 変更項目 | 内容 |
+    |---------|------|
+    | ExitCaseインターフェース | `coreValue: string` フィールド追加 |
+    | データ（21件） | 全事例にcoreValue追加 |
+    | テーブルUI | 「コアバリュー」列を会社名の次に配置 |
+  - coreValue例:
+    | 会社名 | コアバリュー |
+    |--------|-------------|
+    | Paycor | 統合HCMプラットフォーム |
+    | Qualified | AIリードジェネレーション |
+    | Sana | AIパーソナライズ学習 |
+    | Gong | 営業会話分析AI |
+    | Bridge | ステーブルコイン決済 |
+    | Airbase | 統合型企業支出管理 |
+  - 変更ファイル:
+    | ファイル | 変更 |
+    |---------|------|
+    | `exits-data.ts` | coreValueフィールド追加（インターフェース＋21件データ） |
+    | `exits/page.tsx` | テーブルヘッダー＋データセル追加 |
+  - 本番デプロイ完了: https://us-saas-exit-dashboard.vercel.app/exits
+
+### 2026-01-30（#165）
+- **US B2B SaaS EXIT Dashboard作成**
+  - 要件: 米国でM&AでEXITしたB2B SaaSスタートアップを一覧化し、日本での事業機会を探索
+  - 対象規模: $100M〜$4.1B（中規模〜大型EXIT）
+  - データ件数: 21件（HR 7、マーケティング 4、FinOps 3、ナレッジ 3、オペレーション 4）
+  - 技術スタック: Next.js 16.1.6 + React 19 + TypeScript + Tailwind CSS 4 + Recharts
+  - ページ構成:
+    | パス | 内容 |
+    |-----|------|
+    | `/` | ダッシュボード（サマリー、カテゴリ別円グラフ、EXIT金額Top10、機会マトリクス） |
+    | `/exits` | 事例一覧（フィルター、ソート、検索、カード/テーブル切替） |
+    | `/exits/[id]` | 事例詳細（EXIT情報、日本市場分析、関連事例） |
+    | `/opportunities` | 機会分析（優先度マトリクス、カテゴリ別分析、日本競合比較） |
+  - 日本参入 高機会領域:
+    | 領域 | EXIT金額 | 理由 |
+    |------|---------|------|
+    | Agentic AIマーケティング | $1B+ | 自律的リードジェネレーション |
+    | AI学習プラットフォーム | $1.1B | パーソナライズ人材開発 |
+    | ナレッジ管理AI | $450M | 社内知識検索の未解決課題 |
+    | CDP | $300M | マーテック成熟度の低さから先行者利益 |
+  - 作成ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `opperation/Startup/CLAUDE.md` | プロジェクト設定 |
+    | `opperation/Startup/webapp/src/data/exits-data.ts` | 21件のデータ |
+    | `opperation/Startup/webapp/src/components/charts/*.tsx` | グラフ3種 |
+    | `opperation/Startup/webapp/src/components/cards/*.tsx` | カード2種 |
+  - 本番URL: https://us-saas-exit-dashboard.vercel.app
+
+### 2026-01-30（#164）
+- **anybrand.md 構造統一完了**（anystarr.md準拠に再編成）
+  - 要件: anybrand.mdの構造をanystarr.mdと完全に同じにする
+  - 変更内容:
+    | 変更項目 | 内容 |
+    |---------|------|
+    | 目次追加 | 13セクション+更新履歴へのアンカーリンク |
+    | セクション順序統一 | anystarr.mdと同一順序に並べ替え |
+    | セクション名統一 | 「外部連携」→「外部リンク一覧」、「ファイル構成」→「コンポーネント構造」 |
+    | 新セクション追加 | 8. 認証状態による条件分岐（4.6から分離） |
+    | コンテンツ統合 | 「商品カタログ機能」→「全ページ一覧」の/productsに統合 |
+  - 最終構造:
+    ```
+    目次 → 1.サイト概要 → 2.ページ遷移マップ → 3.全ページ一覧 →
+    4.認証フロー → 5.UIコンポーネント別遷移 → 6.モーダル・ポップアップ →
+    7.外部リンク一覧 → 8.認証状態による条件分岐 → 9.コンポーネント構造 →
+    10.データ構造 → 11.API構造 → 12.カラースキーム → 13.参考リンク → 更新履歴
+    ```
+  - 行数: 1,256行 → 1,280行
+  - ファイル: `opperation/TikTokCAP/webapp/docs/anybrand.md`
+  - 本番URL: https://anybrand-platform.vercel.app
+
+### 2026-01-30（#163）
+- **AnyBrand 商品カードUI anystarr仕様対応**
+  - 要件: anystarr.comと同じボタン・コミッション表示UIに変更
+  - 変更内容:
+    | 要素 | Before | After |
+    |------|--------|-------|
+    | Sampleボタン | ピンク枠線、条件付き表示 | 白背景+オレンジ枠、常時表示 |
+    | Addボタン | ピンク塗り、ShoppingCartアイコン | オレンジグラデーション、Layersアイコン |
+    | テキスト | 「サンプル」「追加」 | 「Sample」「Add」 |
+    | コミッション | テキスト形式 `15% ✓ → --` | ピル形状 `rounded-full` |
+    | ラベル | 「現在」「最大」 | 「Earnings」「Max Earnings」 |
+  - 変更ファイル: `opperation/TikTokCAP/webapp/src/app/(auth)/products/page.tsx`
+  - グリッド表示・リスト表示の両方対応
+  - 本番デプロイ完了: https://anybrand-platform.vercel.app/products
+
+### 2026-01-30（#162）
+- **anystarr.md 完全リニューアル**（325行 → 1,223行、約3.8倍に拡充）
+  - 要件: anystarr.comのサイト構造を完全に可視化したドキュメント作成
+  - 追加セクション:
+    | セクション | 内容 |
+    |-----------|------|
+    | ページ遷移マップ | Mermaidフローチャート + ページ別遷移テーブル |
+    | ヘルプセンター完全構造 | 8カテゴリツリー + 全?keyパラメータ仕様 |
+    | UIコンポーネント別遷移 | ヘッダー/フッター/サイドバー/商品カードの各要素→遷移先 |
+    | モーダル・ポップアップ | GetSampleModal, AddAffiliateModal, 確認モーダル, フィルターモーダル詳細 |
+    | 外部リンク一覧 | SNS, アプリDL, TikTok関連, プラットフォームURL |
+    | 認証状態による条件分岐 | ルーティング分岐, ページ別アクセス制御, UI表示切替マトリクス |
+  - 既存セクションも整理・強化（サイト概要にビジネスモデル図追加、データ構造詳細化、API構造拡充）
+  - ファイル: `opperation/TikTokCAP/webapp/docs/anystarr.md`
+
+### 2026-01-30（#161）
+- **TikTokCAP Webapp画像反映完了**
+  - 問題: 商品画像が壊れて表示されない
+  - 原因: Google Drive URL `drive.google.com/uc?id=XXX` は認証が必要（303リダイレクト）
+  - 解決: `convertDriveUrl()` 関数追加 → CDN形式 `lh3.googleusercontent.com/d/XXX` に変換
+  - スプレッドシート再同期: 297件取得（imageUrl含む）
+  - AnyBrand変換: 147件（有効データ）
+  - デプロイ完了: https://anybrand-platform.vercel.app/products
+
+### 2026-01-30（#160）
+- **TikTokCAP スプレッドシートF列画像→G列URL変換完了**
+  - rclone OAuth認証成功（Google Drive）
+  - 142件の画像をGoogle Driveにアップロード完了（1m33s、76.7 MiB）
+  - MCP `writeSpreadsheet` で G4:G145 に142件のDrive URL書き込み完了
+  - URL形式: `https://drive.google.com/uc?id=[FILE_ID]`
+- **spreadsheet-image-to-url スキル作成**
+  - `AP/.claude/commands/spreadsheet-image-to-url.md`
+  - xlsx画像抽出→Driveアップロード→スプレッドシート書き込みのワークフロー文書化
+- **TikTokCAP Webapp画像反映作業開始**
+  - `sync-spreadsheet.ts` 修正:
+    - HEADER_MAPに `'imgage\nurl': 'imageUrl'` 追加
+    - TAPProduct interfaceに `imageUrl?: string` 追加
+    - 空でない最初の行をヘッダーとして使用するロジック追加
+  - `convert-to-anybrand.ts` 修正:
+    - TAPProduct interfaceに `imageUrl?: string` 追加
+    - imageUrl生成を `tap.imageUrl || tap.image || placeholder` に変更
+  - **残作業**: スプレッドシート再同期 → convert実行 → ビルド → デプロイ
+
+### 2026-01-29（#159）
+- **AnyBrand TikTok Developer Portal設定完了**
+  - URL所有権検証: ルート、/terms、/privacy で検証成功
+  - Login Kit設定: Redirect URI、user.info.basic スコープ
+  - Production申請: 審査待ち（TikTok側でレビュー中）
+  - Sandbox環境構築:
+    | 環境 | Client Key | 用途 |
+    |------|------------|------|
+    | ローカル | `sbawiwbkmavphg50ju` | localhost:3000でテスト |
+    | Vercel | Production Key | 審査完了後に使用 |
+  - **重要発見**: TikTok Sandboxはlocalhostのみ対応、本番URLでは使用不可
+  - ローカルテスト環境構築: `npm run dev` → http://localhost:3000/login で「TikTokでログイン」ボタン動作確認済み
+- CLAUDE.md更新: TikTokログイン連携セクションにステータス表、ローカルテスト手順追加
+
+### 2026-01-29（#158）
+- **TikTokCAP スプレッドシートF列画像→G列URL変換作業**
+  - 要件: スプレッドシートALLシートのF列（埋め込み画像）をG列（image url）にURLとして出力
+  - スプレッドシートID: `1OnWqFD7Q9FfQaJ6-0pTI_DMXDdg12HDFiJboFYKjxzw`
+  - 進捗:
+    | ステップ | 状態 |
+    |---------|------|
+    | xlsxエクスポート | ✅完了 |
+    | xlsx→画像抽出（142件） | ✅完了 |
+    | 行→画像マッピング | ✅完了 |
+    | Google Driveアップロード | 🔄進行中 |
+    | G列にURL書き込み | ⏳待機中 |
+  - 作成ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `scripts/extract-images.ts` | xlsx解析→画像抽出スクリプト |
+    | `scripts/gas.js` | GAS: DriveフォルダからURL取得→G列書き込み |
+    | `scripts/upload-images.ts` | imgBBアップロードスクリプト（未使用） |
+    | `data/images_by_row/` | 抽出画像142件（row_004.png〜row_145.png） |
+    | `data/image-mapping.json` | 行番号→画像ファイルマッピング |
+  - 技術的問題:
+    | 問題 | 原因 | 対応 |
+    |------|------|------|
+    | MCP insertLocalImage失敗 | パーミッションエラー | 手動アップロードに切替 |
+    | gdrive CLI認証 | Google APIクレデンシャル必要 | 設定が複雑なため見送り |
+  - 対象フォルダ: https://drive.google.com/drive/folders/1kiF4s-vxxlyhT_5XaDEeyBEAoMTOOiOU
+  - **次のアクション**: Finderから画像をDriveにドラッグ&ドロップ→GAS実行
+- `.claude/rules/long-code.md` 新規作成（長文コードはファイル保存ルール）
+
+### 2026-01-29（#157）
+- **Remotion TikTokDemoVideo作成**
+  - TikTok Developer Portal申請用デモ動画（40秒、1920x1080、3.2MB）
+  - 8シーン構成: Title→Landing→LoginButton→OAuth→Redirect→Profile→Product→Completion
+  - 出力: `opperation/TikTokCAP/webapp/out/tiktok-demo.mp4`
+- **フォルダ統合**
+  - `projects/anybrand/` → `opperation/TikTokCAP/` にマージ
+  - webapp/, HANDOFF.md 移動
+  - CLAUDE.md 統合
+  - convert-to-anybrand.ts パス更新
+  - 旧フォルダ削除
+- AP/CLAUDE.md 更新
 
 ### 2026-01-29（#155）
 - **AnyBrand QRコード実URL化**
@@ -349,7 +582,7 @@ M CLAUDE.md
 | CLAUDECODE | 86-104回 | Starter Kit、Multi-Agent | 13 |
 | インフラ | 125-146回 | 設定同期、権限管理、フォルダ統合、HANDOFFハイブリッド化、戦略タブ静的化、ロイヤリティインサイト、llm-to-staticスキル、useEffect修正、代表口コミフィルター、LLM動的生成基盤 | 18 |
 | TikTokCAP | 151-153回 | TikTok Shop Affiliateスクレイピング + スプレッドシート同期 | 3 |
-| AnyBrand | 150-155回 | TikTokアフィリエイトプラットフォーム（Phase 1-3 + QRコード実URL化） | 6 |
+| AnyBrand | 150-159回 | TikTokアフィリエイトプラットフォーム（Phase 1-3 + QRコード実URL化 + TikTokログイン連携） | 10 |
 
 ## 未解決の問題
 

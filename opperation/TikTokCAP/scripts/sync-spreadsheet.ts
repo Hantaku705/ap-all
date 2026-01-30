@@ -18,6 +18,7 @@ const HEADER_MAP: Record<string, string> = {
   'Brand': 'brand',
   'Product': 'product',
   'image': 'image',
+  'imgage\nurl': 'imageUrl',
   'カテゴリ': 'category',
   'カテゴリ別\nGoogleフォーム': 'categoryFormUrl',
   'フォーム記載': 'formFilled',
@@ -48,6 +49,7 @@ interface TAPProduct {
   brand: string
   product: string
   image: string
+  imageUrl?: string
   category: string
   open: string
   grossTarget: string
@@ -104,8 +106,16 @@ function parseSpreadsheetOutput(filePath: string): SyncResult {
     throw new Error('No data rows found')
   }
 
-  // ヘッダー行（最初の行）
-  const headers = rows[0]
+  // ヘッダー行を特定（「No」カラムを含む行）
+  let headerIndex = 0
+  for (let i = 0; i < rows.length; i++) {
+    if (rows[i].includes('No')) {
+      headerIndex = i
+      break
+    }
+  }
+
+  const headers = rows[headerIndex]
   const headerKeys = headers.map(h => HEADER_MAP[h] || h)
 
   // データ行を変換
@@ -114,7 +124,7 @@ function parseSpreadsheetOutput(filePath: string): SyncResult {
   const categories: Record<string, number> = {}
   const priorities: Record<string, number> = {}
 
-  for (let i = 1; i < rows.length; i++) {
+  for (let i = headerIndex + 1; i < rows.length; i++) {
     const row = rows[i]
     if (!row[1]) continue // No が空なら skip
 

@@ -1,0 +1,48 @@
+﻿Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21
+AJP,,,,,,,,,,,,,,,,,,,Product,BU,Dept
+JP,Department-Entity Level,,Department-Local BU,BU for NS,Month,,Type,,Cost Category,Cost Items,,Country for DS/AS,,Entities,,,JP Entity,,JP Engineer Mapping,,
+,DM,,DM,DM,2025-01-01 00:00:00,,Regional,,Accounting and Professional,Accounting and professional fee,,Cambodia,,JHD,Holding,,AJP,,AnyX,GEC/D2C Creator,D2C
+,IM,,[DM Dept 1],BM,2025-02-01 00:00:00,,Recharge,,Advertising and Marketing,Advertising and marketing events,,Hong Kong,,AJP,JP,,Grove,,AnyFactory,Corporate,Corporate
+,PG,,[DM Dept 2],PG App,2025-03-01 00:00:00,,Local,,Advertising and Marketing,Client Gifts and Entertainment,,IN+ME,,Grove,,,Engawa,,AnyShop,Corporate,Corporate
+,CG,,BM,PG Web,2025-04-01 00:00:00,,,,Depreciation and Amortization,Depreciation and amortization,,Indonesia,,Engawa,,,LYFT,,AnyManager,PG App/PG Web,PG
+,D2C,,PM,PG 共通,2025-05-01 00:00:00,,,,Rental expenses,Depreciation - Lease,,Japan,,LYFT,,,ARE,,AnyChat,Corporate,Corporate
+,POKKT,,[IM Dept 1],CG,2025-06-01 00:00:00,,,,Rental expenses,Interest Expense - Lease,,Malaysia,,ATH+Moindy+VGI,TH,,NADESIKO,,AnyTag,BM/BC/PM,IM
+,Corporate,,PG App,D2C Creator,2025-07-01 00:00:00,,,,Finance Costs,Finance costs,,Philippines,,AME+AMV+ATV,VN,,,,AnyDigital,Corporate,Corporate
+,Alloc_Employee,,PG Web,DX / AI,2025-08-01 00:00:00,,,,Administration,General expenses,,Singapore,,AVN,,,,,AnyLogi,GEC,D2C
+,Alloc_GP,,PG 共通,BC,2025-09-01 00:00:00,,,,Administration,Insurance expenses,,Taiwan,,AHK+ACQ,HK,,,,AnyCreator,CG,CG
+,Alloc_Sales,,CG,POKKT brand,2025-10-01 00:00:00,,,,IT Expenses,IT expenses,,Thailand,,ACN,CN,,,,IT Strategy,Corporate,Corporate
+,[Dept 1],,[CG Dept 1],POKKT App,2025-11-01 00:00:00,,,,Accounting and Professional,Other outsourced services,,Vietnam,,AHS,SG,,,,Designer,Corporate,Corporate
+,[Dept 2],,[CG Dept 2],POKKT Web,2025-12-01 00:00:00,,,,Recruitment,Recruitment,,,,ATI,ID,,,,Data Science,,
+,[Dept 3],,D2C Creator,Finance,,,,,Rental Expenses,Rental expenses,,,,DDI,DDI,,,,Managing Director,,
+,[Dept 4],,DX / AI,Legal,,,,,Research and Development,Research and development,,,,ATW,TW,,,,POKKT,Corporate,Corporate
+,[Dept 5],,Global E-Commerce,PR,,,,,Employee Compensation,Staff costs,,,,APH,PH,,,,AnyAI,DXAI,D2C
+,[Dept 6],,BC,Engineer,,,,,Administration,Telephone & Internet,,,,AMY,MY,,,,AnyLive,Corporate,Corporate
+,[Dept 7],,[D2C Dept 1],共通系,,,,,Travel Expenses,Transportation & Accommodation,,,,ARC,ARC,,,,,,
+,[Dept 8],,POKKT brand,Engineer_RE,,,,,Royalty Expenses,Royalty expenses,,,,ACB,CB,,,,,,
+,[Dept 9],,POKKT App,HR 新卒,,,,,Taxes,Income taxes,,,,MMPL,,,,,,,
+,[Dept 10],,POKKT Web,HR 中途,,,,,,,,,,AKR,KR,,,,,,
+,[Dept 11],,[POKKT Dept 1],,,,,,,,,,,Corporate Planning,,,,,,,
+,[Dept 12],,[POKKT Dept 2],,,,,,,,,,,ARE,,,,,,,
+,,,[POKKT Dept 3],,,,,,,,,,,[New 2],,,,,,,
+,,,Finance,,,,,,Department-Entity Level,Department-Local BU,SGA dropdown for NS,,,,,,,,,,
+,,,HR,,,,,,DM,,DM,,,,,,,,,,
+,,,Legal,,,,,,IM,BM,BM,,,,,,,,,,
+,,,PR,,,,,,,PM,PM,,,,,,,,,,
+,,,Engineer,,,,,,PG,PG App,PG App,,,,,,,,,,
+,,,共通系,,,,,,,PG Web,PG Web,,,,,,,,,,
+,,,Engineer_RE,,,,,,CG,CG,CG,,,,,,,,,,
+,,,,,,,,,D2C,D2C Creator,D2C Creator,,,,,,,,,,
+,,,,,,,,,,DX/AI,DX / AI,,,,,,,,,,
+,,,,,,,,,,Global E-commerce,Global E-commerce,,,,,,,,,,
+,,,,,,,,,,BC,BC,,,,,,,,,,
+,,,,,,,,,POKKT,,POKKT brand,,,,,,,,,,
+,,,,,,,,,,,POKKT App,,,,,,,,,,
+,,,,,,,,,,,POKKT Web,,,,,,,,,,
+,,,,,,,,,Corporate (different allocation key),Finance,Finance,,,,,,,,,,
+,,,,,,,,,,Legal,Legal,,,,,,,,,,
+,,,,,,,,,,PR,PR,,,,,,,,,,
+,,,,,,,,,,Engineer,Engineer,,,,,,,,,,
+,,,,,,,,,,共通系,共通系,,,,,,,,,,
+,,,,,,,,,,Engineer_RE,Engineer_RE,,,,,,,,,,
+,,,,,,,,,,HR 新卒,HR 新卒,,,,,,,,,,
+,,,,,,,,,,HR 中途,HR 中途,,,,,,,,,,

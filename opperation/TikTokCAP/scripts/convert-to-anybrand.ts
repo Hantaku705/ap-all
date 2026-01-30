@@ -4,7 +4,7 @@
  * 使い方:
  * npx tsx convert-to-anybrand.ts
  *
- * 出力: projects/anybrand/webapp/src/data/products-data.ts
+ * 出力: opperation/TikTokCAP/webapp/src/data/products-data.ts
  */
 
 import * as fs from 'fs'
@@ -17,6 +17,7 @@ interface TAPProduct {
   brand: string
   product: string
   image: string
+  imageUrl?: string
   category: string
   open: string
   grossTarget: string
@@ -108,6 +109,17 @@ function parseCommissionRate(rateStr: string): number {
   return isNaN(num) ? 10 : num
 }
 
+// Google Drive URLをCDN形式に変換
+function convertDriveUrl(url: string): string {
+  if (!url) return ''
+  // https://drive.google.com/uc?id=FILE_ID → https://lh3.googleusercontent.com/d/FILE_ID
+  const match = url.match(/drive\.google\.com\/uc\?id=([^&]+)/)
+  if (match) {
+    return `https://lh3.googleusercontent.com/d/${match[1]}`
+  }
+  return url
+}
+
 // バッジ決定
 function determineBadges(tap: TAPProduct): ProductBadge[] {
   const badges: ProductBadge[] = []
@@ -129,7 +141,10 @@ function determineBadges(tap: TAPProduct): ProductBadge[] {
 
 function convertProduct(tap: TAPProduct): Product {
   const price = parsePrice(tap.price)
-  const commissionRate = parseCommissionRate(tap.capRate || tap.netTapRate)
+  // 現在のコミッション率 = M列（open）を優先
+  const commissionRate = parseCommissionRate(tap.open || tap.capRate || tap.netTapRate)
+  // 最大コミッション率 = N列（grossTarget）を優先
+  const maxCommissionRate = parseCommissionRate(tap.grossTarget || tap.open || tap.capRate)
   const categoryInfo = CATEGORY_MAP[tap.category] || CATEGORY_MAP['不明']
   const earnPerSale = Math.round(price * (commissionRate / 100))
 
@@ -139,7 +154,7 @@ function convertProduct(tap: TAPProduct): Product {
     description: '',
     price,
     commissionRate,
-    imageUrl: tap.image || `https://placehold.co/400x400/f3f4f6/6b7280?text=${encodeURIComponent(tap.brand || 'Product')}`,
+    imageUrl: convertDriveUrl(tap.imageUrl) || convertDriveUrl(tap.image) || `https://placehold.co/400x400/f3f4f6/6b7280?text=${encodeURIComponent(tap.brand || 'Product')}`,
     category: categoryInfo.name,
     categoryId: categoryInfo.id,
     brandName: tap.brand || '不明',
@@ -150,7 +165,7 @@ function convertProduct(tap: TAPProduct): Product {
     createdAt: new Date().toISOString(),
     priceMin: price,
     priceMax: price,
-    maxCommissionRate: commissionRate,
+    maxCommissionRate,
     earnPerSale,
     badges: determineBadges(tap),
     hasSample: tap.sample?.includes('サンプル') || false,
@@ -167,7 +182,7 @@ function convertProduct(tap: TAPProduct): Product {
 
 // メイン処理
 const inputPath = path.join(__dirname, '../data/products.json')
-const outputPath = path.join(__dirname, '../../../projects/anybrand/webapp/src/data/products-data.ts')
+const outputPath = path.join(__dirname, '../webapp/src/data/products-data.ts')
 
 const syncData: SyncData = JSON.parse(fs.readFileSync(inputPath, 'utf-8'))
 const products: Product[] = syncData.products.map(convertProduct)
@@ -187,7 +202,7 @@ const tsContent = `/**
  * 商品数: ${products.length}件
  *
  * 自動生成ファイル - 直接編集しないでください
- * 更新: npx tsx opperation/TikTokCAP/scripts/convert-to-anybrand.ts
+ * 更新: cd opperation/TikTokCAP/scripts && npx tsx convert-to-anybrand.ts
  */
 
 import type { Product } from '../types'

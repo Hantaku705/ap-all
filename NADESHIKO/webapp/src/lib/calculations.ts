@@ -1,4 +1,10 @@
 import { Deal, MonthlySummary, ManagerPerformance, AccountPerformance, ClientPerformance, MonthlyTarget } from '@/types/deal';
+import { monthlySummaryData, MonthlySummary as CsvMonthlySummary } from '@/data/monthly-summary';
+
+// CSVサマリーデータをMapに変換（高速検索用）
+const csvSummaryMap = new Map<string, CsvMonthlySummary>(
+  monthlySummaryData.map(s => [s.month, s])
+);
 
 // 粗利計算
 export function calculateGrossProfit(sales: number, cost: number, category: 'AJP' | 'RCP'): number {
@@ -15,6 +21,7 @@ export function calculatePaymentCost60(cost: number): number {
 }
 
 // 月別サマリー計算
+// CSVサマリーデータがある場合はそちらの売上・粗利を優先使用
 export function calculateMonthlySummary(deals: Deal[], targets: MonthlyTarget[]): MonthlySummary[] {
   const months = [...new Set(deals.map(d => d.month))].sort();
 
@@ -22,8 +29,14 @@ export function calculateMonthlySummary(deals: Deal[], targets: MonthlyTarget[])
     const monthDeals = deals.filter(d => d.month === month);
     const target = targets.find(t => t.month === month)?.target || 0;
 
-    const totalSales = monthDeals.reduce((sum, d) => sum + d.sales, 0);
-    const totalGrossProfit = monthDeals.reduce((sum, d) => sum + d.grossProfit, 0);
+    // CSVサマリーデータがあればそちらを使用、なければ案件データから計算
+    const csvSummary = csvSummaryMap.get(month);
+    const totalSales = csvSummary && csvSummary.sales > 0
+      ? csvSummary.sales
+      : monthDeals.reduce((sum, d) => sum + d.sales, 0);
+    const totalGrossProfit = csvSummary && csvSummary.grossProfit > 0
+      ? csvSummary.grossProfit
+      : monthDeals.reduce((sum, d) => sum + d.grossProfit, 0);
 
     const ajpDeals = monthDeals.filter(d => d.category === 'AJP');
     const rcpDeals = monthDeals.filter(d => d.category === 'RCP');
@@ -422,8 +435,30 @@ export function calculatePeriodSummary(
     ? targets.filter(t => months.includes(t.month))
     : targets;
 
-  const totalSales = periodDeals.reduce((sum, d) => sum + d.sales, 0);
-  const totalGrossProfit = periodDeals.reduce((sum, d) => sum + d.grossProfit, 0);
+  // CSVサマリーデータがある月はそちらを使用
+  let totalSales = 0;
+  let totalGrossProfit = 0;
+
+  if (months.length > 0) {
+    // 期間指定がある場合、月ごとにCSVサマリーを参照
+    months.forEach(month => {
+      const csvSummary = csvSummaryMap.get(month);
+      if (csvSummary && csvSummary.sales > 0) {
+        totalSales += csvSummary.sales;
+        totalGrossProfit += csvSummary.grossProfit;
+      } else {
+        // CSVサマリーがない月は案件データから計算
+        const monthDeals = deals.filter(d => d.month === month);
+        totalSales += monthDeals.reduce((sum, d) => sum + d.sales, 0);
+        totalGrossProfit += monthDeals.reduce((sum, d) => sum + d.grossProfit, 0);
+      }
+    });
+  } else {
+    // 全期間の場合は案件データから計算
+    totalSales = periodDeals.reduce((sum, d) => sum + d.sales, 0);
+    totalGrossProfit = periodDeals.reduce((sum, d) => sum + d.grossProfit, 0);
+  }
+
   const target = periodTargets.reduce((sum, t) => sum + t.target, 0);
   const completedDeals = periodDeals.filter(d => d.status === '投稿完了');
 
@@ -483,9 +518,25 @@ export function calculatePeriodComparison(
 }
 
 // 全体サマリー計算
+// CSVサマリーデータを使用して月別の売上・粗利を集計
 export function calculateTotalSummary(deals: Deal[], targets: MonthlyTarget[]) {
-  const totalSales = deals.reduce((sum, d) => sum + d.sales, 0);
-  const totalGrossProfit = deals.reduce((sum, d) => sum + d.grossProfit, 0);
+  // 月別にCSVサマリーを使用して集計
+  const months = [...new Set(deals.map(d => d.month))];
+  let totalSales = 0;
+  let totalGrossProfit = 0;
+
+  months.forEach(month => {
+    const csvSummary = csvSummaryMap.get(month);
+    if (csvSummary && csvSummary.sales > 0) {
+      totalSales += csvSummary.sales;
+      totalGrossProfit += csvSummary.grossProfit;
+    } else {
+      const monthDeals = deals.filter(d => d.month === month);
+      totalSales += monthDeals.reduce((sum, d) => sum + d.sales, 0);
+      totalGrossProfit += monthDeals.reduce((sum, d) => sum + d.grossProfit, 0);
+    }
+  });
+
   const totalTarget = targets.reduce((sum, t) => sum + t.target, 0);
 
   const ajpDeals = deals.filter(d => d.category === 'AJP');

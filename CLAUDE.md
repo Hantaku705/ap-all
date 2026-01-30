@@ -9,7 +9,7 @@
 ```
 AP/
 ├── projects/               # 全プロジェクト
-│   ├── anybrand/           # AnyBrand TikTokアフィリエイトプラットフォーム
+│   ├── AnyMind/            # AnyMind Monthly Report Dashboard（Excel→Webapp）
 │   ├── concept-learning/   # コンセプト学習
 │   ├── dr.melaxin/         # Dr.Melaxin
 │   ├── lip-tagline/        # リップポジショニングマップ（source/docs）
@@ -49,7 +49,8 @@ AP/
 │
 ├── opperation/             # 運用・学習資料
 │   ├── CLAUDECODE/          # Claude Code オンボーディングWebapp
-│   ├── TikTokCAP/           # TikTok Shop Affiliateスクレイピングツール
+│   ├── TikTokCAP/           # TikTok Shop Affiliate + AnyBrand Webapp（統合）
+│   ├── Startup/             # US B2B SaaS EXIT Dashboard（日本参入機会分析）
 │   ├── なまえデザイン_フォルダ/  # 「なまえ」デザイン書籍まとめ
 │   ├── サブスク/            # サブスク確認ツール（Gmail API連携）
 │   ├── clawdbot/           # Clawdbot AIアシスタント設定ガイド
@@ -160,53 +161,40 @@ AP/
 
 ## プロジェクト別詳細
 
-### anybrand（AnyBrand）
+### TikTokCAP + AnyBrand（統合）
 
-日本市場向けTikTokクリエイターアフィリエイトプラットフォーム。anyStarr（https://anystarr.com/）を参考に構築。
+TikTok Shop Affiliate スクレイピング + AnyBrand Webapp 統合プロジェクト。
+
+**場所**: `opperation/TikTokCAP/`
 
 **本番URL**: https://anybrand-platform.vercel.app
 
 **技術スタック**:
-- Next.js 16.1.6 (App Router)
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Recharts
+- Node.js + TypeScript + Playwright（スクレイパー）
+- Next.js 16 + Tailwind CSS + Recharts + Remotion（Webapp）
 
-**ページ構成**:
-| パス | 内容 |
-|-----|------|
-| `/` | ランディングページ（6セクション） |
-| `/login` | ログイン |
-| `/register` | 新規登録（3ステップ） |
-| `/dashboard` | ダッシュボード（統計・グラフ・通知） |
-| `/products` | 商品カタログ（検索・フィルター） |
-| `/products/[id]` | 商品詳細（申請機能） |
-
-**ビジネスモデル**:
+**フォルダ構成**:
 ```
-ブランド → AnyBrand（マッチング） → クリエイター → TikTokで紹介 → 購入 → コミッション
+TikTokCAP/
+├── scraper/    # スクレイピングツール
+├── scripts/    # 変換スクリプト
+├── data/       # 同期データ（299件）
+└── webapp/     # AnyBrand Webapp
 ```
-
-**Key Files**:
-| ファイル | 用途 |
-|---------|------|
-| `projects/anybrand/CLAUDE.md` | プロジェクト概要 |
-| `projects/anybrand/webapp/src/data/mock-data.ts` | モックデータ（商品10件、カテゴリ6件） |
-| `projects/anybrand/webapp/src/app/page.tsx` | ランディングページ |
-| `projects/anybrand/webapp/src/app/(auth)/dashboard/page.tsx` | ダッシュボード |
 
 **開発コマンド**:
 ```bash
-cd projects/anybrand/webapp
+cd opperation/TikTokCAP/webapp
 npm run dev
 ```
 
 **デプロイ**:
 ```bash
-cd projects/anybrand/webapp
+cd opperation/TikTokCAP/webapp
 vercel --prod --yes
 ```
+
+詳細は `opperation/TikTokCAP/CLAUDE.md` を参照。
 
 ---
 
@@ -685,6 +673,10 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-30: **AnyMind Monthly Report Dashboard作成**（`projects/AnyMind/webapp/`、Excel 102シート→CSV変換、4タブ構成（Overview/P&L/Units/Budget）、Recharts可視化、https://anymind-dashboard.vercel.app）
+- 2026-01-30: **AnyBrand anystarr.com UI/UX完全一致**（ランディング→商品グリッド化、サイドバー削除、TikTok Shopバナー、コミッション3段階カード、モーダルMethod 1/2形式、本番デプロイ）
+- 2026-01-30: **US B2B SaaS EXIT Dashboard作成**（`opperation/Startup/webapp/`、21件のM&A事例、4ページ構成、フィルター・可視化・機会分析、https://us-saas-exit-dashboard.vercel.app）
+- 2026-01-29: **AnyBrand TikTokログイン連携**（Auth.js v5、カスタムTikTok OAuthプロバイダー、プロフィールページ（anystarr.comスタイル）、フォロワー/フォロー/いいね/動画数表示）
 - 2026-01-29: **TikTokCAP スプレッドシート同期機能追加**（`/sync-tiktokcap`コマンド、Google Docs MCP→JSON変換、299件同期成功、`scripts/sync-spreadsheet.ts`）
 - 2026-01-29: **Playwright認証スクレイピングスキル + バックグラウンドタスクルール追加**（`playwright-auth-scraper.md`、`background-tasks.md`）
 - 2026-01-29: **TikTokCAP スクレイピングツール作成**（`opperation/TikTokCAP/`、Node.js + TypeScript + Playwright、TikTok Shop Partner Center商品プールからデータ取得、Cookie管理・ページネーション対応）

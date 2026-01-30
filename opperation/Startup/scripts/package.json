@@ -1,0 +1,23 @@
+{
+  "name": "startup-fetchers",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "fetch:yc": "tsx fetch-yc.ts",
+    "fetch:techcrunch": "tsx fetch-techcrunch.ts",
+    "fetch:indie": "tsx fetch-indie-hackers.ts",
+    "fetch:ph": "tsx fetch-product-hunt.ts",
+    "fetch:tiny": "tsx fetch-tiny-startups.ts",
+    "fetch:boring": "tsx fetch-boring-cashcow.ts",
+    "fetch:all": "tsx fetch-all.ts"
+  },
+  "dependencies": {
+    "puppeteer": "^24.0.0",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}

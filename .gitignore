@@ -33,3 +33,5 @@ dr.melaxin/*.pdf
 *.pptx
 # Large files (>100MB)
 opperation/なまえデザイン_フォルダ/なまえデザイン.pdf
+.vercel
+.env*.local

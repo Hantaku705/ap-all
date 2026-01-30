@@ -1,0 +1,161 @@
+﻿Month (YYMM),(複数のアイテム),Unnamed: 2
+,,
+Cost Items,BU Level Dept,SUM of Amount
+Accounting and professional fee,BM,20500
+,D2C Creator,138001
+,Finance,433001
+,Global E-Commerce,67682
+,Legal,3322134
+,PG App,1360000
+,PG Web,545455
+,PG 共通,-1001614
+,共通系,4788168
+Accounting and professional fee 集計,,9673327
+Advertising and marketing events,BC,34340496
+,BM,21609364
+,CG,370582
+,D2C Creator,63821009
+,DX / AI,2179141
+,Engineer,4898
+,Global E-Commerce,5163579
+,HR,50000
+,PG App,228374966
+,PG Web,5018890
+,PG 共通,1320313
+,PM,209060
+,PR,-2168720
+,共通系,949042
+,(空白),-1054260
+Advertising and marketing events 集計,,360188360
+Client Gifts and Entertainment,BC,273344
+,BM,7754757
+,CG,131394
+,D2C Creator,185567
+,DM,22704
+,DX / AI,731440
+,Finance,82209
+,Global E-Commerce,224305
+,HR,263874.63636600005
+,Legal,2364
+,PG App,544293
+,PG Web,2821840
+,PM,7212
+,共通系,187332
+Client Gifts and Entertainment 集計,,13232635.636366
+Cost centre recharge,Engineer_RE,112306714
+,共通系,5627717
+,(空白),72965694.68174002
+Cost centre recharge 集計,,190900125.68174002
+Cost centre recharge - markup,(空白),7384816
+Cost centre recharge - markup 集計,,7384816
+Depreciation - Lease,共通系,358062302
+Depreciation - Lease 集計,,358062302
+Depreciation and amortization,CG,7962978
+,D2C Creator,418998
+,Global E-Commerce,27868
+,PG Web,8708330
+,PG 共通,23500002
+,共通系,21382523
+Depreciation and amortization 集計,,62000699
+Finance costs,(空白),17063661
+Finance costs 集計,,17063661
+General expenses,BC,3137047
+,BM,19218204
+,CG,596878
+,D2C Creator,17993011
+,DM,15811
+,DX / AI,6859761
+,Engineer,45550
+,Finance,1119397
+,Global E-Commerce,12570390
+,HR,1441240.909094
+,Legal,14933
+,PG App,-1939463
+,PG Web,3036897
+,PG 共通,-102620
+,PM,130100
+,PR,157314
+,共通系,141834539
+,(空白),0
+General expenses 集計,,206128989.909094
+Income tax,Finance,-3012900
+,PG 共通,-8131002
+,共通系,-7249952
+Income tax 集計,,-18393854
+Insurance expenses,HR,361763
+,共通系,2692182
+Insurance expenses 集計,,3053945
+Interest Expense - Lease,共通系,18944383
+Interest Expense - Lease 集計,,18944383
+IT expenses,BC,816925
+,BM,8800514.696899999
+,CG,192495
+,D2C Creator,61931525
+,DM,16964
+,DX / AI,9651920
+,Engineer,22324806.989078254
+,Finance,1164279
+,Global E-Commerce,54984665
+,HR,601011.1817748998
+,Legal,1493913
+,PG App,17766225.5
+,PG Web,84112555.5
+,PG 共通,4255574
+,PM,100000
+,共通系,83769908
+IT expenses 集計,,351983281.86775315
+Other outsourced services,BC,3805883
+,BM,62219164
+,CG,43505590
+,D2C Creator,27845499
+,DX / AI,73749455
+,Finance,17720340
+,Global E-Commerce,6028314
+,HR,60000
+,Legal,4788015
+,PG App,43194216
+,PG Web,25820191
+,PM,193720
+,PR,200000
+,共通系,2728974
+Other outsourced services 集計,,311859361
+Recruitment,BC,12909
+,BM,27492913
+,CG,17236
+,D2C Creator,16709
+,Finance,2115750
+,HR,69078897.10054085
+,Legal,1080000
+,PG App,2483500
+,PG Web,7188990
+,共通系,3793727
+Recruitment 集計,,113280631.10054085
+Rental expenses,共通系,718770
+Rental expenses 集計,,718770
+Research and development,Finance,320800
+Research and development 集計,,320800
+Royalty expenses,D2C Creator,143862090
+Royalty expenses 集計,,143862090
+Staff costs,(空白),1161690945
+Staff costs 集計,,1161690945
+Telephone & Internet,共通系,9580254
+Telephone & Internet 集計,,9580254
+Transportation & Accommodation,BC,183169
+,BM,9699140
+,CG,1012974
+,D2C Creator,3292096
+,DM,845647
+,DX / AI,701004
+,Engineer,769964
+,Finance,510716
+,Global E-Commerce,2558561
+,HR,3808561.2817927944
+,Legal,4455
+,PG App,806533
+,PG Web,764556
+,PM,241432
+,PR,28736
+,共通系,4999915.272700001
+,(空白),16921822
+Transportation & Accommodation 集計,,47149281.554492794
+総計,,3368684804.7499866
