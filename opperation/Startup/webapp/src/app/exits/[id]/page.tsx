@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { exits, categoryLabels, japanStatusLabels, entryDifficultyLabels } from '@/data/exits-data'
+import { exits, categoryLabels, japanStatusLabels, entryDifficultyLabels, statusLabels } from '@/data/exits-data'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -32,15 +32,25 @@ export default async function ExitDetailPage({ params }: PageProps) {
     high: 'text-red-600',
   }
 
+  const statusColors = {
+    exit: 'bg-gray-100 text-gray-800 border-gray-200',
+    growing: 'bg-blue-100 text-blue-800 border-blue-200',
+    ipo_planned: 'bg-purple-100 text-purple-800 border-purple-200',
+    discovery: 'bg-teal-100 text-teal-800 border-teal-200',
+  }
+
+  const displayAmount = exit.status === 'exit' ? exit.exitAmount : exit.valuation || '-'
+  const displayTarget = exit.status === 'exit' ? exit.acquirer : exit.fundingRound || '-'
+
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white border-b sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-bold">US B2B SaaS EXIT Dashboard</h1>
+            <h1 className="text-xl font-bold">US B2B SaaS Dashboard</h1>
             <nav className="flex gap-4">
               <Link href="/" className="text-gray-600 hover:text-gray-900">Dashboard</Link>
-              <Link href="/exits" className="text-gray-600 hover:text-gray-900">事例一覧</Link>
+              <Link href="/exits" className="text-gray-600 hover:text-gray-900">ケーススタディ</Link>
               <Link href="/opportunities" className="text-gray-600 hover:text-gray-900">機会分析</Link>
             </nav>
           </div>
@@ -49,18 +59,25 @@ export default async function ExitDetailPage({ params }: PageProps) {
 
       <main className="max-w-4xl mx-auto px-4 py-8">
         <Link href="/exits" className="text-blue-600 text-sm hover:underline mb-4 inline-block">
-          ← 事例一覧に戻る
+          ← ケーススタディ一覧に戻る
         </Link>
 
         <div className="bg-white rounded-lg border p-6 mb-6">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <h2 className="text-3xl font-bold">{exit.company}</h2>
+              <div className="flex items-center gap-3 mb-1">
+                <h2 className="text-3xl font-bold">{exit.company}</h2>
+                <span className={`px-3 py-1 rounded text-sm border ${statusColors[exit.status]}`}>
+                  {statusLabels[exit.status]}
+                </span>
+              </div>
               <p className="text-gray-500 mt-1">{categoryLabels[exit.category]}</p>
             </div>
             <div className="text-right">
-              <p className="text-3xl font-bold text-blue-600">{exit.exitAmount}</p>
-              <p className="text-sm text-gray-500">{exit.exitYear}年</p>
+              <p className="text-3xl font-bold text-blue-600">{displayAmount}</p>
+              <p className="text-sm text-gray-500">
+                {exit.status === 'exit' ? `${exit.exitYear}年EXIT` : displayTarget}
+              </p>
             </div>
           </div>
 
@@ -68,20 +85,41 @@ export default async function ExitDetailPage({ params }: PageProps) {
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <div className="bg-gray-50 rounded-lg p-4">
-              <h3 className="font-bold text-sm text-gray-500 mb-2">EXIT情報</h3>
+              <h3 className="font-bold text-sm text-gray-500 mb-2">
+                {exit.status === 'exit' ? 'EXIT情報' : '企業情報'}
+              </h3>
               <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">買収先</span>
-                  <span className="font-medium">{exit.acquirer}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">EXIT金額</span>
-                  <span className="font-medium">{exit.exitAmount}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">EXIT年</span>
-                  <span className="font-medium">{exit.exitYear}年</span>
-                </div>
+                {exit.status === 'exit' ? (
+                  <>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">買収先</span>
+                      <span className="font-medium">{exit.acquirer}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">EXIT金額</span>
+                      <span className="font-medium">{exit.exitAmount}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">EXIT年</span>
+                      <span className="font-medium">{exit.exitYear}年</span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">評価額</span>
+                      <span className="font-medium">{exit.valuation || '-'}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">ラウンド</span>
+                      <span className="font-medium">{exit.fundingRound || '-'}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">ステータス</span>
+                      <span className="font-medium">{statusLabels[exit.status]}</span>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
 
@@ -124,9 +162,9 @@ export default async function ExitDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Related Exits */}
+        {/* Related Cases */}
         <div className="mt-8">
-          <h3 className="font-bold text-lg mb-4">関連事例</h3>
+          <h3 className="font-bold text-lg mb-4">関連ケーススタディ</h3>
           <div className="grid md:grid-cols-3 gap-4">
             {exits
               .filter((e) => e.id !== exit.id && e.category === exit.category)
@@ -137,9 +175,18 @@ export default async function ExitDetailPage({ params }: PageProps) {
                   href={`/exits/${related.id}`}
                   className="bg-white rounded-lg border p-4 hover:shadow-md transition-shadow"
                 >
-                  <h4 className="font-bold">{related.company}</h4>
-                  <p className="text-sm text-gray-600 mt-1">{related.exitAmount}</p>
-                  <p className="text-xs text-gray-500 mt-2">→ {related.acquirer}</p>
+                  <div className="flex items-center gap-2 mb-1">
+                    <h4 className="font-bold">{related.company}</h4>
+                    <span className={`text-xs px-1.5 py-0.5 rounded ${statusColors[related.status]}`}>
+                      {statusLabels[related.status]}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-1">
+                    {related.status === 'exit' ? related.exitAmount : related.valuation || '-'}
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">
+                    {related.status === 'exit' ? `→ ${related.acquirer}` : related.fundingRound || '-'}
+                  </p>
                 </Link>
               ))}
           </div>

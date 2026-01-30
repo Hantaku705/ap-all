@@ -5,9 +5,12 @@ import { usePathname } from 'next/navigation';
 
 const tabs = [
   { name: 'Overview', href: '/' },
+  { name: 'Annual Summary', href: '/annual' },
   { name: 'P/L Summary', href: '/pl' },
   { name: 'Business Units', href: '/units' },
   { name: 'Budget Progress', href: '/budget' },
+  { name: 'Report', href: '/report' },
+  { name: 'スライド', href: '/slides' },
 ];
 
 export default function Tabs() {

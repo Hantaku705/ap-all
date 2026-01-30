@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "convert-csv": "npx tsx scripts/csv-to-ts.ts"
   },
   "dependencies": {
     "next": "16.1.6",

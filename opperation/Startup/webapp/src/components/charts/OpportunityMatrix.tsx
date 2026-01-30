@@ -1,7 +1,8 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ZAxis, Cell, ReferenceLine, Label } from 'recharts'
-import { exits, japanStatusLabels, entryDifficultyLabels, type JapanStatus, type EntryDifficulty } from '@/data/exits-data'
+import { japanStatusLabels, entryDifficultyLabels, statusLabels, type JapanStatus, type EntryDifficulty, type ExitCase } from '@/data/exits-data'
 
 const difficultyToX: Record<EntryDifficulty, number> = {
   low: 1,
@@ -22,23 +23,49 @@ const COLORS: Record<JapanStatus, string> = {
 }
 
 interface DataPoint {
+  id: string
   x: number
   y: number
   z: number
   company: string
+  coreValue: string
   japanStatus: JapanStatus
   entryDifficulty: EntryDifficulty
+  status: string
+  amount: string
 }
 
-export function OpportunityMatrix() {
-  const data: DataPoint[] = exits.map((e) => ({
+interface OpportunityMatrixProps {
+  data?: ExitCase[]
+}
+
+export function OpportunityMatrix({ data: externalData }: OpportunityMatrixProps) {
+  const router = useRouter()
+
+  // デフォルトでは空配列を使用（外部からデータが渡されない場合はexitsをインポート）
+  const sourceData = externalData || []
+
+  const data: DataPoint[] = sourceData.map((e) => ({
+    id: e.id,
     x: difficultyToX[e.entryDifficulty],
     y: japanStatusToY[e.japanStatus],
-    z: e.exitAmountNum / 100000000,
+    z: Math.max(
+      e.status === 'exit'
+        ? e.exitAmountNum / 100000000
+        : (e.valuation ? parseFloat(e.valuation.replace(/[$B+]/g, '')) * 10 : 1),
+      1
+    ),
     company: e.company,
+    coreValue: e.coreValue,
     japanStatus: e.japanStatus,
     entryDifficulty: e.entryDifficulty,
+    status: statusLabels[e.status],
+    amount: e.status === 'exit' ? e.exitAmount : e.valuation || '-',
   }))
+
+  const handleClick = (point: DataPoint) => {
+    router.push(`/exits/${point.id}`)
+  }
 
   return (
     <div className="h-[400px] w-full">
@@ -63,23 +90,39 @@ export function OpportunityMatrix() {
           >
             <Label value="日本市場機会" angle={-90} position="insideLeft" style={{ textAnchor: 'middle' }} />
           </YAxis>
-          <ZAxis type="number" dataKey="z" range={[100, 400]} />
+          <ZAxis type="number" dataKey="z" range={[50, 300]} />
           <Tooltip
             content={({ payload }) => {
               if (!payload || payload.length === 0) return null
               const d = payload[0].payload as DataPoint
               return (
-                <div className="rounded bg-white p-2 shadow-lg border">
-                  <p className="font-bold">{d.company}</p>
+                <div className="rounded bg-white p-3 shadow-lg border">
+                  <p className="font-bold text-blue-600">{d.company}</p>
+                  <p className="text-xs text-gray-500 mb-2">{d.coreValue}</p>
+                  <p className="text-sm">ステータス: {d.status}</p>
+                  <p className="text-sm">金額/評価額: {d.amount}</p>
                   <p className="text-sm">難易度: {entryDifficultyLabels[d.entryDifficulty]}</p>
                   <p className="text-sm">日本類似: {japanStatusLabels[d.japanStatus]}</p>
+                  <p className="text-xs text-blue-500 mt-2">クリックで詳細へ</p>
                 </div>
               )
             }}
           />
           <ReferenceLine x={2} stroke="#ccc" strokeDasharray="3 3" />
           <ReferenceLine y={2} stroke="#ccc" strokeDasharray="3 3" />
-          <Scatter name="EXIT Cases" data={data}>
+          {/* High opportunity zone highlight */}
+          <ReferenceLine x={1.5} stroke="#10b981" strokeWidth={2} strokeOpacity={0.3} />
+          <ReferenceLine y={2.5} stroke="#10b981" strokeWidth={2} strokeOpacity={0.3} />
+          <Scatter
+            name="Cases"
+            data={data}
+            onClick={(e) => {
+              if (e && e.payload) {
+                handleClick(e.payload as DataPoint)
+              }
+            }}
+            style={{ cursor: 'pointer' }}
+          >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[entry.japanStatus]} />
             ))}
@@ -100,6 +143,11 @@ export function OpportunityMatrix() {
           競合多数
         </span>
       </div>
+      {sourceData.length > 0 && (
+        <p className="text-center text-xs text-gray-400 mt-2">
+          表示中: {sourceData.length}件 | 点をクリックすると詳細ページに移動します
+        </p>
+      )}
     </div>
   )
 }

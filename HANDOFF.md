@@ -4,9 +4,9 @@
 
 | 項目 | 値 |
 |------|-----|
-| 最終セッション | #167 |
+| 最終セッション | #180 |
 | 最終更新 | 2026-01-30 |
-| 最新コミット | 7f0c959 |
+| 最新コミット | be62cd5 |
 
 ### 作業中のタスク
 
@@ -15,7 +15,17 @@
 - [ ] CLAUDECODE Webapp ログイン機能 - Supabase設定待ち
 - [ ] skills-map Webapp CLAUDE.md作成
 - [ ] The Room FX 提案書 Google Docs書き込み（5〜11章）
+- [x] **AnyMind Dashboard スライドタブ修正**（文章部分削除、CSV→TypeScript変換スクリプト追加）
+- [x] **AnyMind Report Factベースインサイト修正**（11BU全てを推測→データのみに修正、モーダルUI更新）
+- [x] **US B2B SaaS EXIT Dashboard 機会分析ページ全面改善**（フィルター4種、機会スコア、成長中企業、カテゴリ別EXIT分析）
+- [x] **US B2B SaaS EXIT Dashboard 一覧デフォルト表示変更**（カード形式→テーブル形式）
+- [x] **US B2B SaaS EXIT Dashboard チャットボットUX改善**（Enter送信/Cmd+Enter改行、Markdownレンダリング）
+- [x] **US B2B SaaS EXIT Dashboard チャットボット機能追加**（Claude API、56件ケーススタディ文脈、ストリーミング応答）
+- [x] **US B2B SaaS EXIT Dashboard UI改善**（coreValue日本語化155件、フィルター複数選択化5種）
+- [x] **US B2B SaaS EXIT Dashboard データ統合**（/sourcesの155件を/exitsに統合、211件統一表示、ソースフィルター追加）
+- [x] **US B2B SaaS EXIT Dashboard 情報収集機能追加**（4ソース自動スクレイピング、/sourcesページ）
 - [x] **US B2B SaaS EXIT Dashboard コアバリュー列追加**（テーブルに21件のビジネスモデル要約）
+- [x] **US B2B SaaS EXIT Dashboard ケーススタディ拡充**（21件→56件、成長中30件+IPO予定5件追加、ステータス列・フィルター）
 - [x] **AnyBrand 商品カードUI anystarr仕様対応**（Sample/Addボタン、ピル形状コミッション、英語化）
 - [x] **TikTokCAP Webapp画像反映完了**（147件、Google Drive CDN URL変換、デプロイ完了）
 - [x] **TikTokCAP スプレッドシートF列画像→G列URL変換完了**（142件、rclone+MCP）
@@ -38,15 +48,12 @@
 ## 未コミット変更
 
 ```
-?? opperation/Startup/ (新規プロジェクト、US B2B SaaS EXIT Dashboard)
-M opperation/TikTokCAP/scripts/sync-spreadsheet.ts
-M opperation/TikTokCAP/scripts/convert-to-anybrand.ts
-M opperation/TikTokCAP/data/products.json
-?? .claude/commands/spreadsheet-image-to-url.md
-?? opperation/TikTokCAP/webapp/
-?? opperation/TikTokCAP/data/images_by_row/ (142件)
-?? opperation/TikTokCAP/scripts/*.ts (新規スクリプト複数)
-D projects/anybrand/ (TikTokCAPに統合済み)
+M CLAUDE.md
+M HANDOFF.md
+M opperation/Startup/CLAUDE.md
+M opperation/Startup/webapp/src/app/opportunities/page.tsx
+M opperation/Startup/webapp/src/components/charts/OpportunityMatrix.tsx
+（他多数 - US B2B SaaS Dashboard, AnyMind関連）
 ```
 
 ## プロジェクト別履歴
@@ -69,6 +76,277 @@ D projects/anybrand/ (TikTokCAPに統合済み)
 | AnyMind | 2026-01-30 | [anymind-dashboard](https://anymind-dashboard.vercel.app) | [詳細](projects/AnyMind/CLAUDE.md) |
 
 ## セッション履歴
+
+### 2026-01-30（#180）
+- **AnyMind Dashboard スライドタブ修正**
+  - 要件:
+    1. CSVからデータを読み込む形式に変更（ビルド時変換）
+    2. 文章部分を削除（グラフ・テーブル・KPIカードのみ）
+  - 文章部分削除（6セクション）:
+    | セクション | 削除内容 |
+    |-----------|----------|
+    | AnnualPerformance | 注釈「数値にはD2C関連の評価損は未反映」 |
+    | OpBreakdown | opBreakdown.notes表示部分 |
+    | GpPerHead | 説明テキスト（前年比+3.6%...） |
+    | OpPerHead | 説明テキスト（前年比△11.8%...） |
+    | PerHeadByUnit | 注釈「BC / GEC 合併する形」 |
+    | NegativeFactor | gpReason/opReason表示部分 |
+  - CSV→TypeScript変換スクリプト作成:
+    | ファイル | 説明 |
+    |---------|------|
+    | `scripts/csv-to-ts.ts` | `csv/Slide用.csv` → `app/data/slides-data.ts` 変換 |
+    | `package.json` | `"convert-csv": "npx tsx scripts/csv-to-ts.ts"` 追加 |
+  - データ更新フロー: `npm run convert-csv` → `npm run build` → `vercel --prod`
+  - 本番デプロイ完了: https://anymind-dashboard.vercel.app/slides
+
+### 2026-01-30（#179）
+- **AnyMind Report Factベースインサイト修正**
+  - 問題: Part 1（事業部別ボトルネック診断）のインサイトに**データに基づかない推測**が含まれていた
+    - 例: BMの「年間契約ピッチで主要案件3件を競合に敗北」→ データソースなし
+  - 修正方針: **Factベースのみ記載**
+    | ✅ 記載OK | ❌ 記載NG |
+    |-----------|-----------|
+    | YoY増減率 | 具体的失注理由 |
+    | OP/GP達成率 | 人員数・内部情報 |
+    | OP率 | 競合情報 |
+    | 1人当たりOP | 将来予測 |
+  - インターフェース変更:
+    ```typescript
+    // Before
+    insights: {
+      summary: string;
+      rootCauses: string[];      // ❌ 推測含む
+      context: string;           // ❌ 推測含む
+      trend: string;
+      recommendation: string;    // ❌ 推測含む
+    }
+    // After
+    insights: {
+      summary: string;           // Factベース1行
+      keyMetrics: string[];      // ✅ 数値指標のみ
+      trend: string;             // ✅ 客観的傾向
+      riskLevel: string;         // ✅ 数値ベース評価
+    }
+    ```
+  - 11BU全て修正:
+    | BU | riskLevel |
+    |----|-----------|
+    | BC, CG, GROVE | 低（全指標で予算超過） |
+    | LYFT, PG Web | 中（成長性に課題、収益性は維持） |
+    | BM, DX/AI | 高（達成度・効率に課題） |
+    | PG App | 危機的（達成度・成長性ともに深刻） |
+    | D2C CR, ENGAWA, AnyReach | 危機的（収益性に深刻な課題） |
+  - モーダルUI変更:
+    - 「根本原因」→「主要指標（Fact）」
+    - 「背景」「提案」セクション削除
+    - 「リスク評価」追加（レベル別色分け）
+  - 変更ファイル:
+    | ファイル | 変更 |
+    |---------|------|
+    | `app/data/report-data.ts` | BUBottleneckインターフェース変更、11BU insights書き直し |
+    | `app/report/page.tsx` | モーダル表示を新構造に対応 |
+  - ビルド・本番デプロイ完了: https://anymind-dashboard.vercel.app/report
+
+### 2026-01-30（#175）
+- **US B2B SaaS EXIT Dashboard 機会分析ページ全面改善**
+  - 要件1: 機会分析ページの6ステップ改善計画実装
+  - 要件2: カテゴリ別EXIT分析セクション追加（どのカテゴリがEXITしやすいか可視化）
+  - 実装内容:
+    | ステップ | 内容 |
+    |---------|------|
+    | Step 1 | フィルター追加（カテゴリ、日本類似、難易度、ステータス） |
+    | Step 2 | 機会スコアリング（0-100点、3軸評価） |
+    | Step 3 | 成長中企業セクション（$1B+評価額） |
+    | Step 4 | カテゴリ別分析強化（平均スコア、成長中数、Discovery数） |
+    | Step 5 | OpportunityMatrix強化（クリックで詳細遷移） |
+    | Step 6 | 推奨アクションデータ駆動化 |
+  - カテゴリ別EXIT分析:
+    | 指標 | 説明 |
+    |------|------|
+    | EXIT率 | EXIT件数 / 全件数（%） |
+    | 平均EXIT金額 | 算術平均 |
+    | 中央値 | 外れ値の影響を排除した中央値 |
+    | 最高額 | カテゴリ内最大EXIT金額 |
+    | トップ企業 | 最高額でEXITした企業名 |
+  - UI追加:
+    - サマリーカード4種（EXIT率最高、平均最高、中央値最高、件数最多）
+    - 詳細テーブル（8列）
+    - EXIT率棒グラフ
+  - 変更ファイル:
+    | ファイル | 変更 |
+    |---------|------|
+    | `opportunities/page.tsx` | Client Component化、フィルター、スコア、EXIT分析追加 |
+    | `OpportunityMatrix.tsx` | クリック遷移、useRouter追加 |
+  - 本番デプロイ完了: https://us-saas-exit-dashboard.vercel.app/opportunities
+
+### 2026-01-30（#174）
+- **US B2B SaaS EXIT Dashboard チャットボットUX改善**
+  - 要件1: キーボード操作の変更（Enter送信、Command+Enter改行）
+  - 要件2: Markdownレンダリング対応（見出し・太字・リストを正しく表示）
+  - 変更内容:
+    | 変更項目 | Before | After |
+    |---------|--------|-------|
+    | 入力欄 | `<input type="text">` | `<textarea rows={1}>` |
+    | キー条件 | `!e.shiftKey` | `!e.metaKey` |
+    | Markdown | そのまま表示 | HTMLレンダリング |
+  - 追加パッケージ: `react-markdown`
+  - 変更ファイル:
+    | ファイル | 変更 |
+    |---------|------|
+    | `ChatWidget.tsx` | textarea化、keyDown条件変更 |
+    | `ChatMessage.tsx` | ReactMarkdownでアシスタント回答レンダリング |
+  - 本番デプロイ完了: https://us-saas-exit-dashboard.vercel.app
+
+### 2026-01-30（#173）
+- **US B2B SaaS EXIT Dashboard チャットボット機能追加**
+  - 要件: 壁打ち用チャットボットを追加し、56件のケーススタディを文脈としてLLMが回答
+  - 技術スタック:
+    | 項目 | 値 |
+    |------|-----|
+    | LLM | Anthropic Claude (claude-sonnet-4-20250514) |
+    | API | Next.js App Router Edge Runtime |
+    | UI | フローティングウィジェット（右下固定） |
+    | ストリーミング | あり（ReadableStream） |
+  - 作成ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `src/app/api/chat/route.ts` | Chat APIエンドポイント（Edge Runtime、ストリーミング対応） |
+    | `src/components/chat/ChatWidget.tsx` | フローティングチャットUI（開閉、メッセージ履歴、ローディング） |
+    | `src/components/chat/ChatMessage.tsx` | メッセージ表示コンポーネント |
+  - 変更ファイル:
+    | ファイル | 変更 |
+    |---------|------|
+    | `src/app/layout.tsx` | ChatWidget追加（全ページで利用可能） |
+    | `package.json` | `@anthropic-ai/sdk` 依存追加 |
+    | `.env.local` | `ANTHROPIC_API_KEY` 追加 |
+  - システムプロンプト: 56件のケーススタディ（会社名、ステータス、コアバリュー、金額、日本競合、参入難易度）を文脈として提供
+  - サンプル質問: 「HR領域で日本参入しやすい企業は？」「$10B以上の評価額の企業は？」「AI/LLMカテゴリの成長中企業を教えて」「Ripplingのビジネスモデルは？」
+  - Vercel環境変数設定: `vercel env add ANTHROPIC_API_KEY production`
+  - 本番デプロイ完了: https://us-saas-exit-dashboard.vercel.app
+
+### 2026-01-30（#172）
+- **US B2B SaaS EXIT Dashboard UI改善**
+  - 要件: coreValue日本語化、フィルター複数選択化
+  - 変更内容:
+    | 変更項目 | 内容 |
+    |---------|------|
+    | coreValue日本語化 | Discovery 155件を日本語に翻訳（静的JSON） |
+    | フィルター複数選択化 | 5種類すべてチェックボックス形式に変更 |
+    | UIコンポーネント | `MultiSelectFilter`汎用コンポーネント追加 |
+  - 変更ファイル:
+    | ファイル | 変更 |
+    |---------|------|
+    | `src/data/translated-corevalues.json` | 新規作成（155件の日本語翻訳） |
+    | `src/data/sources-data.ts` | `extractCoreValue()`を翻訳JSON参照に修正 |
+    | `src/app/exits/page.tsx` | MultiSelectFilter追加、5フィルター複数選択化 |
+  - フィルターUI変更:
+    | Before | After |
+    |--------|-------|
+    | 単一選択ドロップダウン | 複数選択チェックボックス |
+    | 「すべて」選択肢 | 空選択 = すべて（自動） |
+    | - | 「N件選択中」表示 |
+    | - | 「フィルターをクリア」ボタン |
+  - 本番デプロイ完了: https://us-saas-exit-dashboard.vercel.app/exits
+
+### 2026-01-30（#170）
+- **US B2B SaaS EXIT Dashboard データ統合**
+  - 要件: /sourcesページの155件を/exitsページに統合し、統一された事例一覧として表示
+  - 変更内容:
+    | 変更項目 | 内容 |
+    |---------|------|
+    | データ件数 | 56件 → 211件（手動登録56件 + 発見155件） |
+    | 新ステータス | `discovery`（発見）追加 |
+    | 新フィールド | `source?: DataSource`（データの出所追跡） |
+    | ソースフィルター | Y Combinator / TechCrunch / Indie Hackers / 手動登録 |
+    | UIカラー | 発見ステータス用にteal色（青緑）追加 |
+  - 実装内容:
+    | ファイル | 変更 |
+    |---------|------|
+    | `exits-data.ts` | 型拡張（CompanyStatus, DataSource, sourceLabels）、データ統合 |
+    | `sources-data.ts` | `convertToExitCase()`変換関数、カテゴリ自動分類 |
+    | `exits/page.tsx` | ソースフィルター追加、7列グリッド化 |
+    | `exits/[id]/page.tsx` | statusColors に discovery 追加 |
+    | `ExitCard.tsx` | statusColors に discovery 追加 |
+  - カテゴリ自動分類（キーワードベース）:
+    | パターン | カテゴリ |
+    |---------|---------|
+    | ai, ml, llm, gpt | AI/LLM |
+    | security, auth, privacy | セキュリティ |
+    | hr, hiring, recruit | HR |
+    | marketing, ads, seo | マーケティング |
+    | finance, payment, invoice | FinOps |
+    | developer, api, code | 開発ツール |
+    | knowledge, docs, wiki | ナレッジ |
+    | その他 | オペレーション |
+  - ビルド結果: 217ページ静的生成（56 + 155 + 6基本ページ）
+  - 本番デプロイ完了: https://us-saas-exit-dashboard.vercel.app/exits
+
+### 2026-01-30（#169）
+- **US B2B SaaS EXIT Dashboard ケーススタディ拡充**
+  - 要件: 21件のEXIT事例に加え、直近成長中のB2B SaaS企業30-40件を追加
+  - 変更内容:
+    | 変更項目 | 内容 |
+    |---------|------|
+    | データ件数 | 21件 → 56件（EXIT済21件、成長中30件、IPO予定5件） |
+    | 新規カテゴリ | 開発ツール(`devtools`)、AI/LLM(`ai`)、セキュリティ(`security`) 追加 |
+    | ステータス型 | `CompanyStatus` = 'exit' \| 'growing' \| 'ipo_planned' 追加 |
+    | UIフィルター | ステータスフィルター追加（EXIT済/成長中/IPO予定） |
+    | テーブル列 | ステータス列追加（カラーバッジ表示） |
+  - 追加企業（35件）:
+    | カテゴリ | 企業 |
+    |---------|------|
+    | AI/DevTools | Cursor ($29.3B), Vercel, Supabase, Linear, Figma, Replit, Railway |
+    | HR/Payroll | Rippling ($16.8B), Deel, Gusto, Remote, Oyster, BambooHR |
+    | AI/LLM | Anthropic ($60B), ElevenLabs, Cohere, Perplexity, Harvey |
+    | Sales/Marketing | Clay, Apollo.io, Outreach, 6sense, Highspot, Copy.ai |
+    | Security | Vanta, Wiz ($10B), Snyk, 1Password |
+    | FinOps | Ramp, Brex, Mercury, Stripe ($70B) |
+    | Knowledge | Notion ($10B), Gamma |
+  - 変更ファイル:
+    | ファイル | 変更 |
+    |---------|------|
+    | `exits-data.ts` | 新型定義 + 35件追加（既存21件にstatus追加） |
+    | `exits/page.tsx` | ステータスフィルター + テーブル列追加 |
+    | `ExitCard.tsx` | ステータスバッジ + 条件表示（金額/評価額） |
+    | `exits/[id]/page.tsx` | 詳細ページ条件表示（EXIT情報 vs 企業情報） |
+    | `CLAUDE.md` | 概要セクション更新 |
+  - ビルド: 62ページ静的生成
+  - 本番デプロイ完了: https://us-saas-exit-dashboard.vercel.app
+
+### 2026-01-30（#168）
+- **US B2B SaaS EXIT Dashboard 情報収集機能追加**
+  - 要件: 海外スタートアップ情報サイトから自動でデータ取得し、タイムマシン経営のアイデア探索を効率化
+  - 対象サイト調査結果:
+    | サイト | 方法 | 状態 |
+    |--------|------|------|
+    | Y Combinator | 非公式API (yc-oss) | ✅100件 |
+    | TechCrunch | RSS | ✅37件 |
+    | Indie Hackers | Puppeteer | ✅18件 |
+    | Product Hunt | GraphQL API | ⏳トークン必要 |
+    | Tiny Startups | Puppeteer | ❌タイムアウト |
+    | BoringCashCow | Puppeteer | ❌構造複雑 |
+    | Crunchbase | 有料API | ❌対象外 |
+    | Kickstarter | - | ❌法的リスク |
+  - 作成ファイル:
+    | ファイル | 説明 |
+    |---------|------|
+    | `scripts/package.json` | スクリプト実行環境（puppeteer, rss-parser, tsx） |
+    | `scripts/fetch-yc.ts` | Y Combinator取得（100件/実行） |
+    | `scripts/fetch-techcrunch.ts` | TechCrunch RSS取得（37件） |
+    | `scripts/fetch-indie-hackers.ts` | Indie Hackers Puppeteerスクレイピング |
+    | `scripts/fetch-product-hunt.ts` | Product Hunt GraphQL（トークン必要） |
+    | `scripts/fetch-all.ts` | 統合スクリプト |
+    | `webapp/src/data/sources-data.ts` | 型定義とデータ集約 |
+    | `webapp/src/data/sources/*.json` | 取得データ保存 |
+    | `webapp/src/app/sources/page.tsx` | /sourcesページ（フィルター、検索） |
+  - ナビゲーション更新: 全ページに「情報収集」リンク追加
+  - 本番デプロイ完了: https://us-saas-exit-dashboard.vercel.app/sources
+  - 使い方:
+    ```bash
+    cd opperation/Startup/scripts
+    npm run fetch:all   # 全ソース一括取得
+    npm run fetch:yc    # Y Combinator単体
+    ```
 
 ### 2026-01-30（#167）
 - **AnyMind Monthly Report Dashboard作成**
@@ -583,6 +861,7 @@ D projects/anybrand/ (TikTokCAPに統合済み)
 | インフラ | 125-146回 | 設定同期、権限管理、フォルダ統合、HANDOFFハイブリッド化、戦略タブ静的化、ロイヤリティインサイト、llm-to-staticスキル、useEffect修正、代表口コミフィルター、LLM動的生成基盤 | 18 |
 | TikTokCAP | 151-153回 | TikTok Shop Affiliateスクレイピング + スプレッドシート同期 | 3 |
 | AnyBrand | 150-159回 | TikTokアフィリエイトプラットフォーム（Phase 1-3 + QRコード実URL化 + TikTokログイン連携） | 10 |
+| Startup情報収集 | 168-175回 | 4ソース自動スクレイピング、ケーススタディ拡充（21→56→211件統合）、UI改善、機会分析ページ改善、カテゴリ別EXIT分析 | 5 |
 
 ## 未解決の問題
 

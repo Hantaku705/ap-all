@@ -673,6 +673,9 @@ vercel --prod --yes
 
 ## 更新履歴
 
+- 2026-01-30: **US B2B SaaS EXIT Dashboard 機会分析ページ全面改善**（フィルター4種、機会スコア0-100点、成長中企業セクション、カテゴリ別EXIT分析、推奨アクション自動化、OpportunityMatrixクリック遷移）
+- 2026-01-30: **US B2B SaaS EXIT Dashboard データ統合**（/sourcesの155件を/exitsに統合、211件統一表示、ソースフィルター追加、「発見」ステータス追加、カテゴリ自動分類）
+- 2026-01-30: **US B2B SaaS EXIT Dashboard ケーススタディ拡充**（21件→56件、成長中30件+IPO予定5件追加、ステータス列・フィルター追加、新カテゴリ3種（devtools/ai/security））
 - 2026-01-30: **AnyMind Monthly Report Dashboard作成**（`projects/AnyMind/webapp/`、Excel 102シート→CSV変換、4タブ構成（Overview/P&L/Units/Budget）、Recharts可視化、https://anymind-dashboard.vercel.app）
 - 2026-01-30: **AnyBrand anystarr.com UI/UX完全一致**（ランディング→商品グリッド化、サイドバー削除、TikTok Shopバナー、コミッション3段階カード、モーダルMethod 1/2形式、本番デプロイ）
 - 2026-01-30: **US B2B SaaS EXIT Dashboard作成**（`opperation/Startup/webapp/`、21件のM&A事例、4ページ構成、フィルター・可視化・機会分析、https://us-saas-exit-dashboard.vercel.app）

@@ -1,7 +1,8 @@
 export type Category = 'hr' | 'marketing' | 'finops' | 'knowledge' | 'operations' | 'devtools' | 'ai' | 'security'
 export type JapanStatus = 'none' | 'small' | 'competitive'
 export type EntryDifficulty = 'low' | 'medium' | 'high'
-export type CompanyStatus = 'exit' | 'growing' | 'ipo_planned'
+export type CompanyStatus = 'exit' | 'growing' | 'ipo_planned' | 'discovery'
+export type DataSource = 'yc' | 'techcrunch' | 'indie-hackers' | 'product-hunt' | 'manual'
 
 export interface ExitCase {
   id: string
@@ -20,6 +21,7 @@ export interface ExitCase {
   status: CompanyStatus
   valuation?: string
   fundingRound?: string
+  source?: DataSource
 }
 
 export const categoryLabels: Record<Category, string> = {
@@ -37,6 +39,15 @@ export const statusLabels: Record<CompanyStatus, string> = {
   exit: 'EXIT済',
   growing: '成長中',
   ipo_planned: 'IPO予定',
+  discovery: '発見',
+}
+
+export const sourceLabels: Record<DataSource, string> = {
+  yc: 'Y Combinator',
+  techcrunch: 'TechCrunch',
+  'indie-hackers': 'Indie Hackers',
+  'product-hunt': 'Product Hunt',
+  manual: '手動登録',
 }
 
 export const japanStatusLabels: Record<JapanStatus, string> = {
@@ -51,7 +62,11 @@ export const entryDifficultyLabels: Record<EntryDifficulty, string> = {
   high: '高',
 }
 
-export const exits: ExitCase[] = [
+// 手動登録データ（56件）
+const manualExits: ExitCase[] = [
+  // ============================================
+  // EXIT済（21件）
+  // ============================================
   {
     id: 'airbase',
     company: 'Airbase',
@@ -66,6 +81,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'medium',
     opportunity: '日本では楽楽精算、Concur等が存在するが、統合型支出管理は未成熟。中堅企業向けに差別化可能。',
     sourceUrl: 'https://www.cpapracticeadvisor.com/2024/09/05/paylocity-to-buy-airbase-in-325-million-deal/110015/',
+    status: 'exit',
   },
   {
     id: 'cacheflow',
@@ -81,6 +97,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'high',
     opportunity: '日本にはCPQ専門のSaaSがほぼ存在しない。HubSpot/Salesforce連携で中堅企業の営業効率化に貢献可能。',
     sourceUrl: 'https://ir.hubspot.com/news-releases/news-release-details/hubspot-completes-acquisition-b2b-billing-management-and-cpq',
+    status: 'exit',
   },
   {
     id: 'qualified',
@@ -96,6 +113,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'high',
     opportunity: '日本にはAgentic AIマーケティングツールが存在しない。B2Bセールス自動化の大きな機会。',
     sourceUrl: 'https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-qualified/',
+    status: 'exit',
   },
   {
     id: 'payspace',
@@ -111,6 +129,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'medium',
     opportunity: '日本企業の海外子会社向け給与計算ニーズは高い。グローバル給与計算の日本語対応版に機会。',
     sourceUrl: 'https://techcrunch.com/2024/03/05/deel-acquires-payspace-500m-arr/',
+    status: 'exit',
   },
   {
     id: 'zavvy',
@@ -126,6 +145,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'high',
     opportunity: 'AI駆動の人材開発は日本で未開拓。企業の人材育成DXに大きな機会。',
     sourceUrl: 'https://techcrunch.com/2024/03/05/deel-acquires-payspace-500m-arr/',
+    status: 'exit',
   },
   {
     id: 'hofy',
@@ -141,6 +161,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'high',
     opportunity: 'リモートワーク普及でデバイス管理需要増加。日本企業の海外拠点向けに差別化可能。',
     sourceUrl: 'https://techcrunch.com/2024/03/05/deel-acquires-payspace-500m-arr/',
+    status: 'exit',
   },
   {
     id: 'pento',
@@ -156,6 +177,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'medium',
     opportunity: 'SmartHR、freee等が存在するが、完全自動化は未実現。中小企業向けに差別化可能。',
     sourceUrl: 'https://www.hibob.com/news/hibob-acquires-uk-payroll-automation-platform-pento/',
+    status: 'exit',
   },
   {
     id: 'workforce-software',
@@ -171,6 +193,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'medium',
     opportunity: '日本では勤怠管理は普及しているが、シフト最適化AIは未成熟。サービス業向けに機会。',
     sourceUrl: 'https://mediacenter.adp.com/2024-10-15-ADP-Acquires-WorkForce-Software',
+    status: 'exit',
   },
   {
     id: 'zoomin',
@@ -186,6 +209,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'medium',
     opportunity: '日本企業のナレッジ管理は紙・属人的。AI検索による社内知識活用に大きな機会。',
     sourceUrl: 'https://techcrunch.com/2024/09/24/salesforce-snatches-up-zoomin-a-tool-for-organizing-company-knowledge/',
+    status: 'exit',
   },
   {
     id: 'sana',
@@ -201,6 +225,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'high',
     opportunity: '日本のLMSは静的コンテンツ中心。AIパーソナライズ学習は未開拓市場。',
     sourceUrl: 'https://newsroom.workday.com/2025-11-04-Workday-Completes-Acquisition-of-Sana',
+    status: 'exit',
   },
   {
     id: 'bridge',
@@ -216,6 +241,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'high',
     opportunity: '日本の国際送金は銀行中心で高コスト。規制クリアできれば大きな機会。',
     sourceUrl: 'https://fintechmagazine.com/articles/stripe-completes-us-1-1bn-bridge-acquisition',
+    status: 'exit',
   },
   {
     id: 'mparticle',
@@ -231,6 +257,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'high',
     opportunity: '日本のマーテック成熟度は低い。CDP導入初期段階で先行者利益を獲得可能。',
     sourceUrl: 'https://www.adexchanger.com/commerce/rokt-acquires-mparticle-for-300-million/',
+    status: 'exit',
   },
   {
     id: 'paycor',
@@ -246,6 +273,7 @@ export const exits: ExitCase[] = [
     entryDifficulty: 'medium',
     opportunity: '日本では分断されたHRツールが多い。統合HCMプラットフォームに機会。',
     sourceUrl: 'https://www.paychex.com/newsroom/news-releases/paycor-acquisition-complete',
+    status: 'exit',
   },
   {
     id: 'chili-piper',
@@ -260,6 +288,7 @@ export const exits: ExitCase[] = [
     japanStatus: 'none',
     entryDifficulty: 'medium',
     opportunity: '日本のインバウンドリード管理は手動が多い。自動振り分けで営業効率化に貢献。',
+    status: 'exit',
   },
   {
     id: 'productboard',
@@ -274,6 +303,7 @@ export const exits: ExitCase[] = [
     japanStatus: 'small',
     entryDifficulty: 'medium',
     opportunity: '日本のプロダクトマネジメントツール市場は未成熟。スタートアップ・DX企業向けに機会。',
+    status: 'exit',
   },
   {
     id: 'fireflies',
@@ -288,6 +318,7 @@ export const exits: ExitCase[] = [
     japanStatus: 'small',
     entryDifficulty: 'medium',
     opportunity: 'OtterやNottaが存在するが、日本語精度に課題。高精度日本語対応で差別化可能。',
+    status: 'exit',
   },
   {
     id: 'guru',
@@ -302,6 +333,7 @@ export const exits: ExitCase[] = [
     japanStatus: 'none',
     entryDifficulty: 'medium',
     opportunity: '日本企業の社内知識は属人的・分散的。Slack連携ナレッジツールに大きな機会。',
+    status: 'exit',
   },
   {
     id: 'loom',
@@ -316,6 +348,7 @@ export const exits: ExitCase[] = [
     japanStatus: 'small',
     entryDifficulty: 'medium',
     opportunity: 'Loomは日本でも認知されているが、日本語UI・字幕の最適化で差別化可能。',
+    status: 'exit',
   },
   {
     id: 'lattice',
@@ -330,6 +363,7 @@ export const exits: ExitCase[] = [
     japanStatus: 'small',
     entryDifficulty: 'medium',
     opportunity: 'カオナビ、HRMOSが存在するが、OKR・1on1統合は弱い。統合パフォーマンス管理に機会。',
+    status: 'exit',
   },
   {
     id: 'gong',
@@ -344,6 +378,7 @@ export const exits: ExitCase[] = [
     japanStatus: 'none',
     entryDifficulty: 'high',
     opportunity: '日本のセールスイネーブルメント市場は未開拓。会話分析AIで営業生産性向上に貢献可能。',
+    status: 'exit',
   },
   {
     id: 'drata',
@@ -358,8 +393,615 @@ export const exits: ExitCase[] = [
     japanStatus: 'none',
     entryDifficulty: 'medium',
     opportunity: '日本企業のセキュリティ認証取得は手動で高コスト。自動化で中小企業にも普及可能。',
+    status: 'exit',
+  },
+
+  // ============================================
+  // 成長中（Growing）企業
+  // ============================================
+
+  // AI/Developer Tools
+  {
+    id: 'cursor',
+    company: 'Cursor (Anysphere)',
+    coreValue: 'AIコードエディタ',
+    description: 'AI駆動のコードエディタ。GPT-4統合でコード補完・リファクタリング・バグ修正を自動化。',
+    category: 'devtools',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本の開発者向けAIツールは未成熟。日本語コメント対応・ローカライズで差別化可能。',
+    status: 'growing',
+    valuation: '$29.3B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'vercel',
+    company: 'Vercel',
+    coreValue: 'フロントエンドクラウド',
+    description: 'Next.jsを中心としたフロントエンド開発・デプロイプラットフォーム。エッジファンクション・静的生成を提供。',
+    category: 'devtools',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'small',
+    entryDifficulty: 'high',
+    opportunity: '日本ではAWSが主流。エッジ最適化・DX推進で差別化可能。',
+    status: 'growing',
+    valuation: '$9.3B',
+    fundingRound: 'Series E',
+  },
+  {
+    id: 'supabase',
+    company: 'Supabase',
+    coreValue: 'オープンソースBaaS',
+    description: 'Firebase代替のオープンソースBaaS。PostgreSQL、認証、ストレージ、リアルタイムを統合。',
+    category: 'devtools',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本のスタートアップでBaaS需要増加。オープンソース・低コストで差別化可能。',
+    status: 'growing',
+    valuation: '$2B+',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'linear',
+    company: 'Linear',
+    coreValue: '開発Issue管理',
+    description: 'モダンなIssue管理・プロジェクト管理ツール。高速UI・キーボードショートカット・自動化機能。',
+    category: 'devtools',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'small',
+    entryDifficulty: 'medium',
+    opportunity: 'JiraやBacklogが主流だが、UX疲れの声も。モダンUIで開発チーム向けに機会。',
+    status: 'growing',
+    valuation: '$1.25B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'replit',
+    company: 'Replit',
+    coreValue: 'AIコーディング環境',
+    description: 'ブラウザベースのAI統合開発環境。プロトタイピング・デプロイまでを一気通貫。',
+    category: 'devtools',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本の教育・企業研修でのコーディング環境需要。ノーセットアップで差別化可能。',
+    status: 'growing',
+    valuation: '$1.16B',
+    fundingRound: 'Series B',
+  },
+  {
+    id: 'railway',
+    company: 'Railway',
+    coreValue: 'インフラデプロイ',
+    description: 'シンプルなインフラデプロイプラットフォーム。GitHub連携でワンクリックデプロイ。',
+    category: 'devtools',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: 'Heroku代替需要。日本のスタートアップ向けにシンプルさで差別化可能。',
+    status: 'growing',
+    valuation: '$500M+',
+    fundingRound: 'Series B',
+  },
+
+  // HR/Payroll
+  {
+    id: 'rippling',
+    company: 'Rippling',
+    coreValue: '統合HR/IT/FinOps',
+    description: 'HR、IT、FinOpsを統合したプラットフォーム。従業員ライフサイクル全体を一元管理。',
+    category: 'hr',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本にはHR/IT/FinOps統合プラットフォームが存在しない。大きな機会。',
+    status: 'growing',
+    valuation: '$16.8B',
+    fundingRound: 'Series F',
+  },
+  {
+    id: 'deel',
+    company: 'Deel',
+    coreValue: 'グローバル給与計算',
+    description: 'グローバル給与計算・EOR（Employer of Record）プラットフォーム。150カ国以上の雇用に対応。',
+    category: 'hr',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本企業のグローバル採用需要増加。コンプライアンス対応で差別化可能。',
+    status: 'ipo_planned',
+    valuation: '$12.6B',
+    fundingRound: 'Series D',
+  },
+  {
+    id: 'gusto',
+    company: 'Gusto',
+    coreValue: 'SMB向け給与計算',
+    description: '中小企業向け給与計算・福利厚生・HRプラットフォーム。使いやすさとコスパを重視。',
+    category: 'hr',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'small',
+    entryDifficulty: 'medium',
+    opportunity: 'SmartHR/freeeが存在するが、福利厚生統合は弱い。SMB向けに機会。',
+    status: 'growing',
+    valuation: '$9.3B',
+    fundingRound: 'Series E',
+  },
+  {
+    id: 'remote',
+    company: 'Remote',
+    coreValue: 'EOR/グローバル雇用',
+    description: 'EOR・グローバル雇用プラットフォーム。法人設立なしで海外人材を雇用可能。',
+    category: 'hr',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本企業の海外エンジニア採用需要増加。コンプライアンス・手続き代行で差別化可能。',
+    status: 'growing',
+    valuation: '$3B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'oyster',
+    company: 'Oyster',
+    coreValue: '分散チーム採用',
+    description: 'リモートチーム向けグローバル雇用プラットフォーム。採用・オンボーディング・給与計算を統合。',
+    category: 'hr',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: 'リモートワーク普及で分散チーム需要増加。日本企業のグローバル採用支援に機会。',
+    status: 'growing',
+    valuation: '$1B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'bamboohr',
+    company: 'BambooHR',
+    coreValue: 'HR管理プラットフォーム',
+    description: '中小企業向けHR管理プラットフォーム。採用・勤怠・パフォーマンス管理を統合。',
+    category: 'hr',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'small',
+    entryDifficulty: 'medium',
+    opportunity: 'SmartHRやカオナビが存在するが、使いやすさで差別化可能。',
+    status: 'growing',
+    valuation: '$3B',
+    fundingRound: 'Series C',
+  },
+
+  // AI/LLM Infrastructure
+  {
+    id: 'anthropic',
+    company: 'Anthropic',
+    coreValue: 'AI Safety LLM',
+    description: 'AI安全性を重視したLLM企業。Claude AIを開発・提供。',
+    category: 'ai',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: 'AI安全性重視の企業向けLLM需要。日本企業のAI導入支援に機会。',
+    status: 'growing',
+    valuation: '$60B',
+    fundingRound: 'Series E',
+  },
+  {
+    id: 'elevenlabs',
+    company: 'ElevenLabs',
+    coreValue: '音声AI/TTS',
+    description: '高品質音声合成・ボイスクローニングAI。多言語対応でリアルな音声生成。',
+    category: 'ai',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本語音声合成の品質向上需要。コンテンツ制作・アクセシビリティで差別化可能。',
+    status: 'growing',
+    valuation: '$3.3B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'cohere',
+    company: 'Cohere',
+    coreValue: 'エンタープライズLLM',
+    description: 'エンタープライズ向けLLMプラットフォーム。セキュリティ・コンプライアンス重視。',
+    category: 'ai',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本企業のAI導入は慎重。エンタープライズ向けセキュリティで差別化可能。',
+    status: 'growing',
+    valuation: '$5.5B',
+    fundingRound: 'Series D',
+  },
+  {
+    id: 'perplexity',
+    company: 'Perplexity',
+    coreValue: 'AI検索エンジン',
+    description: 'AI駆動の検索エンジン。ソース引用付きで回答を生成。',
+    category: 'ai',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: 'Google検索代替需要。日本語精度向上で差別化可能。',
+    status: 'growing',
+    valuation: '$9B',
+    fundingRound: 'Series B',
+  },
+  {
+    id: 'harvey',
+    company: 'Harvey',
+    coreValue: '法務AI',
+    description: '法務向けAIプラットフォーム。契約書レビュー・法的リサーチを自動化。',
+    category: 'ai',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本の法務業務はマンパワー依存。AI活用で効率化に大きな機会。',
+    status: 'growing',
+    valuation: '$5B',
+    fundingRound: 'Series D',
+  },
+
+  // Sales/Marketing
+  {
+    id: 'clay',
+    company: 'Clay',
+    coreValue: 'AIセールス自動化',
+    description: 'AI駆動のセールスデータエンリッチメント・アウトリーチ自動化プラットフォーム。',
+    category: 'marketing',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本のセールス自動化は未成熟。リード獲得効率化で差別化可能。',
+    status: 'growing',
+    valuation: '$3.1B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'apollo',
+    company: 'Apollo.io',
+    coreValue: 'セールスインテリジェンス',
+    description: 'B2Bセールスインテリジェンス・エンゲージメントプラットフォーム。2.7億件以上の連絡先データベース。',
+    category: 'marketing',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本のB2Bデータベースは分散的。統合プラットフォームで差別化可能。',
+    status: 'growing',
+    valuation: '$1.6B',
+    fundingRound: 'Series D',
+  },
+  {
+    id: 'outreach',
+    company: 'Outreach',
+    coreValue: 'セールスエンゲージメント',
+    description: 'セールスエンゲージメントプラットフォーム。営業活動の自動化・最適化。',
+    category: 'marketing',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本のセールステック市場は拡大中。エンゲージメント自動化で差別化可能。',
+    status: 'ipo_planned',
+    valuation: '$4.4B',
+    fundingRound: 'Series G',
+  },
+  {
+    id: '6sense',
+    company: '6sense',
+    coreValue: 'ABMプラットフォーム',
+    description: 'AI駆動のアカウントベースドマーケティング（ABM）プラットフォーム。購買意向予測・ターゲティング。',
+    category: 'marketing',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本のABM市場は黎明期。先行者利益を獲得可能。',
+    status: 'growing',
+    valuation: '$2.1B',
+    fundingRound: 'Series E',
+  },
+  {
+    id: 'highspot',
+    company: 'Highspot',
+    coreValue: 'セールスイネーブルメント',
+    description: 'セールスイネーブルメントプラットフォーム。営業コンテンツ管理・トレーニング・分析を統合。',
+    category: 'marketing',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本の営業コンテンツ管理は属人的。統合プラットフォームで差別化可能。',
+    status: 'growing',
+    valuation: '$3.5B',
+    fundingRound: 'Series F',
+  },
+  {
+    id: 'copyai',
+    company: 'Copy.ai',
+    coreValue: 'AIコピーライティング',
+    description: 'AI駆動のコピーライティング・コンテンツ生成プラットフォーム。マーケティング文章を自動生成。',
+    category: 'marketing',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'small',
+    entryDifficulty: 'medium',
+    opportunity: '日本語AIライティングの品質向上余地。ローカライズで差別化可能。',
+    status: 'growing',
+    valuation: '$400M',
+    fundingRound: 'Series A',
+  },
+
+  // Security/Compliance
+  {
+    id: 'vanta',
+    company: 'Vanta',
+    coreValue: 'コンプライアンス自動化',
+    description: 'セキュリティコンプライアンス自動化プラットフォーム。SOC2、ISO27001、HIPAA等の認証取得を自動化。',
+    category: 'security',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本企業のISMS取得は手動で高コスト。自動化で中小企業にも普及可能。',
+    status: 'growing',
+    valuation: '$4.15B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'wiz',
+    company: 'Wiz',
+    coreValue: 'クラウドセキュリティ',
+    description: 'クラウドセキュリティプラットフォーム。マルチクラウド環境のリスク可視化・対策。',
+    category: 'security',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本企業のクラウド移行に伴うセキュリティ需要増加。',
+    status: 'ipo_planned',
+    valuation: '$10B',
+    fundingRound: 'Series E',
+  },
+  {
+    id: 'snyk',
+    company: 'Snyk',
+    coreValue: '開発者セキュリティ',
+    description: '開発者向けセキュリティプラットフォーム。コード・依存関係・コンテナの脆弱性を検出。',
+    category: 'security',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'small',
+    entryDifficulty: 'medium',
+    opportunity: '日本のDevSecOps市場は成長中。開発者向けセキュリティツールで差別化可能。',
+    status: 'growing',
+    valuation: '$8.5B',
+    fundingRound: 'Series G',
+  },
+  {
+    id: '1password',
+    company: '1Password',
+    coreValue: 'パスワード管理',
+    description: 'エンタープライズ向けパスワード・シークレット管理プラットフォーム。',
+    category: 'security',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'small',
+    entryDifficulty: 'medium',
+    opportunity: '日本企業のパスワード管理は未成熟。エンタープライズ向けで差別化可能。',
+    status: 'growing',
+    valuation: '$6.8B',
+    fundingRound: 'Series C',
+  },
+
+  // FinOps/Expense
+  {
+    id: 'ramp',
+    company: 'Ramp',
+    coreValue: 'コーポレートカード',
+    description: 'AI駆動のコーポレートカード・支出管理プラットフォーム。自動経費削減提案。',
+    category: 'finops',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本のコーポレートカード市場は伝統的。AI支出管理で差別化可能。',
+    status: 'growing',
+    valuation: '$7.6B',
+    fundingRound: 'Series D',
+  },
+  {
+    id: 'brex',
+    company: 'Brex',
+    coreValue: 'ビジネス支出管理',
+    description: 'スタートアップ・中堅企業向けビジネス支出管理プラットフォーム。',
+    category: 'finops',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本のスタートアップ向け金融サービスは限定的。統合支出管理で差別化可能。',
+    status: 'growing',
+    valuation: '$12.3B',
+    fundingRound: 'Series D',
+  },
+  {
+    id: 'mercury',
+    company: 'Mercury',
+    coreValue: 'スタートアップ銀行',
+    description: 'スタートアップ向けデジタル銀行。法人口座・支出管理・資金調達支援を統合。',
+    category: 'finops',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'high',
+    opportunity: '日本の法人口座開設は煩雑。スタートアップ特化で差別化可能。',
+    status: 'growing',
+    valuation: '$3.5B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'stripe',
+    company: 'Stripe',
+    coreValue: '決済インフラ',
+    description: 'オンライン決済インフラプラットフォーム。130カ国以上・135通貨に対応。',
+    category: 'finops',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'competitive',
+    entryDifficulty: 'high',
+    opportunity: '日本でも浸透中だが、ローカル決済手段への対応で差別化余地あり。',
+    status: 'ipo_planned',
+    valuation: '$70B',
+    fundingRound: 'Series I',
+  },
+
+  // Productivity/Knowledge
+  {
+    id: 'notion',
+    company: 'Notion',
+    coreValue: 'ワークスペース',
+    description: 'オールインワンワークスペース。ドキュメント・Wiki・プロジェクト管理を統合。',
+    category: 'knowledge',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'competitive',
+    entryDifficulty: 'high',
+    opportunity: '日本でも人気だが、大企業向けセキュリティ・日本語テンプレートで差別化余地。',
+    status: 'growing',
+    valuation: '$10B',
+    fundingRound: 'Series C',
+  },
+  {
+    id: 'gamma',
+    company: 'Gamma',
+    coreValue: 'AIプレゼン作成',
+    description: 'AI駆動のプレゼンテーション・ドキュメント作成ツール。テキストから美しいスライドを自動生成。',
+    category: 'knowledge',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'none',
+    entryDifficulty: 'medium',
+    opportunity: '日本の資料作成はPowerPoint中心。AIプレゼン生成で差別化可能。',
+    status: 'growing',
+    valuation: '$2.1B',
+    fundingRound: 'Series C',
+  },
+
+  // IPO予定
+  {
+    id: 'figma',
+    company: 'Figma',
+    coreValue: 'デザインコラボツール',
+    description: 'クラウドベースのデザインコラボレーションツール。リアルタイム共同編集・プロトタイピング。',
+    category: 'devtools',
+    exitAmount: '-',
+    exitAmountNum: 0,
+    acquirer: '-',
+    exitYear: 2025,
+    japanStatus: 'competitive',
+    entryDifficulty: 'high',
+    opportunity: '日本でもデザインチームに浸透。エンタープライズ・日本語サポートで差別化余地。',
+    status: 'ipo_planned',
+    valuation: '$12.5B',
+    fundingRound: 'Series E',
   },
 ]
+
+// ============================================
+// データ統合（手動登録 + 発見）
+// ============================================
+import { discoveryExits } from './sources-data'
+
+// 統合配列をエクスポート
+export const exits: ExitCase[] = [...manualExits, ...discoveryExits]
 
 // Helper functions
 export function getExitsByCategory(category: Category): ExitCase[] {
@@ -372,6 +1014,10 @@ export function getExitsByJapanStatus(status: JapanStatus): ExitCase[] {
 
 export function getExitsByDifficulty(difficulty: EntryDifficulty): ExitCase[] {
   return exits.filter((e) => e.entryDifficulty === difficulty)
+}
+
+export function getExitsByStatus(status: CompanyStatus): ExitCase[] {
+  return exits.filter((e) => e.status === status)
 }
 
 export function getCategoryCounts(): Record<Category, number> {
@@ -394,10 +1040,30 @@ export function getJapanStatusCounts(): Record<JapanStatus, number> {
   )
 }
 
+export function getStatusCounts(): Record<CompanyStatus, number> {
+  return exits.reduce(
+    (acc, e) => {
+      acc[e.status] = (acc[e.status] || 0) + 1
+      return acc
+    },
+    {} as Record<CompanyStatus, number>
+  )
+}
+
 export function getTotalExitValue(): number {
-  return exits.reduce((sum, e) => sum + e.exitAmountNum, 0)
+  return exits.filter(e => e.status === 'exit').reduce((sum, e) => sum + e.exitAmountNum, 0)
 }
 
 export function getAverageExitValue(): number {
-  return getTotalExitValue() / exits.length
+  const exitCases = exits.filter(e => e.status === 'exit')
+  return getTotalExitValue() / exitCases.length
+}
+
+export function getTotalValuation(): number {
+  return exits
+    .filter(e => e.status !== 'exit' && e.valuation)
+    .reduce((sum, e) => {
+      const val = e.valuation?.replace(/[$B+]/g, '') || '0'
+      return sum + parseFloat(val) * 1000000000
+    }, 0)
 }
